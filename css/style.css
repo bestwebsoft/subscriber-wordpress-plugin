@@ -1,0 +1,188 @@
+/**
+ * BWS menu styles
+ */
+#adminmenu #toplevel_page_bws_plugins div.wp-menu-image,
+.admin-color-classic #adminmenu #toplevel_page_bws_plugins div.wp-menu-image,
+#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,
+#adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
+	background: url("../images/icon_16_single.png") no-repeat scroll center center transparent;
+}
+#adminmenu #toplevel_page_bws_plugins.wp-not-current-submenu div.wp-menu-image {
+    opacity: 0.7;
+}
+#toplevel_page_bws_plugins .wp-submenu .wp-first-item {
+	display: none;
+}
+/*
+* styles for rate-support div on the settings page
+*/
+.bws-plugin-reviews {
+	background: none repeat scroll 0 0 #BEE1F1;
+	border: 1px solid #70A8C2;
+	border-radius: 3px;
+	max-width: 700px;
+}
+.bws-plugin-reviews-rate {
+	padding: 10px;
+	border-bottom: 1px dashed #70A8C2;
+}
+.bws-plugin-reviews-support {
+	padding: 10px;
+}
+/**
+ * Subscribers page
+ */
+.sbscrbr-users-list-page .subscribed td,
+.sbscrbr-users-list-page .subscribed th {
+	background: #eff8f3;
+}
+.sbscrbr-users-list-page .unsubscribed td,
+.sbscrbr-users-list-page .unsubscribed th{
+	background: #fefaf7;
+}
+.sbscrbr-users-list-page .subtitle {
+	display: block;
+	padding-left: 0;
+}
+.subscribed .check-column {
+	border-left: 4px solid #179458;
+}
+.unsubscribed .check-column {
+	border-left: 4px solid #d54e21;
+}
+.subscribed .check-column input,
+.unsubscribed .check-column input {
+	margin: 0 0 0 4px;
+}
+.sbscrbr-users-list-page .column-name img {
+	float: left;
+	margin-top: 1px;
+	margin-right: 10px;
+}
+.sbscrbr-users-list-page .column-name strong {
+	font-size: 13px;
+	line-height: 1.5em;
+}
+.sbscrbr-users-list-page .column-name .sbscrbr-delete-user {
+	color: red;
+}
+.sbscrbr-users-list-page .column-name .row-actions span {
+	color: #777;
+}
+.sbscrbr-users-list-page .column-status {
+	width: 115px;
+	text-align: left;
+}
+.sbscrbr-users-list-page .subsubsub {
+	clear: left;
+}
+/**
+ * Settings page
+ */
+#sbscrbr_settings_form textarea {
+	margin-left: 1px;
+	height: 100px;
+}
+.sbscrbr_info {
+	position: relative;
+	top: 8px;
+	font-size: 10px;
+	color: #888;
+	vertical-align: top;
+}
+.sbscrbr-input-text {
+	width: 450px;
+}
+.sbscrbr-mail-input-text,
+.sbscrbr-select {
+	width: 200px;
+}
+.sbscrbr-email-field {
+	margin-left: 25px;
+	clear: left;
+}
+.sbscrbr-help-box {
+	position: relative;
+	top: -3px;
+	float: left;
+	margin: 0 10px;
+	height: 29px;
+	width: 29px;
+	font-weight: normal;
+	background: url("../images/tooltip_icons.png") no-repeat;
+	
+}
+.sbscrbr-help-box .sbscrbr-hidden-help-text:before {
+	position: absolute;
+	top: 7px;
+	left: -10px;
+	content: url("../images/help.png");	
+}
+.sbscrbr-help-box .sbscrbr-hidden-help-text {
+	display: none;
+	position: absolute;
+	left: 40px;
+	padding: 5px 10px;
+	width: 240px;
+	line-height: 1.5;
+	background: #f4f4f4;
+	border: 1px solid #dcdcdc;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	z-index: 10;
+}
+.sbscrbr-help-box:hover {
+	cursor: pointer;
+}
+.sbscrbr-help-box:hover .sbscrbr-hidden-help-text {
+	display: block;
+}
+#sbscrbr-hide-service-messages,
+#sbscrbr-hide-messages-settings {
+	display: none;
+}
+.sbscrbr-preloader {
+	position: absolute;
+	top: 82px;
+	left: 9px;
+	width: 16px;
+	height: 16px;
+	background: url( '../images/preloader.gif' );
+	background-size: 100%;
+}
+@media only screen and ( max-width: 782px ) {
+	/**
+	 * Subscribers page
+	 */
+	.sbscrbr-users-list-page .check-column input[type=checkbox] {
+		margin-left: 4px !important;
+	}	
+	.sbscrbr-users-list-page .manage-column.check-column input[type=checkbox] {
+		margin-left: 8px !important;
+	}	
+	.sbscrbr-users-list-page .column-name,
+	.sbscrbr-users-list-page .column-email {
+		display: table-cell !important;
+	}	
+	.sbscrbr-users-list-page .column-status {
+		display: none;
+	}
+	/**
+	 * settings page
+	 */
+	#sbscrbr_settings_form input[type="radio"],
+	#sbscrbr_settings_form input[type="checkbox"] {
+		margin-top: 4px;
+	}	
+	.sbscrbr_info {
+		display: block;
+		padding-bottom: 15px;
+	}
+	.sbscrbr-help-box {
+		margin-top: 6px;
+	}
+	.sbscrbr-email-field {
+		margin-left: 0;
+	}
+}
