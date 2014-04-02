@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Subscriber, newsletter, mailout, subscription, subscribe, email, mail, sign up
 Requires at least: 3.1
 Tested up to: 3.8.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -84,10 +84,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1 - 01.04.2014 =
+* Update : BWS plugins section is updated.
+* Budfix : Problem with deleting plugin is fixed.
+* Budfix : Fixed output administrator`s login on settings page.
+
 = V1.0 - 27.02.2014 =
-* New: Russian language files were added to the plugin.
+* New : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1 =
+BWS plugins section is updated. Problem with deleting plugin is fixed. Fixed output administrator`s login on settings page.
 
 = V1.0 =
 Russian language files were added to the plugin.

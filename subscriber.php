@@ -4,7 +4,7 @@ Plugin Name: Subscriber
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.0
+Version: 1.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -33,8 +33,8 @@ License: GPLv2 or later
 if ( ! function_exists( 'sbscrbr_admin_menu' ) ) {
 	function sbscrbr_admin_menu() {	
 		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_version = '1.2';
-		$base = plugin_basename(__FILE__);
+		$bws_menu_version = '1.2.3';
+		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
 			if ( 1 == $wpmu ) {
@@ -144,7 +144,12 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 
 		$admin_email = get_bloginfo( 'admin_email' );
 		$admin_data  = get_user_by( 'email', $admin_email );
-
+		if ( ! $admin_data ) {
+			$admin_list  = get_super_admins();
+			$admin_login = $admin_list[0];
+		} else {
+			$admin_login = $admin_data->user_login;
+		}
 		$sbscrbr_options_default = array(
 			'plugin_option_version'       => $sbscrbr_plugin_info["Version"],
 			/* form labels */
@@ -170,7 +175,7 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 			/* mail settings */
 			/* "From" settings */
 			'choose_from_name'            => 'admin_name',
-			'from_admin_name'             => $admin_data->user_login,
+			'from_admin_name'             => $admin_login,
 			'from_custom_name'            => get_bloginfo( 'name' ),
 			'from_email'                  => $admin_email,
 			/* subject settings */
@@ -1054,7 +1059,7 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		$from_email = empty( $sbscrbr_options['from_email'] ) ? get_option( 'admin_email' ) : $sbscrbr_options['from_email'];
 
 		/* send message to user */
-		$headers = 'From: ' . $from_name . '<' . $from_email . '>';
+		$headers = 'From: ' . $from_name . ' <' . $from_email . '>';
 		$subject = $sbscrbr_options['subscribe_message_subject'];
 		$message = sbscrbr_replace_shortcodes( $sbscrbr_options['subscribe_message_text'], $email );
 		if ( ! empty( $user_password ) ) { 
@@ -1939,7 +1944,7 @@ if ( ! function_exists( 'sbscrbr_get_admin_email' ) ) {
  * @return bool  true if Sender is installed
  */
 if ( ! function_exists( 'sbscrbr_check_sender_install' ) ) {
-	function sbscrbr_check_sender() {
+	function sbscrbr_check_sender_install() {
 		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		$plugins_list = get_plugins();
 		if ( array_key_exists( 'sender/sender.php', $plugins_list ) ) {
