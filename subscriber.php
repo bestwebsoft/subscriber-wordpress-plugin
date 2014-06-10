@@ -4,7 +4,7 @@ Plugin Name: Subscriber
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.1
+Version: 1.1.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -33,7 +33,8 @@ License: GPLv2 or later
 if ( ! function_exists( 'sbscrbr_admin_menu' ) ) {
 	function sbscrbr_admin_menu() {	
 		global $bstwbsftwppdtplgns_options, $wpmu, $bstwbsftwppdtplgns_added_menu;
-		$bws_menu_version = '1.2.3';
+		$bws_menu_info = get_plugin_data( plugin_dir_path( __FILE__ ) . "bws_menu/bws_menu.php" );
+		$bws_menu_version = $bws_menu_info["Version"];
 		$base = plugin_basename( __FILE__ );
 
 		if ( ! isset( $bstwbsftwppdtplgns_options ) ) {
@@ -341,7 +342,7 @@ if ( ! function_exists( 'sbscrbr_load_scripts' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 	function sbscrbr_settings_page() {
-		global $wp_version, $wpdb, $sbscrbr_options;
+		global $wp_version, $wpdb, $sbscrbr_options, $sbscrbr_plugin_info;
 		$prefix = is_multisite() ? $wpdb->base_prefix : $wpdb->prefix;
 		/* get list of administrators */
 		$admin_list = $wpdb->get_results( 
@@ -426,6 +427,10 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 		<div class="wrap" id="sbscrbr-settings-page">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
 			<h2><?php _e( "Subscriber Settings", 'subscriber' ); ?></h2>
+			<h2 class="nav-tab-wrapper">
+				<a class="nav-tab nav-tab-active" href="admin.php?page=sbscrbr_settings_page"><?php _e( 'Settings', 'subscriber' ); ?></a>
+				<a class="nav-tab" href="http://bestwebsoft.com/plugin/subscriber/#faq" target="_blank"><?php _e( 'FAQ', 'subscriber' ); ?></a>
+			</h2>			
 			<div id="sbscrbr-settings-notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'subscriber' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'subscriber' ); ?></p></div>
 			<div class="updated fade" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 			<div class="error" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
@@ -589,6 +594,9 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 						</td>
 					</tr>
 				</table>
+				<?php if ( false == sbscrbr_check_sender_install() ) {
+					echo '<p>' . __( 'If you want to send mailout to the users who have subscribed for newsletters use', 'subscriber' ) . ' <a href="http://bestwebsoft.com/plugin/sender/" target="_blank">Sender plugin</a> ' . __( 'that sends mail to registered users. There is also a premium version of the plugin', 'subscriber' ) . ' - <a href="http://bestwebsoft.com/plugin/sender-pro/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro</a>, ' . __( 'allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.', 'subscriber' ) . '</p>';
+				} ?>				
 				<input type="hidden" name="sbscrbr_form_submit" value="submit" />
 				<p class="submit">
 					<input type="submit" id="sbscrbr-submit-button" class="button-primary" value="<?php _e( 'Save Changes', 'subscriber' ) ?>" />
@@ -635,6 +643,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 		 * @return void
 		 */
 		public function widget( $args, $instance ) {
+			global $cptchpr_options;
 			$widget_title = isset( $instance['widget_title'] ) ? $instance['widget_title'] : null;
 			if ( isset( $instance['widget_apply_settings'] ) && '1' == $instance['widget_apply_settings'] ) { /* load plugin settings */
 				global $sbscrbr_options;
@@ -653,7 +662,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 			}
 			/* get report message */
 			$report_message = sbscrbr_handle_form_data();
-			$page_url       = home_url( '/' . $_SERVER["REQUEST_URI"] );
+			$page_url       = $_SERVER["REQUEST_URI"];
 			echo $args['before_widget'] . $args['before_title'] . $widget_title . $args['after_title']; ?>
 			<form method="post" action="<?php echo $page_url; ?>" id="subscrbr-form-<?php echo $args['widget_id']; ?>" class="subscrbr-sign-up-form" style="position: relative;">
 				<?php if ( empty( $report_message ) ) { 
@@ -670,6 +679,14 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 						<?php echo $widget_checkbox_label; ?>
 					</label>
 				</p>
+				<?php if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
+					if ( function_exists( 'cptchpr_display_captcha_custom' ) ) {
+						echo '<p class="cptchpr_block">';
+						if ( "" != $cptchpr_options['cptchpr_label_form'] )	
+							echo '<label>'. stripslashes( $cptchpr_options['cptchpr_label_form'] ) .'<span class="required"> ' . $cptchpr_options['cptchpr_required_symbol'] . '</span></label><br />';
+						echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />" . cptchpr_display_captcha_custom() . '</p>';					
+					}
+				} ?>
 				<p class="sbscrbr-submit-block" style="position: relative;">
 					<input type="submit" value="<?php echo $widget_button_label; ?>" name="sbscrbr_submit_email" class="submit" />
 				</p>
@@ -756,14 +773,14 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 	function sbscrbr_subscribe_form() {
-		global $sbscrbr_options;
+		global $sbscrbr_options, $cptchpr_options;
 		add_action( 'wp_enqueue_scripts', 'sbscrbr_load_scripts' );
 		if ( empty( $sbscrbr_options ) ) {
 			$sbscrbr_options = is_multisite() ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
 		}
 		/* get report message */
 		$report_message = sbscrbr_handle_form_data(); 
-		$page_url       = home_url( '/' . $_SERVER["REQUEST_URI"] );
+		$page_url       = $_SERVER["REQUEST_URI"];
 		$content        = '<form method="post" action="' .  $page_url . '" class="subscrbr-sign-up-form">';
 		if ( empty( $report_message ) ) { 
 			if ( ! empty( $sbscrbr_options['form_label'] ) ) {
@@ -781,8 +798,16 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 					<input id="sbscrbr-checkbox" type="checkbox" name="sbscrbr_unsubscribe" value="yes" style="vertical-align: middle;"/>' .
 					$sbscrbr_options['form_checkbox_label'] . 
 				'</label>
-			</p>
-			<p class="sbscrbr-submit-block" style="position: relative;">
+			</p>';
+		if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
+			if ( function_exists( 'cptchpr_display_captcha_custom' ) ) {
+				$content .=  '<p class="cptchpr_block">';
+				if ( "" != $cptchpr_options['cptchpr_label_form'] )	
+					$content .=  '<label>'. stripslashes( $cptchpr_options['cptchpr_label_form'] ) .'<span class="required"> ' . $cptchpr_options['cptchpr_required_symbol'] . '</span></label><br />';
+				$content .=  "<input type='hidden' name='cntctfrm_contact_action' value='true' />" . cptchpr_display_captcha_custom() . '</p>';
+			}
+		}
+		$content .= '<p class="sbscrbr-submit-block" style="position: relative;">
 				<input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
 			</p>
 		</form>';
@@ -796,7 +821,7 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 	function sbscrbr_handle_form_data() {
-		global $wpdb, $sbscrbr_options;
+		global $wpdb, $sbscrbr_options, $cptchpr_options;
 		if ( empty( $sbscrbr_options ) ) {
 			$sbscrbr_options = ( is_multisite() ) ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
 		}
@@ -809,6 +834,12 @@ if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 		$done_message          = '<p class="sbscrbr-form-done">' . $sbscrbr_options['done_subscribe'] . '</p>';
 		$prefix                = is_multisite() ? $wpdb->base_prefix : $wpdb->prefix;
 		if ( isset( $_POST['sbscrbr_submit_email'] ) ) { /* if request was sended from subscribe form */
+			if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
+				if ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== true ) {
+					$message = '<p class="sbscrbr-form-error">' . __( "Please complete the CAPTCHA.", 'subscriber' ) . '</p>';
+					return $message;
+				}
+			}			
 			if ( isset( $_POST['sbscrbr_unsubscribe'] ) && 'yes' == $_POST['sbscrbr_unsubscribe'] ) { /* unsubscribe user */
 				if ( empty( $_POST['sbscrbr_email'] ) ) {
 					$message = $empty_mail_message;
@@ -1947,7 +1978,7 @@ if ( ! function_exists( 'sbscrbr_check_sender_install' ) ) {
 	function sbscrbr_check_sender_install() {
 		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		$plugins_list = get_plugins();
-		if ( array_key_exists( 'sender/sender.php', $plugins_list ) ) {
+		if ( array_key_exists( 'sender/sender.php', $plugins_list ) || array_key_exists('sender-pro/sender-pro.php', $plugins_list ) ) {
 			return true;
 		} else {
 			return false;

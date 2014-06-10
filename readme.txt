@@ -1,10 +1,10 @@
 ﻿=== Subscriber ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
-Tags: Subscriber, newsletter, mailout, subscription, subscribe, email, mail, sign up
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
+Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 3.8.1
-Stable tag: 1.1
+Tested up to: 3.9.1
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,12 @@ This plugin allows you to subscribe users for newsletters from your website.
 
 The Subscriber plugin is an exclusive add-on for the Sender Plugin by BestWebSoft. This plugin allows your site visitors to subscribe for newsletters, coming from your website.
 
+http://www.youtube.com/watch?v=ytjxGd4hXDU
+
+<a href="http://www.youtube.com/watch?v=YJOQSGXPjRY" target="_blank">Video instruction on Installation</a>
+
 <a href="http://wordpress.org/plugins/subscriber/faq/" target="_blank">FAQ</a>
+
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Features =
@@ -27,11 +32,16 @@ The Subscriber plugin is an exclusive add-on for the Sender Plugin by BestWebSof
 
 The author of the Subscriber also recommends the following plugins:
 
-* <a href="http://wordpress.org/plugins/sender/">Sender</a> - this plugin sends mail to registered users.
+* <a href="http://wordpress.org/plugins/sender/">Sender</a> - this plugin sends mail to registered users. There is also a premium version of the plugin - <a href="http://bestwebsoft.com/plugin/sender-pro/?k=87e536ef51413f30ebada1bb46dcdf39">Sender Pro</a>, allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.
+* <a href="http://wordpress.org/plugins/captcha/">Captcha</a> - The Captcha plugin allows you to implement a super security captcha form into web forms. It protects your website from spam by means of math logic, easily understood by human beings. This captcha can be used for login, registration, password recovery, comments forms.
+There is also a premium version of the plugin - <a href="http://bestwebsoft.com/plugin/captcha-pro/?k=087fd14aa72b0c2680b4ec1ad896e63a">Captcha Pro</a>, allowing compatibility with BuddyPress (Registration form, Comments form, "Create a Group" form), Contact Form 7 and Subscriber.
+* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=eae2aa18f1ba0036cc937a130f05f001">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
 
 = Translation =
 
 * Russian (ru_RU)
+* Ukrainian (uk)
 
 If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -46,6 +56,10 @@ Also, emails which are reporting about plugin's bugs are accepted for investigat
 1. Upload the `subscriber` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Plugin settings are located in 'BWS Plugins', 'Subscriber'.
+
+<a href="https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/edit" target="_blank">View a Step-by-step Instruction on Subscriber Installation</a>.
+
+http://www.youtube.com/watch?v=YJOQSGXPjRY
 
 == Frequently Asked Questions ==
 
@@ -73,7 +87,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">System_Status.pdf</a>
+4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
 
 == Screenshots ==
 
@@ -84,15 +98,24 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1.1 - 26.05.2014 =
+* Update : We updated all functionality for wordpress 3.9.1.
+* NEW    : The Ukrainian language file is added to the plugin.
+* Budfix : Fixed 404 error after form submitting.
+* NEW    : Compatibility with Captcha Pro plugin.
+
 = V1.1 - 01.04.2014 =
 * Update : BWS plugins section is updated.
 * Budfix : Problem with deleting plugin is fixed.
 * Budfix : Fixed output administrator`s login on settings page.
 
 = V1.0 - 27.02.2014 =
-* New : Russian language files were added to the plugin.
+* NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.1 =
+We updated all functionality for wordpress 3.9.1. The Ukrainian language file is added to the plugin. Fixed 404 error after form submitting.  Compatibility with Captcha Pro plugin.
 
 = V1.1 =
 BWS plugins section is updated. Problem with deleting plugin is fixed. Fixed output administrator`s login on settings page.
