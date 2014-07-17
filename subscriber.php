@@ -4,7 +4,7 @@ Plugin Name: Subscriber
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.1.1
+Version: 1.1.2
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1096,13 +1096,28 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		if ( ! empty( $user_password ) ) { 
 			$message .= __( "\nYour login: ", 'subscriber' ) . $email . __( "\nYour password: ", 'subscriber' ) . $user_password;
 		}
-		wp_mail( $email , $subject, $message, $headers );
+
+		if ( ! function_exists( 'is_plugin_active' ) )
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		if ( is_plugin_active( 'email-queue/email-queue.php' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
+			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
+			do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
+		} else {	
+			wp_mail( $email , $subject, $message, $headers );
+		}
 
 		/* send message to admin */
 		$headers = 'From: ' . home_url();
 		$subject = $sbscrbr_options['admin_message_subject'];
 		$message = sbscrbr_replace_shortcodes( $sbscrbr_options['admin_message_text'], $email );
-		wp_mail( get_option( 'admin_email' ) , $subject, $message, $headers );
+		
+		if ( is_plugin_active( 'email-queue/email-queue.php' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
+			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
+			do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), get_option( 'admin_email' ), $subject, $message, $headers );
+		} else {
+			wp_mail( get_option( 'admin_email' ) , $subject, $message, $headers );
+		}
 	}
 }
 
@@ -1131,13 +1146,38 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 			$headers    = 'From: ' . $from_name . '<' . $from_email . '>';
 			$subject    = $sbscrbr_options['unsubscribe_message_subject'];
 			$message    = sbscrbr_replace_shortcodes( $sbscrbr_options['unsubscribe_message_text'], $email );
-			if ( wp_mail( $email , $subject, $message, $headers ) ) {
-				$report['done'] = 'check mail';
+
+			if ( ! function_exists( 'is_plugin_active' ) )
+				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+			if ( is_plugin_active( 'email-queue/email-queue.php' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
+				/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
+				global $mlq_mail_result;
+				do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
+				if ( $mlq_mail_result ) {
+					$report['done'] = 'check mail';
+				} else {
+					$report['error'] = $sbscrbr_options['cannot_send_email'];
+				}
 			} else {
-				$report['error'] = $sbscrbr_options['cannot_send_email'];
+				if ( wp_mail( $email , $subject, $message, $headers ) ) {
+					$report['done'] = 'check mail';
+				} else {
+					$report['error'] = $sbscrbr_options['cannot_send_email'];
+				}
 			}
 		}
 		return $report;
+	}
+}
+
+/**
+ * Function that is used by email-queue to check for compatibility
+ * @return void 
+ */
+if ( ! function_exists( 'sbscrbr_check_for_compatibility_with_mlq' ) ) {
+	function sbscrbr_check_for_compatibility_with_mlq() {
+		return false;
 	}
 }
 
