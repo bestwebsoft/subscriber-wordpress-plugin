@@ -1,7 +1,7 @@
 <?php
 /*
 * Function for displaying BestWebSoft menu
-* Version: 1.3.4
+* Version: 1.3.5
 */
 
 if ( ! function_exists( 'bws_add_menu_render' ) ) {
@@ -259,6 +259,15 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 				'download'		=> 'http://bestwebsoft.com/plugin/email-queue/?k=e345e1b6623f0dca119bc2d9433b130b&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version . '#download',
 				'wp_install'	=> '/wp-admin/plugin-install.php?tab=search&s=Email+Queue+BestWebSoft&plugin-search-input=Search+Plugins',
 				'settings'		=> 'admin.php?page=mlq_settings'
+			),
+			'limit-attempts/limit-attempts.php' => array(
+				'name'			=> 'Limit Attempts',
+				'description'	=> 'Allows you to limit rate of login attempts by the ip, and create whitelist and blacklist.',
+				'link'			=> 'http://bestwebsoft.com/plugin/limit-attempts/?k=b14e1697ee4d008abcd4bd34d492573a&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'download'		=> 'http://bestwebsoft.com/plugin/limit-attempts/?k=b14e1697ee4d008abcd4bd34d492573a&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version . '#download',
+				'wp_install'	=> '/wp-admin/plugin-install.php?tab=search&s=Limit+Attempts+BestWebSoft&plugin-search-input=Search+Plugins',
+				'settings'		=> 'admin.php?page=limit-attempts.php',
+				'pro_version'	=> 'limit-attempts-pro/limit-attempts-pro.php'
 			)
 		);
 		$bws_plugins_pro	= array(
@@ -359,6 +368,13 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 				'link'			=> 'http://bestwebsoft.com/plugin/sender-pro/?k=dc5d1a87bdc8aeab2de40ffb99b38054&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
 				'purchase' 		=> 'http://bestwebsoft.com/plugin/sender-pro/?k=dc5d1a87bdc8aeab2de40ffb99b38054&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version . '#purchase',
 				'settings'		=> 'admin.php?page=sndrpr_settings'
+			),
+			'limit-attempts-pro/limit-attempts-pro.php' => array(
+				'name'			=> 'Limit Attempts Pro',
+				'description'	=> 'Allows you to limit rate of login attempts by the ip, and create whitelist and blacklist.',
+				'link'			=> 'http://bestwebsoft.com/plugin/limit-attempts-pro/?k=9d42cdf22c7fce2c4b6b447e6a2856e0&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
+				'purchase' 		=> 'http://bestwebsoft.com/plugin/limit-attempts-pro/?k=9d42cdf22c7fce2c4b6b447e6a2856e0&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version . '#purchase',
+				'settings'		=> 'admin.php?page=limit-attempts-pro.php',
 			)
 		);
 		

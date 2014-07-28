@@ -4,7 +4,7 @@ Plugin Name: Subscriber
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.1.2
+Version: 1.1.3
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -821,7 +821,20 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 	function sbscrbr_handle_form_data() {
-		global $wpdb, $sbscrbr_options, $cptchpr_options;
+		global $wpdb, $sbscrbr_options, $cptchpr_options, $lmtttmptspr_options, $wpmu;
+		$all_plugins = get_plugins();
+		if ( '' == $lmtttmptspr_options ) {
+			$lmtttmptspr_options = ( 1 == $wpmu ) ? get_site_option( 'lmtttmptspr_options' ) : get_option( 'lmtttmptspr_options' );
+		}
+		if ( 1 == $wpmu ) {
+			$active_plugins = (array) array_keys( get_site_option( 'active_sitewide_plugins', array() ) );
+			$active_plugins = array_merge( $active_plugins , get_option( 'active_plugins' ) );
+		} else {
+			$active_plugins = get_option( 'active_plugins' );
+		}
+		if ( ! function_exists( 'is_plugin_active_for_network' ) )
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
 		if ( empty( $sbscrbr_options ) ) {
 			$sbscrbr_options = ( is_multisite() ) ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
 		}
@@ -836,7 +849,47 @@ if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 		if ( isset( $_POST['sbscrbr_submit_email'] ) ) { /* if request was sended from subscribe form */
 			if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
 				if ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== true ) {
-					$message = '<p class="sbscrbr-form-error">' . __( "Please complete the CAPTCHA.", 'subscriber' ) . '</p>';
+					if ( array_key_exists( 'limit-attempts-pro/limit-attempts-pro.php', $all_plugins ) 
+						&& ( 0 < count( preg_grep( '/limit-attempts-pro\/limit-attempts-pro.php/', $active_plugins ) ) || is_plugin_active_for_network( 'limit-attempts-pro/limit-attempts-pro.php' ) ) 
+						&& isset( $lmtttmptspr_options['subscriber_captcha_check'] ) ) {
+						$lmtttmpts_prefix = $wpdb->prefix . 'lmtttmpts_';
+						$ip = lmtttmptspr_get_address();
+						$attempts = $wpdb->get_var (  /*quantity of attempts by current user*/
+							"SELECT `failed_attempts` 
+							FROM `" . $lmtttmpts_prefix . "failed_attempts` 
+							WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
+						) ;
+						$blocks = $wpdb->get_var ( /*quantity of blocks by current user*/
+							"SELECT `block_quantity` 
+							FROM `" . $lmtttmpts_prefix . "failed_attempts` 
+							WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
+						) ;
+						do_action( 'lmtttmpts_wrong_captcha', 'subscriber' );
+						if ( ! lmtttmptspr_is_ip_in_table( $ip, 'whitelist' ) ) {
+							if ( lmtttmptspr_is_ip_in_table( $ip, 'blacklist' ) ) {
+								$message = '<p class="sbscrbr-form-error">' . str_replace( '%MAIL%' , $lmtttmptspr_options['email_address'], $lmtttmptspr_options['blacklisted_message'] ) . '</p>';
+							} elseif ( lmtttmptspr_is_ip_blocked( $ip ) ) {
+								$when = ( $wpdb->get_var ( 
+									"SELECT `block_till` 
+									FROM `" . $lmtttmpts_prefix . "failed_attempts` 
+									WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
+								) );
+								$message = '<p class="sbscrbr-form-error">' . str_replace( array( '%DATE%', '%MAIL%' ) , array( $when, $lmtttmptspr_options['email_address'] ), $lmtttmptspr_options['blocked_message'] ) . '</p>';
+							} else {
+								$tries = ( $wpdb->get_var( 
+									"SELECT `failed_attempts` 
+									FROM `" . $lmtttmpts_prefix . "failed_attempts` 
+									WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
+								) );
+								$allowed_tries = max( $lmtttmptspr_options['allowed_retries'] - $tries, 0 ); /*calculation of allowed retries*/
+								$message = '<p class="sbscrbr-form-error">' . __( "Please complete the CAPTCHA.", 'subscriber' ) . '</br>' . str_replace( '%ATTEMPTS%' , $allowed_tries, $lmtttmptspr_options['failed_message'] ) . '</p>';
+							}
+						} else {
+							$message = '<p class="sbscrbr-form-error">' . __( "Please complete the CAPTCHA.", 'subscriber' ) . '</p>';
+						}
+					} else {
+						$message = '<p class="sbscrbr-form-error">' . __( "Please complete the CAPTCHA.", 'subscriber' ) . '</p>';
+					}
 					return $message;
 				}
 			}			

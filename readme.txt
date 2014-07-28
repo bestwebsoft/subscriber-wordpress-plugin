@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
 Tested up to: 3.9.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1.3 - 28.07.2014 =
+* Update : We updated all functionality for Limit Attempts Pro plugin.
+
 = V1.1.2 - 17.07.2014 =
 * Update : We updated all functionality for Email Queue plugin.
 
@@ -118,6 +121,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.3 =
+We updated all functionality for Limit Attempts Pro plugin.
 
 = V1.1.2 =
 We updated all functionality for Email Queue plugin.
