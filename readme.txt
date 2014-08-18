@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 3.9.1
-Stable tag: 1.1.3
+Tested up to: 4.0-beta3
+Stable tag: 1.1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1.4 - 18.08.2014 =
+* Bugfix : Security Exploit was fixed.
+
 = V1.1.3 - 28.07.2014 =
 * Update : We updated all functionality for Limit Attempts Pro plugin.
 
@@ -109,18 +112,21 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 = V1.1.1 - 26.05.2014 =
 * Update : We updated all functionality for wordpress 3.9.1.
 * NEW    : The Ukrainian language file is added to the plugin.
-* Budfix : Fixed 404 error after form submitting.
+* Bugfix : Fixed 404 error after form submitting.
 * NEW    : Compatibility with Captcha Pro plugin.
 
 = V1.1 - 01.04.2014 =
 * Update : BWS plugins section is updated.
-* Budfix : Problem with deleting plugin is fixed.
-* Budfix : Fixed output administrator`s login on settings page.
+* Bugfix : Problem with deleting plugin is fixed.
+* Bugfix : Fixed output administrator`s login on settings page.
 
 = V1.0 - 27.02.2014 =
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.4 =
+Security Exploit was fixed.
 
 = V1.1.3 =
 We updated all functionality for Limit Attempts Pro plugin.
