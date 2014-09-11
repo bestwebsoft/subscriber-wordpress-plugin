@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 4.0-beta3
-Stable tag: 1.1.4
+Tested up to: 4.0
+Stable tag: 1.1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,7 +13,7 @@ This plugin allows you to subscribe users for newsletters from your website.
 == Description ==
 
 The Subscriber plugin is an exclusive add-on for the Sender Plugin by BestWebSoft.
-This plugin allows your site visitors to subscribe for newsletters, coming from your website. It is a simple and effevtive tool for businessmen as well as for those people who just want to share their ideas with others. Moreover, it has minimum settings but maximum feedback.
+This plugin allows your site visitors to subscribe for newsletters, coming from your website. It is a simple and effective tool for businessmen as well as for those people who just want to share their ideas with others. Moreover, it has minimum settings but maximum feedback.
 
 http://www.youtube.com/watch?v=ytjxGd4hXDU
 
@@ -100,6 +100,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1.5 - 11.09.2014 =
+* Update : We updated all functionality for wordpress 4.0.
+* Bugfix : Duplication of mailout with Sender Pro for the user registered after installation of the Subscriber plugin was fixed.
+
 = V1.1.4 - 18.08.2014 =
 * Bugfix : Security Exploit was fixed.
 
@@ -124,6 +128,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.5 =
+We updated all functionality for wordpress 4.0. Duplication of mailout with Sender Pro for the user registered after installation of the Subscriber plugin was fixed.
 
 = V1.1.4 =
 Security Exploit was fixed.

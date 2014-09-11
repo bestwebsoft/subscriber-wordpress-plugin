@@ -4,7 +4,7 @@ Plugin Name: Subscriber
 Plugin URI: http://bestwebsoft.com/plugin/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.1.4
+Version: 1.1.5
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1010,7 +1010,8 @@ if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 							if ( is_wp_error( $user_id ) ) {
 								$message = $error_message;
 							} else {
-								if ( ! function_exists( 'sndr_mail_register_user' ) ) { /* if "Sender" plugin by BWS is not installed and activated */
+								 /* if "Sender" plugin by BWS is not installed and activated */
+								if ( ! function_exists( 'sndr_mail_register_user' ) && ! function_exists( 'sndrpr_mail_register_user' ) ) {
 									$wpdb->insert( $prefix . 'sndr_mail_users_info', 
 										array( 
 											'id_user'           => $user_id, 
