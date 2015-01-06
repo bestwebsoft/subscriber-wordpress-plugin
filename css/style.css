@@ -53,10 +53,12 @@
 	height: 100px;
 }
 .sbscrbr_info {
-	position: relative;
-	top: 8px;
 	font-size: 10px;
 	color: #888;
+}
+.sbscrbr_info.sbscrbr_info_textarea {
+	position: relative;
+	top: 8px;
 	vertical-align: top;
 }
 .sbscrbr-input-text {

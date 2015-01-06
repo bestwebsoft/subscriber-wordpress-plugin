@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 1.1.6
+Tested up to: 4.1
+Stable tag: 1.1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.1.7 - 06.01.2015 =
+* Update : BWS plugins section is updated.
+* Update : We updated all functionality for wordpress 4.1.
+
 = V1.1.6 - 20.10.2014 =
 * Bugfix : We fixed email headers.
 
@@ -131,6 +135,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.7 =
+BWS plugins section is updated. We updated all functionality for wordpress 4.1.
 
 = V1.1.6 =
 We fixed email headers.
