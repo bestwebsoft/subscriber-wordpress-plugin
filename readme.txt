@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
 Tested up to: 4.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,8 +20,9 @@ http://www.youtube.com/watch?v=ytjxGd4hXDU
 <a href="http://www.youtube.com/watch?v=YJOQSGXPjRY" target="_blank">Video instruction on Installation</a>
 
 <a href="http://wordpress.org/plugins/subscriber/faq/" target="_blank">FAQ</a>
-
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+
+<a href="http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450" target="_blank">Upgrade to Pro Version</a>
 
 = Features =
 
@@ -94,11 +95,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 == Screenshots ==
 
 1. Subscriber Settings page.
-2. Subscriber Form Registation widget settings.
-3. Subscribe Form in frontend of site.
-4. Subscribers list in admin panel.
+2. Service messages option on Subscriber Settings page.
+3. Letters content option on Subscriber Settings page.
+4. Subscriber Form Registation widget settings.
+5. Subscribe Form in frontend of site.
+6. Subscribers list in admin panel.
 
 == Changelog ==
+
+= V1.1.8 - 26.01.2015 =
+* Bugfix : We fixed selectbox on plugin settings page.
+* Bugfix : We have changed adding script variables.
+* Bugfix : We have fixed Unsubscribe checkbox redundance on the user profile page with activated Sender Pro plugin.
 
 = V1.1.7 - 06.01.2015 =
 * Update : BWS plugins section is updated.
@@ -135,6 +143,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.1.8 =
+We fixed selectbox on plugin settings page. We have changed adding script variables. We have fixed Unsubscribe checkbox redundance on the user profile page with activated Sender Pro plugin.
 
 = V1.1.7 =
 BWS plugins section is updated. We updated all functionality for wordpress 4.1.
