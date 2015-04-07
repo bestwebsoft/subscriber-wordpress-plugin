@@ -31,17 +31,6 @@
 			$( '#sbscrbr-show-messages-settings' ).show();
 			$( '.sbscrbr-messages-settings' ).hide(); 
 			$( this ).hide();
-		});
-
-		/**
-		 * event on click on submit button on settings page
-		 */
-		$( '#sbscrbr-submit-button' ).click( function() {
-			if( $( 'input[name="sbscrbr_from_email"]' ).is( ':disabled' ) ) {
-				$( 'input[name="sbscrbr_from_email"]' ).attr( 'disabled', false );
-			}
-			$( this ).trigger( 'click' );
-			return false;
-		});
+		});		
 	});
 })(jQuery);
