@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 4.2-beta4
-Stable tag: 1.2.0
+Tested up to: 4.2-RC3
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -103,6 +103,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 
 == Changelog ==
 
+= V1.2.1 - 21.04.2015 =
+* Bugfix : We fixed bug with displaying the lists of the users. 
+
 = V1.2.0 - 07.04.2015 =
 * Bugfix : Subscriber shortcode checking for WP versions 3.6 and below was fixed.
 * Bugfix : Fixed duplicate messages.
@@ -153,6 +156,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.1 =
+We fixed bug with displaying the lists of the users.
 
 = V1.2.0 =
 Subscriber shortcode checking for WP versions 3.6 and below was fixed. Fixed duplicate messages. We fixed syntax error.

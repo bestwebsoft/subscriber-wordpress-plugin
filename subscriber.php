@@ -4,7 +4,7 @@ Plugin Name: Subscriber by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.2.0
+Version: 1.2.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -766,7 +766,6 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 	function sbscrbr_handle_form_data() {
 		global $wpdb, $sbscrbr_options, $cptchpr_options, $lmtttmptspr_options, $sbscrbr_send_unsubscribe_mail;
-		
 		$cptchpr_error_incorrect_value = ( ! empty( $cptchpr_options['cptchpr_error_incorrect_value'] ) ) ? $cptchpr_options['cptchpr_error_incorrect_value'] : __( "Please complete the CAPTCHA.", 'subscriber' );
 		
 		if ( empty( $lmtttmptspr_options ) )
@@ -1137,8 +1136,7 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		if ( ! function_exists( 'is_plugin_active' ) )
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
-			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
+		if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
 			do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
 		} else {	
 			wp_mail( $email , $subject, $message, $headers );
@@ -1148,8 +1146,7 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		$subject = $sbscrbr_options['admin_message_subject'];
 		$message = sbscrbr_replace_shortcodes( $sbscrbr_options['admin_message_text'], $email );
 		
-		if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
-			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
+		if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
 			do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), get_option( 'admin_email' ), $subject, $message, $headers );
 		} else {
 			wp_mail( get_option( 'admin_email' ) , $subject, $message, $headers );
@@ -1195,7 +1192,7 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 			if ( ! function_exists( 'is_plugin_active' ) )
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-			if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
+			if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) &&  function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
 				/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
 				global $mlq_mail_result, $mlqpr_mail_result;
 				do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
@@ -1396,8 +1393,7 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 				$hidden                = array();
 				$sortable              = $this->get_sortable_columns();
 				$this->_column_headers = array( $columns, $hidden, $sortable );
-				$this->found_data      = $this->users_list();
-				$this->items           = $this->found_data;
+				$this->items           = $this->users_list();
 				$per_page              = $this->get_items_per_page( 'subscribers_per_page', 30 );
 				$current_page          = $this->get_pagenum();
 				$total_items           = $this->items_count();
@@ -2122,7 +2118,7 @@ if ( ! function_exists( 'sbscrbr_show_notices' ) ) {
 		global $hook_suffix;
 		if ( 'plugins.php' == $hook_suffix ) {  
 			global $sbscrbr_plugin_info;
-			bws_plugin_banner( $sbscrbr_plugin_info, 'sbscrbr', 'subscriber', '95812391951699cd5a64397cfb1b0557', '122', plugins_url( 'images/banner.png', __FILE__ ) );
+			bws_plugin_banner( $sbscrbr_plugin_info, 'sbscrbr', 'subscriber', '95812391951699cd5a64397cfb1b0557', '122', 'http://ps.w.org/subscriber/assets/icon-128x128.png' );
 		}
 	}
 }
