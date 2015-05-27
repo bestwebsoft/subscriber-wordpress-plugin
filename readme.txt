@@ -1,10 +1,10 @@
 ﻿=== Subscriber by BestWebSoft ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=94
+Donate link: http://bestwebsoft.com/donate/
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
-Tested up to: 4.2-RC3
-Stable tag: 1.2.1
+Tested up to: 4.2.2
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -86,11 +86,12 @@ If you do not want the user to receive letters of mailing for some reason, you c
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed yet on our forum (http://support.bestwebsoft.com). If no, please provide the following data along with your problem's description:
-1. the link to the page where the problem occurs
-2. the name of the plugin and its version. If you are using a pro version - your order number.
+Please make sure that the problem hasn't been discussed on our forum yet (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If not, please provide the following data along with your problem's description:
+
+1. the link to the page, on which the problem occurs
+2. the plugin’s name and version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
+4. copy and paste your system status report into the message. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
 
 == Screenshots ==
 
@@ -102,6 +103,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 6. Subscribers list in admin panel.
 
 == Changelog ==
+
+= V1.2.2 - 27.05.2015 =
+* Bugfix : We fixed bug with unsubscribing user via the link in an email.
+* Update : We updated all functionality for wordpress 4.2.2.
 
 = V1.2.1 - 21.04.2015 =
 * Bugfix : We fixed bug with displaying the lists of the users. 
@@ -156,6 +161,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (http:/
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.2 =
+We fixed bug with unsubscribing user via the link in an email. We updated all functionality for wordpress 4.2.2.
 
 = V1.2.1 =
 We fixed bug with displaying the lists of the users.
