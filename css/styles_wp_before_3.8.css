@@ -111,6 +111,8 @@
 .sbscrbr-help-box:hover .sbscrbr-hidden-help-text {
 	display: block;
 }
+#sbscrbr-show-service-messages,
+#sbscrbr-show-messages-settings,
 #sbscrbr-hide-service-messages,
 #sbscrbr-hide-messages-settings {
 	display: none;

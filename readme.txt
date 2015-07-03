@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
 Requires at least: 3.1
 Tested up to: 4.2.2
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -104,6 +104,11 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Changelog ==
 
+= V1.2.3 - 03.07.2015 =
+* New : Ability to restore settings to defaults.
+* Update: Input maxlength is added.
+* Update: BWS plugins section was updated.
+
 = V1.2.2 - 27.05.2015 =
 * Bugfix : We fixed bug with unsubscribing user via the link in an email.
 * Update : We updated all functionality for wordpress 4.2.2.
@@ -161,6 +166,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.3 =
+Ability to restore settings to defaults. Input maxlength is added. BWS plugins section was updated.
 
 = V1.2.2 =
 We fixed bug with unsubscribing user via the link in an email. We updated all functionality for wordpress 4.2.2.
