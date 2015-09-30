@@ -1,16 +1,6 @@
 (function($) {
 	$( document ).ready( function() {
 		/**
-		 * add notice about changing on the settings page 
-		 */
-		$( '#sbscrbr_settings_form input' ).bind( "change click select", function() {
-			if ( $( this ).attr( 'type' ) != 'submit' ) {
-				$( '.updated.fade, .error' ).css( 'display', 'none' );
-				$( '#sbscrbr-settings-notice' ).css( 'display', 'block' );
-			};
-		});
-
-		/**
 		 * show/hide neccessary blocks on settings page
 		 */
 		$( '#sbscrbr-show-service-messages, #sbscrbr-show-messages-settings' ).show();		

@@ -4,7 +4,9 @@ Plugin Name: Subscriber by BestWebSoft
 Plugin URI: http://bestwebsoft.com/products/
 Description: This plugin allows you to subscribe users on newsletter from your website.
 Author: BestWebSoft
-Version: 1.2.3
+Text Domain: subscriber
+Domain Path: /languages
+Version: 1.2.4
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -39,6 +41,13 @@ if ( ! function_exists( 'sbscrbr_admin_menu' ) ) {
 	}
 }
 
+if ( ! function_exists( 'sbscrbr_plugins_loaded' ) ) {
+	function sbscrbr_plugins_loaded() {
+		/* load textdomain of plugin */
+		load_plugin_textdomain( 'subscriber', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+}
+
 /**
  * Plugin initialisation in backend and frontend 
  * @return void
@@ -46,10 +55,9 @@ if ( ! function_exists( 'sbscrbr_admin_menu' ) ) {
 if ( ! function_exists( 'sbscrbr_init' ) ) {
 	function sbscrbr_init() {
 		global $sbscrbr_plugin_info; 
-		/* load textdomain of plugin */
-		load_plugin_textdomain( 'subscriber', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
-		require_once( dirname( __FILE__ ) . '/bws_menu/bws_functions.php' );
+		
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
 
 		if ( empty( $sbscrbr_plugin_info ) ) {
 			if ( ! function_exists( 'get_plugin_data' ) )
@@ -58,7 +66,7 @@ if ( ! function_exists( 'sbscrbr_init' ) ) {
 		}
 
 		/* check version on WordPress */
-		bws_wp_version_check( plugin_basename( __FILE__ ), $sbscrbr_plugin_info, '3.1' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $sbscrbr_plugin_info, '3.8', '3.1' );
 
 		/* add new user role */
 		$capabilities = array(
@@ -88,10 +96,13 @@ if ( ! function_exists( 'sbscrbr_init' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_admin_init' ) ) {
 	function sbscrbr_admin_init() {
-		global $bws_plugin_info, $sbscrbr_plugin_info;
+		global $bws_plugin_info, $sbscrbr_plugin_info, $bws_shortcode_list;
 
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
 			$bws_plugin_info = array( 'id' => '122', 'version' => $sbscrbr_plugin_info["Version"] );
+
+		/* add Subscriber to global $bws_shortcode_list  */
+		$bws_shortcode_list['sbscrbr'] = array( 'name' => 'Subscriber' );
 	}
 }
 
@@ -149,6 +160,8 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 			/* another settings */
 			'unsubscribe_link_text'			=> __( "If you want to unsubscribe from the newsletter from our site go to the following link:\n{unsubscribe_link}", 'subscriber' ),
 			'delete_users'					=> '0',
+			'first_install'					=>	strtotime( "now" ),
+			'display_settings_notice'		=> 1
 		);
 		/* install the default options */
 		if ( ! get_option( 'sbscrbr_options' ) )
@@ -157,6 +170,7 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 		$sbscrbr_options = get_option( 'sbscrbr_options' );
 
 		if ( ! isset( $sbscrbr_options['plugin_option_version'] ) || $sbscrbr_options['plugin_option_version'] != $sbscrbr_plugin_info["Version"] ) {
+			$sbscrbr_options_default['display_settings_notice'] = 0;
 			/* array merge incase this version of plugin has added new options */
 			$sbscrbr_options = array_merge( $sbscrbr_options_default, $sbscrbr_options );
 
@@ -228,11 +242,7 @@ if ( ! function_exists( 'sbscrbr_activation' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_admin_head' ) ) {
 	function sbscrbr_admin_head() {
-		global $wp_version;
-		if ( 3.8 > $wp_version )
-			wp_enqueue_style( 'sbscrbr_style', plugins_url( 'css/styles_wp_before_3.8.css', __FILE__ ) );	
-		else
-			wp_enqueue_style( 'sbscrbr_style', plugins_url( 'css/style.css', __FILE__ ) );
+		wp_enqueue_style( 'sbscrbr_style', plugins_url( 'css/style.css', __FILE__ ) );
 
 		$plugin_pages = array(
 			'sbscrbr_settings_page',
@@ -280,26 +290,26 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 
 		if ( isset( $_POST['sbscrbr_form_submit'] ) && check_admin_referer( $plugin_basename, 'sbscrbr_nonce_name' ) ) {
 			/* form labels */
-			$sbscrbr_options_submit['form_label']				= isset( $_POST['sbscrbr_form_label'] ) ? stripslashes( esc_html( $_POST['sbscrbr_form_label'] ) ) : $sbscrbr_options['form_label'];
-			$sbscrbr_options_submit['form_placeholder']			= isset( $_POST['sbscrbr_form_placeholder'] ) ? stripslashes( esc_html( $_POST['sbscrbr_form_placeholder'] ) ) : $sbscrbr_options['form_placeholder'];
-			$sbscrbr_options_submit['form_checkbox_label']		= isset( $_POST['sbscrbr_form_checkbox_label'] ) ? stripslashes( esc_html( $_POST['sbscrbr_form_checkbox_label'] ) ) : $sbscrbr_options['form_checkbox_label'];
-			$sbscrbr_options_submit['form_button_label']		= isset( $_POST['sbscrbr_form_button_label'] ) ? stripslashes( esc_html( $_POST['sbscrbr_form_button_label'] ) ) : $sbscrbr_options['form_button_label'];
+			$sbscrbr_options_submit['form_label']				= isset( $_POST['sbscrbr_form_label'] ) ? esc_html( $_POST['sbscrbr_form_label'] ) : $sbscrbr_options['form_label'];
+			$sbscrbr_options_submit['form_placeholder']			= isset( $_POST['sbscrbr_form_placeholder'] ) ? esc_html( $_POST['sbscrbr_form_placeholder'] ) : $sbscrbr_options['form_placeholder'];
+			$sbscrbr_options_submit['form_checkbox_label']		= isset( $_POST['sbscrbr_form_checkbox_label'] ) ? esc_html( $_POST['sbscrbr_form_checkbox_label'] ) : $sbscrbr_options['form_checkbox_label'];
+			$sbscrbr_options_submit['form_button_label']		= isset( $_POST['sbscrbr_form_button_label'] ) ? esc_html( $_POST['sbscrbr_form_button_label'] ) : $sbscrbr_options['form_button_label'];
 			
 			/* service messages  */
-			$sbscrbr_options_submit['bad_request']				= isset( $_POST['sbscrbr_bad_request'] ) ? stripslashes( esc_html( $_POST['sbscrbr_bad_request'] ) ) : $sbscrbr_options['bad_request'];
-			$sbscrbr_options_submit['empty_email']				= isset( $_POST['sbscrbr_empty_email'] ) ? stripslashes( esc_html( $_POST['sbscrbr_empty_email'] ) ) : $sbscrbr_options['empty_email'];
-			$sbscrbr_options_submit['invalid_email']			= isset( $_POST['sbscrbr_invalid_email'] ) ? stripslashes( esc_html( $_POST['sbscrbr_invalid_email'] ) ) : $sbscrbr_options['invalid_email'];
-			$sbscrbr_options_submit['not_exists_email']			= isset( $_POST['sbscrbr_not_exists_email'] ) ? stripslashes( esc_html( $_POST['sbscrbr_not_exists_email'] ) ) : $sbscrbr_options['not_exists_email'];
-			$sbscrbr_options_submit['cannot_get_email']			= isset( $_POST['sbscrbr_cannot_get_email'] ) ? stripslashes( esc_html( $_POST['sbscrbr_cannot_get_email'] ) ) : $sbscrbr_options['cannot_get_email'];
-			$sbscrbr_options_submit['cannot_send_email']		= isset( $_POST['sbscrbr_cannot_send_email'] ) ? stripslashes( esc_html( $_POST['sbscrbr_cannot_send_email'] ) ) : $sbscrbr_options['cannot_send_email'];
-			$sbscrbr_options_submit['error_subscribe']			= isset( $_POST['sbscrbr_error_subscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_error_subscribe'] ) ) : $sbscrbr_options['error_subscribe'];
-			$sbscrbr_options_submit['done_subscribe']			= isset( $_POST['sbscrbr_done_subscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_done_subscribe'] ) ) : $sbscrbr_options['done_subscribe'];
-			$sbscrbr_options_submit['already_subscribe']		= isset( $_POST['sbscrbr_already_subscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_already_subscribe'] ) ) : $sbscrbr_options['already_subscribe'];
-			$sbscrbr_options_submit['denied_subscribe']			= isset( $_POST['sbscrbr_denied_subscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_denied_subscribe'] ) ) : $sbscrbr_options['denied_subscribe'];
-			$sbscrbr_options_submit['already_unsubscribe']		= isset( $_POST['sbscrbr_already_unsubscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_already_unsubscribe'] ) ) : $sbscrbr_options['already_unsubscribe'];
-			$sbscrbr_options_submit['check_email_unsubscribe']	= isset( $_POST['sbscrbr_check_email_unsubscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_check_email_unsubscribe'] ) ) : $sbscrbr_options['check_email_unsubscribe'];
-			$sbscrbr_options_submit['done_unsubscribe']			= isset( $_POST['sbscrbr_done_unsubscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_done_unsubscribe'] ) ) : $sbscrbr_options['done_unsubscribe'];
-			$sbscrbr_options_submit['not_exists_unsubscribe']	= isset( $_POST['sbscrbr_not_exists_unsubscribe'] ) ? stripslashes( esc_html( $_POST['sbscrbr_not_exists_unsubscribe'] ) ) : $sbscrbr_options['not_exists_unsubscribe'];
+			$sbscrbr_options_submit['bad_request']				= isset( $_POST['sbscrbr_bad_request'] ) ? esc_html( $_POST['sbscrbr_bad_request'] ) : $sbscrbr_options['bad_request'];
+			$sbscrbr_options_submit['empty_email']				= isset( $_POST['sbscrbr_empty_email'] ) ? esc_html( $_POST['sbscrbr_empty_email'] ) : $sbscrbr_options['empty_email'];
+			$sbscrbr_options_submit['invalid_email']			= isset( $_POST['sbscrbr_invalid_email'] ) ? esc_html( $_POST['sbscrbr_invalid_email'] ) : $sbscrbr_options['invalid_email'];
+			$sbscrbr_options_submit['not_exists_email']			= isset( $_POST['sbscrbr_not_exists_email'] ) ? esc_html( $_POST['sbscrbr_not_exists_email'] ) : $sbscrbr_options['not_exists_email'];
+			$sbscrbr_options_submit['cannot_get_email']			= isset( $_POST['sbscrbr_cannot_get_email'] ) ? esc_html( $_POST['sbscrbr_cannot_get_email'] ) : $sbscrbr_options['cannot_get_email'];
+			$sbscrbr_options_submit['cannot_send_email']		= isset( $_POST['sbscrbr_cannot_send_email'] ) ? esc_html( $_POST['sbscrbr_cannot_send_email'] ) : $sbscrbr_options['cannot_send_email'];
+			$sbscrbr_options_submit['error_subscribe']			= isset( $_POST['sbscrbr_error_subscribe'] ) ? esc_html( $_POST['sbscrbr_error_subscribe'] ) : $sbscrbr_options['error_subscribe'];
+			$sbscrbr_options_submit['done_subscribe']			= isset( $_POST['sbscrbr_done_subscribe'] ) ? esc_html( $_POST['sbscrbr_done_subscribe'] ) : $sbscrbr_options['done_subscribe'];
+			$sbscrbr_options_submit['already_subscribe']		= isset( $_POST['sbscrbr_already_subscribe'] ) ? esc_html( $_POST['sbscrbr_already_subscribe'] ) : $sbscrbr_options['already_subscribe'];
+			$sbscrbr_options_submit['denied_subscribe']			= isset( $_POST['sbscrbr_denied_subscribe'] ) ? esc_html( $_POST['sbscrbr_denied_subscribe'] ) : $sbscrbr_options['denied_subscribe'];
+			$sbscrbr_options_submit['already_unsubscribe']		= isset( $_POST['sbscrbr_already_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_already_unsubscribe'] ) : $sbscrbr_options['already_unsubscribe'];
+			$sbscrbr_options_submit['check_email_unsubscribe']	= isset( $_POST['sbscrbr_check_email_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_check_email_unsubscribe'] ) : $sbscrbr_options['check_email_unsubscribe'];
+			$sbscrbr_options_submit['done_unsubscribe']			= isset( $_POST['sbscrbr_done_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_done_unsubscribe'] ) : $sbscrbr_options['done_unsubscribe'];
+			$sbscrbr_options_submit['not_exists_unsubscribe']	= isset( $_POST['sbscrbr_not_exists_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_not_exists_unsubscribe'] ) : $sbscrbr_options['not_exists_unsubscribe'];
 
 			/* "From" settings */
 			if ( isset( $_POST['sbscrbr_from_email'] ) && is_email( trim( $_POST['sbscrbr_from_email'] ) ) ) {
@@ -309,21 +319,23 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			} else
 				$sbscrbr_options_submit['from_email']  = $sbscrbr_options_default['from_email'];
 
-			$sbscrbr_options_submit['from_custom_name']	= isset( $_POST['sbscrbr_from_custom_name'] ) ? $_POST['sbscrbr_from_custom_name'] : $sbscrbr_options['from_custom_name'];
+			$sbscrbr_options_submit['from_custom_name']	= isset( $_POST['sbscrbr_from_custom_name'] ) ? esc_html( $_POST['sbscrbr_from_custom_name'] ) : $sbscrbr_options['from_custom_name'];
 			if ( '' == $sbscrbr_options_submit['from_custom_name'] )
 				$sbscrbr_options_submit['from_custom_name'] = $sbscrbr_options_default['from_custom_name'];
 
 			/* subject settings */
-			$sbscrbr_options_submit['admin_message_subject']       = isset( $_POST['sbscrbr_admin_message_subject'] ) ? stripslashes( $_POST['sbscrbr_admin_message_subject'] ) : $sbscrbr_options['admin_message_subject'];
-			$sbscrbr_options_submit['subscribe_message_subject']   = isset( $_POST['sbscrbr_subscribe_message_subject'] ) ? stripslashes( $_POST['sbscrbr_subscribe_message_subject'] ) : $sbscrbr_options['subscribe_message_subject'];
-			$sbscrbr_options_submit['unsubscribe_message_subject'] = isset( $_POST['sbscrbr_unsubscribe_message_subject'] ) ? stripslashes( $_POST['sbscrbr_unsubscribe_message_subject'] ) : $sbscrbr_options['unsubscribe_message_subject'];
+			$sbscrbr_options_submit['admin_message_subject']       = isset( $_POST['sbscrbr_admin_message_subject'] ) ? esc_html( $_POST['sbscrbr_admin_message_subject'] ) : $sbscrbr_options['admin_message_subject'];
+			$sbscrbr_options_submit['subscribe_message_subject']   = isset( $_POST['sbscrbr_subscribe_message_subject'] ) ? esc_html( $_POST['sbscrbr_subscribe_message_subject'] ) : $sbscrbr_options['subscribe_message_subject'];
+			$sbscrbr_options_submit['unsubscribe_message_subject'] = isset( $_POST['sbscrbr_unsubscribe_message_subject'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_message_subject'] ) : $sbscrbr_options['unsubscribe_message_subject'];
 			/* message body settings */ 
-			$sbscrbr_options_submit['admin_message_text']          = isset( $_POST['sbscrbr_admin_message_text'] ) ? stripslashes( $_POST['sbscrbr_admin_message_text'] ) : $sbscrbr_options['admin_message_text'];
-			$sbscrbr_options_submit['subscribe_message_text']      = isset( $_POST['sbscrbr_subscribe_message_text'] ) ? stripslashes( $_POST['sbscrbr_subscribe_message_text'] ) : $sbscrbr_options['subscribe_message_text'];
-			$sbscrbr_options_submit['unsubscribe_message_text']    = isset( $_POST['sbscrbr_unsubscribe_message_text'] ) ? stripslashes( $_POST['sbscrbr_unsubscribe_message_text'] ) : $sbscrbr_options['unsubscribe_message_text'];
+			$sbscrbr_options_submit['admin_message_text']          = isset( $_POST['sbscrbr_admin_message_text'] ) ? esc_html( $_POST['sbscrbr_admin_message_text'] ) : $sbscrbr_options['admin_message_text'];
+			$sbscrbr_options_submit['subscribe_message_text']      = isset( $_POST['sbscrbr_subscribe_message_text'] ) ? esc_html( $_POST['sbscrbr_subscribe_message_text'] ) : $sbscrbr_options['subscribe_message_text'];
+			$sbscrbr_options_submit['unsubscribe_message_text']    = isset( $_POST['sbscrbr_unsubscribe_message_text'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_message_text'] ) : $sbscrbr_options['unsubscribe_message_text'];
 			/*  another settings  */
-			$sbscrbr_options_submit['unsubscribe_link_text']       = isset( $_POST['sbscrbr_unsubscribe_link_text'] ) ? $_POST['sbscrbr_unsubscribe_link_text'] : $sbscrbr_options['unsubscribe_link_text'];
+			$sbscrbr_options_submit['unsubscribe_link_text']       = isset( $_POST['sbscrbr_unsubscribe_link_text'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_link_text'] ) : $sbscrbr_options['unsubscribe_link_text'];
 			$sbscrbr_options_submit['delete_users']                = ( isset( $_POST['sbscrbr_delete_users'] ) && '1' == $_POST['sbscrbr_delete_users'] ) ? '1' : '0';
+
+			$sbscrbr_options_submit = array_map( 'stripslashes_deep', $sbscrbr_options_submit );
 
 			if ( ! empty( $cptchpr_options ) ) {
 				$cptchpr_options['cptchpr_subscriber'] = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? 1 : 0;
@@ -362,89 +374,90 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			</h2>
 			<?php if ( ! empty( $notice ) ) { ?>
 				<div class="error"><p><strong><?php _e( 'Notice:', 'subscriber' ); ?></strong> <?php echo $notice; ?></p></div>			
-			<?php } ?>
-			<div id="sbscrbr-settings-notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'subscriber' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'subscriber' ); ?></p></div>
+			<?php }
+			bws_show_settings_notice(); ?>
 			<div class="updated fade" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 			<div class="error" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div><?php
 			if ( ! isset( $_GET['action'] ) ) { /* Showing settings tab */ 
 				if ( isset( $_REQUEST['bws_restore_default'] ) && check_admin_referer( $plugin_basename, 'bws_settings_nonce_name' ) ) {
 					bws_form_restore_default_confirm( $plugin_basename );
 				} else { ?>				
-					<div><p><?php _e( "If you would like to add the Subscribe Form to your website, just copy and paste this shortcode to your post, page or widget:", 'subscriber' ); ?> <span class="sbscrbr_code">[sbscrbr_form]</span> <?php _e( "or you can use Subscriber Form Registation Widget.", 'subscriber' ); ?></p></div>
-					<form id="sbscrbr_settings_form" method="post" action="admin.php?page=sbscrbr_settings_page">
+					<div><p><?php _e( "If you would like to add the Subscribe Form to your website, just copy and paste this shortcode to your post, page or widget:", 'subscriber' ); ?> <span class="bws_code">[sbscrbr_form]</span> <?php _e( "or you can use Subscriber Form Registation Widget.", 'subscriber' ); ?></p></div>
+					<form class="bws_form" method="post" action="admin.php?page=sbscrbr_settings_page">
 						<table id="sbscrbr-settings-table" class="form-table">
 							<tr valign="top">
 								<th><?php _e( 'Subscribe form labels', 'subscriber' ); ?></th>
 								<td colspan="2">
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-form-label" name="sbscrbr_form_label" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['form_label'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'Text above the subscribe form', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'Text above the subscribe form', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-form-placeholder" name="sbscrbr_form_placeholder" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['form_placeholder'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'Placeholder for text field', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'Placeholder for text field', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-form-checkbox-label" name="sbscrbr_form_checkbox_label" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['form_checkbox_label'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'Label for "unsubscribe" checkbox', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'Label for "unsubscribe" checkbox', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-form-button-label" name="sbscrbr_form_button_label" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['form_button_label'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'Label for "submit" button', 'subscriber' ); ?></span>
+									<span class="bws_info
+									"><?php _e( 'Label for "submit" button', 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top">
 								<th><?php _e( 'Service messages', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<input id="sbscrbr-show-service-messages" type="button" class="button-small button" value="<?php _e( "Show", 'subscriber' ); ?>"/>
-									<input id="sbscrbr-hide-service-messages" type="button" class="button-small button" value="<?php _e( "Hide", 'subscriber' ); ?>"/>
-									<div class="sbscrbr-help-box">
-										<div class="sbscrbr-hidden-help-text">
-											<p><?php _e( 'These messages will be displayed in the frontend of your site.', 'subscriber' ); ?></p>
-										</div><!-- .sbscrbr-hidden-help-text -->
+									<div class="bws_help_box<?php if ( $wp_version >= '3.9' ) echo ' dashicons dashicons-editor-help'; ?>">
+										<div class="bws_hidden_help_text" style="width: 240px;">
+											<?php _e( 'These messages will be displayed in the frontend of your site.', 'subscriber' ); ?>
+										</div>
 									</div>
+									<input id="sbscrbr-show-service-messages" type="button" class="button-small button bws_no_bind_notice" value="<?php _e( "Show", 'subscriber' ); ?>"/>
+									<input id="sbscrbr-hide-service-messages" type="button" class="button-small button bws_no_bind_notice" value="<?php _e( "Hide", 'subscriber' ); ?>"/>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-service-messages">
 								<th></th>
 								<td colspan="2">
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-bad-request" name="sbscrbr_bad_request" maxlength="250" value="<?php echo $sbscrbr_options['bad_request'] ; ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'Unknown error', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'Unknown error', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-empty-email" name="sbscrbr_empty_email" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['empty_email'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If user has not entered e-mail', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If user has not entered e-mail', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-invalid-email" name="sbscrbr_invalid_email" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['invalid_email'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If user has entered invalid e-mail', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If user has entered invalid e-mail', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-not-exists-email" name="sbscrbr_not_exists_email" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['not_exists_email'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If the user has entered a non-existent e-mail', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If the user has entered a non-existent e-mail', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-not-exists-email" name="sbscrbr_cannot_get_email" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['cannot_get_email'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If it is impossible to get the data about the entered e-mail', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If it is impossible to get the data about the entered e-mail', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-cannot-send-email" name="sbscrbr_cannot_send_email" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['cannot_send_email'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If it is impossible to send a letter', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If it is impossible to send a letter', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-error-subscribe" name="sbscrbr_error_subscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['error_subscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If some errors occurred while user registration', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If some errors occurred while user registration', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-done-subscribe" name="sbscrbr_done_subscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['done_subscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If user registration was succesfully finished', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If user registration was succesfully finished', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-already-subscribe" name="sbscrbr_already_subscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['already_subscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If the user has already subscribed', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If the user has already subscribed', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-denied-subscribe" name="sbscrbr_denied_subscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['denied_subscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If subscription has been denied', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If subscription has been denied', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-already-unsubscribe" name="sbscrbr_already_unsubscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['already_unsubscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If the user has already unsubscribed', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If the user has already unsubscribed', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-check-email-unsubscribe" name="sbscrbr_check_email_unsubscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['check_email_unsubscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If the user has been sent a letter with a link to unsubscribe', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If the user has been sent a letter with a link to unsubscribe', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-done-unsubscribe" name="sbscrbr_done_unsubscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['done_unsubscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If user was unsubscribed', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If user was unsubscribed', 'subscriber' ); ?></span>
 									<br/>
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-not-exists-unsubscribe" name="sbscrbr_not_exists_unsubscribe" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['not_exists_unsubscribe'] ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( 'If the user clicked on a non-existent "unsubscribe"-link', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If the user clicked on a non-existent "unsubscribe"-link', 'subscriber' ); ?></span>
 								</td><!-- .sbscrbr-service-messages -->
 							</tr>
 							<tr valign="top">
@@ -460,69 +473,69 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									<div>
 										<input type="text" name="sbscrbr_from_email" maxlength="250" value="<?php echo $sbscrbr_options['from_email']; ?>"/>
 									</div>
-									<span class="sbscrbr_info">(<?php _e( "If this option is changed, email messages may be moved to the spam folder or email delivery failures may occur.", 'subscriber' ); ?>)</span>
+									<span class="bws_info">(<?php _e( "If this option is changed, email messages may be moved to the spam folder or email delivery failures may occur.", 'subscriber' ); ?>)</span>
 								</td>
 							</tr>
 							<tr valign="top">
 								<th><?php _e( 'Letters content', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<input id="sbscrbr-show-messages-settings" type="button" class="button-small button" value="<?php _e( "Show", 'subscriber' ); ?>"/>
-									<input id="sbscrbr-hide-messages-settings" type="button" class="button-small button" value="<?php _e( "Hide", 'subscriber' ); ?>"/>
-									<div class="sbscrbr-help-box">
-										<div class="sbscrbr-hidden-help-text">
+									<div class="bws_help_box<?php if ( $wp_version >= '3.9' ) echo ' dashicons dashicons-editor-help'; ?>">
+										<div class="bws_hidden_help_text" style="width: 240px;">
 											<p><?php _e( 'You can edit the content of service letters, which will be sent to users. In the text of the message you can use the following shortcodes:', 'subscriber' ); ?></p>
 											<ul>
 												<li>{user_email} - <?php _e( 'this shortcode will be replaced with the e-mail of a current user;', 'subscriber' ); ?></li>
 												<li>{profile_page} - <?php _e( 'this shortcode will be replaced with the link to profile page of current user;', 'subscriber' ); ?></li>
 												<li>{unsubscribe_link} - <?php _e( 'this shortcode will be replaced with the link to unsubscribe.', 'subscriber' ); ?></li>
 											<ul>
-										</div><!-- .sbscrbr-hidden-help-text -->
+										</div>
 									</div>
+									<input id="sbscrbr-show-messages-settings" type="button" class="button-small button bws_no_bind_notice" value="<?php _e( "Show", 'subscriber' ); ?>"/>
+									<input id="sbscrbr-hide-messages-settings" type="button" class="button-small button bws_no_bind_notice" value="<?php _e( "Hide", 'subscriber' ); ?>"/>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-messages-settings">
 								<th><?php _e( 'Message to admin about new subscribed users', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<input type="text" class="sbscrbr-input-text" id="sbscrbr-admin-message-subject" name="sbscrbr_admin_message_subject" maxlength="250" value="<?php echo stripslashes( esc_attr( $sbscrbr_options['admin_message_subject'] ) ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
+									<input type="text" class="sbscrbr-input-text" id="sbscrbr-admin-message-subject" name="sbscrbr_admin_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['admin_message_subject'] ); ?>"/>
+									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo stripslashes( esc_textarea( $sbscrbr_options['admin_message_text'] ) ); ?></textarea>
-									<span class="sbscrbr_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo esc_textarea( $sbscrbr_options['admin_message_text'] ); ?></textarea>
+									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-messages-settings">
 								<th><?php _e( 'Message to subscribed users', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<input type="text" class="sbscrbr-input-text" id="sbscrbr-subscribe-message-subject" name="sbscrbr_subscribe_message_subject" maxlength="250" value="<?php echo stripslashes( esc_attr( $sbscrbr_options['subscribe_message_subject'] ) ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
+									<input type="text" class="sbscrbr-input-text" id="sbscrbr-subscribe-message-subject" name="sbscrbr_subscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['subscribe_message_subject'] ); ?>"/>
+									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo stripslashes( esc_textarea( $sbscrbr_options['subscribe_message_text'] ) ); ?></textarea>
-									<span class="sbscrbr_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo esc_textarea( $sbscrbr_options['subscribe_message_text'] ); ?></textarea>
+									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-messages-settings">
 								<th><?php _e( 'Message with unsubscribe link', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<input type="text" class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-subject"  name="sbscrbr_unsubscribe_message_subject" maxlength="250" value="<?php echo stripslashes( esc_attr( $sbscrbr_options['unsubscribe_message_subject'] ) ); ?>"/>
-									<span class="sbscrbr_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
+									<input type="text" class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-subject"  name="sbscrbr_unsubscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['unsubscribe_message_subject'] ); ?>"/>
+									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo stripslashes( esc_textarea( $sbscrbr_options['unsubscribe_message_text'] ) ); ?></textarea>
-									<span class="sbscrbr_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo esc_textarea( $sbscrbr_options['unsubscribe_message_text'] ); ?></textarea>
+									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-messages-settings">
 								<th><?php _e( 'Text to be attached to letters', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-link-text" name="sbscrbr_unsubscribe_link_text"><?php echo stripslashes( esc_textarea( $sbscrbr_options['unsubscribe_link_text'] ) ); ?></textarea>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-link-text" name="sbscrbr_unsubscribe_link_text"><?php echo esc_textarea( $sbscrbr_options['unsubscribe_link_text'] ); ?></textarea>
 									<br/>
-									<span class="sbscrbr_info"><?php _e( 'This text will be attached to each letter of the mailing, which was created with Sender plugin by BestWebsoft.', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'This text will be attached to each letter of the mailing, which was created with Sender plugin by BestWebsoft.', 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top">
 								<th><?php _e( 'Delete users while plugin removing', 'subscriber' ); ?></th>
 								<td colspan="2">
 									<input type="checkbox" id="sbscrbr-delete-user" name="sbscrbr_delete_users" value="1" <?php if ( '1' == $sbscrbr_options['delete_users'] ) { echo 'checked="checked"'; } ?> />
-									<span class="sbscrbr_info"><?php _e( 'If this option enabled, when you remove plugin, all users with role "Mail Subscribed" will be removed from users list.', 'subscriber' ); ?></span>
+									<span class="bws_info"><?php _e( 'If this option enabled, when you remove plugin, all users with role "Mail Subscribed" will be removed from users list.', 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top">
@@ -530,15 +543,15 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 								<td colspan="2">
 									<?php if ( array_key_exists( 'captcha-pro/captcha_pro.php', $all_plugins ) ) {
 										if ( is_plugin_active( 'captcha-pro/captcha_pro.php' ) ) { ?>
-											<input type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> <span class="sbscrbr_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>)</span>
+											<input type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>)</span>
 										<?php } else { ?>
-											<input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> <span class="sbscrbr_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'subscriber' ); ?></a></span>
+											<input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate', 'subscriber' ); ?> Captcha</a></span>
 										<?php }
 									} else { ?>
-										<input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" /> <span class="sbscrbr_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/products/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download captcha', 'subscriber' ); ?></a></span>
+										<input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" /> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/products/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download', 'subscriber' ); ?> Captcha</a></span>
 									<?php } ?>
-								</td>
-							</tr>
+								</td>								
+							</tr>							
 						</table>
 						<div class="bws_pro_version_bloc">
 							<div class="bws_pro_version_table_bloc">
@@ -551,16 +564,21 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											<label><input type="checkbox" name="sbscrbrpr_form_unsubscribe_checkbox" checked disabled value="1" /> <?php _e( '"Unsubscribe" checkbox', 'subscriber' ); ?> </label><br/>
 										</td>
 									</tr>
+									<tr valign="top">
+										<th><?php _e( 'Delete a user data if the subscription has not been confirmed in', 'subscriber' ); ?></th>
+										<td colspan="2">
+											<input disabled="disabled" type="number" name="sbscrbr_hours_for_delete_user" min="1" max="10000" value="6" /> <?php _e( 'hours', 'subscriber' ); ?> 
+											<?php _e( 'every', 'subscriber' ); ?> <input disabled="disabled" type="number" name="sbscrbrpr_clear_data_hours" min="1" max="10000" value="24" /> <?php _e( 'hours', 'subscriber' ); ?>.<br/>
+											<span class="bws_info"><?php _e( 'Please set 0 if you do not want to delete a user data.', 'subscriber' ); ?></span>
+										</td>
+									</tr>
 								</table>
 							</div>
 							<div class="bws_pro_version_tooltip">
 								<div class="bws_info">
-									<?php _e( 'Unlock premium options by upgrading to a PRO version.', 'subscriber' ); ?>
-									<a href="http://bestwebsoft.com/products/subscriber/?k=d356381b0c3554404e34cdc4fe936455&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version; ?>" target="_blank" title="Subscriber Pro"><?php _e( "Learn More", 'subscriber' ); ?></a>
+									<?php _e( 'Unlock premium options by upgrading to Pro version', 'subscriber' ); ?>
 								</div>
-								<a class="bws_button" href="http://bestwebsoft.com/products/subscriber/buy/?k=d356381b0c3554404e34cdc4fe936455&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version; ?>" target="_blank" title="Subscriber Pro">
-									<?php _e( 'Go', 'subscriber' ); ?> <strong>PRO</strong>
-								</a>
+								<a class="bws_button" href="http://bestwebsoft.com/products/subscriber/?k=d356381b0c3554404e34cdc4fe936455&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version; ?>" target="_blank" title="Subscriber Pro"><?php _e( "Learn More", 'subscriber' ); ?></a>
 								<div class="clear"></div>
 							</div>
 						</div>
@@ -569,7 +587,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 						} ?>				
 						<input type="hidden" name="sbscrbr_form_submit" value="submit" />
 						<p class="submit">
-							<input type="submit" id="sbscrbr-submit-button" class="button-primary" value="<?php _e( 'Save Changes', 'subscriber' ) ?>" />
+							<input type="submit" id="bws-submit-button" class="button-primary" value="<?php _e( 'Save Changes', 'subscriber' ) ?>" />
 						</p>
 						<?php wp_nonce_field( $plugin_basename, 'sbscrbr_nonce_name' ); ?>				
 					</form>
@@ -608,7 +626,6 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 		 * @return void
 		 */
 		public function widget( $args, $instance ) {
-			global $cptchpr_options;
 			$widget_title = isset( $instance['widget_title'] ) ? $instance['widget_title'] : null;
 			if ( isset( $instance['widget_apply_settings'] ) && '1' == $instance['widget_apply_settings'] ) { /* load plugin settings */
 				global $sbscrbr_options;
@@ -643,14 +660,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 						<?php echo $widget_checkbox_label; ?>
 					</label>
 				</p>
-				<?php if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
-					if ( function_exists( 'cptchpr_display_captcha_custom' ) ) {
-						echo '<p class="cptchpr_block">';
-						if ( "" != $cptchpr_options['cptchpr_label_form'] )	
-							echo '<label>'. stripslashes( $cptchpr_options['cptchpr_label_form'] ) .'<span class="required"> ' . $cptchpr_options['cptchpr_required_symbol'] . '</span></label><br />';
-						echo "<input type='hidden' name='cntctfrm_contact_action' value='true' />" . cptchpr_display_captcha_custom() . '</p>';					
-					}
-				} ?>
+				<?php echo apply_filters( 'sbscrbr_add_field', false ); ?>
 				<p class="sbscrbr-submit-block" style="position: relative;">
 					<input type="submit" value="<?php echo $widget_button_label; ?>" name="sbscrbr_submit_email" class="submit" />
 				</p>
@@ -736,7 +746,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 	function sbscrbr_subscribe_form() {
-		global $sbscrbr_options, $cptchpr_options;
+		global $sbscrbr_options;
 
 		add_action( 'wp_enqueue_scripts', 'sbscrbr_load_scripts' );
 		
@@ -763,14 +773,7 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 					$sbscrbr_options['form_checkbox_label'] . 
 				'</label>
 			</p>';
-		if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
-			if ( function_exists( 'cptchpr_display_captcha_custom' ) ) {
-				$content .=  '<p class="cptchpr_block">';
-				if ( "" != $cptchpr_options['cptchpr_label_form'] )	
-					$content .=  '<label>'. stripslashes( $cptchpr_options['cptchpr_label_form'] ) .'<span class="required"> ' . $cptchpr_options['cptchpr_required_symbol'] . '</span></label><br />';
-				$content .=  "<input type='hidden' name='cntctfrm_contact_action' value='true' />" . cptchpr_display_captcha_custom() . '</p>';
-			}
-		}
+		$content .= apply_filters( 'sbscrbr_add_field', false );
 		$content .= '<p class="sbscrbr-submit-block" style="position: relative;">
 				<input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
 			</p>
@@ -785,14 +788,7 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 	function sbscrbr_handle_form_data() {
-		global $wpdb, $sbscrbr_options, $cptchpr_options, $lmtttmptspr_options, $sbscrbr_send_unsubscribe_mail, $sbscrbr_add_content_message;
-		
-		$cptchpr_error_incorrect_value = ( ! empty( $cptchpr_options['cptchpr_error_incorrect_value'] ) ) ? $cptchpr_options['cptchpr_error_incorrect_value'] : __( "Please complete the CAPTCHA.", 'subscriber' );
-		
-		if ( empty( $lmtttmptspr_options ) )
-			$lmtttmptspr_options = get_option( 'lmtttmptspr_options' );
-
-		$all_plugins = get_plugins();
+		global $wpdb, $sbscrbr_options, $sbscrbr_send_unsubscribe_mail, $sbscrbr_add_content_message;
 
 		if ( empty( $sbscrbr_options ) )
 			$sbscrbr_options = ( is_multisite() ) ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
@@ -806,52 +802,12 @@ if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 		$prefix                = is_multisite() ? $wpdb->base_prefix : $wpdb->prefix;
 		
 		if ( empty( $sbscrbr_add_content_message ) ) {
-			if ( isset( $_POST['sbscrbr_submit_email'] ) ) { /* if request was sended from subscribe form */				
-				if ( isset( $cptchpr_options['cptchpr_subscriber'] ) && 1 == $cptchpr_options['cptchpr_subscriber'] ) { 
-					if ( function_exists( 'cptchpr_check_custom_form' ) && cptchpr_check_custom_form() !== true ) {
-						if ( array_key_exists( 'limit-attempts-pro/limit-attempts-pro.php', $all_plugins ) 
-							&& is_plugin_active( 'limit-attempts-pro/limit-attempts-pro.php' ) 
-							&& isset( $lmtttmptspr_options['subscriber_captcha_check'] ) ) {
-							$lmtttmpts_prefix = $wpdb->prefix . 'lmtttmpts_';
-							$ip = lmtttmptspr_get_address();
-							$attempts = $wpdb->get_var (  /*quantity of attempts by current user*/
-								"SELECT `failed_attempts` 
-								FROM `" . $lmtttmpts_prefix . "failed_attempts` 
-								WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
-							) ;
-							$blocks = $wpdb->get_var ( /*quantity of blocks by current user*/
-								"SELECT `block_quantity` 
-								FROM `" . $lmtttmpts_prefix . "failed_attempts` 
-								WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
-							) ;
-
-							if ( ! lmtttmptspr_is_ip_in_table( $ip, 'whitelist' ) ) {
-								if ( lmtttmptspr_is_ip_in_table( $ip, 'blacklist' ) ) {
-									$sbscrbr_add_content_message = '<p class="sbscrbr-form-error">' . str_replace( '%MAIL%' , $lmtttmptspr_options['email_address'], $lmtttmptspr_options['blacklisted_message'] ) . '</p>';
-								} elseif ( lmtttmptspr_is_ip_blocked( $ip ) ) {
-									$when = ( $wpdb->get_var ( 
-										"SELECT `block_till` 
-										FROM `" . $lmtttmpts_prefix . "failed_attempts` 
-										WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
-									) );
-									$sbscrbr_add_content_message = '<p class="sbscrbr-form-error">' . str_replace( array( '%DATE%', '%MAIL%' ) , array( $when, $lmtttmptspr_options['email_address'] ), $lmtttmptspr_options['blocked_message'] ) . '</p>';
-								} else {
-									$tries = ( $wpdb->get_var( 
-										"SELECT `failed_attempts` 
-										FROM `" . $lmtttmpts_prefix . "failed_attempts` 
-										WHERE `ip_int` = '" . sprintf( '%u', ip2long( $ip ) ) . "'" 
-									) );
-									$allowed_tries = max( $lmtttmptspr_options['allowed_retries'] - $tries, 0 ); /*calculation of allowed retries*/
-									$sbscrbr_add_content_message = '<p class="sbscrbr-form-error">' . $cptchpr_error_incorrect_value . '</br>' . str_replace( '%ATTEMPTS%' , $allowed_tries, $lmtttmptspr_options['failed_message'] ) . '</p>';
-								}
-							} else {
-								$sbscrbr_add_content_message = '<p class="sbscrbr-form-error">' . $cptchpr_error_incorrect_value . '</p>';
-							}
-						} else {
-							$sbscrbr_add_content_message = '<p class="sbscrbr-form-error">' . $cptchpr_error_incorrect_value . '</p>';
-						}
-						return $sbscrbr_add_content_message;
-					}
+			if ( isset( $_POST['sbscrbr_submit_email'] ) ) { /* if request was sended from subscribe form */
+				/* If captcha plugin exists */
+				if ( has_filter( 'sbscrbr_check' ) ) {
+					$check_result = apply_filters( 'sbscrbr_check', $_POST );
+					if ( true !== $check_result )
+						return '<p class="sbscrbr-form-error">' . $check_result . '</p>';
 				}			
 				if ( isset( $_POST['sbscrbr_unsubscribe'] ) && 'yes' == $_POST['sbscrbr_unsubscribe'] ) { /* unsubscribe user */
 					if ( empty( $_POST['sbscrbr_email'] ) ) {
@@ -2158,12 +2114,36 @@ if ( ! function_exists( 'sbscrbr_register_plugin_links' ) ) {
 
 if ( ! function_exists( 'sbscrbr_show_notices' ) ) {
 	function sbscrbr_show_notices() {
-		global $hook_suffix;
+		global $hook_suffix, $sbscrbr_options;
 		if ( 'plugins.php' == $hook_suffix ) {  
 			global $sbscrbr_plugin_info;
-			bws_plugin_banner( $sbscrbr_plugin_info, 'sbscrbr', 'subscriber', '95812391951699cd5a64397cfb1b0557', '122', '//ps.w.org/subscriber/assets/icon-128x128.png' );
+			if ( isset( $sbscrbr_options['first_install'] ) && strtotime( '-1 week' ) > $sbscrbr_options['first_install'] )
+				bws_plugin_banner( $sbscrbr_plugin_info, 'sbscrbr', 'subscriber', '95812391951699cd5a64397cfb1b0557', '122', '//ps.w.org/subscriber/assets/icon-128x128.png' );
+
+			bws_plugin_banner_to_settings( $sbscrbr_plugin_info, 'sbscrbr_options', 'subscriber', 'admin.php?page=sbscrbr_settings_page' );
+			
+			if ( is_multisite() && ! is_network_admin() && is_admin() ) { ?>
+				<div class="update-nag"><strong><?php _e( 'Notice:', 'subscriber' ); ?></strong> 
+					<?php if ( is_plugin_active_for_network( plugin_basename( __FILE__ ) ) ) {
+						_e( 'Due to the peculiarities of the multisite work, Subscriber plugin has only', 'subscriber' ); ?> <a target="_blank" href="<?php echo network_admin_url( 'admin.php?page=sbscrbr_settings_page' ); ?>"><?php _e( 'Network settings page', 'subscriber' ); ?></a>
+					<?php } else {
+						_e( 'Due to the peculiarities of the multisite work, Subscriber plugin has the network settings page only and it should be Network Activated. Please', 'subscriber' ); ?> <a target="_blank" href="<?php echo network_admin_url( 'plugins.php' ); ?>"><?php _e( 'Activate Subscriber for Network', 'subscriber' ); ?></a>
+					<?php } ?>
+				</div>	
+			<?php }
 		}
 	}
+}
+
+/* add shortcode content  */
+if ( ! function_exists( 'sbscrbr_shortcode_button_content' ) ) {
+	function sbscrbr_shortcode_button_content( $content ) {
+		global $wp_version, $post; ?>
+		<div id="sbscrbr" style="display:none;">			
+			<input class="bws_default_shortcode" type="hidden" name="default" value="[sbscrbr_form]" />
+			<div class="clear"></div>
+		</div>
+	<?php }
 }
 
 /**
@@ -2231,6 +2211,8 @@ if ( function_exists( 'is_multisite' ) ) {
 		add_action( 'admin_menu', 'sbscrbr_admin_menu' );
 }
 /* initialization */
+add_action( 'plugins_loaded', 'sbscrbr_plugins_loaded' );
+
 add_action( 'init', 'sbscrbr_init' );
 add_action( 'admin_init', 'sbscrbr_admin_init' );
 /* include js- and css-files  */
@@ -2257,5 +2239,8 @@ add_filter( 'plugin_action_links', 'sbscrbr_plugin_action_links', 10, 2 );
 add_filter( 'plugin_row_meta', 'sbscrbr_register_plugin_links', 10, 2 );
 
 add_action( 'admin_notices', 'sbscrbr_show_notices' );
+
+/* custom filter for bws button in tinyMCE */
+add_filter( 'bws_shortcode_button_content', 'sbscrbr_shortcode_button_content' );
 
 register_uninstall_hook( __FILE__, 'sbscrbr_uninstall' );

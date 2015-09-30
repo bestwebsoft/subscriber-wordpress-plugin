@@ -1,10 +1,10 @@
 ﻿=== Subscriber by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add subscribe form, display subscribe form on page, display subscribe form in post, email, e-mail, mail, newsletter, sign up, shortcode, subscribe, subscribe to newsletters, sebscriber, subscriber, subcriber, subcsriber, subskriber, suscriber, subscriber list, subscriber plugin, subscriber widget, subscription, website newsletters
-Requires at least: 3.1
-Tested up to: 4.2.2
-Stable tag: 1.2.3
+Tags: add-on, addon, add subscriber plugin, add subscribe widget, add subscribe form, display subscribe form in post, display subscribe form on page, e-mail, email, free, free plugin, free subscribe plugin, free subscriber plugin, free add-on, free addon, free subscriber addon, insert shortcode, mail, newsletter, sebscriber, shortcode, sign up, subcriber, subcsriber, subscribe, subscribe to newsletters, subscriber, subscriber list, subscriber plugin, subscriber widget, subscription, subskriber, suscriber, website newsletters, widget, wordpress, wp, wp plugin, wp free plugin, wp subscriber, wp subscriber plugin, wp simple subscriber plugin, wp free subscriber, wp free subscriber plugin, wordpress plugin, wordpress free plugin, wordpress subscriber, wordpress subscriber plugin, wordpress simple subscriber plugin, wordpress free subscriber, wordpress free subscriber plugin
+Requires at least: 3.8
+Tested up to: 4.3.1
+Stable tag: 1.2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,12 +17,12 @@ This plugin allows your site visitors to subscribe for newsletters, coming from 
 
 http://www.youtube.com/watch?v=ytjxGd4hXDU
 
-<a href="http://www.youtube.com/watch?v=YJOQSGXPjRY" target="_blank">Video instruction on Installation</a>
+<a href="http://www.youtube.com/watch?v=YJOQSGXPjRY" target="_blank">Subscriber by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://wordpress.org/plugins/subscriber/faq/" target="_blank">FAQ</a>
-<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="http://wordpress.org/plugins/subscriber/faq/" target="_blank">Subscriber by BestWebSoft FAQ</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Subscriber by BestWebSoft Support</a>
 
-<a href="http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450" target="_blank">Upgrade to Subscriber Pro by BestWebSoft</a>
 
 = Features =
 
@@ -91,7 +91,7 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 1. the link to the page, on which the problem occurs
 2. the plugin’s name and version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste your system status report into the message. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instuction on System Status</a>
+4. copy and paste your system status report into the message. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
 
 == Screenshots ==
 
@@ -103,6 +103,10 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 6. Subscribers list in admin panel.
 
 == Changelog ==
+
+= V1.2.4 - 30.09.2015 =
+* NEW : A button for Subscriber shortcode inserting to the content was added.
+* Bugfix : Fixed captcha displaying.
 
 = V1.2.3 - 03.07.2015 =
 * New : Ability to restore settings to defaults.
@@ -166,6 +170,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.4 =
+A button for Subscriber shortcode inserting to the content was added. Fixed captcha displaying
 
 = V1.2.3 =
 Ability to restore settings to defaults. Input maxlength is added. BWS plugins section was updated.
