@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add-on, addon, add subscriber plugin, add subscribe widget, add subscribe form, display subscribe form in post, display subscribe form on page, e-mail, email, free, free plugin, free subscribe plugin, free subscriber plugin, free add-on, free addon, free subscriber addon, insert shortcode, mail, newsletter, sebscriber, shortcode, sign up, subcriber, subcsriber, subscribe, subscribe to newsletters, subscriber, subscriber list, subscriber plugin, subscriber widget, subscription, subskriber, suscriber, website newsletters, widget, wordpress, wp, wp plugin, wp free plugin, wp subscriber, wp subscriber plugin, wp simple subscriber plugin, wp free subscriber, wp free subscriber plugin, wordpress plugin, wordpress free plugin, wordpress subscriber, wordpress subscriber plugin, wordpress simple subscriber plugin, wordpress free subscriber, wordpress free subscriber plugin
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.2.4
+Tested up to: 4.4-RC1
+Stable tag: 1.2.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,7 +28,7 @@ http://www.youtube.com/watch?v=ytjxGd4hXDU
 
 * Add 'Subscriber Form Registation' widget, where your site visitors can subscribe for your newsletters.
 * Add shortcode to display Subscribe Form in post, page or widget content. 
-* You can manage the list of subscribers in Users > Subscribers.
+* Manage the list of subscribers in Users > Subscribers.
 
 = Recommended Plugins =
 
@@ -104,6 +104,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Changelog ==
 
+= V1.2.5 - 03.12.2015 =
+* NEW : An ability to disable the notifications about new subscribers was added.
+
 = V1.2.4 - 30.09.2015 =
 * NEW : A button for Subscriber shortcode inserting to the content was added.
 * Bugfix : Fixed captcha displaying.
@@ -170,6 +173,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.5 =
+An ability to disable the notifications about new subscribers was added.
 
 = V1.2.4 =
 A button for Subscriber shortcode inserting to the content was added. Fixed captcha displaying
