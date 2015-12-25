@@ -6,7 +6,7 @@ Description: This plugin allows you to subscribe users on newsletter from your w
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.2.5
+Version: 1.2.6
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -534,7 +534,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-admin-message-subject" name="sbscrbr_admin_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['admin_message_subject'] ); ?>"/>
 									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo esc_textarea( $sbscrbr_options['admin_message_text'] ); ?></textarea>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo $sbscrbr_options['admin_message_text']; ?></textarea>
 									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
@@ -544,7 +544,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-subscribe-message-subject" name="sbscrbr_subscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['subscribe_message_subject'] ); ?>"/>
 									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo esc_textarea( $sbscrbr_options['subscribe_message_text'] ); ?></textarea>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo $sbscrbr_options['subscribe_message_text']; ?></textarea>
 									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
@@ -554,14 +554,14 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									<input type="text" class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-subject"  name="sbscrbr_unsubscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['unsubscribe_message_subject'] ); ?>"/>
 									<span class="bws_info"><?php _e( "Subject:", 'subscriber' ); ?></span>
 									<br/>
-									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo esc_textarea( $sbscrbr_options['unsubscribe_message_text'] ); ?></textarea>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo $sbscrbr_options['unsubscribe_message_text']; ?></textarea>
 									<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text:", 'subscriber' ); ?></span>
 								</td>
 							</tr>
 							<tr valign="top" class="sbscrbr-messages-settings">
 								<th><?php _e( 'Text to be attached to letters', 'subscriber' ); ?></th>
 								<td colspan="2">
-									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-link-text" name="sbscrbr_unsubscribe_link_text"><?php echo esc_textarea( $sbscrbr_options['unsubscribe_link_text'] ); ?></textarea>
+									<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-link-text" name="sbscrbr_unsubscribe_link_text"><?php echo $sbscrbr_options['unsubscribe_link_text']; ?></textarea>
 									<br/>
 									<span class="bws_info"><?php _e( 'This text will be attached to each letter of the mailing, which was created with Sender plugin by BestWebsoft.', 'subscriber' ); ?></span>
 								</td>
@@ -727,7 +727,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 			<p>
 				<label for="<?php echo $this->get_field_id( 'widget_form_label' ); ?>">
 					<?php _e( 'Text above the subscribe form:', 'subscriber' ); ?> 
-					<textarea class="widefat" id="<?php echo $this->get_field_id( 'widget_form_label' ); ?>" name="<?php echo $this->get_field_name( 'widget_form_label' ); ?>"><?php echo esc_textarea( $widget_form_label ); ?></textarea>
+					<textarea class="widefat" id="<?php echo $this->get_field_id( 'widget_form_label' ); ?>" name="<?php echo $this->get_field_name( 'widget_form_label' ); ?>"><?php echo $widget_form_label; ?></textarea>
 				</label>
 			</p>
 			<p>
@@ -844,7 +844,7 @@ if ( ! function_exists( 'sbscrbr_handle_form_data' ) ) {
 				/* If captcha plugin exists */
 				if ( has_filter( 'sbscrbr_check' ) ) {
 					$check_result = apply_filters( 'sbscrbr_check', true );
-					if ( true !== $check_result )
+					if ( false === $check_result || ( is_string( $check_result ) && ! empty( $check_result ) ) )
 						return '<p class="sbscrbr-form-error">' . $check_result . '</p>';
 				}			
 				if ( isset( $_POST['sbscrbr_unsubscribe'] ) && 'yes' == $_POST['sbscrbr_unsubscribe'] ) { /* unsubscribe user */
@@ -1512,24 +1512,24 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 				$actions = array();
 				if ( '0' == $item['status_marker'] ) { /* if user not subscribed */
 					if( ! ( isset( $_REQUEST['users_status'] ) && in_array( $_REQUEST['users_status'], array( "subscribed", "trashed", "black_list" ) ) ) ) {
-						$actions['subscribe_user'] = '<a class="sbscrbr-subscribe-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=subscribe_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_subscribe_users' . $item['id'] ) . '">' . __( 'Subscribe', 'subscriber' ) . '</a>';
+						$actions['subscribe_user'] = '<a class="sbscrbr-subscribe-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=subscribe_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_subscribe_users' . $item['id'] ) ) . '">' . __( 'Subscribe', 'subscriber' ) . '</a>';
 					}
 				}
 				if ( '1' == $item['status_marker'] ) { /* if user subscribed */
 					if( ! ( isset( $_REQUEST['users_status'] ) && in_array( $_REQUEST['users_status'], array( "unsubscribed", "trashed", "black_list" ) ) ) ) {
-						$actions['unsubscribe_user'] = '<a class="sbscrbr-unsubscribe-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=unsubscribe_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_unsubscribe_users' . $item['id'] ) . '">' . __( 'Unsubscribe', 'subscriber' ) . '</a>';
+						$actions['unsubscribe_user'] = '<a class="sbscrbr-unsubscribe-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=unsubscribe_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_unsubscribe_users' . $item['id'] ) ) . '">' . __( 'Unsubscribe', 'subscriber' ) . '</a>';
 					}
 				}
 				if ( isset( $_REQUEST['users_status'] ) && 'black_list' == $_REQUEST['users_status'] ) {
-					$actions['restore_from_black_list_user'] = '<a class="sbscrbr-restore-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=restore_from_black_list_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_restore_from_black_list_users' . $item['id'] ) . '">' . __( 'Restore From Black List', 'subscriber' ) . '</a>';
+					$actions['restore_from_black_list_user'] = '<a class="sbscrbr-restore-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=restore_from_black_list_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_restore_from_black_list_users' . $item['id'] ) ) . '">' . __( 'Restore From Black List', 'subscriber' ) . '</a>';
 				} else {
-					$actions['to_black_list_user'] = '<a class="sbscrbr-delete-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=to_black_list_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_to_black_list_users' . $item['id'] ) . '">' . __( 'Black List', 'subscriber' ) . '</a>';				
+					$actions['to_black_list_user'] = '<a class="sbscrbr-delete-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=to_black_list_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_to_black_list_users' . $item['id'] ) ) . '">' . __( 'Black List', 'subscriber' ) . '</a>';				
 				}
 				if ( isset( $_REQUEST['users_status'] ) && "trashed" == $_REQUEST['users_status'] ) {
-					$actions['restore_user'] = '<a class="sbscrbr-restore-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=restore_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_restore_users' . $item['id'] ) . '">' . __( 'Restore', 'subscriber' ) . '</a>';
-					$actions['delete_user'] = '<a class="sbscrbr-delete-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=delete_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_delete_users' . $item['id'] ) . '">' . __( 'Delete Permanently', 'subscriber' ) . '</a>';
+					$actions['restore_user'] = '<a class="sbscrbr-restore-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=restore_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_restore_users' . $item['id'] ) ) . '">' . __( 'Restore', 'subscriber' ) . '</a>';
+					$actions['delete_user'] = '<a class="sbscrbr-delete-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=delete_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_delete_users' . $item['id'] ) ) . '">' . __( 'Delete Permanently', 'subscriber' ) . '</a>';
 				} else {
-					$actions['trash_user'] = '<a class="sbscrbr-delete-user" href="' . wp_nonce_url( sprintf( '?page=sbscrbr_users&action=trash_user&user_id=%s' . $users_status, $item['id'] ), 'sbscrbr_trash_users' . $item['id'] ) . '">' . __( 'Trash', 'subscriber' ) . '</a>';
+					$actions['trash_user'] = '<a class="sbscrbr-delete-user" href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=trash_user&user_id=' . $item['id'] . $users_status, 'sbscrbr_trash_users' . $item['id'] ) ) . '">' . __( 'Trash', 'subscriber' ) . '</a>';
 				}
 
 				return sprintf( '%1$s %2$s', $item['name'], $this->row_actions( $actions ) );
@@ -1680,26 +1680,26 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 						$sql_query .= "WHERE `delete`=0  AND `black_list`=0";
 					}
 				}
-				$sql_query   .= " ORDER BY " . $order_by . " " . $order . " LIMIT " . $per_page . " OFFSET " . $start_row . ";";
-				$users_data = $wpdb->get_results( $sql_query, ARRAY_A );
+				$sql_query   .= " ORDER BY %s %s LIMIT " . $per_page . " OFFSET " . $start_row . ";";
+				$users_data = $wpdb->get_results( $wpdb->prepare( $sql_query, $order_by, $order ), ARRAY_A );
 				foreach ( $users_data as $user ) {
-					$users_list[$i]                  = array();
-					$users_list[$i]['id']            = $user['id_user'];
-					$users_list[$i]['name']          = get_avatar( $user['id_user'], 32 ) . '<strong>' . $user['user_display_name'] . '</strong>';
+					$users_list[ $i ]                  = array();
+					$users_list[ $i ]['id']            = $user['id_user'];
+					$users_list[ $i ]['name']          = get_avatar( $user['id_user'], 32 ) . '<strong>' . $user['user_display_name'] . '</strong>';
 
 					if ( isset( $_REQUEST['s'] ) && '' != $_REQUEST['s'] ) {
 						if ( '1' == $user['black_list'] && '0' == $user['delete'] ) {
-							$users_list[$i]['name'] .=  ' - ' . __( 'in blacklist', 'subscriber' );
+							$users_list[ $i ]['name'] .=  ' - ' . __( 'in blacklist', 'subscriber' );
 						} elseif ( '1' == $user['delete'] ) {
-							$users_list[$i]['name'] .= ' - ' . __( 'in trash', 'subscriber' );
+							$users_list[ $i ]['name'] .= ' - ' . __( 'in trash', 'subscriber' );
 						}
 					}
-					$users_list[$i]['email']         = '<a href=mailto:' . $user['user_email'] . ' title="' . __( 'E-mail:', 'subscriber' ) . ' ' . $user['user_email'] . '">' . $user['user_email'] . '</a>';
-					$users_list[$i]['status_marker'] = $user['subscribe'];
+					$users_list[ $i ]['email']         = '<a href=mailto:' . $user['user_email'] . ' title="' . __( 'E-mail:', 'subscriber' ) . ' ' . $user['user_email'] . '">' . $user['user_email'] . '</a>';
+					$users_list[ $i ]['status_marker'] = $user['subscribe'];
 					if ( '1' == $user['subscribe'] ) {
-						$users_list[$i]['status']    = '<span>' . __( 'Subscribed from', 'subscriber' ) . '<br/>' . date( 'd M Y', $user['subscribe_time'] ) . '</span>';
+						$users_list[ $i ]['status']    = '<span>' . __( 'Subscribed from', 'subscriber' ) . '<br/>' . date( 'd M Y', $user['subscribe_time'] ) . '</span>';
 					} else {
-						$users_list[$i]['status']    = '<span>' . __( 'Unsubscribed from', 'subscriber' ) . '<br/>' . date( 'd M Y', $user['unsubscribe_time'] ) . '</span>';
+						$users_list[ $i ]['status']    = '<span>' . __( 'Unsubscribed from', 'subscriber' ) . '<br/>' . date( 'd M Y', $user['unsubscribe_time'] ) . '</span>';
 					}
 					$i ++;
 				}
@@ -1715,7 +1715,7 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 				$prefix    = is_multisite() ? $wpdb->base_prefix : $wpdb->prefix;
 				$sql_query = "SELECT COUNT(`id_user`) FROM `" . $prefix . "sndr_mail_users_info`";
 				if ( isset( $_REQUEST['s'] ) && '' != $_REQUEST['s'] ) {
-					$sql_query .= "WHERE `user_email` LIKE '%" . $_REQUEST['s'] . "%' OR `user_display_name` LIKE '%" . $_REQUEST['s'] . "%'";
+					$sql_query .= "WHERE `user_email` LIKE '%" . esc_sql( $_REQUEST['s'] ) . "%' OR `user_display_name` LIKE '%" . esc_sql( $_REQUEST['s'] ) . "%'";
 				} else {
 					if ( isset( $_REQUEST['users_status'] ) ) {
 						switch ( $_REQUEST['users_status'] ) {
@@ -1825,11 +1825,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode(  ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -1850,7 +1851,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 									}
 								}
 								if ( ! empty( $counter ) ) {
-									$action_message['done'] = sprintf( _n( 'One user was subscribed on newsletter.', '%s users were subscribed on newsletter.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=unsubscribe_users&user_id=' . $user_id . $user_status, 'sbscrbr_unsubscribe_users' . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was subscribed on newsletter.', '%s users were subscribed on newsletter.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=unsubscribe_users&user_id=' . $user_id . $user_status, 'sbscrbr_unsubscribe_users' . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
@@ -1865,11 +1866,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode(  ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -1890,7 +1892,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 									}
 								}
 								if ( ! empty( $counter ) ) {
-									$action_message['done'] = sprintf( _n( 'One user was unsubscribed from newsletter.', '%s users were unsubscribed from newsletter.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=subscribe_users&user_id=' . $user_id . $user_status, 'sbscrbr_subscribe_users' . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was unsubscribed from newsletter.', '%s users were unsubscribed from newsletter.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=subscribe_users&user_id=' . $user_id . $user_status, 'sbscrbr_subscribe_users' . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
@@ -1905,11 +1907,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode(  ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -1929,7 +1932,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 									}
 								}
 								if ( ! empty( $counter ) ) {
-									$action_message['done'] = sprintf( _n( 'One user was moved to black list.', '%s users were moved to black list.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=restore_from_black_list_users&user_id=' . $user_id . $user_status, 'sbscrbr_restore_from_black_list_users' . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was moved to black list.', '%s users were moved to black list.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=restore_from_black_list_users&user_id=' . $user_id . $user_status, 'sbscrbr_restore_from_black_list_users' . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
@@ -1944,11 +1947,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode( ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -1963,7 +1967,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 									}
 								}
 								if ( ! empty( $counter ) ) {
-									$action_message['done'] = sprintf( _n( 'One user was restored from black list.', '%s users were restored from black list.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=to_black_list_users&user_id=' . $user_id . $user_status, 'sbscrbr_to_black_list_users' . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was restored from black list.', '%s users were restored from black list.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=to_black_list_users&user_id=' . $user_id . $user_status, 'sbscrbr_to_black_list_users' . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
@@ -1978,11 +1982,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode(  ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -1998,7 +2003,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 								}
 								if ( ! empty( $counter ) ) {
 									$previous_action        = preg_match( '/black_list/', $user_status ) ? 'to_black_list_users' : 'restore_users';
-									$action_message['done'] = sprintf( _n( 'One user was moved to trash.', '%s users were moved to trash.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=' . $previous_action . '&user_id=' . $user_id . $user_status, 'sbscrbr_' . $previous_action . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was moved to trash.', '%s users were moved to trash.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=' . $previous_action . '&user_id=' . $user_id . $user_status, 'sbscrbr_' . $previous_action . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
@@ -2013,8 +2018,13 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
-									$user_ids[0] = $_REQUEST['user_id'];
+									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
+									} else {
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
+									}
 								}								
 								foreach ( $user_ids as $id ) {
 									$result = $wpdb->query( "DELETE FROM `" . $prefix . "sndr_mail_users_info` WHERE `id_user`=" . $id );
@@ -2038,11 +2048,12 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 							} else {
 								if ( is_array( $_REQUEST['user_id'] ) ) {
 									$user_ids = $_REQUEST['user_id'];
+									array_walk( $user_ids, 'intval' );
 								} else {
 									if ( preg_match( '|,|', $_REQUEST['user_id'] ) ) {
-										$user_ids = explode( ',', $_REQUEST['user_id'] );
+										$user_ids = explode(  ',', intval( $_REQUEST['user_id'] ) );
 									} else {
-										$user_ids[0] = $_REQUEST['user_id'];
+										$user_ids[0] = intval( $_REQUEST['user_id'] );
 									}
 								}
 								foreach ( $user_ids as $id ) {
@@ -2057,7 +2068,7 @@ if ( ! function_exists( 'sbscrbr_report_actions' ) ) {
 									}
 								}
 								if ( ! empty( $counter ) ) {
-									$action_message['done'] = sprintf( _n( 'One user was restored.', '%s users were restored.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . wp_nonce_url( '?page=sbscrbr_users&action=trash_users&user_id=' . $user_id . $user_status, 'sbscrbr_trash_users' . $user_id ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
+									$action_message['done'] = sprintf( _n( 'One user was restored.', '%s users were restored.', $counter, 'subscriber' ), number_format_i18n( $counter ) ) . ' <a href="' . esc_url( wp_nonce_url( '?page=sbscrbr_users&action=trash_users&user_id=' . $user_id . $user_status, 'sbscrbr_trash_users' . $user_id ) ) . '">' . __( 'Undo.', 'subscriber' ) . '</a>';
 								} else {
 									$action_message['error'] = $message_list['not_updated'];
 								}
