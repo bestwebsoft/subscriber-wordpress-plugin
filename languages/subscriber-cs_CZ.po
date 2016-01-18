@@ -1,0 +1,747 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Subscriber\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-12-03 10:44+0300\n"
+"PO-Revision-Date: 2015-12-29 23:00+0100\n"
+"Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
+"Language-Team: BestWebSoft Team <wp@bestwebsoft.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n%10==1 && n%100!=11) ? 3 : "
+"((n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20)) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.7.3\n"
+"Language: cs_CZ\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../subscriber.php:39 ../subscriber.php:2087
+msgid "Subscribers"
+msgstr "Odběratelé"
+
+#: ../subscriber.php:78
+msgid "Mail Subscriber"
+msgstr "Odebírat maily"
+
+#: ../subscriber.php:131 ../subscriber.php:679 ../subscriber.php:717
+#: ../subscriber.php:1462
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ../subscriber.php:132 ../subscriber.php:680 ../subscriber.php:718
+msgid "unsubscribe"
+msgstr "Zrušit odběr"
+
+#: ../subscriber.php:133 ../subscriber.php:681 ../subscriber.php:719
+#: ../subscriber.php:1516 ../subscriber.php:1586
+msgid "Subscribe"
+msgstr "Přihlásit se k odběru"
+
+#: ../subscriber.php:135
+msgid "Error while your request. Please try later."
+msgstr "Při vaší žádosti došlo k chybě. Opakujte akci později."
+
+#: ../subscriber.php:136
+msgid "Please, enter e-mail."
+msgstr "Prosím zadejte e-mail."
+
+#: ../subscriber.php:137
+msgid "Please, enter valid e-mail."
+msgstr "Zadejte, prosím, platnou emailovou adresu"
+
+#: ../subscriber.php:138
+msgid "No user with this e-mail."
+msgstr "Uživatel s touto e-mailu není."
+
+#: ../subscriber.php:139
+msgid "Cannot get data about this e-mail. Please try later."
+msgstr "Nelze získat data o tomto e-mailu. Opakujte akci později."
+
+#: ../subscriber.php:140
+msgid "Cannot send message to your e-mail. Please try later."
+msgstr "Nelze odeslat zprávu na váš e-mail. Opakujte akci později."
+
+#: ../subscriber.php:141
+msgid "Sorry, but during registration an error occurred. Please try later."
+msgstr "Omlouváme se, ale při registraci došlo k chybě. Opakujte akci později."
+
+#: ../subscriber.php:142
+msgid "Thanks for subscribing for our newsletter. Check your mail."
+msgstr "Díky za přihlášení k odběru novinek. Zkontrolujte si poštu."
+
+#: ../subscriber.php:143
+msgid "User with this e-mail is already subscribed to the newsletter."
+msgstr "Uživatel s tímto e-mailem je již přihlášen k odebírání newsletteru."
+
+#: ../subscriber.php:144
+msgid ""
+"Sorry, but your request to subscribe for the newsletter has been denied. "
+"Please contact the site administration."
+msgstr ""
+"Omlouváme se, ale váš požadavek k odběru pro zasílání novinek byl odepřen. "
+"Obraťte se na správu webu."
+
+#: ../subscriber.php:145
+msgid "User with this e-mail already has unsubscribed from the newsletter."
+msgstr "Uživatel s tímto e-mailem je již přihlášen k odebírání novinek."
+
+#: ../subscriber.php:146
+msgid "Please check your email."
+msgstr "Zkontrolujte prosím svůj e-mail."
+
+#: ../subscriber.php:147
+msgid "The user does not exist."
+msgstr "Zadaný uživatel neexistuje."
+
+#: ../subscriber.php:148
+msgid "You have successfully unsubscribed from the newsletter."
+msgstr "Jste se úspěšně odhlášení newsletteru."
+
+#: ../subscriber.php:155
+msgid "New subscriber"
+msgstr "Nový odběratel"
+
+#: ../subscriber.php:156
+msgid "Thanks for registration"
+msgstr "Děkujeme za registraci"
+
+#: ../subscriber.php:157
+msgid "Link to unsubscribe"
+msgstr "Odkaz pro odhlášení"
+
+#: ../subscriber.php:159
+msgid "User with e-mail {user_email} has subscribed to a newsletter."
+msgstr "Uživatele s e-mailem {user_email} se přihlásil k odběru novinek."
+
+#: ../subscriber.php:160
+msgid ""
+"Thanks for registration. To change data of your profile go to "
+"{profile_page}.\n"
+"If you want to unsubscribe from the newsletter from our site go to the link\n"
+"{unsubscribe_link}"
+msgstr ""
+"Díky za registraci. Chcete-li změnit údaje v profilu přejděte na "
+"{profile_page}.\n"
+"Chcete-li se odhlásit z odebírání novinek z našich stránek, použijte tento "
+"odkaz\n"
+" {unsubscribe_link}"
+
+#: ../subscriber.php:161
+msgid ""
+"Dear user. At your request, we send you a link to unsubscribe from emails of "
+"our site. To unsubscribe please use the link below. If you change your mind, "
+"you can just ignore this letter.\n"
+"Link to unsubscribe:\n"
+"{unsubscribe_link}"
+msgstr ""
+"Vážený uživateli. Na vaši žádost zasíláme odkaz pro odhlášení zasílání "
+"novinek e-mailem z našich stránek. Chcete-li se odhlásit, použijte odkazu "
+"níže. Pokud jste změnili názor, můžete prostě tento dopis ignorovat. \n"
+"Odkaz k odhlášení odběru: \n"
+" {unsubscribe_link}"
+
+#: ../subscriber.php:163
+msgid ""
+"If you want to unsubscribe from the newsletter from our site go to the "
+"following link:\n"
+"{unsubscribe_link}"
+msgstr ""
+"Pokud se chcete odhlásit z odebírání novinek z našeho webu přejděte na "
+"následující odkaz: \n"
+" {unsubscribe_link}"
+
+#: ../subscriber.php:327
+msgid ""
+"Email 'FROM' field option was changed, which may cause email messages being "
+"moved to the spam folder or email delivery failures."
+msgstr ""
+"Pole e-mailu 'OD' bylo změněno, což může způsobit, že e-mailové zprávy by "
+"mohly být přesouvány do spamové složky nebo může dojít k selhání doručení e-"
+"mailu."
+
+#: ../subscriber.php:360
+msgid "Settings Saved"
+msgstr "Nastavení uloženo"
+
+#: ../subscriber.php:368
+msgid "All plugin settings were restored."
+msgstr "Výchozí nastavení pluginu bylo obnoveno."
+
+#: ../subscriber.php:382
+msgid "Subscriber Settings"
+msgstr "Nastavení odběratele"
+
+#: ../subscriber.php:384 ../subscriber.php:2142 ../subscriber.php:2161
+msgid "Settings"
+msgstr "Nastavení"
+
+#: ../subscriber.php:385
+msgid "Go PRO"
+msgstr "Získat verzi Pro"
+
+#: ../subscriber.php:388 ../subscriber.php:2183
+msgid "Notice:"
+msgstr "Upozornění:"
+
+#: ../subscriber.php:400
+msgid ""
+"If you would like to display the Subscribe Form with a widget, you need to "
+"add the widget \"Subscriber Form Registation\" in the Widgets tab."
+msgstr ""
+"Pokud byste chtěli zobrazit Přihlašovací formulář ve widgetu, je potřeba "
+"přidat widget \"Přihlašovací formulář odběratele\" na kartě widgety."
+
+#: ../subscriber.php:402
+#, php-format
+msgid ""
+"If you would like to add the Subscribe Form to your page or post, please use "
+"%s button"
+msgstr ""
+"Pokud chcete přidat Přihlašovací formulář na vaší stránku nebo příspěvek, "
+"použijte tlačítko %s"
+
+#: ../subscriber.php:408
+#, php-format
+msgid ""
+"You can add the Subscribe Form to your page or post by clicking on %s button "
+"in the content edit block using the Visual mode. If the button isn't "
+"displayed, please use the shortcode %s."
+msgstr ""
+"Můžete na stránku nebo do příspěvku přidat Přihlašovací formulář kliknutím "
+"na tlačítko %s v obsahu upravením bloku pomocí celoobrazovkového režimu. "
+"Pokud tlačítko není zobrazeno, použijte krátký kód %s."
+
+#: ../subscriber.php:418
+msgid "Subscribe form labels"
+msgstr "Popisky Přihlašovacího formuláře"
+
+#: ../subscriber.php:421
+msgid "Text above the subscribe form"
+msgstr "Text nad Přihlašovacím formulářem"
+
+#: ../subscriber.php:424
+msgid "Placeholder for text field"
+msgstr "Předvyplněná hodnota pro textové pole"
+
+#: ../subscriber.php:427
+msgid "Label for \"unsubscribe\" checkbox"
+msgstr "Popisek pro zaškrtávací políčko \"odhlásit\""
+
+#: ../subscriber.php:431
+msgid "Label for \"submit\" button"
+msgstr "Popisek tlačítka \"Odeslat\""
+
+#: ../subscriber.php:435
+msgid "Service messages"
+msgstr "Zprávy služby"
+
+#: ../subscriber.php:439
+msgid "These messages will be displayed in the frontend of your site."
+msgstr "Tyto zprávy se zobrazí na konci vaší stránky."
+
+#: ../subscriber.php:442 ../subscriber.php:527
+msgid "Show"
+msgstr "Zobrazit"
+
+#: ../subscriber.php:443 ../subscriber.php:528
+msgid "Hide"
+msgstr "Skrýt"
+
+#: ../subscriber.php:450
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+#: ../subscriber.php:453
+msgid "If user has not entered e-mail"
+msgstr "Jestliže uživatel nezadal e-mail"
+
+#: ../subscriber.php:456
+msgid "If user has entered invalid e-mail"
+msgstr "Jestliže uživatel zadal neplatnou e-mailovou"
+
+#: ../subscriber.php:459
+msgid "If the user has entered a non-existent e-mail"
+msgstr "Pokud uživatel zadal neexistující e-mail"
+
+#: ../subscriber.php:462
+msgid "If it is impossible to get the data about the entered e-mail"
+msgstr "Jestliže není možné získat údaje o zadaném e-mailu"
+
+#: ../subscriber.php:465
+msgid "If it is impossible to send a letter"
+msgstr "Jestliže není možné poslat dopis"
+
+#: ../subscriber.php:468
+msgid "If some errors occurred while user registration"
+msgstr "Pokud došlo k nějakým chybám během registrace uživatele"
+
+#: ../subscriber.php:471
+msgid "If user registration was succesfully finished"
+msgstr "Jestliže registrace uživatele byla úspěšně dokončená"
+
+#: ../subscriber.php:474
+msgid "If the user has already subscribed"
+msgstr "Je-li uživatel je již přihlášen k odběru"
+
+#: ../subscriber.php:477
+msgid "If subscription has been denied"
+msgstr "Jestliže byl odběr odepřen"
+
+#: ../subscriber.php:480
+msgid "If the user has already unsubscribed"
+msgstr "Jestliže uživatel je již odhlášen k odběru"
+
+#: ../subscriber.php:483
+msgid "If the user has been sent a letter with a link to unsubscribe"
+msgstr "Má-li uživatel byl zaslán dopis s odkazem na odhlášení k odběru"
+
+#: ../subscriber.php:486
+msgid "If user was unsubscribed"
+msgstr "Pokud byl uživatel odhlášen"
+
+#: ../subscriber.php:489
+msgid "If the user clicked on a non-existent \"unsubscribe\"-link"
+msgstr "Pokud by uživatel kliknul na neexistující odkaz k \"odhlášení\""
+
+#: ../subscriber.php:493
+msgid "'FROM' field"
+msgstr "Pole 'OD'"
+
+#: ../subscriber.php:495 ../subscriber.php:1461
+msgid "Name"
+msgstr "Jméno"
+
+#: ../subscriber.php:501
+msgid "Email"
+msgstr "E-mail"
+
+#: ../subscriber.php:505
+msgid ""
+"If this option is changed, email messages may be moved to the spam folder or "
+"email delivery failures may occur."
+msgstr ""
+"Je-li tato možnost změněná, e-mailové zprávy mohou být přesunuty do složky "
+"Nevyžádaná pošta nebo může dojít k selhání doručení e-mailu."
+
+#: ../subscriber.php:509
+msgid "Email admin about new subscribed users"
+msgstr "E-mail správce o nově přihlášených uživatelích"
+
+#: ../subscriber.php:515
+msgid "Letters content"
+msgstr "Obsah dopisů"
+
+#: ../subscriber.php:519
+msgid ""
+"You can edit the content of service letters, which will be sent to users. In "
+"the text of the message you can use the following shortcodes:"
+msgstr ""
+"Můžete upravovat obsah dopisové služby, která bude odeslána uživatelům. V "
+"textu zprávy můžete použít následující krátké kódy:"
+
+#: ../subscriber.php:521
+msgid "this shortcode will be replaced with the e-mail of a current user;"
+msgstr "tento krátký kód bude nahrazovat e-mail daného uživatele;"
+
+#: ../subscriber.php:522
+msgid ""
+"this shortcode will be replaced with the link to profile page of current "
+"user;"
+msgstr ""
+"tento krátký kód bude nahrazovat odkaz na profilovou stránku daného "
+"uživatele;"
+
+#: ../subscriber.php:523
+msgid "this shortcode will be replaced with the link to unsubscribe."
+msgstr "tento krátký kód bude nahrazovat odkaz pro odhlášení."
+
+#: ../subscriber.php:532
+msgid "Message to admin about new subscribed users"
+msgstr "Zpráva pro správce o nově přihlášených uživatelích."
+
+#: ../subscriber.php:535 ../subscriber.php:545 ../subscriber.php:555
+msgid "Subject:"
+msgstr "Předmět:"
+
+#: ../subscriber.php:538 ../subscriber.php:548 ../subscriber.php:558
+msgid "Text:"
+msgstr "Text:"
+
+#: ../subscriber.php:542
+msgid "Message to subscribed users"
+msgstr "Zpráva pro přihlášené uživatele k odběru"
+
+#: ../subscriber.php:552
+msgid "Message with unsubscribe link"
+msgstr "Zpráva s odkazem k odhlášení odběru"
+
+#: ../subscriber.php:562
+msgid "Text to be attached to letters"
+msgstr "Text, který chcete připojit k dopisu"
+
+#: ../subscriber.php:566
+msgid ""
+"This text will be attached to each letter of the mailing, which was created "
+"with Sender plugin by BestWebsoft."
+msgstr ""
+"Tento text bude připojen ke každému zaslanému dopisu, který byl vytvořen "
+"pomocí pluginu Sender od BestWebsoft."
+
+#: ../subscriber.php:570
+msgid "Delete users while plugin removing"
+msgstr "Odstranit uživatele při odstraňování pluginu"
+
+#: ../subscriber.php:573
+msgid ""
+"If this option enabled, when you remove plugin, all users with role \"Mail "
+"Subscribed\" will be removed from users list."
+msgstr ""
+"Je-li tato možnost povolena, tak pokud odeberete modul - všichni uživatelé s "
+"rolí \"Zasílání mailu\" budou odstraněni ze seznamu uživatelů."
+
+#: ../subscriber.php:577
+msgid "Add captcha to the form"
+msgstr "Do formuláře přidat captcha"
+
+#: ../subscriber.php:581 ../subscriber.php:583 ../subscriber.php:586
+msgid "powered by"
+msgstr "Beží na"
+
+#: ../subscriber.php:583
+msgid "Activate"
+msgstr "Aktivovat"
+
+#: ../subscriber.php:586
+msgid "Download"
+msgstr "Stáhnout"
+
+#: ../subscriber.php:594
+msgid "Close"
+msgstr "Zavřít"
+
+#: ../subscriber.php:598
+msgid "Add to the subscribe form"
+msgstr "Přidat do Přihlašovacího formuláře"
+
+#: ../subscriber.php:600
+msgid "\"Name\" field"
+msgstr "Pole \"Jméno\""
+
+#: ../subscriber.php:601
+msgid "\"Unsubscribe\" checkbox"
+msgstr "Zaškrtávací políčko \"Odhlásit\""
+
+#: ../subscriber.php:605
+msgid "Delete a user data if the subscription has not been confirmed in"
+msgstr "Odstranit data přihlášených uživatelů k odběru není potvrzena v"
+
+#: ../subscriber.php:607 ../subscriber.php:608
+msgid "hours"
+msgstr "hodiny"
+
+#: ../subscriber.php:608
+msgid "every"
+msgstr "každý"
+
+#: ../subscriber.php:609
+msgid "Please set 0 if you do not want to delete a user data."
+msgstr "Prosím nastavte 0, pokud nechcete odstranit uživatelská data."
+
+#: ../subscriber.php:616
+msgid "Unlock premium options by upgrading to Pro version"
+msgstr "Odemknout prémiové možnosti aktualizací na verzi Pro"
+
+#: ../subscriber.php:618
+msgid "Learn More"
+msgstr "Více informací"
+
+#: ../subscriber.php:624
+msgid ""
+"If you want to send mailout to the users who have subscribed for newsletters "
+"use"
+msgstr ""
+"Pokud chcete poslat mailout uživatelům, kteří jsou přihlášeni k odběru "
+"novinek"
+
+#: ../subscriber.php:624
+msgid ""
+"that sends mail to registered users. There is also a premium version of the "
+"plugin"
+msgstr ""
+"zašle mail přihlášeným uživatelům. Existuje také jako prémiová verze pluginu"
+
+#: ../subscriber.php:624
+msgid ""
+"allowing to create and save templates for letters, edit the content of "
+"messages with a visual editor TinyMce, set priority оf mailing, create and "
+"manage mailing lists."
+msgstr ""
+"umožňuje vytvořit a uložit šablony pro dopisy, upravit si obsah zpráv s "
+"vizuálním editorem TinyMce, nastavit prioritu zasílání zpráv, vytvářet a "
+"spravovat seznamy adresátů."
+
+#: ../subscriber.php:628
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+#: ../subscriber.php:654
+msgid "Subscriber Form Registation"
+msgstr "Registrační formulář pro přihlášení k odběru"
+
+#: ../subscriber.php:655
+msgid "Displaying the registration form for newsletter subscribers."
+msgstr "Zobrazení formuláře registrace pro přihlášení k odběru novinek."
+
+#: ../subscriber.php:723
+msgid "Widget Title:"
+msgstr "Titulek Widgetu"
+
+#: ../subscriber.php:729
+msgid "Text above the subscribe form:"
+msgstr "Text nad Přihlašovacím formulářem"
+
+#: ../subscriber.php:735
+msgid "Placeholder for text field:"
+msgstr "Předvyplněná hodnota pro textové pole"
+
+#: ../subscriber.php:741
+msgid "Label for \"unsubscribe\" checkbox:"
+msgstr "Popisek pro zaškrtávací políčko \"odhlásit\""
+
+#: ../subscriber.php:747
+msgid "Label for \"submit\" button:"
+msgstr "Popisek tlačítka \"Odeslat\""
+
+#: ../subscriber.php:754
+msgid "apply plugin settings"
+msgstr "použít nastavení pluginu"
+
+#: ../subscriber.php:1170
+msgid ""
+"\n"
+"Your login:"
+msgstr ""
+"\n"
+"Váš login:"
+
+#: ../subscriber.php:1170
+msgid ""
+"\n"
+"Your password:"
+msgstr ""
+"\n"
+"Vaše heslo:"
+
+#: ../subscriber.php:1346
+msgid "Subscribe on newsletters"
+msgstr "Přihlásit k odběru novinek"
+
+#: ../subscriber.php:1417
+msgid "user"
+msgstr "uživatel"
+
+#: ../subscriber.php:1418
+msgid "users"
+msgstr "uživatelé"
+
+#: ../subscriber.php:1451
+msgid "Users not found"
+msgstr "Uživatelé nebyl nalezen."
+
+#: ../subscriber.php:1463
+msgid "Status"
+msgstr "Stav"
+
+#: ../subscriber.php:1521 ../subscriber.php:1589
+msgid "Unsubscribe"
+msgstr "Zrušit odběr"
+
+#: ../subscriber.php:1525 ../subscriber.php:1592
+msgid "Restore From Black List"
+msgstr "Obnovit z černé listiny"
+
+#: ../subscriber.php:1527 ../subscriber.php:1574 ../subscriber.php:1594
+msgid "Black List"
+msgstr "Černá listina"
+
+#: ../subscriber.php:1530 ../subscriber.php:1597
+msgid "Restore"
+msgstr "Obnovit"
+
+#: ../subscriber.php:1531
+msgid "Delete Permanently"
+msgstr "Smazat trvale"
+
+#: ../subscriber.php:1533 ../subscriber.php:1575
+msgid "Trash"
+msgstr "Koš"
+
+#: ../subscriber.php:1571
+msgid "All"
+msgstr "Vše"
+
+#: ../subscriber.php:1572
+msgid "Subscribed"
+msgstr "Přihlášeno"
+
+#: ../subscriber.php:1573
+msgid "Unsubscribed"
+msgstr "Odhlášeno"
+
+#: ../subscriber.php:1598
+msgid "Delete Premanently"
+msgstr "Odstranit trvale"
+
+#: ../subscriber.php:1600
+msgid "Delete"
+msgstr "Smazat"
+
+#: ../subscriber.php:1693
+msgid "in blacklist"
+msgstr "na černé listině"
+
+#: ../subscriber.php:1695
+msgid "in trash"
+msgstr "v koši"
+
+#: ../subscriber.php:1698
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: ../subscriber.php:1701
+msgid "Subscribed from"
+msgstr "Přihlášeno od"
+
+#: ../subscriber.php:1703
+msgid "Unsubscribed from"
+msgstr "Odhlášeno od"
+
+#: ../subscriber.php:1761
+msgid "users per page"
+msgstr "Uživatelů na stránku"
+
+#: ../subscriber.php:1810
+msgid "Unknown action."
+msgstr "Neznámá akce."
+
+#: ../subscriber.php:1811
+msgid "Select the users to apply the necessary actions."
+msgstr "Vyberte uživatele k provedení nezbytných opatření."
+
+#: ../subscriber.php:1812
+msgid "No user was updated."
+msgstr "Žádný uživatel byl aktualizován."
+
+#: ../subscriber.php:1854
+#, php-format
+msgid "One user was subscribed on newsletter."
+msgid_plural "%s users were subscribed on newsletter."
+msgstr[0] "Jeden uživatel byl přihlášen o odběru novinek."
+msgstr[1] " %s uživatelů je přihlášeno k odběru"
+msgstr[2] " %s uživatelů je přihlášeno k odběru"
+msgstr[3] " %s uživatelů je přihlášeno k odběru"
+
+#: ../subscriber.php:1854 ../subscriber.php:1894 ../subscriber.php:1933
+#: ../subscriber.php:1967 ../subscriber.php:2002 ../subscriber.php:2061
+msgid "Undo."
+msgstr "Zpět"
+
+#: ../subscriber.php:1894
+#, php-format
+msgid "One user was unsubscribed from newsletter."
+msgid_plural "%s users were unsubscribed from newsletter."
+msgstr[0] "Jeden uživatel se odhlásil z odebírání novinek."
+msgstr[1] "%s uživatelů se odhlásilo z odebírání novinek."
+msgstr[2] "%s uživatelů se odhlásilo z odebírání novinek."
+msgstr[3] "%s uživatelů se odhlásilo z odebírání novinek."
+
+#: ../subscriber.php:1933
+#, php-format
+msgid "One user was moved to black list."
+msgid_plural "%s users were moved to black list."
+msgstr[0] "Jeden uživatel byl přesunut na černou listinu."
+msgstr[1] "%s uživatelů bylo přesunuto na černou listinu."
+msgstr[2] "%s uživatelů bylo přesunuto na černou listinu."
+msgstr[3] "%s uživatelů bylo přesunuto na černou listinu."
+
+#: ../subscriber.php:1967
+#, php-format
+msgid "One user was restored from black list."
+msgid_plural "%s users were restored from black list."
+msgstr[0] "Jeden uživatel byl přesunutý z černé listiny."
+msgstr[1] "%s uživatelů bylo přesunuto z černé listiny."
+msgstr[2] "%s uživatelů bylo přesunuto z černé listiny."
+msgstr[3] "%s uživatelů bylo přesunuto z černé listiny."
+
+#: ../subscriber.php:2002
+#, php-format
+msgid "One user was moved to trash."
+msgid_plural "%s users were moved to trash."
+msgstr[0] "Jeden uživatel byl přesunutý do koše."
+msgstr[1] "%s uživatelů bylo přesunuto do koše."
+msgstr[2] "%s uživatelů bylo přesunuto do koše."
+msgstr[3] "%s uživatelů bylo přesunuto do koše."
+
+#: ../subscriber.php:2027
+#, php-format
+msgid "One user was deleted permanently."
+msgid_plural "%s users were deleted permanently."
+msgstr[0] "Jeden uživatel byl trvale smazán."
+msgstr[1] "%s uživatelé byli trvale smazáni."
+msgstr[2] "%s uživatelé byli trvale smazáni."
+msgstr[3] "%s uživatelé byli trvale smazáni."
+
+#: ../subscriber.php:2061
+#, php-format
+msgid "One user was restored."
+msgid_plural "%s users were restored."
+msgstr[0] "Jeden uživatel byl obnoven."
+msgstr[1] "%s uživatelé byli obnoveni."
+msgstr[2] "%s uživatelé byli obnoveni."
+msgstr[3] "%s uživatelé byli obnoveni."
+
+#: ../subscriber.php:2097
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Výsledky vyhledávání pro &#8220;%s&#8221;"
+
+#: ../subscriber.php:2099
+msgid "Filter subscribers list"
+msgstr "Filtr pro přihlášené odběratele"
+
+#: ../subscriber.php:2103
+msgid "search"
+msgstr "Hledat"
+
+#: ../subscriber.php:2162
+msgid "FAQ"
+msgstr "Často kladené otázky"
+
+#: ../subscriber.php:2163
+msgid "Support"
+msgstr "Podpora"
+
+#: ../subscriber.php:2185
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has only"
+msgstr ""
+"Pouze Subsciber plugin umožňuje zvláštní práci na více místech najednou"
+
+#: ../subscriber.php:2185
+msgid "Network settings page"
+msgstr "Stránka nastavení sítě"
+
+#: ../subscriber.php:2187
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has the "
+"network settings page only and it should be Network Activated. Please"
+msgstr ""
+"Pouze Subsciber plugin umožňuje zvláštní práci na více místech najednou a na "
+"stránce nastavení sítě by měla být síť aktivována. Prosím."
+
+#: ../subscriber.php:2187
+msgid "Activate Subscriber for Network"
+msgstr "Aktivovat Subcsriber pro síť"

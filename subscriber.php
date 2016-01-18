@@ -6,12 +6,12 @@ Description: This plugin allows you to subscribe users on newsletter from your w
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.2.6
+Version: 1.2.7
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2015  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2016  BestWebSoft  ( http://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -1653,7 +1653,7 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 				} else {
 					$order_by = 'id_user';
 				}
-				$order = isset( $_REQUEST['order'] ) ? $_REQUEST['order'] : 'DESC';
+				$order = ( isset( $_REQUEST['order'] ) && strtoupper( $_REQUEST['order'] ) == 'ASC' ) ? 'ASC' : 'DESC';
 				$sql_query = "SELECT * FROM `" . $prefix . "sndr_mail_users_info` ";
 				if ( isset( $_REQUEST['s'] ) && '' != $_REQUEST['s'] ) {
 					$sql_query .= "WHERE `user_email` LIKE '%" . $_REQUEST['s'] . "%' OR `user_display_name` LIKE '%" . $_REQUEST['s'] . "%'";
@@ -1680,8 +1680,8 @@ if ( file_exists( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' ) ) {
 						$sql_query .= "WHERE `delete`=0  AND `black_list`=0";
 					}
 				}
-				$sql_query   .= " ORDER BY %s %s LIMIT " . $per_page . " OFFSET " . $start_row . ";";
-				$users_data = $wpdb->get_results( $wpdb->prepare( $sql_query, $order_by, $order ), ARRAY_A );
+				$sql_query   .= " ORDER BY " . $order_by . " " . $order . " LIMIT " . $per_page . " OFFSET " . $start_row . ";";
+				$users_data = $wpdb->get_results( $sql_query, ARRAY_A );
 				foreach ( $users_data as $user ) {
 					$users_list[ $i ]                  = array();
 					$users_list[ $i ]['id']            = $user['id_user'];
