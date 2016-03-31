@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add-on, addon, add subscriber plugin, add subscribe widget, add subscribe form, display subscribe form in post, display subscribe form on page, e-mail, email, free, free plugin, free subscribe plugin, free subscriber plugin, free add-on, free addon, free subscriber addon, insert shortcode, mail, newsletter, sebscriber, shortcode, sign up, subcriber, subcsriber, subscribe, subscribe to newsletters, subscriber, subscriber list, subscriber plugin, subscriber widget, subscription, subskriber, suscriber, website newsletters, widget, wordpress, wp, wp plugin, wp free plugin, wp subscriber, wp subscriber plugin, wp simple subscriber plugin, wp free subscriber, wp free subscriber plugin, wordpress plugin, wordpress free plugin, wordpress subscriber, wordpress subscriber plugin, wordpress simple subscriber plugin, wordpress free subscriber, wordpress free subscriber plugin
 Requires at least: 3.8
-Tested up to: 4.4.1
-Stable tag: 1.2.7
+Tested up to: 4.4.2
+Stable tag: 1.2.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,8 +27,11 @@ http://www.youtube.com/watch?v=ytjxGd4hXDU
 = Features =
 
 * Add 'Subscriber Form Registation' widget, where your site visitors can subscribe for your newsletters.
-* Add shortcode to display Subscribe Form in post, page or widget content. 
-* Manage the list of subscribers in Users > Subscribers.
+* Add shortcode to display Subscribe Form in post, page or widget content.
+* Add "Subscribe" checkbox to Contact Form plugin by BestWebSoft.
+* Manage the list of subscribers on the plugin settings page ("Subscribers" tab).
+
+If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
 
 = Recommended Plugins =
 
@@ -85,6 +88,56 @@ The previously registered users can subscribe for the newsletter exactly as any 
 
 If you do not want the user to receive letters of mailing for some reason, you can move him to the blacklist. Users from the black list can not receive letters and resubscribe for the mailing.
 
+= I would like to add checkbox "Subscribe" to the custom form on my website. How can I do this? =
+
+1. Install the Subscribe plugin and activate it.
+2. Open the file with the form (where you would like to add checkbox "Subscribe" to).
+3. Find a place to insert the code for the checkbox "Subscribe" output.
+4. Insert the necessary lines: 
+
+if ( has_filter( 'sbscrbr_checkbox_add' ) ) {
+	$sbscrbr_checkbox = apply_filters( 'sbscrbr_checkbox_add', false );
+	if ( isset( $sbscrbr_checkbox['content'] ) ) {
+	 	echo $sbscrbr_checkbox['content'];
+	}
+}
+
+If the form is HTML you should insert the line with the PHP tags:
+
+<?php if ( has_filter( 'sbscrbr_checkbox_add' ) ) {
+	$sbscrbr_checkbox = apply_filters( 'sbscrbr_checkbox_add', false );
+	if ( isset( $sbscrbr_checkbox['content'] ) ) {
+	 	echo $sbscrbr_checkbox['content'];
+	}
+} ?>
+
+5. Then you should add the lines to the function of the entered data checking:
+
+if ( isset( $_POST['submit'] ) && has_filter( 'sbscrbr_checkbox_check' ) ) {
+	$sbscrbr_check = apply_filters( 'sbscrbr_checkbox_check', array(
+		'email' => isset( $_POST['email'] ) ? $_POST['email'] : ''
+	) );
+	if ( isset( $sbscrbr_check['response'] ) {
+		echo $sbscrbr_check['response']['message'];
+	}
+}
+
+or 
+
+<?php if ( isset( $_POST['submit'] ) && has_filter( 'sbscrbr_checkbox_check' ) ) {
+	$sbscrbr_check = apply_filters( 'sbscrbr_checkbox_check', array(
+		'email' => isset( $_POST['email'] ) ? $_POST['email'] : ''
+	) );
+	if ( isset( $sbscrbr_check['response'] ) {
+		echo $sbscrbr_check['response']['message'];
+	}
+} ?>
+
+where:
+
+- $_POST['submit'] is a name of the submit form button;
+- $_POST['email'] is a name of the field with entered e-mail;
+
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
 Please make sure that the problem hasn't been discussed on our forum yet (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If not, please provide the following data along with your problem's description:
@@ -96,14 +149,17 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Screenshots ==
 
-1. Subscriber Settings page.
-2. Service messages option on Subscriber Settings page.
-3. Letters content option on Subscriber Settings page.
-4. Subscriber Form Registation widget settings.
+1. Subscriber Basic Settings page.
+2. Subscriber Email Notifications page.
+3. Subscriber Subscribers page.
+4. Subscribe Form Registation widget settings.
 5. Subscribe Form in frontend of site.
-6. Subscribers list in admin panel.
 
 == Changelog ==
+
+= V1.2.8 - 31.03.2016 =
+* NEW : An ability to add "Subscribe" checkbox to Contact Form plugin by BestWebSoft.
+* Update: BWS plugins section was updated.
 
 = V1.2.7 - 18.01.2016 =
 * NEW : The Czech language file was added.
@@ -181,6 +237,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.2.8 =
+An ability to add "Subscribe" checkbox to Contact Form plugin by BestWebSoft.  BWS plugins section was updated.
 
 = V1.2.7 =
 The Czech language file was added. Bug with sorting by columns was fixed.

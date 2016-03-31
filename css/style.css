@@ -58,7 +58,9 @@
 	vertical-align: top;
 }
 .sbscrbr-input-text {
-	width: 450px;
+	max-width: 450px;
+	width: 100%;
+	margin: 5px 0 0;
 }
 .sbscrbr-mail-input-text,
 .sbscrbr-select {
@@ -68,11 +70,13 @@
 	margin-left: 25px;
 	clear: left;
 }
-#sbscrbr-show-service-messages,
-#sbscrbr-show-messages-settings,
-#sbscrbr-hide-service-messages,
-#sbscrbr-hide-messages-settings {
-	display: none;
+.sbscrbr-messages-settings {
+	margin: 0 0 20px;
+}
+.sbscrbr-admin-email-settings {
+	max-width: 300px;
+	width: 100%;
+	margin: 5px 0 0;
 }
 .sbscrbr-preloader {
 	position: absolute;
@@ -83,22 +87,20 @@
 	background: url( '../images/preloader.gif' );
 	background-size: 100%;
 }
+.sbscrbr_floating_info {
+	margin: 5px 0 0 25px;
+	display: block;
+}
 @media only screen and ( max-width: 782px ) {
 	/**
-	 * Subscribers page
+	 * Subscribers tab
 	 */
-	.sbscrbr-users-list-page .check-column input[type=checkbox] {
-		margin-left: 4px !important;
-	}	
-	.sbscrbr-users-list-page .manage-column.check-column input[type=checkbox] {
-		margin-left: 8px !important;
-	}	
-	.sbscrbr-users-list-page .column-name,
-	.sbscrbr-users-list-page .column-email {
-		display: table-cell !important;
-	}	
-	.sbscrbr-users-list-page .column-status {
-		display: none;
+	.sbscrbr-users-list-page thead .check-column input[type=checkbox],
+	.sbscrbr-users-list-page tfoot .check-column input[type=checkbox] {
+		margin-left: 5px !important;
+	}
+	.sbscrbr-users-list-page tbody .check-column input[type=checkbox] {
+		margin-left: 1px !important;
 	}
 	/**
 	 * settings page
@@ -109,5 +111,8 @@
 	}
 	.sbscrbr-email-field {
 		margin-left: 0;
+	}
+	.sbscrbr_floating_info {
+		margin: 5px 0 0;
 	}
 }
