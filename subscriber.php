@@ -6,7 +6,7 @@ Description: This plugin allows you to subscribe users on newsletter from your w
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.2.8
+Version: 1.2.9
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -82,11 +82,7 @@ if ( ! function_exists( 'sbscrbr_init' ) ) {
 		add_role( 'sbscrbr_subscriber', __( 'Mail Subscriber', 'subscriber' ), $capabilities );
 
 		/* register plugin settings */
-		$plugin_pages = array(
-			'sbscrbr_settings_page',
-			'sbscrbr_users'
-		);
-		if ( ! is_admin() || ( isset( $_GET['page'] ) && in_array( $_GET['page'], $plugin_pages ) ) )
+		if ( ! is_admin() || ( isset( $_GET['page'] ) && 'sbscrbr_settings_page' == $_GET['page'] ) )
 			sbscrbr_settings();
 
 		if ( empty( $sbscrbr_options ) ) {
@@ -293,14 +289,13 @@ if ( ! function_exists( 'sbscrbr_activation' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_admin_head' ) ) {
 	function sbscrbr_admin_head() {
-		wp_enqueue_style( 'sbscrbr_style', plugins_url( 'css/style.css', __FILE__ ) );
-
-		$plugin_pages = array(
-			'sbscrbr_settings_page',
-			'sbscrbr_users'
-		);
-		if ( isset( $_REQUEST['page'] ) && in_array( $_REQUEST['page'], $plugin_pages ) )
+		if ( isset( $_REQUEST['page'] ) && 'sbscrbr_settings_page' == $_REQUEST['page'] ) {
+			wp_enqueue_style( 'sbscrbr_style', plugins_url( 'css/style.css', __FILE__ ) );
 			wp_enqueue_script( 'sbscrbr_scripts', plugins_url( 'js/script.js', __FILE__ ), array( 'jquery' ) );
+
+			if ( isset( $_GET['tab'] ) && 'custom_code' == $_GET['tab'] )
+				bws_plugins_include_codemirror();
+		}
 	}
 }
 
@@ -482,6 +477,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 				<a class="nav-tab <?php if ( ! isset( $_GET['tab'] ) ) echo ' nav-tab-active'; ?>" href="admin.php?page=sbscrbr_settings_page"><?php _e( 'Settings', 'subscriber' ); ?></a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && 'sbscrbr_email_notifications' == $_GET['tab'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=sbscrbr_settings_page&amp;tab=sbscrbr_email_notifications"><?php _e( 'Email Notifications', 'subscriber' ); ?></a>
 				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && 'sbscrbr_users' == $_GET['tab'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=sbscrbr_settings_page&amp;tab=sbscrbr_users"><?php _e( 'Subscribers', 'subscriber' ); ?></a>
+				<a class="nav-tab <?php if ( isset( $_GET['tab'] ) && 'custom_code' == $_GET['tab'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=sbscrbr_settings_page&amp;tab=custom_code"><?php _e( 'Custom code', 'subscriber' ); ?></a>
 				<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['tab'] ) && 'go_pro' == $_GET['tab'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=sbscrbr_settings_page&amp;tab=go_pro"><?php _e( 'Go PRO', 'subscriber' ); ?></a>
 			</h2>
 			<?php if ( ! empty( $notice ) ) { ?>
@@ -618,7 +614,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											if ( array_key_exists( 'contact-form-plugin/contact_form.php', $all_plugins ) ) {
 												$sbscrbr_cntcfrm_name = 'Contact Form';
 												$sbscrbr_cntcfrm_installed = true;
-												if( $all_plugins['contact-form-plugin/contact_form.php']['Version'] >= '3.97' ) {
+												if( $all_plugins['contact-form-plugin/contact_form.php']['Version'] <= '3.97' ) {
 													$sbscrbr_cntcfrm_notice = sprintf( '<a href="%s">%s 3.98</a>', $sbscrbr_admin_url, sprintf( __( 'Update %s at least to version', 'subscriber' ), $sbscrbr_cntcfrm_name ) );
 													$sbscrbr_cntcfrm_attr = 'disabled="disabled"';
 												} else {
@@ -635,7 +631,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											if ( $sbscrbr_cntcfrm_activated == false && array_key_exists( 'contact-form-pro/contact_form_pro.php', $all_plugins ) ) {
 												$sbscrbr_cntcfrm_name = 'Contact Form Pro';
 												$sbscrbr_cntcfrm_installed = true;
-												if( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] >= '2.1.0' ) {
+												if( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] <= '2.1.0' ) {
 													$sbscrbr_cntcfrm_notice = sprintf( '<a href="%s">%s 2.1.1</a>', $sbscrbr_admin_url, sprintf( __( 'Update %s at least to version', 'subscriber' ), $sbscrbr_cntcfrm_name ) );
 													$sbscrbr_cntcfrm_attr = 'disabled="disabled"';
 												} else {
@@ -826,6 +822,8 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 				</div><!-- .wrap .sbscrbr-users-list-page -->
 			<?php } elseif ( isset( $_GET['tab'] ) && 'go_pro' == $_GET['tab'] ) {
 				bws_go_pro_tab_show( $bws_hide_premium_options_check, $sbscrbr_plugin_info, $plugin_basename, 'sbscrbr_settings_page', 'sbscrbrpr_settings_page', 'subscriber-pro/subscriber-pro.php', 'subscriber', 'd356381b0c3554404e34cdc4fe936455', '122', isset( $go_pro_result['pro_plugin_is_activated'] ) );
+			} elseif ( isset( $_GET['tab'] ) && 'custom_code' == $_GET['tab'] ) {
+				bws_custom_code_tab();	
 			}
 			bws_plugin_reviews_block( $sbscrbr_plugin_info['Name'], 'subscriber' ); ?>
 		</div><!-- .wrap -->
@@ -2737,6 +2735,10 @@ if ( ! function_exists( 'sbscrbr_uninstall' ) ) {
 			delete_option( 'sbscrbr_options' );
 			delete_option( 'sbscrbr_db_version' );
 		}
+
+		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
+		bws_include_init( plugin_basename( __FILE__ ) );
+		bws_delete_plugin( plugin_basename( __FILE__ ) );
 	}
 }
 

@@ -271,6 +271,10 @@ div.bws_banner_on_plugin_page .icon {
 .rtl .bws_pro_version_tooltip .bws_info {
     float: right;
 }
+.rtl table.bws_pro_version th,
+.rtl table.bws_pro_version td {
+    padding-right: 10px;
+}
 /* #### Mobile Phones Portrait or Landscape #### */
 @media screen and (max-device-width: 768px) {
     .bws_banner_on_plugin_page .text,
