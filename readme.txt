@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add-on, addon, add subscriber plugin, add subscribe widget, add subscribe form, display subscribe form in post, display subscribe form on page, e-mail, email, free, free plugin, free subscribe plugin, free subscriber plugin, free add-on, free addon, free subscriber addon, insert shortcode, mail, newsletter, sebscriber, shortcode, sign up, subcriber, subcsriber, subscribe, subscribe to newsletters, subscriber, subscriber list, subscriber plugin, subscriber widget, subscription, subskriber, suscriber, website newsletters, widget, wordpress, wp, wp plugin, wp free plugin, wp subscriber, wp subscriber plugin, wp simple subscriber plugin, wp free subscriber, wp free subscriber plugin, wordpress plugin, wordpress free plugin, wordpress subscriber, wordpress subscriber plugin, wordpress simple subscriber plugin, wordpress free subscriber, wordpress free subscriber plugin
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 1.2.9
+Tested up to: 4.5.2
+Stable tag: 1.3.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,9 +54,11 @@ If you would like to create your own language pack or update the existing one, y
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or propositions regarding functionality of our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English language only. All messages on other languages wouldn't be accepted. 
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
 
-Also, emails which are reporting about plugin's bugs are accepted for investigation and fixing. Your request must contain URL of the website, issues description and WordPress admin panel access. Plugin customization based on your Wordpress theme is a paid service (standard price is $10, but it could be higer and depends on the complexity of requested changes). We will analize existing issue and make necessary changes after 100% pre-payment. All these paid changes and modifications could be included to the next version of plugin and will be shared for all users like an integral part of the plugin. Free fixing services will be provided for user who send translation on their native language (this should be a new translation of a certain plugin, and you can check available translations on the official plugin page).
+If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
+Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
+We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
 
 == Installation ==
 
@@ -157,6 +159,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Changelog ==
 
+= V1.3.0 - 20.05.2016 =
+* NEW : Ability to use HTML letters created with TinyMce visual editor through Sender Pro by BestWebSoft plugin.
+
 = V1.2.9 - 25.04.2016 =
 * NEW : Ability to add custom styles.
 * Bugfix : Bug with checking Contact Form version has been fixed.
@@ -241,6 +246,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.0 =
+Ability to use HTML letters created with TinyMce visual editor through Sender Pro by BestWebSoft plugin.
 
 = V1.2.9 =
 Ability to add custom styles. Bug with checking Contact Form version has been fixed.

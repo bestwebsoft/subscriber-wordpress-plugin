@@ -6,7 +6,7 @@ Description: This plugin allows you to subscribe users on newsletter from your w
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.2.9
+Version: 1.3.0
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -71,7 +71,7 @@ if ( ! function_exists( 'sbscrbr_init' ) ) {
 		}
 
 		/* check version on WordPress */
-		bws_wp_min_version_check( plugin_basename( __FILE__ ), $sbscrbr_plugin_info, '3.8', '3.1' );
+		bws_wp_min_version_check( plugin_basename( __FILE__ ), $sbscrbr_plugin_info, '3.8' );
 
 		/* add new user role */
 		$capabilities = array(
@@ -142,6 +142,9 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 		$sbscrbr_options_default = array(
 			'plugin_option_version'			=> $sbscrbr_plugin_info["Version"],
 			'plugin_db_version'				=> $sbscrbr_db_version,
+			'first_install'					=> strtotime( "now" ),
+			'suggest_feature_banner'        => 1,
+			'display_settings_notice'		=> 1,
 			/* form labels */
 			'form_label'					=> '',
 			'form_placeholder'				=> __( 'E-mail', 'subscriber' ),
@@ -171,21 +174,24 @@ if ( ! function_exists( 'sbscrbr_settings' ) ) {
 			'from_custom_name'				=> get_bloginfo( 'name' ),
 			'from_email'					=> $from_email,
 			'admin_message'					=> 1,
-			/* subject settings */
+			/* subject settings */			
 			'admin_message_subject'			=> __( 'New subscriber', 'subscriber' ),
 			'subscribe_message_subject'		=> __( 'Thanks for registration', 'subscriber' ),
-			'unsubscribe_message_subject'	=> __( 'Link to unsubscribe', 'subscriber' ),
+			'unsubscribe_message_subject'	=> __( 'Link to unsubscribe', 'subscriber' ),			
 			/* message body settings */
 			'admin_message_text'			=> __( 'User with e-mail {user_email} has subscribed to a newsletter.', 'subscriber' ),
 			'subscribe_message_text'		=> __( "Thanks for registration. To change data of your profile go to {profile_page}\nIf you want to unsubscribe from the newsletter from our site go to the link\n{unsubscribe_link}", 'subscriber' ),
 			'unsubscribe_message_text'		=> __( "Dear user. At your request, we send you a link to unsubscribe from emails of our site. To unsubscribe please use the link below. If you change your mind, you can just ignore this letter.\nLink to unsubscribe:\n{unsubscribe_link}", 'subscriber' ),
+			'admin_message_use_sender'					=> 0,
+			'admin_message_sender_template_id' 			=> '',
+			'subscribe_message_use_sender'				=> 0,
+			'subscribe_message_sender_template_id'		=> '',
+			'unsubscribe_message_use_sender'			=> 0,
+			'unsubscribe_message_sender_template_id' 	=> '',
 			/* another settings */
 			'unsubscribe_link_text'			=> __( "If you want to unsubscribe from the newsletter from our site go to the following link:\n{unsubscribe_link}", 'subscriber' ),
-			'delete_users'					=> '0',
-			'first_install'					=>	strtotime( "now" ),
-			'display_settings_notice'		=> 1,
-			'contact_form'		            => 0,
-			'suggest_feature_banner'        => 1
+			'delete_users'					=> 0,			
+			'contact_form'		            => 0			
 		);
 
 		/* install the default options */
@@ -329,10 +335,11 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 		$error = $message = $notice = '';
 		$plugin_basename = plugin_basename( __FILE__ );
 
+		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		$all_plugins = get_plugins();
-
+		
 		if ( empty( $cptchpr_options ) )
-			$cptchpr_options = get_option( 'cptchpr_options' );
+			$cptchpr_options = is_multisite() ? get_site_option( 'cptchpr_options' ) : get_option( 'cptchpr_options' );
 
 		if ( isset( $_POST['sbscrbr_form_submit'] ) && check_admin_referer( $plugin_basename, 'sbscrbr_nonce_name' ) ) {
 			$sbscrbr_options_submit = array();
@@ -416,6 +423,15 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			$sbscrbr_options_submit['admin_message_text']          = isset( $_POST['sbscrbr_admin_message_text'] ) ? esc_html( $_POST['sbscrbr_admin_message_text'] ) : $sbscrbr_options['admin_message_text'];
 			$sbscrbr_options_submit['subscribe_message_text']      = isset( $_POST['sbscrbr_subscribe_message_text'] ) ? esc_html( $_POST['sbscrbr_subscribe_message_text'] ) : $sbscrbr_options['subscribe_message_text'];
 			$sbscrbr_options_submit['unsubscribe_message_text']    = isset( $_POST['sbscrbr_unsubscribe_message_text'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_message_text'] ) : $sbscrbr_options['unsubscribe_message_text'];
+
+			$sbscrbr_options_submit['admin_message_use_sender'] = isset( $_POST['sbscrbr_admin_message_use_sender'] ) && 1 == $_POST['sbscrbr_admin_message_use_sender'] ? 1 : 0;
+			$sbscrbr_options_submit['subscribe_message_use_sender'] = isset( $_POST['sbscrbr_subscribe_message_use_sender'] ) && 1 == $_POST['sbscrbr_subscribe_message_use_sender'] ? 1 : 0;
+			$sbscrbr_options_submit['unsubscribe_message_use_sender'] = isset( $_POST['sbscrbr_unsubscribe_message_use_sender'] ) && 1 == $_POST['sbscrbr_unsubscribe_message_use_sender'] ? 1 : 0;
+
+			$sbscrbr_options_submit['admin_message_sender_template_id'] = isset( $_POST['sbscrbr_admin_message_sender_template_id'] ) ? intval( $_POST['sbscrbr_admin_message_sender_template_id'] ) : '';
+			$sbscrbr_options_submit['subscribe_message_sender_template_id'] = isset( $_POST['sbscrbr_subscribe_message_sender_template_id'] ) ? intval( $_POST['sbscrbr_subscribe_message_sender_template_id'] ) : '';
+			$sbscrbr_options_submit['unsubscribe_message_sender_template_id'] = isset( $_POST['sbscrbr_unsubscribe_message_sender_template_id'] ) ? intval( $_POST['sbscrbr_unsubscribe_message_sender_template_id'] ) : '';
+
 			/*  another settings  */
 			$sbscrbr_options_submit['unsubscribe_link_text']       = isset( $_POST['sbscrbr_unsubscribe_link_text'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_link_text'] ) : $sbscrbr_options['unsubscribe_link_text'];
 			$sbscrbr_options_submit['delete_users']                = ( isset( $_POST['sbscrbr_delete_users'] ) && '1' == $_POST['sbscrbr_delete_users'] ) ? 1 : 0;
@@ -425,7 +441,24 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 
 			if ( ! empty( $cptchpr_options ) ) {
 				$cptchpr_options['cptchpr_subscriber'] = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? 1 : 0;
-				update_option( 'cptchpr_options', $cptchpr_options );
+				if ( is_multisite() ) {
+					update_site_option( 'cptchpr_options', $cptchpr_options );
+					if ( 'all' == $cptchpr_options['cptchpr_network_apply'] ) {
+						/* Get all blog ids */
+						$blogids = $wpdb->get_col( "SELECT `blog_id` FROM $wpdb->blogs" );
+						$old_blog = $wpdb->blogid;
+						foreach ( $blogids as $blog_id ) {
+							switch_to_blog( $blog_id );
+							if ( $cptchpr_single_options = get_option( 'cptchpr_options' ) ) {
+								$cptchpr_single_options['cptchpr_subscriber'] = $cptchpr_options['cptchpr_subscriber'];	
+								update_option( 'cptchpr_options', $cptchpr_single_options );
+							}	
+						}
+						switch_to_blog( $old_blog );
+					}
+				} else {
+					update_option( 'cptchpr_options', $cptchpr_options );
+				}
 			}
 
 			/* update options of plugin in database */
@@ -594,12 +627,12 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									<td colspan="2">
 										<?php if ( array_key_exists( 'captcha-pro/captcha_pro.php', $all_plugins ) ) {
 											if ( is_plugin_active( 'captcha-pro/captcha_pro.php' ) ) { ?>
-												<label><input type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>)</span>
+												<label><input type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/" target="_blank">bestwebsoft.com</a>)</span>
 											<?php } else { ?>
-												<label><input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate', 'subscriber' ); ?> Captcha</a></span>
+												<label><input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" <?php if ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_subscriber"] ) echo 'checked="checked"'; ?> /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/" target="_blank">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate', 'subscriber' ); ?> Captcha</a></span>
 											<?php }
 										} else { ?>
-											<label><input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/products/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"><?php _e( 'Download', 'subscriber' ); ?> Captcha</a></span>
+											<label><input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" /> Captcha</label> <span class="bws_info">(<?php _e( 'powered by', 'subscriber' ); ?> <a href="http://bestwebsoft.com/products/" target="_blank">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/products/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank"><?php _e( 'Download', 'subscriber' ); ?> Captcha</a></span>
 										<?php } ?>
 									</td>
 								</tr>
@@ -614,7 +647,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											if ( array_key_exists( 'contact-form-plugin/contact_form.php', $all_plugins ) ) {
 												$sbscrbr_cntcfrm_name = 'Contact Form';
 												$sbscrbr_cntcfrm_installed = true;
-												if( $all_plugins['contact-form-plugin/contact_form.php']['Version'] <= '3.97' ) {
+												if ( $all_plugins['contact-form-plugin/contact_form.php']['Version'] <= '3.97' ) {
 													$sbscrbr_cntcfrm_notice = sprintf( '<a href="%s">%s 3.98</a>', $sbscrbr_admin_url, sprintf( __( 'Update %s at least to version', 'subscriber' ), $sbscrbr_cntcfrm_name ) );
 													$sbscrbr_cntcfrm_attr = 'disabled="disabled"';
 												} else {
@@ -631,7 +664,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											if ( $sbscrbr_cntcfrm_activated == false && array_key_exists( 'contact-form-pro/contact_form_pro.php', $all_plugins ) ) {
 												$sbscrbr_cntcfrm_name = 'Contact Form Pro';
 												$sbscrbr_cntcfrm_installed = true;
-												if( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] <= '2.1.0' ) {
+												if ( $all_plugins['contact-form-pro/contact_form_pro.php']['Version'] <= '2.1.0' ) {
 													$sbscrbr_cntcfrm_notice = sprintf( '<a href="%s">%s 2.1.1</a>', $sbscrbr_admin_url, sprintf( __( 'Update %s at least to version', 'subscriber' ), $sbscrbr_cntcfrm_name ) );
 													$sbscrbr_cntcfrm_attr = 'disabled="disabled"';
 												} else {
@@ -698,7 +731,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									</div>
 								</div>
 							<?php }
-							if ( false == sbscrbr_check_sender_install() ) {
+							if ( ! array_key_exists( 'sender/sender.php', $all_plugins ) && ! array_key_exists( 'sender-pro/sender-pro.php', $all_plugins ) ) {
 								echo '<p>' . __( 'If you want to send mailout to the users who have subscribed for newsletters use', 'subscriber' ) . ' <a href="http://bestwebsoft.com/products/sender/" target="_blank">Sender plugin</a> ' . __( 'that sends mail to registered users. There is also a premium version of the plugin', 'subscriber' ) . ' - <a href="http://bestwebsoft.com/products/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro</a>, ' . __( 'allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.', 'subscriber' ) . '</p>';
 							} ?>
 						</div><!-- #sbscrbr_settings_block -->
@@ -731,8 +764,8 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 									</td>
 								</tr>
 								<tr valign="top">
-									<th scope="row" style="width:200px;"><?php _e( "'FROM' field", 'subscriber' ); ?></th>
-									<td style="width: 200px; vertical-align: top;">
+									<th scope="row"><?php _e( "'FROM' field", 'subscriber' ); ?></th>
+									<td style="vertical-align: top;">
 										<div><?php _e( "Name", 'subscriber' ); ?></div>
 										<div>
 											<input type="text" name="sbscrbr_from_custom_name" maxlength="250" value="<?php echo $sbscrbr_options['from_custom_name']; ?>"/>
@@ -757,34 +790,78 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 													<li><strong>{profile_page}</strong> - <?php _e( 'this shortcode will be replaced with the link to profile page of current user;', 'subscriber' ); ?></li>
 													<li><strong>{unsubscribe_link}</strong> - <?php _e( 'this shortcode will be replaced with the link to unsubscribe.', 'subscriber' ); ?></li>
 												</ul>
-												<p><?php _e( 'There must be a space after the shortcode otherwise the link will be incorrect.', 'subscriber-pro' ) ?></p>
+												<p><?php _e( 'There must be a space after the shortcode otherwise the link will be incorrect.', 'subscriber' ); ?></p>
 											</span>
 										</span>
 									</th>
 									<td colspan="2">
+										<?php /* check sender pro activation */
+										$sbscrbr_admin_url = is_network_admin() ? network_admin_url( 'plugins.php' ) : admin_url( 'plugins.php' );
+										$sender_pro_active = false;
+
+										if ( array_key_exists( 'sender-pro/sender-pro.php', $all_plugins ) ) {											
+											if ( ! is_plugin_active( 'sender-pro/sender-pro.php' ) ) {
+												$sender_for = ( is_multisite() ) ? __( 'Activate for network', 'subscriber' ) : __( 'Activate', 'subscriber' );
+												$sender_pro_notice = sprintf( '<a href="%s">%s %s</a>', $sbscrbr_admin_url, $sender_for, 'Sender Pro by BestWebSoft' );
+											} else {
+												$sender_pro_active = true; 
+											}
+										} else {
+											$sender_pro_notice = sprintf( __( 'Install %s plugin in order to use HTML letters created with TinyMce visual editor', 'subscriber' ), ' <a href="http://bestwebsoft.com/products/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro by BestWebSoft</a>' );
+										} ?>
 										<div class="sbscrbr-messages-settings">
 											<label><strong><?php _e( 'Message to admin about new subscribed users', 'subscriber' ); ?>:</strong></label><br>
-											<input type="text" class="sbscrbr-input-text" id="sbscrbr-admin-message-subject" name="sbscrbr_admin_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['admin_message_subject'] ); ?>"/>
-											<span class="bws_info"><?php _e( "Subject", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Subject", 'subscriber' ); ?>:</span>
+											<input type="text" class="sbscrbr-input-text" id="sbscrbr-admin-message-subject" name="sbscrbr_admin_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['admin_message_subject'] ); ?>"/>							
 											<br/>
-											<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo $sbscrbr_options['admin_message_text']; ?></textarea>
-											<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Text", 'subscriber' ); ?>:</span>
+											<div class="sbscrbr-message-text">
+												<input type="radio" name="sbscrbr_admin_message_use_sender" value="0"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 0 == $sbscrbr_options['admin_message_use_sender'] || ! $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<textarea class="sbscrbr-input-text" id="sbscrbr-admin-message-text" name="sbscrbr_admin_message_text"><?php echo $sbscrbr_options['admin_message_text']; ?></textarea>												
+												<br/>
+												<input type="radio" name="sbscrbr_admin_message_use_sender" value="1"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 1 == $sbscrbr_options['admin_message_use_sender'] && $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<?php if ( $sender_pro_active ) { 
+													sbscrbr_sender_letters_list_select( 'sbscrbr_admin_message_sender_template_id', $sbscrbr_options['admin_message_sender_template_id'] );
+												} else { ?>					
+													<span class="bws_info"><?php echo $sender_pro_notice; ?></span>
+												<?php } ?>
+											</div>
 										</div>
 										<div class="sbscrbr-messages-settings">
 											<label><strong><?php _e( 'Message to subscribed users', 'subscriber' ); ?></strong>:</label><br>
-											<input type="text" class="sbscrbr-input-text" id="sbscrbr-subscribe-message-subject" name="sbscrbr_subscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['subscribe_message_subject'] ); ?>"/>
-											<span class="bws_info"><?php _e( "Subject", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Subject", 'subscriber' ); ?>:</span>
+											<input type="text" class="sbscrbr-input-text" id="sbscrbr-subscribe-message-subject" name="sbscrbr_subscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['subscribe_message_subject'] ); ?>"/>											
 											<br/>
-											<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo $sbscrbr_options['subscribe_message_text']; ?></textarea>
-											<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Text", 'subscriber' ); ?>:</span>
+											<div class="sbscrbr-message-text">										
+												<input type="radio" name="sbscrbr_subscribe_message_use_sender" value="0"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 0 == $sbscrbr_options['subscribe_message_use_sender'] || ! $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<textarea class="sbscrbr-input-text" id="sbscrbr-subscribe-message-text" name="sbscrbr_subscribe_message_text"><?php echo $sbscrbr_options['subscribe_message_text']; ?></textarea>												
+												<br/>
+												<input type="radio" name="sbscrbr_subscribe_message_use_sender" value="1"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 1 == $sbscrbr_options['subscribe_message_use_sender'] && $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<?php if ( $sender_pro_active ) { 
+													sbscrbr_sender_letters_list_select( 'sbscrbr_subscribe_message_sender_template_id', $sbscrbr_options['subscribe_message_sender_template_id'] );
+												} else { ?>					
+													<span class="bws_info"><?php echo $sender_pro_notice; ?></span>
+												<?php } ?>
+											</div>
 										</div>
 										<div class="sbscrbr-messages-settings">
 											<label><strong><?php _e( 'Message with unsubscribe link', 'subscriber' ); ?></strong>:</label><br>
-											<input type="text" class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-subject"  name="sbscrbr_unsubscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['unsubscribe_message_subject'] ); ?>"/>
-											<span class="bws_info"><?php _e( "Subject", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Subject", 'subscriber' ); ?>:</span>
+											<input type="text" class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-subject"  name="sbscrbr_unsubscribe_message_subject" maxlength="250" value="<?php echo esc_attr( $sbscrbr_options['unsubscribe_message_subject'] ); ?>"/>											
 											<br/>
-											<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo $sbscrbr_options['unsubscribe_message_text']; ?></textarea>
-											<span class="bws_info sbscrbr_info_textarea"><?php _e( "Text", 'subscriber' ); ?></span>
+											<span class="description"><?php _e( "Text", 'subscriber' ); ?>:</span>
+											<div class="sbscrbr-message-text">
+												<input type="radio" name="sbscrbr_unsubscribe_message_use_sender" value="0"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 0 == $sbscrbr_options['unsubscribe_message_use_sender'] || ! $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-message-text" name="sbscrbr_unsubscribe_message_text"><?php echo $sbscrbr_options['unsubscribe_message_text']; ?></textarea>												
+												<br/>
+												<input type="radio" name="sbscrbr_unsubscribe_message_use_sender" value="1"<?php if ( ! $sender_pro_active ) echo ' disabled'; if ( 1 == $sbscrbr_options['unsubscribe_message_use_sender'] && $sender_pro_active ) echo ' checked="checked" '; ?> />
+												<?php if ( $sender_pro_active ) { 
+													sbscrbr_sender_letters_list_select( 'sbscrbr_unsubscribe_message_sender_template_id', $sbscrbr_options['unsubscribe_message_sender_template_id'] );
+												} else { ?>					
+													<span class="bws_info"><?php echo $sender_pro_notice; ?></span>
+												<?php } ?>
+											</div>
 										</div>
 										<div class="sbscrbr-messages-settings">
 											<label><strong><?php _e( 'Text to be attached to letters', 'subscriber' ); ?></strong>:</label>
@@ -828,6 +905,43 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			bws_plugin_reviews_block( $sbscrbr_plugin_info['Name'], 'subscriber' ); ?>
 		</div><!-- .wrap -->
 	<?php }
+}
+
+/**
+ * Display list of letters
+ * @param   string  name for select
+ * @param   int     $letters_list_id of selected letters
+ * @return  void
+ */
+if ( ! function_exists( 'sbscrbr_sender_letters_list_select' ) ) {
+	function sbscrbr_sender_letters_list_select( $name, $letters_list_id = "" ) {
+		global $wpdb;
+		$count_selected = 0;
+		$error = '<select name="' . $name . '" disabled="disabled"><option>' . __( 'Letters not found', 'subscriber' ) . '</option>';
+
+		$list_data = $wpdb->get_results( "SELECT `mail_send_id`, `subject`, `letter_in_trash` FROM `" . $wpdb->prefix . "sndr_mail_send` ORDER BY `subject`;", ARRAY_A );
+		if ( ! empty( $list_data ) ) {
+			$html = '<select name="' . $name . '">';
+			foreach ( $list_data as $list ) {
+				if ( 0 == $list['letter_in_trash'] ) {
+					$count_selected ++;
+					$selected = ( ! empty( $letters_list_id ) && $list['mail_send_id'] == $letters_list_id ) ? ' selected="selected"' : '';
+					$item_title   = ( empty( $list['subject'] ) ) ? ' - ' . __( 'empty title', 'subscriber' ) . ' - ' : $list['subject'] ;
+					$html .= '<option value="' . $list['mail_send_id'] . '"' . $selected . '>' . $item_title . '</option>';
+				}
+			}
+			if ( $count_selected == 0 ) {
+				$html = $error;
+			} else {
+				$count_selected = 0;
+			}		
+			$html .= '</select> <span class="bws_info">' . __( 'Choose a letter', 'subscriber' ) . '</span>';
+		} else {
+			/* display error message */
+			$html = $error . '</select> <span class="bws_info">' . __( 'Choose a letter', 'subscriber' ) . '</span>';
+		}		
+		echo $html;
+	}
 }
 
 /**
@@ -946,7 +1060,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 		public function widget( $args, $instance ) {
 			global $sbscrbr_handle_form_data, $sbscrbr_display_message;
 
-			$widget_title = isset( $instance['widget_title'] ) ? $instance['widget_title'] : null;
+			$widget_title = ( ! empty( $instance['widget_title'] ) ) ? apply_filters( 'widget_title', $instance['widget_title'], $instance, $this->id_base ) : '';
 			$sbscrbr_action_form = ( is_home() || is_front_page() ) ? home_url('/') : '';
 
 			if ( isset( $instance['widget_apply_settings'] ) && '1' == $instance['widget_apply_settings'] ) { /* load plugin settings */
@@ -1014,7 +1128,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 			$widget_apply_settings	= isset( $instance['widget_apply_settings'] ) && '1' == $instance['widget_apply_settings'] ? '1' : '0'; ?>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'widget_title' ); ?>">
-					<?php _e( 'Widget Title', 'subscriber' ); ?>:
+					<?php _e( 'Title', 'subscriber' ); ?>:
 					<input class="widefat" id="<?php echo $this->get_field_id( 'widget_title' ); ?>" name="<?php echo $this->get_field_name( 'widget_title' ); ?>" type="text" value="<?php echo esc_attr( $widget_title ); ?>"/>
 				</label>
 			</p>
@@ -1638,9 +1752,10 @@ if ( ! function_exists( 'sbscrbr_check_status' ) ) {
  */
 if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 	function sbscrbr_send_mails( $email, $user_password ) {
-		global $sbscrbr_options;
+		global $sbscrbr_options, $wpdb;
+		$is_multisite = is_multisite();
 		if ( empty( $sbscrbr_options ) ) {
-			$sbscrbr_options = ( is_multisite() ) ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
+			$sbscrbr_options = $is_multisite ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
 		}
 		$from_name	= ( empty( $sbscrbr_options['from_custom_name'] ) ) ? get_bloginfo( 'name' ) : $sbscrbr_options['from_custom_name'];
 		if ( empty( $sbscrbr_options['from_email'] ) ) {
@@ -1652,10 +1767,44 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		} else
 			$from_email	= $sbscrbr_options['from_email'];
 
+		$prefix = $is_multisite ? $wpdb->base_prefix : $wpdb->prefix;
+
 		/* send message to user */
 		$headers = 'From: ' . $from_name . ' <' . $from_email . '>';
 		$subject = $sbscrbr_options['subscribe_message_subject'];
-		$message = sbscrbr_replace_shortcodes( $sbscrbr_options['subscribe_message_text'], $email );
+
+		if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['subscribe_message_use_sender'] && ! empty( $sbscrbr_options['subscribe_message_sender_template_id'] ) ) {
+
+			if ( $is_multisite )
+				switch_to_blog( 1 );
+			$letter_data = $wpdb->get_row( "SELECT * FROM `" . $wpdb->prefix . "sndr_mail_send` WHERE `mail_send_id`=" . $sbscrbr_options['subscribe_message_sender_template_id'], ARRAY_A );
+			if ( $is_multisite )
+				restore_current_blog();
+
+			if ( ! empty( $letter_data ) ) {
+				$user_info = $wpdb->get_row( "SELECT `id_user`, `user_display_name`, `unsubscribe_code` FROM `" . $prefix . "sndr_mail_users_info` WHERE `user_email`='" . $email . "'", ARRAY_A );
+
+				/* get neccessary data */
+				$current_user_data = array(
+					'id_user'           => ! empty( $user_info ) ? $user_info['id_user'] : '',
+					'user_email'        => $email,
+					'user_display_name' => ! empty( $user_info ) ? $user_info['user_display_name'] : '',  
+					'unsubscribe_code'  => ! empty( $user_info ) ? $user_info['unsubscribe_code'] : '', 
+					'mailout_id'        => ''
+				);
+				remove_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link' );
+				$message = sndrpr_replace_shortcodes( $current_user_data, $letter_data );
+				add_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link', 10, 2 );
+
+				$headers	= 'MIME-Version: 1.0' . "\n";
+				$headers	.= 'Content-type: text/html; charset=utf-8' . "\n";
+				$headers	.= "From: " .  $from_name . " <" . $from_email . ">\n";					
+			} else {
+				$message = sbscrbr_replace_shortcodes( $sbscrbr_options['subscribe_message_text'], $email );
+			}			
+		} else {
+			$message = sbscrbr_replace_shortcodes( $sbscrbr_options['subscribe_message_text'], $email );
+		}
 		if ( ! empty( $user_password ) ) {
 			$message .= __( "\nYour login:", 'subscriber' ) . ' ' . $email . __( "\nYour password:", 'subscriber' ) . ' ' . $user_password;
 		}
@@ -1668,13 +1817,46 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		}
 
 		/* send message to admin */
-		if ( '1' == $sbscrbr_options['admin_message'] ) {
+		if ( '1' == $sbscrbr_options['admin_message'] ) {			
 			$subject = $sbscrbr_options['admin_message_subject'];
-			$message = sbscrbr_replace_shortcodes( $sbscrbr_options['admin_message_text'], $email );
+
+			if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['admin_message_use_sender'] && ! empty( $sbscrbr_options['admin_message_sender_template_id'] ) ) {
+
+				if ( $is_multisite )
+					switch_to_blog( 1 );
+				$letter_data = $wpdb->get_row( "SELECT * FROM `" . $wpdb->prefix . "sndr_mail_send` WHERE `mail_send_id`=" . $sbscrbr_options['admin_message_sender_template_id'], ARRAY_A );
+				if ( $is_multisite )
+					restore_current_blog();
+
+				if ( ! empty( $letter_data ) ) {
+					if ( ! isset( $user_info ) )
+						$user_info = $wpdb->get_row( "SELECT `id_user`, `user_display_name`, `unsubscribe_code` FROM `" . $prefix . "sndr_mail_users_info` WHERE `user_email`='" . $email . "'", ARRAY_A );
+					/* get neccessary data */
+					$current_user_data = array(
+						'id_user'           => ! empty( $user_info ) ? $user_info['id_user'] : '',
+						'user_email'        => $email,
+						'user_display_name' => ! empty( $user_info ) ? $user_info['user_display_name'] : '',  
+						'unsubscribe_code'  => ! empty( $user_info ) ? $user_info['unsubscribe_code'] : '', 
+						'mailout_id'        => ''
+					);
+
+					remove_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link' );
+					$message = sndrpr_replace_shortcodes( $current_user_data, $letter_data );
+					add_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link', 10, 2 );
+
+					$headers	= 'MIME-Version: 1.0' . "\n";
+					$headers	.= 'Content-type: text/html; charset=utf-8' . "\n";
+					$headers	.= "From: " .  $from_name . " <" . $from_email . ">\n";					
+				} else {
+					$message = sbscrbr_replace_shortcodes( $sbscrbr_options['admin_message_text'], $email );
+				}
+			} else {
+				$message = sbscrbr_replace_shortcodes( $sbscrbr_options['admin_message_text'], $email );
+			}
 			$email = array();
 
 			if ( $sbscrbr_options['to_email'] == 'user' ) {
-				$sbscrbr_userlogin = get_user_by( 'login', $sbscrbr_options[ 'email_user' ] );
+				$sbscrbr_userlogin = get_user_by( 'login', $sbscrbr_options['email_user'] );
 				$email[] = $sbscrbr_userlogin->data->user_email;
 			} else {
 				$email = $sbscrbr_options[ 'email_custom' ];
@@ -1701,10 +1883,11 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 	function sbscrbr_sent_unsubscribe_mail( $email ) {
 		global $wpdb, $sbscrbr_options, $sbscrbr_send_unsubscribe_mail;
 		$sbscrbr_send_unsubscribe_mail = "";
+		$is_multisite = is_multisite();
 		if ( empty( $sbscrbr_options ) ) {
-			$sbscrbr_options = ( is_multisite() ) ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
+			$sbscrbr_options = $is_multisite ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
 		}
-		$prefix = is_multisite() ? $wpdb->base_prefix : $wpdb->prefix;
+		$prefix = $is_multisite ? $wpdb->base_prefix : $wpdb->prefix;
 		$report = array(
 			'done'  => false,
 			'error' => false
@@ -1724,13 +1907,43 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 				$from_email	= $sbscrbr_options['from_email'];
 
 			$headers    = 'From: ' . $from_name . ' <' . $from_email . '>';
-			$subject    = $sbscrbr_options['unsubscribe_message_subject'];
-			$message    = sbscrbr_replace_shortcodes( $sbscrbr_options['unsubscribe_message_text'], $email );
+			$subject    = $sbscrbr_options['unsubscribe_message_subject'];	
+
+			if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['unsubscribe_message_use_sender'] && ! empty( $sbscrbr_options['unsubscribe_message_sender_template_id'] ) ) {
+
+				if ( $is_multisite )
+					switch_to_blog( 1 );
+				$letter_data = $wpdb->get_row( "SELECT * FROM `" . $wpdb->prefix . "sndr_mail_send` WHERE `mail_send_id`=" . $sbscrbr_options['unsubscribe_message_sender_template_id'], ARRAY_A );
+				if ( $is_multisite )
+					restore_current_blog();
+
+				if ( ! empty( $letter_data ) ) {
+					/* get neccessary data */
+					$current_user_data = array(
+						'id_user'           => ! empty( $user_info ) ? $user_info['id_user'] : '',
+						'user_email'        => $email,
+						'user_display_name' => ! empty( $user_info ) ? $user_info['user_display_name'] : '', 
+						'unsubscribe_code'  => $user_info['unsubscribe_code'],
+						'mailout_id'        => ''
+					);
+					remove_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link' );
+					$message = sndrpr_replace_shortcodes( $current_user_data, $letter_data );
+					add_filter( 'sbscrbr_add_unsubscribe_link', 'sbscrbr_unsubscribe_link', 10, 2 );					
+
+					$headers = 'MIME-Version: 1.0' . "\n";
+					$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
+					$headers .= "From: " .  $from_name . " <" . $from_email . ">\n";					
+				} else {
+					$message = sbscrbr_replace_shortcodes( $sbscrbr_options['unsubscribe_message_text'], $email );
+				}			
+			} else {
+				$message = sbscrbr_replace_shortcodes( $sbscrbr_options['unsubscribe_message_text'], $email );
+			}
 
 			if ( ! function_exists( 'is_plugin_active' ) )
 				require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-			if ( ( is_plugin_active( 'email-queue/email-queue.php' )  || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) &&  function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
+			if ( ( is_plugin_active( 'email-queue/email-queue.php' ) || is_plugin_active( 'email-queue-pro/email-queue-pro.php' ) ) && function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
 				/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
 				global $mlq_mail_result, $mlqpr_mail_result;
 				do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
@@ -1741,7 +1954,7 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 					$report['error'] = $sbscrbr_options['cannot_send_email'];
 				}
 			} else {
-				if ( wp_mail( $email , $subject, $message, $headers ) ) {
+				if ( wp_mail( $email, $subject, $message, $headers ) ) {
 					$sbscrbr_send_unsubscribe_mail = true;
 					$report['done'] = 'check mail';
 				} else {
@@ -2595,7 +2808,7 @@ if ( ! function_exists( 'sbscrbr_check_sender_install' ) ) {
 	function sbscrbr_check_sender_install() {
 		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		$plugins_list = get_plugins();
-		if ( array_key_exists( 'sender/sender.php', $plugins_list ) || array_key_exists('sender-pro/sender-pro.php', $plugins_list ) ) {
+		if ( array_key_exists( 'sender/sender.php', $plugins_list ) || array_key_exists( 'sender-pro/sender-pro.php', $plugins_list ) ) {
 			return true;
 		} else {
 			return false;
@@ -2629,7 +2842,7 @@ if ( ! function_exists( 'sbscrbr_plugin_action_links' ) ) {
 /**
  * Add action links on plugin page in to Plugin Description block
  * @param $links array() action links
- * @param $file  string  relative path to pugin "sender/sender.php"
+ * @param $file  string  relative path to pugin "subscriber/subscriber.php"
  * @return $links array() action links
  */
 if ( ! function_exists( 'sbscrbr_register_plugin_links' ) ) {

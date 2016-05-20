@@ -181,20 +181,18 @@ if ( ! function_exists( 'bws_plugin_reviews_block' ) ) {
 
 if ( ! function_exists( 'bws_go_pro_tab_check' ) ) {
 	function bws_go_pro_tab_check( $plugin_basename, $plugin_options_name = false, $is_network_option = false ) {
-		global $wp_version, $bstwbsftwppdtplgns_options, $current_user;
+		global $wp_version, $bstwbsftwppdtplgns_options;
 		$result = array();
 
 		$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? stripslashes( esc_html( trim( $_POST['bws_license_key'] ) ) ) : "";
 
 		if ( ! empty( $plugin_options_name ) && isset( $_POST['bws_hide_premium_options_submit'] ) && check_admin_referer( $plugin_basename, 'bws_license_nonce_name' ) ) {
-			if ( ! $current_user )
-				get_currentuserinfo();
 
 			$plugin_options = ( $is_network_option ) ? get_site_option( $plugin_options_name ) : get_option( $plugin_options_name );
 
 			if ( !empty( $plugin_options['hide_premium_options'] ) ) {
 
-				$key = array_search( $current_user->ID, $plugin_options['hide_premium_options'] );
+				$key = array_search( get_current_user_id(), $plugin_options['hide_premium_options'] );
 				if ( false !== $key ) {
 					unset( $plugin_options['hide_premium_options'][ $key ] );
 				}
@@ -776,13 +774,10 @@ if ( ! function_exists( 'bws_show_settings_notice' ) ) {
 
 if ( ! function_exists( 'bws_hide_premium_options' ) ) {
 	function bws_hide_premium_options( $options ) {
-		global $current_user;
-		if ( ! $current_user )
-			get_currentuserinfo();
 		if ( ! isset( $options['hide_premium_options'] ) || ! is_array( $options['hide_premium_options'] ) )
 			$options['hide_premium_options'] = array();
 		
-		$options['hide_premium_options'][] = $current_user->ID;
+		$options['hide_premium_options'][] = get_current_user_id();
 
 		return array( 
 				'message' => __( 'You can always look at premium options by clicking on the "Show Pro features" in the "Go PRO" tab', 'bestwebsoft' ),
@@ -792,11 +787,7 @@ if ( ! function_exists( 'bws_hide_premium_options' ) ) {
 
 if ( ! function_exists( 'bws_hide_premium_options_check' ) ) {
 	function bws_hide_premium_options_check( $options ) {
-		global $current_user;
-		if ( ! $current_user )
-			get_currentuserinfo();
-
-		if ( ! empty( $options['hide_premium_options'] ) && in_array( $current_user->ID, $options['hide_premium_options'] ) )
+		if ( ! empty( $options['hide_premium_options'] ) && in_array( get_current_user_id(), $options['hide_premium_options'] ) )
 			return true;
 		else
 			return false;
@@ -865,14 +856,15 @@ if ( ! function_exists ( 'bws_plugins_admin_head' ) ) {
 			<!-- TinyMCE Shortcode Plugin -->
 			<script type='text/javascript'>
 				var bws_shortcode_button = {
+					'label': '<?php esc_attr_e( "Add BWS Shortcode", "bestwebsoft" ); ?>',
 					'title': '<?php esc_attr_e( "Add BWS Plugins Shortcode", "bestwebsoft" ); ?>',
+					'icon_url': '<?php echo plugins_url( "images/shortcode-icon.png" , __FILE__ ); ?>',
 					'function_name': [
 						<?php foreach ( $bws_shortcode_list as $key => $value ) {
 							if ( isset( $value['js_function'] ) )
 								echo "'" . $value['js_function'] . "',";	
 						} ?>
 					],
-					'icon_url': '<?php echo plugins_url( "images/shortcode-icon.png" , __FILE__ ); ?>',
 					'wp_version' : '<?php echo $wp_version; ?>'
 				};
 			</script>
