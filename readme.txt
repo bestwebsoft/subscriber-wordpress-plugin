@@ -1,14 +1,14 @@
 ﻿=== Subscriber by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add-on, addon, add subscriber plugin, add subscribe widget, add subscribe form, display subscribe form in post, display subscribe form on page, e-mail, email, free, free plugin, free subscribe plugin, free subscriber plugin, free add-on, free addon, free subscriber addon, insert shortcode, mail, newsletter, sebscriber, shortcode, sign up, subcriber, subcsriber, subscribe, subscribe to newsletters, subscriber, subscriber list, subscriber plugin, subscriber widget, subscription, subskriber, suscriber, website newsletters, widget, wordpress, wp, wp plugin, wp free plugin, wp subscriber, wp subscriber plugin, wp simple subscriber plugin, wp free subscriber, wp free subscriber plugin, wordpress plugin, wordpress free plugin, wordpress subscriber, wordpress subscriber plugin, wordpress simple subscriber plugin, wordpress free subscriber, wordpress free subscriber plugin
+Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
-Tested up to: 4.5.2
-Stable tag: 1.3.0
+Tested up to: 4.5.3
+Stable tag: 1.3.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin allows you to subscribe users for newsletters from your website.
+Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.
 
 == Description ==
 
@@ -50,7 +50,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pr
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -64,7 +64,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 1. Upload the `subscriber` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Plugin settings are located in 'BWS Plugins', 'Subscriber'.
+3. Plugin settings are located in 'BWS Panel', 'Subscriber'.
 
 <a href="https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/edit" target="_blank">View a Step-by-step Instruction on Subscriber Installation</a>.
 
@@ -119,7 +119,7 @@ if ( isset( $_POST['submit'] ) && has_filter( 'sbscrbr_checkbox_check' ) ) {
 	$sbscrbr_check = apply_filters( 'sbscrbr_checkbox_check', array(
 		'email' => isset( $_POST['email'] ) ? $_POST['email'] : ''
 	) );
-	if ( isset( $sbscrbr_check['response'] ) {
+	if ( isset( $sbscrbr_check['response'] ) ) {
 		echo $sbscrbr_check['response']['message'];
 	}
 }
@@ -130,7 +130,7 @@ or
 	$sbscrbr_check = apply_filters( 'sbscrbr_checkbox_check', array(
 		'email' => isset( $_POST['email'] ) ? $_POST['email'] : ''
 	) );
-	if ( isset( $sbscrbr_check['response'] ) {
+	if ( isset( $sbscrbr_check['response'] ) ) {
 		echo $sbscrbr_check['response']['message'];
 	}
 } ?>
@@ -158,6 +158,12 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 5. Subscribe Form Registation widget settings.
 
 == Changelog ==
+
+= V1.3.1  - 13.07.2016 =
+* NEW : Classes has been added for form's blocks for an ability to stylize it.
+* NEW : An anchor has been added to the form to make the page scroll down to the form after submitting.
+* Update: BWS panel section was updated.
+* Pro : An ability to disable Subscription confirmation.
 
 = V1.3.0 - 20.05.2016 =
 * NEW : Ability to use HTML letters created with TinyMce visual editor through Sender Pro by BestWebSoft plugin.
@@ -246,6 +252,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.1 =
+Classes has been added for form's blocks for an ability to stylize it. An anchor has been added to the form to make the page scroll down to the form after submitting. BWS panel section was updated. An ability to disable Subscription confirmation.
 
 = V1.3.0 =
 Ability to use HTML letters created with TinyMce visual editor through Sender Pro by BestWebSoft plugin.
