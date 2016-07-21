@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -351,7 +351,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 		$captcha_pro_options = is_multisite() ? get_site_option( 'cptchpr_options' ) : get_option( 'cptchpr_options' );
 		if ( ! $captcha_pro_options ) {
 			$captcha_pro_options = is_multisite() ? get_site_option( 'cptch_options' ) : get_option( 'cptch_options' );
-			$captcha_pro_enabled = ( isset( $captcha_pro_options['bws_subscriber']['enable'] ) || true == $captcha_pro_options['bws_subscriber']['enable'] ) ? true : false;
+			$captcha_pro_enabled = ( isset( $captcha_pro_options['forms']['bws_subscriber']['enable'] ) && true == $captcha_pro_options['forms']['bws_subscriber']['enable'] ) ? true : false;
 		} else {
 			$captcha_pro_is_old_version = true;
 			$captcha_pro_enabled = ( isset( $captcha_pro_options["cptchpr_subscriber"] ) && 1 == $captcha_pro_options["cptchpr_subscriber"] ) ? true : false;
@@ -460,8 +460,8 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 				 */
 				if ( isset( $captcha_pro_options['cptchpr_subscriber'] ) )
 					$captcha_pro_options['cptchpr_subscriber'] = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? 1 : 0;
-				elseif ( isset( $captcha_pro_options['bws_subscriber']['enable'] ) )
-					$captcha_pro_options['bws_subscriber']['enable'] = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? true : false;
+				elseif ( isset( $captcha_pro_options['forms']['bws_subscriber']['enable'] ) )
+					$captcha_pro_options['forms']['bws_subscriber']['enable'] = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? true : false;
 
 				$captcha_pro_enabled = ( isset( $_POST['sbscrbr_display_captcha'] ) ) ? true : false;
 
@@ -485,7 +485,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 								}	
 							} else {
 								if ( $captcha_pro_single_options = get_option( 'cptch_options' ) ) {
-									$captcha_pro_single_options['bws_subscriber']['enable'] = $captcha_pro_options['bws_subscriber']['enable'];					
+									$captcha_pro_single_options['forms']['bws_subscriber']['enable'] = $captcha_pro_options['forms']['bws_subscriber']['enable'];		
 									update_option( 'cptch_options', $captcha_pro_single_options );
 								}
 							}
@@ -1842,7 +1842,7 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 
 		/* send message to user */
 		$headers = 'From: ' . $from_name . ' <' . $from_email . '>';
-		$subject = $sbscrbr_options['subscribe_message_subject'];
+		$subject = wp_specialchars_decode( $sbscrbr_options['subscribe_message_subject'], ENT_QUOTES );
 
 		if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['subscribe_message_use_sender'] && ! empty( $sbscrbr_options['subscribe_message_sender_template_id'] ) ) {
 
@@ -1879,6 +1879,8 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 		if ( ! empty( $user_password ) )
 			$message .= __( "\nYour login:", 'subscriber' ) . ' ' . $email . __( "\nYour password:", 'subscriber' ) . ' ' . $user_password;
 
+		$message = wp_specialchars_decode( $message, ENT_QUOTES );
+
 		if ( function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
 			/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */
 			do_action( 'sbscrbr_get_mail_data', plugin_basename( __FILE__ ), $email, $subject, $message, $headers );
@@ -1888,7 +1890,7 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 
 		/* send message to admin */
 		if ( '1' == $sbscrbr_options['admin_message'] ) {			
-			$subject = $sbscrbr_options['admin_message_subject'];
+			$subject = wp_specialchars_decode( $sbscrbr_options['admin_message_subject'], ENT_QUOTES );
 
 			if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['admin_message_use_sender'] && ! empty( $sbscrbr_options['admin_message_sender_template_id'] ) ) {
 
@@ -1931,6 +1933,8 @@ if ( ! function_exists( 'sbscrbr_send_mails' ) ) {
 			} else {
 				$email = $sbscrbr_options[ 'email_custom' ];
 			}
+
+			$message = wp_specialchars_decode( $message, ENT_QUOTES );
 
 			foreach ( $email as $value ) {
 				if ( function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
@@ -1977,7 +1981,7 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 				$from_email	= $sbscrbr_options['from_email'];
 
 			$headers    = 'From: ' . $from_name . ' <' . $from_email . '>';
-			$subject    = $sbscrbr_options['unsubscribe_message_subject'];	
+			$subject    = wp_specialchars_decode( $sbscrbr_options['unsubscribe_message_subject'], ENT_QUOTES );	
 
 			if ( function_exists( 'sndrpr_replace_shortcodes' ) && 1 == $sbscrbr_options['unsubscribe_message_use_sender'] && ! empty( $sbscrbr_options['unsubscribe_message_sender_template_id'] ) ) {
 
@@ -2009,6 +2013,8 @@ if ( ! function_exists( 'sbscrbr_sent_unsubscribe_mail' ) ) {
 			} else {
 				$message = sbscrbr_replace_shortcodes( $sbscrbr_options['unsubscribe_message_text'], $email );
 			}
+
+			$message = wp_specialchars_decode( $message, ENT_QUOTES );
 
 			if ( function_exists( 'mlq_if_mail_plugin_is_in_queue' ) && mlq_if_mail_plugin_is_in_queue( plugin_basename( __FILE__ ) ) ) {
 				/* if email-queue plugin is active and this plugin's "in_queue" status is 'ON' */

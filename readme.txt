@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
 Tested up to: 4.5.3
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -159,7 +159,10 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Changelog ==
 
-= V1.3.1  - 13.07.2016 =
+= V1.3.2 - 21.07.2016 =
+* Bugfix : Decoding of special characters in emails was added.
+
+= V1.3.1 - 13.07.2016 =
 * NEW : Classes has been added for form's blocks for an ability to stylize it.
 * NEW : An anchor has been added to the form to make the page scroll down to the form after submitting.
 * Update: BWS panel section was updated.
@@ -252,6 +255,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.2 =
+* Bugs fixed.
 
 = V1.3.1 =
 Classes has been added for form's blocks for an ability to stylize it. An anchor has been added to the form to make the page scroll down to the form after submitting. BWS panel section was updated. An ability to disable Subscription confirmation.
