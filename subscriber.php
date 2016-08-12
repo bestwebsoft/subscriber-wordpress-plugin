@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.3.2
+Version: 1.3.3
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */

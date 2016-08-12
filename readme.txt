@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 1.3.2
+Tested up to: 4.6
+Stable tag: 1.3.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -159,6 +159,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 
 == Changelog ==
 
+= V1.3.3 - 12.08.2016 =
+* Update : All functionality for WordPress 4.6 was updated.
+
 = V1.3.2 - 21.07.2016 =
 * Bugfix : Decoding of special characters in emails was added.
 
@@ -255,6 +258,9 @@ Please make sure that the problem hasn't been discussed on our forum yet (<a hre
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.3 =
+* The compatibility with new WordPress version updated.
 
 = V1.3.2 =
 * Bugs fixed.
