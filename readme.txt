@@ -3,62 +3,112 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
-Tested up to: 4.6
+Tested up to: 4.6.1
 Stable tag: 1.3.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.
+Add email newsletter sign up form to WordPress posts, pages, and widgets. Collect data and subscribe your users.
 
 == Description ==
 
-The Subscriber plugin is an exclusive add-on for the Sender Plugin by BestWebSoft.
-This plugin allows your site visitors to subscribe for newsletters, coming from your website. It is a simple and effective tool for businessmen as well as for those people who just want to share their ideas with others. Moreover, it has minimum settings but maximum feedback.
+Subscriber plugin adds email newsletter signup form to collect customer data on your WordPress website. Subscribe your visitors to a company newsletter or simply collect leads.
+
+Communicate with your audience directly. Convert your visitors to subscribers and customers easily!
+
+> **NOTE:** Subscriber plugin is an exclusive add-on to the [Sender](http://bestwebsoft.com/products/sender/?k=87e536ef51413f30ebada1bb46dcdf39) plugin.
+
+[View Demo](http://bestwebsoft.com/demo-for-subscriber/)
 
 http://www.youtube.com/watch?v=ytjxGd4hXDU
 
-<a href="http://www.youtube.com/watch?v=YJOQSGXPjRY" target="_blank">Subscriber by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://wordpress.org/plugins/subscriber/faq/" target="_blank">Subscriber by BestWebSoft FAQ</a>
-<a href="http://support.bestwebsoft.com" target="_blank">Subscriber by BestWebSoft Support</a>
+= Free Features =
 
-<a href="http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450" target="_blank">Upgrade to Subscriber Pro by BestWebSoft</a>
+* Add newsletter email subscription form to the:
+	* Posts
+	* Pages
+	* Widgets
+* Add labels to:
+	* Text above the subscription form
+	* Email field
+	* Unsubscribe checkbox
+	* Subscribe button
+* Compatible with [Captcha](http://bestwebsoft.com/products/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
+* Compatible with [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
+* Customize service messages
+* Notify administrator via email about new subscribers
+* Change recipient email to:
+	* Administrator email
+	* Custom email
+* Customize message content sent to:
+	* Administrator
+	* Subscribed user
+* Add unsubscribe link and additional text to email template
+* View information about subscribers:
+	* Name
+	* E-mail
+	* Status
+* Sort your subscribers by:
+	* All
+	* Subscribed
+	* Unsubscribed
+	* Black listed
+	* Trashed
+* Add custom code via plugin settings page
+* Compatible with latest WordPress version
+* Incredibly simple settings for fast setup without modifying code
+* Detailed step-by-step documentation and videos
 
-= Features =
+> **Pro Features**
+>
+> All features from Free version included plus:
+>
+> * Add email newsletter subscription checkbox to registration form
+> * Send email with subscription confirmation
+> * Set time limit for subscription confirmation
+> * Add the following fields to the subscription form:
+> 	* Name
+> 	* Unsubscribe (checkbox)
+> * View reason of unsubscribing
+> * Get answer to your support question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
+>
+> [Upgrade to Pro Now](http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450)
 
-* Add 'Subscriber Form Registation' widget, where your site visitors can subscribe for your newsletters.
-* Add shortcode to display Subscribe Form in post, page or widget content.
-* Add "Subscribe" checkbox to Contact Form plugin by BestWebSoft.
-* Manage the list of subscribers on the plugin settings page ("Subscribers" tab).
+If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
 
-If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it! <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">Suggest a Feature</a>
+= Documentation & Videos =
 
-= Recommended Plugins =
+* [[Doc] Installation](https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/)
+* [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1L9dTRggFiOwOtBtlt3kB1xX9HUZdPH_NkJBQIukHdFk/)
+* [[Video] Purchase, Installation, Configuration Tutorial](https://www.youtube.com/watch?v=kQQ0ZqmpR6Y)
+* [[Video] Installation Instruction](https://www.youtube.com/watch?v=YJOQSGXPjRY)
 
-The author of the Subscriber also recommends the following plugins:
+= Help & Support =
 
-* <a href="http://wordpress.org/plugins/sender/">Sender</a> - this plugin sends mail to registered users. There is also a premium version of the plugin - <a href="http://bestwebsoft.com/products/sender/?k=87e536ef51413f30ebada1bb46dcdf39">Sender Pro</a>, allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.
-* <a href="http://wordpress.org/plugins/captcha/">Captcha</a> - The Captcha plugin allows you to implement a super security captcha form into web forms. It protects your website from spam by means of math logic, easily understood by human beings. This captcha can be used for login, registration, password recovery, comments forms.
-There is also a premium version of the plugin - <a href="http://bestwebsoft.com/products/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a">Captcha Pro</a>, allowing compatibility with BuddyPress (Registration form, Comments form, "Create a Group" form), Contact Form 7 and Subscriber.
-* <a href="http://wordpress.org/plugins/email-queue/">Email Queue</a> - This plugin gives you an opportunity to organize a simple and effective mail queue. You can assign priorities to plugins that send mail. You can manage outgoing messages: trash them or delete completely. You can use searching, filtering and bulk operations with your mail. The plugin works with plugins produced by BestWebSoft team only.
-* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
-There is also a premium version of the plugin <a href="http://bestwebsoft.com/products/updater/?k=eae2aa18f1ba0036cc937a130f05f001">Updater Pro</a> with more useful features available. It can make backup of all your files and database before updating. Also it can forbid some plugins or WordPress Core update.
+Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <http://support.bestwebsoft.com/>
 
 = Translation =
 
-* Czech (cs_CZ) (thanks to <a href="mailto:info@pamadessoft.cz">PaMaDeSSoft</a>, www.pamadessoft.cz)
+* Czech (cs_CZ) (thanks to [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
-Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+Some of these translations are not complete. We are constantly adding new features which should be translated. If you would like to create your own language pack or update the existing one, you can send [the text of PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [BestWebSoft](http://support.bestwebsoft.com/hc/en-us/requests/new) and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO [files Poedit](http://www.poedit.net/download.php).
 
-= Technical support =
+= Recommended Plugins =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in other languages won't be accepted.
+* [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
+* [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Add contact form to your WordPress website
+* [Captcha](http://bestwebsoft.com/products/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a) - Protect WordPress website forms from spam entries by means of math logic.
+* [Sender](http://bestwebsoft.com/products/sender/?k=87e536ef51413f30ebada1bb46dcdf39) - Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.
+* [SMTP](http://bestwebsoft.com/products/smtp/) - Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.
 
-If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
-Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
-We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
+= Donate =
+
+Donations play an important role in supporting open-source projects. We greatly appreciate any donation you can make to help us continue further development of free products.
+
+[Donate Now](http://bestwebsoft.com/donate/)
 
 == Installation ==
 
@@ -66,7 +116,7 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Plugin settings are located in 'BWS Panel', 'Subscriber'.
 
-<a href="https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/edit" target="_blank">View a Step-by-step Instruction on Subscriber Installation</a>.
+[View a Step-by-step Instruction on Subscriber Installation](https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/)
 
 http://www.youtube.com/watch?v=YJOQSGXPjRY
 
@@ -142,12 +192,12 @@ where:
 
 = I have some problems with the plugin's work. What Information should I provide to receive proper support? =
 
-Please make sure that the problem hasn't been discussed on our forum yet (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If not, please provide the following data along with your problem's description:
+Please make sure that the problem hasn't been discussed yet on our forum (<http://support.bestwebsoft.com>). If no, please provide the following data along with your problem's description:
 
-1. the link to the page, on which the problem occurs
-2. the plugin’s name and version. If you are using a pro version - your order number.
+1. the link to the page where the problem occurs
+2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste your system status report into the message. Please read more here: <a href="https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit" target="_blank">Instruction on System Status</a>
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
 
 == Screenshots ==
 
