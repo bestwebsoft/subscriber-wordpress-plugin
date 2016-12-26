@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.3.3
+Tested up to: 4.7
+Stable tag: 1.3.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,12 +16,11 @@ Subscriber plugin adds email newsletter signup form to collect customer data on 
 
 Communicate with your audience directly. Convert your visitors to subscribers and customers easily!
 
-> **NOTE:** Subscriber plugin is an exclusive add-on to the [Sender](http://bestwebsoft.com/products/sender/?k=87e536ef51413f30ebada1bb46dcdf39) plugin.
+> **NOTE:** Subscriber plugin is an exclusive add-on to the [Sender](http://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39) plugin.
 
 [View Demo](http://bestwebsoft.com/demo-for-subscriber/)
 
 http://www.youtube.com/watch?v=ytjxGd4hXDU
-
 
 = Free Features =
 
@@ -34,7 +33,7 @@ http://www.youtube.com/watch?v=ytjxGd4hXDU
 	* Email field
 	* Unsubscribe checkbox
 	* Subscribe button
-* Compatible with [Captcha](http://bestwebsoft.com/products/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
+* Compatible with [Captcha](http://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
 * Compatible with [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
 * Customize service messages
 * Notify administrator via email about new subscribers
@@ -73,7 +72,7 @@ http://www.youtube.com/watch?v=ytjxGd4hXDU
 > * View reason of unsubscribing
 > * Get answer to your support question within one business day ([Support Policy](http://bestwebsoft.com/support-policy/))
 >
-> [Upgrade to Pro Now](http://bestwebsoft.com/products/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450)
+> [Upgrade to Pro Now](http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450)
 
 If you have a feature suggestion or idea you'd like to see in the plugin, we'd love to hear about it! [Suggest a Feature](http://support.bestwebsoft.com/hc/en-us/requests/new)
 
@@ -81,6 +80,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 * [[Doc] Installation](https://docs.google.com/document/d/1c3snoIZgS1e9AgYjps19HJ-cIhDLACMPiqfduH5tAaw/)
 * [[Doc] Purchase, Installation & Configuration](https://docs.google.com/document/d/1L9dTRggFiOwOtBtlt3kB1xX9HUZdPH_NkJBQIukHdFk/)
+* [[Doc] Sender & Subscriber Usage instruction](https://docs.google.com/document/d/1VHSpwcPpNSmrBFUdiEiVSikxLyTqcUT1cPivGyQYvxo/)
 * [[Video] Purchase, Installation, Configuration Tutorial](https://www.youtube.com/watch?v=kQQ0ZqmpR6Y)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=YJOQSGXPjRY)
 
@@ -100,9 +100,9 @@ Some of these translations are not complete. We are constantly adding new featur
 
 * [Updater](http://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
 * [Contact Form](http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Add contact form to your WordPress website
-* [Captcha](http://bestwebsoft.com/products/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a) - Protect WordPress website forms from spam entries by means of math logic.
-* [Sender](http://bestwebsoft.com/products/sender/?k=87e536ef51413f30ebada1bb46dcdf39) - Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.
-* [SMTP](http://bestwebsoft.com/products/smtp/) - Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.
+* [Captcha](http://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a) - Protect WordPress website forms from spam entries by means of math logic.
+* [Sender](http://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39) - Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.
+* [SMTP](http://bestwebsoft.com/products/wordpress/plugins/smtp/) - Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.
 
 = Donate =
 
@@ -201,13 +201,16 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 
 == Screenshots ==
 
-1. Subscribe Form in frontend of site.
+1. Subscribe Form in the frontend.
 2. Subscriber Basic Settings page.
 3. Subscriber Email Notifications page.
 4. Subscriber Subscribers page.
 5. Subscribe Form Registation widget settings.
 
 == Changelog ==
+
+= V1.3.4 - 26.12.2016 =
+* NEW: An ability to refer {unsubscribe_link} and {subscribe_link} shortcodes to a separate page or specified URL.
 
 = V1.3.3 - 12.08.2016 =
 * Update : All functionality for WordPress 4.6 was updated.
@@ -308,6 +311,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<http:
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.4 =
+* Functionality improved
+* Bugs fixed
 
 = V1.3.3 =
 * The compatibility with new WordPress version updated.

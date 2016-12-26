@@ -7,6 +7,10 @@
 .sbscrbr-form-done {
 	color: #3B9E2A;
 }
+#sbscrbr-page .sbscrbr-form-error,
+#sbscrbr-page .sbscrbr-form-done {
+	color: inherit;
+}
 .login-action-register .sbscrbr-cb {
 	margin: 0 0 10px;
 }
