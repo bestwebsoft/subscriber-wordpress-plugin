@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Subscriber by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/subscriber/
+Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/subscriber/
 Description: Add email newsletter sign up form to WordPress posts, pages and widgets. Collect data and subscribe your users.
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.3.4
-Author URI: http://bestwebsoft.com/
+Version: 1.3.5
+Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2016 BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2017 BestWebSoft  ( https://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -656,13 +656,13 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 					<p><?php printf( __( 'If you would like to display the Subscribe Form with a widget, you need to add the widget "Subscriber Form Registation" in %s.', 'subscriber' ), '<a href="' . admin_url( 'widgets.php' ) . '">' . __( 'the Widgets tab', 'subscriber' ) . '</a>' ); ?></p>
 					<div>
 						<?php printf( __( "If you would like to add the Subscribe Form to your page or post, please use %s button", 'subscriber' ),
-							'<code><img style="vertical-align: sub;" src="' . plugins_url( 'bws_menu/images/shortcode-icon.png', __FILE__ ) . '" alt="" /></code>'
+							'<span class="bws_code"><span class="bwsicons bwsicons-shortcode"></span></span>'
 						); ?>
 						<div class="bws_help_box bws_help_box_right dashicons dashicons-editor-help">
 							<div class="bws_hidden_help_text" style="min-width: 260px;">
 								<?php printf(
 									__( "You can add the Subscribe Form to your page or post by clicking on %s button in the content edit block using the Visual mode. If the button isn't displayed, please use the shortcode %s.", 'subscriber' ),
-									'<code><img style="vertical-align: sub;" src="' . plugins_url( 'bws_menu/images/shortcode-icon.png', __FILE__ ) . '" alt="" /></code>',
+									'<span class="bws_code"><span class="bwsicons bwsicons-shortcode"></span></span>',
 									'<code>[sbscrbr_form]</code>'
 								); ?>
 							</div>
@@ -705,7 +705,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											<label>
 												<input disabled="disabled" type="checkbox" name="sbscrbr_display_captcha" value="1" /> Captcha by BestWebSoft
 											</label> 
-											<span class="bws_info"><a href="http://bestwebsoft.com/products/wordpress/plugins/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank"><?php _e( 'Download', 'subscriber' ); ?> Captcha</a></span>
+											<span class="bws_info"><a href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=d045de4664b2e847f2612a815d838e60&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank"><?php _e( 'Download', 'subscriber' ); ?> Captcha</a></span>
 										<?php } ?>
 									</td>
 								</tr>
@@ -754,7 +754,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 
 										if ( $sbscrbr_cntcfrm_installed == false ) {
 											$sbscrbr_cntcfrm_name = 'Contact Form';
-											$sbscrbr_cntcfrm_notice = '<a href="http://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=507a200ccc60acfd5731b09ba88fb355&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Download', 'subscriber' ) . ' ' . $sbscrbr_cntcfrm_name . '</a>';
+											$sbscrbr_cntcfrm_notice = '<a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=507a200ccc60acfd5731b09ba88fb355&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Download', 'subscriber' ) . ' ' . $sbscrbr_cntcfrm_name . '</a>';
 											$sbscrbr_cntcfrm_attr = 'disabled="disabled"';
 										} ?>
 										<label>
@@ -765,7 +765,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 													echo ' (' . __( 'Check off for adding captcha to forms on their settings pages.', 'subscriber' ) . ')'; ?>
 											</span>
 										<br />
-										<span class="bws_info"><?php _e( 'If you would like to add checkbox "Subscribe" to a custom form, please see', 'subscriber' ); ?>&nbsp;<a href="http://support.bestwebsoft.com/hc/en-us/sections/200538739" target="_blank">FAQ</a></span>
+										<span class="bws_info"><?php _e( 'If you would like to add checkbox "Subscribe" to a custom form, please see', 'subscriber' ); ?>&nbsp;<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538739" target="_blank">FAQ</a></span>
 									</td>
 								</tr>
 								<tr valign="top" class="sbscrbr-service-messages">
@@ -859,10 +859,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 										</table>
 									</div>
 									<div class="bws_pro_version_tooltip">
-										<div class="bws_info">
-											<?php _e( 'Unlock premium options by upgrading to Pro version', 'subscriber' ); ?>
-										</div>
-										<a class="bws_button" href="http://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=d356381b0c3554404e34cdc4fe936455&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version; ?>" target="_blank" title="Subscriber Pro"><?php _e( "Learn More", 'subscriber' ); ?></a>
+										<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=d356381b0c3554404e34cdc4fe936455&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version; ?>" target="_blank" title="Subscriber Pro"><?php _e( "Learn More", 'subscriber' ); ?></a>
 										<div class="clear"></div>
 									</div>
 								</div>
@@ -877,7 +874,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 								</tr>								
 							</table>
 							<?php if ( ! array_key_exists( 'sender/sender.php', $all_plugins ) && ! array_key_exists( 'sender-pro/sender-pro.php', $all_plugins ) ) {
-								echo '<p>' . __( 'If you want to send mailout to the users who have subscribed for newsletters use', 'subscriber' ) . ' <a href="http://bestwebsoft.com/products/wordpress/plugins/sender/" target="_blank">Sender plugin</a> ' . __( 'that sends mail to registered users. There is also a premium version of the plugin', 'subscriber' ) . ' - <a href="http://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro</a>, ' . __( 'allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.', 'subscriber' ) . '</p>';
+								echo '<p>' . __( 'If you want to send mailout to the users who have subscribed for newsletters use', 'subscriber' ) . ' <a href="https://bestwebsoft.com/products/wordpress/plugins/sender/" target="_blank">Sender plugin</a> ' . __( 'that sends mail to registered users. There is also a premium version of the plugin', 'subscriber' ) . ' - <a href="https://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro</a>, ' . __( 'allowing to create and save templates for letters, edit the content of messages with a visual editor TinyMce, set priority оf mailing, create and manage mailing lists.', 'subscriber' ) . '</p>';
 							} ?>
 						</div><!-- #sbscrbr_settings_block -->
 						<div id="sbscrbr_settings_block_email_notifications" style="display: <?php echo ( isset( $_GET['tab'] ) && 'sbscrbr_email_notifications' == $_GET['tab'] ) ? 'block' : 'none'; ?>;">
@@ -951,7 +948,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 												$sender_pro_active = true; 
 											}
 										} else {
-											$sender_pro_notice = sprintf( __( 'Install %s plugin in order to use HTML letters created with TinyMce visual editor', 'subscriber' ), ' <a href="http://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro by BestWebSoft</a>' );
+											$sender_pro_notice = sprintf( __( 'Install %s plugin in order to use HTML letters created with TinyMce visual editor', 'subscriber' ), ' <a href="https://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender Pro by BestWebSoft</a>' );
 										} ?>
 										<div class="sbscrbr-messages-settings">
 											<label><strong><?php _e( 'Message to admin about new subscribed users', 'subscriber' ); ?>:</strong></label><br>
@@ -1012,7 +1009,7 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 											<br>
 											<textarea class="sbscrbr-input-text" id="sbscrbr-unsubscribe-link-text" name="sbscrbr_unsubscribe_link_text"><?php echo $sbscrbr_options['unsubscribe_link_text']; ?></textarea>
 											<br/>
-											<span class="bws_info"><?php printf( __( 'This text will be attached to each letter of the mailing, which was created with plugin %s.', 'subscriber' ), '<a href="http://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender by BestWebSoft</a>' ); ?></span>
+											<span class="bws_info"><?php printf( __( 'This text will be attached to each letter of the mailing, which was created with plugin %s.', 'subscriber' ), '<a href="https://bestwebsoft.com/products/wordpress/plugins/sender/?k=01665f668edd3310e8c5cf13e9cb5181&pn=122&v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">Sender by BestWebSoft</a>' ); ?></span>
 										</div>
 									</td>
 								</tr>
@@ -3036,8 +3033,8 @@ if ( ! function_exists( 'sbscrbr_register_plugin_links' ) ) {
 		if ( $file == $base ) {
 			if ( ( is_multisite() && is_network_admin() ) || ( ! is_multisite() && is_admin() ) )
 				$links[] = '<a href="admin.php?page=sbscrbr_settings_page">' . __( 'Settings', 'subscriber' ) . '</a>';
-			$links[] = '<a href="http://support.bestwebsoft.com/hc/en-us/sections/200538739" target="_blank">' . __( 'FAQ', 'subscriber' ) . '</a>';
-			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'subscriber' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538739" target="_blank">' . __( 'FAQ', 'subscriber' ) . '</a>';
+			$links[] = '<a href="https://support.bestwebsoft.com">' . __( 'Support', 'subscriber' ) . '</a>';
 		}
 		return $links;
 	}
