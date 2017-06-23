@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.8
-Tested up to: 4.7.3
-Stable tag: 1.3.5
+Tested up to: 4.8
+Stable tag: 1.3.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -122,13 +122,13 @@ Yes. You just need to create a new user with the role of "Mail Subscriber" in Us
 
 = How can the user unsubscribe from the newsletter? =
 
-1) The user should go to your site, enter his/her e-mail in the Subscribe Form, mark the "unsubscribe" checkbox and click the "Submit" button. 
+1) The user should go to your site, enter his/her e-mail in the Subscribe Form, mark the "unsubscribe" checkbox and click the "Submit" button.
 2) If everything has been done correctly, he/she will recieve a mail with a link for unsubscription.
 3) If the user follows that link, he/she will be automatically unsubscribed from the newsletters.
 
 = How can the previously registered users subscribe for the newsletter? =
 
-The previously registered users can subscribe for the newsletter exactly as any other site visitor through the Subscribe Form or mark the "Subscribe for newsletters" checkbox on their Profile editing page.  
+The previously registered users can subscribe for the newsletter exactly as any other site visitor through the Subscribe Form or mark the "Subscribe for newsletters" checkbox on their Profile editing page.
 
 = Why do I need the blacklist? =
 
@@ -139,7 +139,7 @@ If you do not want the user to receive letters of mailing for some reason, you c
 1. Install the Subscriber plugin and activate it.
 2. Open the file with the form (where you would like to add checkbox "Subscribe").
 3. Find a place to insert the code for the checkbox "Subscribe" output.
-4. Insert the necessary lines: 
+4. Insert the necessary lines:
 
 if ( has_filter( 'sbscrbr_checkbox_add' ) ) {
 	$sbscrbr_checkbox = apply_filters( 'sbscrbr_checkbox_add', false );
@@ -168,7 +168,7 @@ if ( isset( $_POST['submit'] ) && has_filter( 'sbscrbr_checkbox_check' ) ) {
 	}
 }
 
-or 
+or
 
 <?php if ( isset( $_POST['submit'] ) && has_filter( 'sbscrbr_checkbox_check' ) ) {
 	$sbscrbr_check = apply_filters( 'sbscrbr_checkbox_check', array(
@@ -203,11 +203,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.3.6 - 23.06.2017 =
+* NEW : An ability to add several email addresses to the "Recipient email address" field has been added.
+* Bugfix : Widget's name has been changed from "Subscriber Form Registration" to "Subscriber Registration Form".
+* Bugfix : Service messages have been changed.
+* NEW : An error message which appears if email can't be sent and SMTP is not configured has been added.
+* Bugfix : Form's action has been corrected to remove wrong redirects after form submission.
+
 = V1.3.5 - 14.04.2017 =
 * Bugfix : Multiple Cross-Site Scripting (XSS) vulnerability was fixed.
 
 = V1.3.4 - 26.12.2016 =
-* NEW: An ability to refer {unsubscribe_link} and {subscribe_link} shortcodes to a separate page or specified URL.
+* NEW : An ability to refer {unsubscribe_link} and {subscribe_link} shortcodes to a separate page or specified URL.
 
 = V1.3.3 - 12.08.2016 =
 * Update : All functionality for WordPress 4.6 was updated.
@@ -240,7 +247,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Bugfix : Fixed captcha working.
 
 = V1.2.5 - 03.12.2015 =
-* NEW : An ability to disable the notifications about new subscribers was added. 
+* NEW : An ability to disable the notifications about new subscribers was added.
 
 = V1.2.4 - 30.09.2015 =
 * NEW : A button for Subscriber shortcode inserting to the content was added.
@@ -256,7 +263,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * Update : We updated all functionality for wordpress 4.2.2.
 
 = V1.2.1 - 21.04.2015 =
-* Bugfix : We fixed bug with displaying the lists of the users. 
+* Bugfix : We fixed bug with displaying the lists of the users.
 
 = V1.2.0 - 07.04.2015 =
 * Bugfix : Subscriber shortcode checking for WP versions 3.6 and below was fixed.
@@ -265,7 +272,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 = V1.1.9 - 03.02.2015 =
 * Bugfix : False error display when subscribing from a form was fixed.
-* Bugfix : The empty "From" field in the letter to the administrator was fixed. 
+* Bugfix : The empty "From" field in the letter to the administrator was fixed.
 * Update : We added style for subscriber form.
 
 = V1.1.8 - 26.01.2015 =
@@ -308,6 +315,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.6 =
+* Bugs fixed.
 
 = V1.3.5 =
 * Bugs fixed.
