@@ -544,7 +544,20 @@ if ( ! function_exists ( 'bws_plugins_admin_init' ) ) {
 				unset( $recent[ $plugin ] );
 				update_site_option( 'recently_activated', $recent );
 			}
-			wp_redirect( self_admin_url( 'admin.php?page=bws_panel&activate=true' ) );
+			/**
+			* @deprecated 1.9.8 (15.12.2016)
+			*/
+			$is_main_page = in_array( $_GET['page'], array( 'bws_panel', 'bws_themes', 'bws_system_status' ) );
+			$page = esc_attr( $_GET['page'] );
+			$tab = isset( $_GET['tab'] ) ? esc_attr( $_GET['tab'] ) : '';
+
+			if ( $is_main_page )
+				$current_page = 'admin.php?page=' . $page;
+			else
+				$current_page = isset( $_GET['tab'] ) ? 'admin.php?page=' . $page . '&tab=' . $tab : 'admin.php?page=' . $page;
+			/*end deprecated */
+
+			wp_redirect( self_admin_url( $current_page . '&activate=true' ) );
 			exit();
 		}
 

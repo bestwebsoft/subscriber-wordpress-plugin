@@ -4,9 +4,9 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-05 16:20+0300\n"
 "PO-Revision-Date: 2017-07-05 16:20+0300\n"
-"Last-Translator: plugin@bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language-Team: BestWebSoft Team <wp@bestwebsoft.com>\n"
-"Language: cs_CZ\n"
+"Last-Translator: Jordan Silaen <jordan.silaen@chameleonjohn.com>\n"
+"Language-Team: ChameleonJohn.com <jordan.silaen@chameleonjohn.com>\n"
+"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,12 +20,12 @@ msgstr ""
 
 #: ../subscriber.php:76
 msgid "Mail Subscriber"
-msgstr "Odebírat maily"
+msgstr "Mail Subscriber"
 
 #: ../subscriber.php:89
 #, fuzzy
 msgid "Unsubscribe Confirmation"
-msgstr "Registrační formulář pro přihlášení k odběru"
+msgstr "Konfirmasi berhenti berlangganan"
 
 #: ../subscriber.php:195 ../subscriber.php:1221 ../subscriber.php:1273
 #: ../subscriber.php:2368
@@ -34,12 +34,12 @@ msgstr "E-mail"
 
 #: ../subscriber.php:196 ../subscriber.php:1222 ../subscriber.php:1274
 msgid "unsubscribe"
-msgstr "Zrušit odběr"
+msgstr "berhenti berlangganan"
 
 #: ../subscriber.php:197 ../subscriber.php:1094 ../subscriber.php:1223
 #: ../subscriber.php:1275 ../subscriber.php:2492
 msgid "Subscribe"
-msgstr "Přihlásit se k odběru"
+msgstr "Berlangganan"
 
 #: ../subscriber.php:199
 msgid "System error. Please try later."
@@ -97,20 +97,20 @@ msgstr ""
 
 #: ../subscriber.php:223
 msgid "New subscriber"
-msgstr "Nový odběratel"
+msgstr "pelanggan baru"
 
 #: ../subscriber.php:224
 msgid "Thanks for registration"
-msgstr "Děkujeme za registraci"
+msgstr "Terima kasih untuk pendaftaran"
 
 #: ../subscriber.php:225
 msgid "Link to unsubscribe"
-msgstr "Odkaz pro odhlášení"
+msgstr "Link ke berhenti berlangganan"
 
 #: ../subscriber.php:227
 #, fuzzy, php-format
 msgid "User with e-mail %s has subscribed to a newsletter."
-msgstr "Uživatele s e-mailem {user_email} se přihlásil k odběru novinek."
+msgstr "Pengguna dengan e-mail %s telah berlangganan newsletter."
 
 #: ../subscriber.php:228
 #, fuzzy, php-format
@@ -118,11 +118,9 @@ msgid ""
 "Thanks for registration. To change data of your profile go to %s If you want "
 "to unsubscribe from the newsletter from our site go to the link %s"
 msgstr ""
-"Díky za registraci. Chcete-li změnit údaje v profilu přejděte na "
-"{profile_page}.\n"
-"Chcete-li se odhlásit z odebírání novinek z našich stránek, použijte tento "
-"odkaz\n"
-" {unsubscribe_link}"
+"Terima kasih untuk pendaftaran. Untuk mengubah data profil Anda pergi ke %s "
+"Jika Anda ingin berhenti berlangganan dari newsletter dari situs kami pergi "
+"ke link %s"
 
 #: ../subscriber.php:229
 #, fuzzy, php-format
@@ -133,11 +131,10 @@ msgid ""
 "Link to unsubscribe:\n"
 " %s"
 msgstr ""
-"Vážený uživateli. Na vaši žádost zasíláme odkaz pro odhlášení zasílání "
-"novinek e-mailem z našich stránek. Chcete-li se odhlásit, použijte odkazu "
-"níže. Pokud jste změnili názor, můžete prostě tento dopis ignorovat. \n"
-"Odkaz k odhlášení odběru: \n"
-" {unsubscribe_link}"
+"Sayang pengguna. Atas permintaan Anda, kami mengirimkan link untuk berhenti "
+"berlangganan dari pesan email kami. Untuk berhenti berlangganan silakan "
+"gunakan link di bawah ini. Jika Anda berubah pikiran, Anda hanya dapat "
+"mengabaikan surat ini \\ nlink untuk berhenti berlangganan. \\ N %s"
 
 #: ../subscriber.php:237
 #, fuzzy, php-format
@@ -145,18 +142,16 @@ msgid ""
 "If you want to unsubscribe from the newsletter from our site go to the "
 "following link: %s"
 msgstr ""
-"Pokud se chcete odhlásit z odebírání novinek z našeho webu přejděte na "
-"následující odkaz: \n"
-" {unsubscribe_link}"
+"Jika Anda ingin berhenti berlangganan dari newsletter dari situs kami pergi "
+"ke link berikut: %s"
 
 #: ../subscriber.php:490
 msgid ""
 "Email 'FROM' field option was changed, which may cause email messages being "
 "moved to the spam folder or email delivery failures."
 msgstr ""
-"Pole e-mailu 'OD' bylo změněno, což může způsobit, že e-mailové zprávy by "
-"mohly být přesouvány do spamové složky nebo může dojít k selhání doručení e-"
-"mailu."
+"Email 'DARI' pilihan lapangan berubah, yang dapat menyebabkan pesan email "
+"dipindahkan ke folder spam atau email kegagalan pengiriman."
 
 #: ../subscriber.php:524
 msgid ""
@@ -166,39 +161,39 @@ msgstr ""
 
 #: ../subscriber.php:573
 msgid "Settings Saved"
-msgstr "Nastavení uloženo"
+msgstr "pengaturan Disimpan"
 
 #: ../subscriber.php:585
 msgid "All plugin settings were restored."
-msgstr "Výchozí nastavení pluginu bylo obnoveno."
+msgstr "Semua pengaturan Plugin dipulihkan."
 
 #: ../subscriber.php:609
 msgid "Subscriber Settings"
-msgstr "Nastavení odběratele"
+msgstr "Pengaturan pelanggan"
 
 #: ../subscriber.php:611 ../subscriber.php:3014 ../subscriber.php:3033
 msgid "Settings"
-msgstr "Nastavení"
+msgstr "pengaturan"
 
 #: ../subscriber.php:612
 msgid "Email Notifications"
-msgstr ""
+msgstr "notifikasi email"
 
 #: ../subscriber.php:613
 msgid "Subscribers"
-msgstr "Odběratelé"
+msgstr "pelanggan"
 
 #: ../subscriber.php:614
 msgid "Custom code"
-msgstr ""
+msgstr "kode kustom"
 
 #: ../subscriber.php:615
 msgid "Go PRO"
-msgstr "Získat verzi Pro"
+msgstr "Go PRO"
 
 #: ../subscriber.php:618 ../subscriber.php:3055
 msgid "Notice:"
-msgstr "Upozornění:"
+msgstr "Melihat:"
 
 #: ../subscriber.php:630
 #, php-format
@@ -209,7 +204,7 @@ msgstr ""
 
 #: ../subscriber.php:630
 msgid "the Widgets tab"
-msgstr ""
+msgstr "tab Widget"
 
 #: ../subscriber.php:632
 #, php-format
@@ -217,8 +212,8 @@ msgid ""
 "If you would like to add the Subscribe Form to your page or post, please use "
 "%s button"
 msgstr ""
-"Pokud chcete přidat Přihlašovací formulář na vaší stránku nebo příspěvek, "
-"použijte tlačítko %s"
+"Jika Anda ingin menambahkan Langganan Form ke halaman Anda atau posting, "
+"silakan gunakan %s tombol"
 
 #: ../subscriber.php:638
 #, php-format
@@ -227,208 +222,211 @@ msgid ""
 "in the content edit block using the Visual mode. If the button isn't "
 "displayed, please use the shortcode %s."
 msgstr ""
-"Můžete na stránku nebo do příspěvku přidat Přihlašovací formulář kliknutím "
-"na tlačítko %s v obsahu upravením bloku pomocí celoobrazovkového režimu. "
-"Pokud tlačítko není zobrazeno, použijte krátký kód %s."
+"Anda dapat menambahkan Formulir Berlangganan halaman Anda atau posting "
+"dengan mengklik %s tombol di blok mengedit konten menggunakan modus Visual. "
+"Jika tombol tidak ditampilkan, gunakan shortcode %s ."
 
 #: ../subscriber.php:650
 msgid "Subscribe form labels"
-msgstr "Popisky Přihlašovacího formuláře"
+msgstr "Berlangganan bentuk label"
 
 #: ../subscriber.php:653 ../subscriber.php:1285
 msgid "Text above the subscribe form"
-msgstr "Text nad Přihlašovacím formulářem"
+msgstr "Teks di atas bentuk berlangganan"
 
 #: ../subscriber.php:656 ../subscriber.php:1291
 #, fuzzy
 msgid "Placeholder for text field \"E-mail\""
-msgstr "Předvyplněná hodnota pro textové pole"
+msgstr "Placeholder untuk bidang teks \\ \"E-mail \""
 
 #: ../subscriber.php:659 ../subscriber.php:1297
 #, fuzzy
 msgid "Label for \"Unsubscribe\" checkbox"
-msgstr "Popisek pro zaškrtávací políčko \"odhlásit\""
+msgstr "Label untuk \\ \"Unsubscribe \" kotak centang"
 
 #: ../subscriber.php:663 ../subscriber.php:1303
 #, fuzzy
 msgid "Label for \"Subscribe\" button"
-msgstr "Popisek tlačítka \"Odeslat\""
+msgstr "Label untuk \\ \"Langganan \" tombol"
 
 #: ../subscriber.php:667 ../subscriber.php:806
 msgid "Add to the subscribe form"
-msgstr "Přidat do Přihlašovacího formuláře"
+msgstr "Menambah bentuk berlangganan"
 
 #: ../subscriber.php:676 ../subscriber.php:700 ../subscriber.php:717
 #: ../subscriber.php:919
 msgid "Activate"
-msgstr "Aktivovat"
+msgstr "Mengaktifkan"
 
 #: ../subscriber.php:682 ../subscriber.php:731
 msgid "Download"
-msgstr "Stáhnout"
+msgstr "Download"
 
 #: ../subscriber.php:687 ../subscriber.php:813
 #, fuzzy
 msgid "Add checkbox \"Subscribe\" to"
-msgstr "Přidat do Přihlašovacího formuláře"
+msgstr "Menambahkan kotak centang \\ \"Berlangganan \" untuk"
 
 #: ../subscriber.php:696 ../subscriber.php:713
 #, php-format
 msgid "Update %s at least to version"
-msgstr ""
+msgstr "Perbarui %s setidaknya untuk versi"
 
 #: ../subscriber.php:700 ../subscriber.php:717 ../subscriber.php:919
 #, fuzzy
 msgid "Activate for network"
-msgstr "Aktivovat Subcsriber pro síť"
+msgstr "Aktifkan untuk jaringan"
 
 #: ../subscriber.php:739
 msgid "Check off for adding captcha to forms on their settings pages."
 msgstr ""
+"Periksa off untuk menambahkan captcha untuk formulir di halaman pengaturan "
+"mereka."
 
 #: ../subscriber.php:742
 #, fuzzy
 msgid ""
 "If you would like to add checkbox \"Subscribe\" to a custom form, please see"
 msgstr ""
-"Pokud chcete přidat Přihlašovací formulář na vaší stránku nebo příspěvek, "
-"použijte tlačítko %s"
+"Jika Anda ingin menambahkan kotak centang \\ \"Berlangganan \" untuk bentuk "
+"kustom, silakan lihat"
 
 #: ../subscriber.php:747
 msgid "Service messages"
-msgstr "Zprávy služby"
+msgstr "pesan layanan"
 
 #: ../subscriber.php:750
 msgid "These messages will be displayed in the frontend of your site."
-msgstr "Tyto zprávy se zobrazí na konci vaší stránky."
+msgstr "Pesan-pesan ini akan ditampilkan di frontend dari situs Anda."
 
 #: ../subscriber.php:756
 msgid "Unknown error"
-msgstr "Neznámá chyba"
+msgstr "Kesalahan yang tidak diketahui"
 
 #: ../subscriber.php:759
 msgid "If user has not entered e-mail"
-msgstr "Jestliže uživatel nezadal e-mail"
+msgstr "Jika pengguna belum masuk e-mail"
 
 #: ../subscriber.php:762
 msgid "If user has entered invalid e-mail"
-msgstr "Jestliže uživatel zadal neplatnou e-mailovou"
+msgstr "Jika pengguna telah memasuki e-mail yang tidak valid"
 
 #: ../subscriber.php:765
 msgid "If the user has entered a non-existent e-mail"
-msgstr "Pokud uživatel zadal neexistující e-mail"
+msgstr "Jika pengguna telah memasuki e-mail tidak ada"
 
 #: ../subscriber.php:768
 msgid "If it is impossible to get the data about the entered e-mail"
-msgstr "Jestliže není možné získat údaje o zadaném e-mailu"
+msgstr "Jika tidak mungkin untuk mendapatkan data tentang e-mail yang masuk"
 
 #: ../subscriber.php:771
 msgid "If it is impossible to send a letter"
-msgstr "Jestliže není možné poslat dopis"
+msgstr "Jika tidak mungkin untuk mengirim surat"
 
 #: ../subscriber.php:774
 msgid "If some errors occurred while user registration"
-msgstr "Pokud došlo k nějakým chybám během registrace uživatele"
+msgstr "Jika beberapa kesalahan terjadi saat pendaftaran pengguna"
 
 #: ../subscriber.php:777
 msgid "If user registration was succesfully finished"
-msgstr "Jestliže registrace uživatele byla úspěšně dokončená"
+msgstr "Jika pendaftaran pengguna telah berhasil selesai"
 
 #: ../subscriber.php:780
 msgid "If the user has already subscribed"
-msgstr "Je-li uživatel je již přihlášen k odběru"
+msgstr "Jika pengguna sudah berlangganan"
 
 #: ../subscriber.php:783
 msgid "If subscription has been denied"
-msgstr "Jestliže byl odběr odepřen"
+msgstr "Jika langganan telah ditolak"
 
 #: ../subscriber.php:786
 msgid "If the user has already unsubscribed"
-msgstr "Jestliže uživatel je již odhlášen k odběru"
+msgstr "Jika pengguna memiliki sudah berhenti berlangganan"
 
 #: ../subscriber.php:789
 msgid "If the user has been sent a letter with a link to unsubscribe"
-msgstr "Má-li uživatel byl zaslán dopis s odkazem na odhlášení k odběru"
+msgstr ""
+"Jika pengguna telah mengirim surat dengan link untuk berhenti berlangganan"
 
 #: ../subscriber.php:792
 msgid "If user was unsubscribed"
-msgstr "Pokud byl uživatel odhlášen"
+msgstr "Jika pengguna adalah berhenti berlangganan"
 
 #: ../subscriber.php:795
 msgid "If the user clicked on a non-existent \"unsubscribe\"-link"
-msgstr "Pokud by uživatel kliknul na neexistující odkaz k \"odhlášení\""
+msgstr "Jika pengguna mengklik pada tidak ada \\ \"\\ unsubscribe\" - Link"
 
 #: ../subscriber.php:802
 msgid "Close"
-msgstr "Zavřít"
+msgstr "Dekat"
 
 #: ../subscriber.php:808
 msgid "\"Name\" field"
-msgstr "Pole \"Jméno\""
+msgstr "\\ Bidang \"Nama \""
 
 #: ../subscriber.php:809
 msgid "\"Unsubscribe\" checkbox"
-msgstr "Zaškrtávací políčko \"Odhlásit\""
+msgstr "\\ \"Unsubscribe \" kotak centang"
 
 #: ../subscriber.php:815
 msgid "Registration form"
-msgstr ""
+msgstr "Formulir pendaftaran"
 
 #: ../subscriber.php:819
 #, fuzzy
 msgid "Subscription confirmation"
-msgstr "Registrační formulář pro přihlášení k odběru"
+msgstr "konfirmasi berlangganan"
 
 #: ../subscriber.php:822
 msgid "Subscription confirmation via email before user registration."
-msgstr ""
+msgstr "konfirmasi berlangganan melalui email sebelum pendaftaran pengguna."
 
 #: ../subscriber.php:826
 msgid "Delete a user data if the subscription has not been confirmed in"
-msgstr "Odstranit data přihlášených uživatelů k odběru není potvrzena v"
+msgstr "Menghapus data pengguna jika berlangganan belum dikonfirmasi di"
 
 #: ../subscriber.php:828 ../subscriber.php:829
 msgid "hours"
-msgstr "hodiny"
+msgstr "jam"
 
 #: ../subscriber.php:829
 msgid "every"
-msgstr "každý"
+msgstr "setiap"
 
 #: ../subscriber.php:830
 msgid "Please set 0 if you do not want to delete a user data."
-msgstr "Prosím nastavte 0, pokud nechcete odstranit uživatelská data."
+msgstr "Silakan set 0 jika Anda tidak ingin menghapus data pengguna."
 
 #: ../subscriber.php:836
 msgid "Learn More"
-msgstr "Více informací"
+msgstr "Belajarlah lagi"
 
 #: ../subscriber.php:843
 msgid "Delete users while plugin removing"
-msgstr "Odstranit uživatele při odstraňování pluginu"
+msgstr "Menghapus pengguna sementara Plugin menghapus"
 
 #: ../subscriber.php:846
 msgid ""
 "If this option enabled, when you remove plugin, all users with role \"Mail "
 "Subscribed\" will be removed from users list."
 msgstr ""
-"Je-li tato možnost povolena, tak pokud odeberete modul - všichni uživatelé s "
-"rolí \"Zasílání mailu\" budou odstraněni ze seznamu uživatelů."
+"Jika opsi ini diaktifkan, ketika Anda menghapus Plugin, semua pengguna "
+"dengan peran \\ \"Surat Berlangganan \" akan dihapus dari daftar pengguna."
 
 #: ../subscriber.php:851
 msgid ""
 "If you want to send mailout to the users who have subscribed for newsletters "
 "use"
 msgstr ""
-"Pokud chcete poslat mailout uživatelům, kteří jsou přihlášeni k odběru "
-"novinek"
+"Jika Anda ingin mengirim mailout kepada pengguna yang telah berlangganan "
+"untuk newsletter digunakan"
 
 #: ../subscriber.php:851
 msgid ""
 "that sends mail to registered users. There is also a premium version of the "
 "plugin"
 msgstr ""
-"zašle mail přihlášeným uživatelům. Existuje také jako prémiová verze pluginu"
+"yang mengirim email ke pengguna terdaftar. Ada juga versi premium plugin"
 
 #: ../subscriber.php:851
 msgid ""
@@ -436,35 +434,37 @@ msgid ""
 "messages with a visual editor TinyMce, set priority оf mailing, create and "
 "manage mailing lists."
 msgstr ""
-"umožňuje vytvořit a uložit šablony pro dopisy, upravit si obsah zpráv s "
-"vizuálním editorem TinyMce, nastavit prioritu zasílání zpráv, vytvářet a "
-"spravovat seznamy adresátů."
+"memungkinkan untuk membuat dan menyimpan template untuk surat, mengedit isi "
+"pesan dengan editor TinyMCE visual, menetapkan prioritas оf mailing, membuat "
+"dan mengelola mailing list."
 
 #: ../subscriber.php:857
 msgid "Email admin about new subscribed users"
-msgstr "E-mail správce o nově přihlášených uživatelích"
+msgstr "Email admin tentang pengguna berlangganan baru"
 
 #: ../subscriber.php:863
 msgid "Recipient email address (To:)"
-msgstr ""
+msgstr "Alamat email penerima (To :)"
 
 #: ../subscriber.php:868
 msgid "Select a username"
-msgstr ""
+msgstr "Memilih nama pengguna"
 
 #: ../subscriber.php:878
 msgid ""
 "If necessary you can specify several email addresses separated by comma (For "
 "example: email1@example.com, email2@example.com)."
 msgstr ""
+"Jika perlu Anda dapat menentukan beberapa alamat email dipisahkan dengan "
+"koma (Misalnya: email1@example.com, email2@example.com)."
 
 #: ../subscriber.php:883
 msgid "'FROM' field"
-msgstr "Pole 'OD'"
+msgstr "'DARI' lapangan"
 
 #: ../subscriber.php:885 ../subscriber.php:2367
 msgid "Name"
-msgstr "Jméno"
+msgstr "Nama"
 
 #: ../subscriber.php:891
 msgid "Email"
@@ -475,42 +475,41 @@ msgid ""
 "If this option is changed, email messages may be moved to the spam folder or "
 "email delivery failures may occur."
 msgstr ""
-"Je-li tato možnost změněná, e-mailové zprávy mohou být přesunuty do složky "
-"Nevyžádaná pošta nebo může dojít k selhání doručení e-mailu."
+"Jika opsi ini berubah, pesan email mungkin akan dipindahkan ke folder spam "
+"atau email kegagalan pengiriman dapat terjadi."
 
 #: ../subscriber.php:900
 msgid "Letters content"
-msgstr "Obsah dopisů"
+msgstr "konten surat"
 
 #: ../subscriber.php:903
 msgid ""
 "You can edit the content of service letters, which will be sent to users. In "
 "the text of the message you can use the following shortcodes:"
 msgstr ""
-"Můžete upravovat obsah dopisové služby, která bude odeslána uživatelům. V "
-"textu zprávy můžete použít následující krátké kódy:"
+"Anda dapat mengedit isi dari surat layanan, yang akan dikirim ke pengguna. "
+"Dalam teks pesan Anda dapat menggunakan shortcode berikut:"
 
 #: ../subscriber.php:905
 msgid "this shortcode will be replaced with the e-mail of a current user;"
-msgstr "tento krátký kód bude nahrazovat e-mail daného uživatele;"
+msgstr "shortcode ini akan diganti dengan e-mail dari pengguna saat ini;"
 
 #: ../subscriber.php:906
 msgid ""
 "this shortcode will be replaced with the link to profile page of current "
 "user;"
 msgstr ""
-"tento krátký kód bude nahrazovat odkaz na profilovou stránku daného "
-"uživatele;"
+"shortcode ini akan diganti dengan link ke halaman profil pengguna saat ini;"
 
 #: ../subscriber.php:907
 msgid "this shortcode will be replaced with the link to unsubscribe."
-msgstr "tento krátký kód bude nahrazovat odkaz pro odhlášení."
+msgstr "shortcode ini akan diganti dengan link untuk berhenti berlangganan."
 
 #: ../subscriber.php:909
 msgid ""
 "There must be a space after the shortcode otherwise the link will be "
 "incorrect."
-msgstr ""
+msgstr "Harus ada spasi setelah shortcode sebaliknya link akan salah."
 
 #: ../subscriber.php:925
 #, php-format
@@ -518,32 +517,34 @@ msgid ""
 "Install %s plugin in order to use HTML letters created with TinyMce visual "
 "editor"
 msgstr ""
+"Instal %s Plugin untuk menggunakan huruf HTML dibuat dengan TinyMCE editor "
+"visual"
 
 #: ../subscriber.php:928
 msgid "Message to admin about new subscribed users"
-msgstr "Zpráva pro správce o nově přihlášených uživatelích."
+msgstr "Pesan ke admin tentang pengguna berlangganan baru"
 
 #: ../subscriber.php:929 ../subscriber.php:947 ../subscriber.php:965
 #, fuzzy
 msgid "Subject"
-msgstr "Předmět:"
+msgstr "Subyek"
 
 #: ../subscriber.php:932 ../subscriber.php:950 ../subscriber.php:968
 #, fuzzy
 msgid "Text"
-msgstr "Text:"
+msgstr "Teks"
 
 #: ../subscriber.php:946
 msgid "Message to subscribed users"
-msgstr "Zpráva pro přihlášené uživatele k odběru"
+msgstr "Pesan ke pengguna berlangganan"
 
 #: ../subscriber.php:964
 msgid "Message with unsubscribe link"
-msgstr "Zpráva s odkazem k odhlášení odběru"
+msgstr "Pesan dengan link unsubscribe"
 
 #: ../subscriber.php:982
 msgid "Text to be attached to letters"
-msgstr "Text, který chcete připojit k dopisu"
+msgstr "Teks yang akan melekat pada surat"
 
 #: ../subscriber.php:986
 #, fuzzy, php-format
@@ -551,59 +552,62 @@ msgid ""
 "This text will be attached to each letter of the mailing, which was created "
 "with plugin %s."
 msgstr ""
-"Tento text bude připojen ke každému zaslanému dopisu, který byl vytvořen "
-"pomocí pluginu Sender od BestWebsoft."
+"Teks ini akan melekat pada setiap huruf dari mailing, yang diciptakan dengan "
+"plugin %s ."
 
 #: ../subscriber.php:991
 #, php-format
 msgid "Shortcode %s refers to"
-msgstr ""
+msgstr "Shortcode %s mengacu"
 
 #: ../subscriber.php:1000
 msgid ""
 "Service message is displayed in a subscriber form if the last one was added "
 "on the page."
 msgstr ""
+"pesan layanan ditampilkan dalam bentuk pelanggan jika yang terakhir "
+"ditambahkan pada halaman."
 
 #: ../subscriber.php:1007
 msgid "Separate page with appropriate service message"
-msgstr ""
+msgstr "halaman terpisah dengan pesan layanan yang sesuai"
 
 #: ../subscriber.php:1015
 msgid "Save Changes"
-msgstr "Uložit změny"
+msgstr "Simpan perubahan"
 
 #: ../subscriber.php:1026
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
-msgstr "Výsledky vyhledávání pro &#8220;%s&#8221;"
+msgstr "Hasil pencarian untuk & # 8220; %s & # 8221;"
 
 #: ../subscriber.php:1028
 msgid "Filter subscribers list"
-msgstr "Filtr pro přihlášené odběratele"
+msgstr "daftar filter pelanggan"
 
 #: ../subscriber.php:1032
 msgid "search"
-msgstr "Hledat"
+msgstr "pencarian"
 
 #: ../subscriber.php:1057
 #, fuzzy
 msgid "Letters not found"
-msgstr "Uživatelé nebyl nalezen."
+msgstr "Surat tidak ditemukan"
 
 #: ../subscriber.php:1066
 #, fuzzy
 msgid "empty title"
-msgstr "Titulek Widgetu"
+msgstr "judul kosong"
 
 #: ../subscriber.php:1075 ../subscriber.php:1078
 msgid "Choose a letter"
-msgstr ""
+msgstr "Pilih huruf"
 
 #: ../subscriber.php:1162
 msgid ""
 "The ID of the verifiable form does not match the ID of the sending form."
 msgstr ""
+"ID dari bentuk diverifikasi tidak cocok dengan ID dari bentuk pengiriman."
 
 #: ../subscriber.php:1191
 msgid "Subscriber Sign Up Form"
@@ -611,15 +615,15 @@ msgstr ""
 
 #: ../subscriber.php:1192
 msgid "Displaying the registration form for newsletter subscribers."
-msgstr "Zobrazení formuláře registrace pro přihlášení k odběru novinek."
+msgstr "Menampilkan formulir pendaftaran untuk pelanggan newsletter."
 
 #: ../subscriber.php:1279
 msgid "Title"
-msgstr ""
+msgstr "Judul"
 
 #: ../subscriber.php:1310
 msgid "apply plugin settings"
-msgstr "použít nastavení pluginu"
+msgstr "menerapkan pengaturan plugin"
 
 #: ../subscriber.php:1984
 msgid ""
@@ -627,7 +631,7 @@ msgid ""
 "Your login:"
 msgstr ""
 "\n"
-"Váš login:"
+" NNama login:"
 
 #: ../subscriber.php:1984
 msgid ""
@@ -635,91 +639,91 @@ msgid ""
 "Your password:"
 msgstr ""
 "\n"
-"Vaše heslo:"
+"Sandi nNama:"
 
 #: ../subscriber.php:2254
 msgid "Subscribe on newsletters"
-msgstr "Přihlásit k odběru novinek"
+msgstr "Berlangganan pada newsletter"
 
 #: ../subscriber.php:2323
 msgid "user"
-msgstr "uživatel"
+msgstr "pemakai"
 
 #: ../subscriber.php:2324
 msgid "users"
-msgstr "uživatelé"
+msgstr "pengguna"
 
 #: ../subscriber.php:2357
 msgid "Users not found"
-msgstr "Uživatelé nebyl nalezen."
+msgstr "Pengguna tidak ditemukan"
 
 #: ../subscriber.php:2369
 msgid "Status"
-msgstr "Stav"
+msgstr "Status"
 
 #: ../subscriber.php:2422
 #, fuzzy
 msgctxt "Action in WP_List_Table"
 msgid "Subscribe"
-msgstr "Přihlásit se k odběru"
+msgstr "Berlangganan"
 
 #: ../subscriber.php:2427
 #, fuzzy
 msgctxt "Action in WP_List_Table"
 msgid "Unsubscribe"
-msgstr "Zrušit odběr"
+msgstr "Berhenti berlangganan"
 
 #: ../subscriber.php:2431 ../subscriber.php:2498
 msgid "Restore From Black List"
-msgstr "Obnovit z černé listiny"
+msgstr "Kembalikan Dari Daftar Hitam"
 
 #: ../subscriber.php:2433 ../subscriber.php:2480 ../subscriber.php:2500
 msgid "Black List"
-msgstr "Černá listina"
+msgstr "Daftar hitam"
 
 #: ../subscriber.php:2436 ../subscriber.php:2503
 msgid "Restore"
-msgstr "Obnovit"
+msgstr "Mengembalikan"
 
 #: ../subscriber.php:2437
 msgid "Delete Permanently"
-msgstr "Smazat trvale"
+msgstr "Hapus permanen"
 
 #: ../subscriber.php:2439 ../subscriber.php:2481
 msgid "Trash"
-msgstr "Koš"
+msgstr "Sampah"
 
 #: ../subscriber.php:2477
 msgid "All"
-msgstr "Vše"
+msgstr "Semua"
 
 #: ../subscriber.php:2478
 msgid "Subscribed"
-msgstr "Přihlášeno"
+msgstr "berlangganan"
 
 #: ../subscriber.php:2479
 msgid "Unsubscribed"
-msgstr "Odhlášeno"
+msgstr "Tidak berlangganan"
 
 #: ../subscriber.php:2495
 msgid "Unsubscribe"
-msgstr "Zrušit odběr"
+msgstr "Berhenti berlangganan"
 
 #: ../subscriber.php:2504
 msgid "Delete Premanently"
-msgstr "Odstranit trvale"
+msgstr "Hapus premanently"
 
 #: ../subscriber.php:2506
 msgid "Delete"
-msgstr "Smazat"
+msgstr "Menghapus"
 
 #: ../subscriber.php:2599
 msgid "in blacklist"
-msgstr "na černé listině"
+msgstr "di blacklist"
 
 #: ../subscriber.php:2601
 msgid "in trash"
-msgstr "v koši"
+msgstr "di tempat sampah"
 
 #: ../subscriber.php:2604
 msgid "E-mail:"
@@ -727,186 +731,189 @@ msgstr "E-mail:"
 
 #: ../subscriber.php:2607
 msgid "Subscribed from"
-msgstr "Přihlášeno od"
+msgstr "disetor dari"
 
 #: ../subscriber.php:2609
 msgid "Unsubscribed from"
-msgstr "Odhlášeno od"
+msgstr "Berhenti berlangganan dari"
 
 #: ../subscriber.php:2668
 msgid "users per page"
-msgstr "Uživatelů na stránku"
+msgstr "pengguna per halaman"
 
 #: ../subscriber.php:2704
 msgid "Unknown action."
-msgstr "Neznámá akce."
+msgstr "tindakan yang tidak diketahui."
 
 #: ../subscriber.php:2705
 msgid "Select the users to apply the necessary actions."
-msgstr "Vyberte uživatele k provedení nezbytných opatření."
+msgstr "Pilih pengguna untuk menerapkan tindakan yang diperlukan."
 
 #: ../subscriber.php:2706
 msgid "No user was updated."
-msgstr "Žádný uživatel byl aktualizován."
+msgstr "Tidak ada pengguna telah diupdate."
 
 #: ../subscriber.php:2749
 #, php-format
 msgid "One user was subscribed on newsletter."
 msgid_plural "%s users were subscribed on newsletter."
-msgstr[0] "Jeden uživatel byl přihlášen o odběru novinek."
-msgstr[1] " %s uživatelů je přihlášeno k odběru"
-msgstr[2] " %s uživatelů je přihlášeno k odběru"
-msgstr[3] " %s uživatelů je přihlášeno k odběru"
+msgstr[0] "Salah satu pengguna yang berlangganan pada newsletter."
+msgstr[1] "Salah satu pengguna yang berlangganan pada newsletter."
+msgstr[2] "Salah satu pengguna yang berlangganan pada newsletter."
+msgstr[3] "Salah satu pengguna yang berlangganan pada newsletter."
 
 #: ../subscriber.php:2749 ../subscriber.php:2790 ../subscriber.php:2830
 #: ../subscriber.php:2865 ../subscriber.php:2901 ../subscriber.php:2966
 msgid "Undo."
-msgstr "Zpět"
+msgstr "Membuka."
 
 #: ../subscriber.php:2790
 #, php-format
 msgid "One user was unsubscribed from newsletter."
 msgid_plural "%s users were unsubscribed from newsletter."
-msgstr[0] "Jeden uživatel se odhlásil z odebírání novinek."
-msgstr[1] "%s uživatelů se odhlásilo z odebírání novinek."
-msgstr[2] "%s uživatelů se odhlásilo z odebírání novinek."
-msgstr[3] "%s uživatelů se odhlásilo z odebírání novinek."
+msgstr[0] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
+msgstr[1] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
+msgstr[2] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
+msgstr[3] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
 
 #: ../subscriber.php:2830
 #, php-format
 msgid "One user was moved to black list."
 msgid_plural "%s users were moved to black list."
-msgstr[0] "Jeden uživatel byl přesunut na černou listinu."
-msgstr[1] "%s uživatelů bylo přesunuto na černou listinu."
-msgstr[2] "%s uživatelů bylo přesunuto na černou listinu."
-msgstr[3] "%s uživatelů bylo přesunuto na černou listinu."
+msgstr[0] "Salah satu pengguna dipindahkan ke daftar hitam."
+msgstr[1] "Salah satu pengguna dipindahkan ke daftar hitam."
+msgstr[2] "Salah satu pengguna dipindahkan ke daftar hitam."
+msgstr[3] "Salah satu pengguna dipindahkan ke daftar hitam."
 
 #: ../subscriber.php:2865
 #, php-format
 msgid "One user was restored from black list."
 msgid_plural "%s users were restored from black list."
-msgstr[0] "Jeden uživatel byl přesunutý z černé listiny."
-msgstr[1] "%s uživatelů bylo přesunuto z černé listiny."
-msgstr[2] "%s uživatelů bylo přesunuto z černé listiny."
-msgstr[3] "%s uživatelů bylo přesunuto z černé listiny."
+msgstr[0] "Salah satu pengguna dipulihkan dari daftar hitam."
+msgstr[1] "Salah satu pengguna dipulihkan dari daftar hitam."
+msgstr[2] "Salah satu pengguna dipulihkan dari daftar hitam."
+msgstr[3] "Salah satu pengguna dipulihkan dari daftar hitam."
 
 #: ../subscriber.php:2901
 #, php-format
 msgid "One user was moved to trash."
 msgid_plural "%s users were moved to trash."
-msgstr[0] "Jeden uživatel byl přesunutý do koše."
-msgstr[1] "%s uživatelů bylo přesunuto do koše."
-msgstr[2] "%s uživatelů bylo přesunuto do koše."
-msgstr[3] "%s uživatelů bylo přesunuto do koše."
+msgstr[0] "Salah satu pengguna dipindahkan ke tempat sampah."
+msgstr[1] "Salah satu pengguna dipindahkan ke tempat sampah."
+msgstr[2] "Salah satu pengguna dipindahkan ke tempat sampah."
+msgstr[3] "Salah satu pengguna dipindahkan ke tempat sampah."
 
 #: ../subscriber.php:2931
 #, php-format
 msgid "One user was deleted permanently."
 msgid_plural "%s users were deleted permanently."
-msgstr[0] "Jeden uživatel byl trvale smazán."
-msgstr[1] "%s uživatelé byli trvale smazáni."
-msgstr[2] "%s uživatelé byli trvale smazáni."
-msgstr[3] "%s uživatelé byli trvale smazáni."
+msgstr[0] "Salah satu pengguna telah dihapus secara permanen."
+msgstr[1] "Salah satu pengguna telah dihapus secara permanen."
+msgstr[2] "Salah satu pengguna telah dihapus secara permanen."
+msgstr[3] "Salah satu pengguna telah dihapus secara permanen."
 
 #: ../subscriber.php:2966
 #, php-format
 msgid "One user was restored."
 msgid_plural "%s users were restored."
-msgstr[0] "Jeden uživatel byl obnoven."
-msgstr[1] "%s uživatelé byli obnoveni."
-msgstr[2] "%s uživatelé byli obnoveni."
-msgstr[3] "%s uživatelé byli obnoveni."
+msgstr[0] "Salah satu pengguna dipulihkan."
+msgstr[1] "Salah satu pengguna dipulihkan."
+msgstr[2] "Salah satu pengguna dipulihkan."
+msgstr[3] "Salah satu pengguna dipulihkan."
 
 #: ../subscriber.php:3034
 msgid "FAQ"
-msgstr "Často kladené otázky"
+msgstr "FAQ"
 
 #: ../subscriber.php:3035
 msgid "Support"
-msgstr "Podpora"
+msgstr "Mendukung"
 
 #: ../subscriber.php:3057
 msgid ""
 "Due to the peculiarities of the multisite work, Subscriber plugin has only"
-msgstr ""
-"Pouze Subsciber plugin umožňuje zvláštní práci na více místech najednou"
+msgstr "Karena kekhasan karya multisite, Subscriber Plugin hanya memiliki"
 
 #: ../subscriber.php:3057
 msgid "Network settings page"
-msgstr "Stránka nastavení sítě"
+msgstr "halaman pengaturan jaringan"
 
 #: ../subscriber.php:3059
 msgid ""
 "Due to the peculiarities of the multisite work, Subscriber plugin has the "
 "network settings page only and it should be Network Activated. Please"
 msgstr ""
-"Pouze Subsciber plugin umožňuje zvláštní práci na více místech najednou a na "
-"stránce nastavení sítě by měla být síť aktivována. Prosím."
+"Karena kekhasan karya multisite, Subscriber plugin memiliki halaman "
+"pengaturan jaringan hanya dan harus Jaringan Diaktifkan. Silahkan"
 
 #: ../subscriber.php:3059
 msgid "Activate Subscriber for Network"
-msgstr "Aktivovat Subcsriber pro síť"
+msgstr "Aktifkan Subscriber untuk Jaringan"
 
 #~ msgid "Error while your request. Please try later."
-#~ msgstr "Při vaší žádosti došlo k chybě. Opakujte akci později."
+#~ msgstr "Kesalahan saat permintaan Anda. Silakan coba lagi nanti."
 
 #~ msgid "Please, enter e-mail."
-#~ msgstr "Prosím zadejte e-mail."
+#~ msgstr "Silakan, masukkan e-mail."
 
 #~ msgid "Please, enter valid e-mail."
-#~ msgstr "Zadejte, prosím, platnou emailovou adresu"
+#~ msgstr "Silakan, masukkan e-mail yang valid."
 
 #~ msgid "No user with this e-mail."
-#~ msgstr "Uživatel s touto e-mailu není."
+#~ msgstr "Tidak ada pengguna dengan e-mail."
 
 #~ msgid "Cannot get data about this e-mail. Please try later."
-#~ msgstr "Nelze získat data o tomto e-mailu. Opakujte akci později."
+#~ msgstr ""
+#~ "Tidak bisa mendapatkan data tentang e-mail. Silakan coba lagi nanti."
 
 #~ msgid "Cannot send message to your e-mail. Please try later."
-#~ msgstr "Nelze odeslat zprávu na váš e-mail. Opakujte akci později."
+#~ msgstr "tidak bisa mengirim pesan ke e-mail Anda. Silakan coba lagi nanti."
 
 #~ msgid "Sorry, but during registration an error occurred. Please try later."
 #~ msgstr ""
-#~ "Omlouváme se, ale při registraci došlo k chybě. Opakujte akci později."
+#~ "Maaf, tapi saat pendaftaran terjadi kesalahan. Silakan coba lagi nanti."
 
 #~ msgid "Thanks for subscribing for our newsletter. Check your mail."
-#~ msgstr "Díky za přihlášení k odběru novinek. Zkontrolujte si poštu."
+#~ msgstr ""
+#~ "Terima kasih telah berlangganan newsletter kami. Periksa email Anda."
 
 #~ msgid "User with this e-mail is already subscribed to the newsletter."
-#~ msgstr "Uživatel s tímto e-mailem je již přihlášen k odebírání newsletteru."
+#~ msgstr "Pengguna dengan e-mail yang sudah berlangganan newsletter."
 
 #~ msgid ""
 #~ "Sorry, but your request to subscribe for the newsletter has been denied. "
 #~ "Please contact the site administration."
 #~ msgstr ""
-#~ "Omlouváme se, ale váš požadavek k odběru pro zasílání novinek byl "
-#~ "odepřen. Obraťte se na správu webu."
+#~ "Maaf, tapi permintaan Anda untuk berlangganan newsletter telah ditolak. "
+#~ "Silahkan hubungi administrasi situs."
 
 #~ msgid "User with this e-mail already has unsubscribed from the newsletter."
-#~ msgstr "Uživatel s tímto e-mailem je již přihlášen k odebírání novinek."
+#~ msgstr ""
+#~ "Pengguna dengan e-mail yang sudah telah berhenti berlangganan dari "
+#~ "newsletter."
 
 #~ msgid "Please check your email."
 #~ msgstr "Zkontrolujte prosím svůj e-mail."
 
 #~ msgid "The user does not exist."
-#~ msgstr "Zadaný uživatel neexistuje."
+#~ msgstr "Pengguna tidak ada."
 
 #~ msgid "You have successfully unsubscribed from the newsletter."
-#~ msgstr "Jste se úspěšně odhlášení newsletteru."
+#~ msgstr "Anda telah berhasil berhenti berlangganan dari newsletter."
 
 #, fuzzy
 #~ msgid ""
 #~ "If you would like to display the Subscribe Form with a widget, you need "
 #~ "to add the widget \"Subscriber Form Registation\" in %s."
 #~ msgstr ""
-#~ "Pokud byste chtěli zobrazit Přihlašovací formulář ve widgetu, je potřeba "
-#~ "přidat widget \"Přihlašovací formulář odběratele\" na kartě widgety."
+#~ "Jika Anda ingin menampilkan Langganan Form dengan widget, Anda perlu "
+#~ "menambahkan widget \\ \"Subscriber Form registation \" di %s ."
 
 #~ msgid "Unlock premium options by upgrading to Pro version"
-#~ msgstr "Odemknout prémiové možnosti aktualizací na verzi Pro"
+#~ msgstr "Membuka pilihan premium dengan upgrade ke versi Pro"
 
 #~ msgid "Subscriber Form Registation"
-#~ msgstr "Registrační formulář pro přihlášení k odběru"
+#~ msgstr "Form Subscriber registation"
 
 #~ msgid "powered by"
 #~ msgstr "Beží na"

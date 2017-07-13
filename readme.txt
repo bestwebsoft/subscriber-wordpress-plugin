@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
-Requires at least: 3.8
+Requires at least: 3.9
 Tested up to: 4.8
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -98,8 +98,8 @@ Some of these translations are not complete. We are constantly adding new featur
 
 = Recommended Plugins =
 
-* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001) - Automatically check and update WordPress core with all installed plugins to the latest versions. Manual mode, email notifications and backups of all your files and database before updating.
-* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Add contact form to your WordPress website
+* [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
+* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Allow customers to reach you using secure contact form plugin any website must have.
 * [Captcha](https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a) - #1 super security anti-spam captcha plugin for WordPress forms.
 * [Sender](https://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39) - Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.
 * [SMTP](https://bestwebsoft.com/products/wordpress/plugins/smtp/) - Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.
@@ -195,13 +195,16 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Screenshots ==
 
-1. Subscribe Form in the frontend.
+1. Subscriber Sign Up Form widget in the frontend.
 2. Subscriber Basic Settings page.
 3. Subscriber Email Notifications page.
 4. Subscriber Subscribers page.
-5. Subscribe Form Registration widget settings.
+5. Subscriber Sigh Up Form widget settings.
 
 == Changelog ==
+
+= V1.3.7 - 12.07.2017 =
+* NEW : The Indonesian language file was added.
 
 = V1.3.6 - 23.06.2017 =
 * NEW : An ability to add several email addresses to the "Recipient email address" field has been added.
@@ -315,6 +318,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.7 =
+* The Indonesian language file was added.
 
 = V1.3.6 =
 * Bugs fixed.
