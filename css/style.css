@@ -111,6 +111,11 @@
 	#sbscrbr_settings_form input[type="checkbox"] {
 		margin-top: 4px;
 	}
+	#sbscrbr_settings_block_email_notifications input[type="radio"],
+	#sbscrbr_settings_block_email_notifications input[type="checkbox"] {
+		margin-top: 0px;
+		margin-bottom: 4px;
+	}
 	.sbscrbr-email-field {
 		margin-left: 0;
 	}

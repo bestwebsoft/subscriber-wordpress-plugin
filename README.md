@@ -6,7 +6,7 @@
 <blockquote>
 <p><strong>NOTE:</strong> Subscriber plugin is an exclusive add-on to the <a href="https://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39" rel="nofollow">Sender</a> plugin.</p>
 </blockquote>
-<p><a href="https://bestwebsoft.com/demo-for-subscriber/" rel="nofollow">View Demo</a></p>
+<p><a href="https://bestwebsoft.com/demo-for-subscriber/?ref=readme" rel="nofollow">View Demo</a></p>
 <p><span class="embed-youtube" style="text-align:center; display: block;"></span></p>
 <h4>Free Features</h4>
 <ul>
@@ -25,8 +25,14 @@
 <li>Subscribe button</li>
 </ul>
 </li>
-<li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a" rel="nofollow">Captcha</a></li>
-<li>Compatible with <a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e" rel="nofollow">Contact Form</a></li>
+<li>Compatible with:
+<ul>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a" rel="nofollow">Captcha</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e" rel="nofollow">Contact Form</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688" rel="nofollow">Google Captcha (reCAPTCHA)</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc" rel="nofollow">Social Login</a></li>
+</ul>
+</li>
 <li>Customize service messages</li>
 <li>Notify administrator via email about new subscribers</li>
 <li>Change recipient email to:
@@ -102,7 +108,7 @@
 <h4>Recommended Plugins</h4>
 <ul>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001" rel="nofollow">Updater</a> &#8211; Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.</li>
-<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e" rel="nofollow">Contact Form</a> &#8211; Allow customers to reach you using secure contact form plugin any website must have.</li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e" rel="nofollow">Contact Form</a> &#8211; Simple contact form plugin any WordPress website must have.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a" rel="nofollow">Captcha</a> &#8211; #1 super security anti-spam captcha plugin for WordPress forms.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39" rel="nofollow">Sender</a> &#8211; Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.</li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/smtp/" rel="nofollow">SMTP</a> &#8211; Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.</li>

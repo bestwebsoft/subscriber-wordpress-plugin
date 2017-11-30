@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 4.8
-Stable tag: 1.3.7
+Tested up to: 4.9.1
+Stable tag: 1.3.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ Communicate with your audience directly. Convert your visitors to subscribers an
 
 > **NOTE:** Subscriber plugin is an exclusive add-on to the [Sender](https://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39) plugin.
 
-[View Demo](https://bestwebsoft.com/demo-for-subscriber/)
+[View Demo](https://bestwebsoft.com/demo-for-subscriber/?ref=readme)
 
 https://www.youtube.com/watch?v=ytjxGd4hXDU
 
@@ -33,8 +33,11 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* Email field
 	* Unsubscribe checkbox
 	* Subscribe button
-* Compatible with [Captcha](https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
-* Compatible with [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
+* Compatible with:
+	* [Captcha](https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
+	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
+	* [Google Captcha (reCAPTCHA)](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688)
+	* [Social Login](https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc)
 * Customize service messages
 * Notify administrator via email about new subscribers
 * Change recipient email to:
@@ -99,7 +102,7 @@ Some of these translations are not complete. We are constantly adding new featur
 = Recommended Plugins =
 
 * [Updater](https://bestwebsoft.com/products/wordpress/plugins/updater/?k=eae2aa18f1ba0036cc937a130f05f001) - Automatically check and update WordPress website core with all installed plugins and themes to the latest versions.
-* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Allow customers to reach you using secure contact form plugin any website must have.
+* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e) - Simple contact form plugin any WordPress website must have.
 * [Captcha](https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a) - #1 super security anti-spam captcha plugin for WordPress forms.
 * [Sender](https://bestwebsoft.com/products/wordpress/plugins/sender/?k=87e536ef51413f30ebada1bb46dcdf39) - Send bulk email messages to WordPress users. Custom templates, advanced settings and detailed reports.
 * [SMTP](https://bestwebsoft.com/products/wordpress/plugins/smtp/) - Configure SMTP server to receive email messages from WordPress to Gmail, Yahoo, Hotmail and other services.
@@ -199,12 +202,18 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 2. Subscriber Basic Settings page.
 3. Subscriber Email Notifications page.
 4. Subscriber Subscribers page.
-5. Subscriber Sigh Up Form widget settings.
+5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
 
-= V1.3.7 - 12.07.2017 =
-* NEW : The Indonesian language file was added.
+= V1.3.8 - 30.11.2017 =
+* NEW : Compatibility with Social Login by BestWebSoft has been added.
+* NEW : Compatibility with Google Captcha (reCAPTCHA) by BestWebSoft has been added.
+* NEW : Compatibility with Email Queue by BestWebSoft has been removed.
+* NEW : An ability to change submit button text has been added.
+
+= V1.3.7 - 13.07.2017 =
+* NEW : The Indonesian language file has been added.
 
 = V1.3.6 - 23.06.2017 =
 * NEW : An ability to add several email addresses to the "Recipient email address" field has been added.
@@ -318,6 +327,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.3.8 =
+* Functionality improved
 
 = V1.3.7 =
 * The Indonesian language file was added.

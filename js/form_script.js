@@ -13,5 +13,16 @@
 				}
 			});
 		});
+
+		/**
+		 * change button text by click
+		 */
+		$('input[name="sbscrbr_unsubscribe"]').click(function() {
+			if( $(this).is(':checked')) {
+				$('input[name="sbscrbr_submit_email"]').val( sbscrbr_js_var.unsubscribe_button_name );
+			} else {
+				$('input[name="sbscrbr_submit_email"]').val( sbscrbr_js_var.subscribe_button_name );
+			}
+		});
 	});
 })(jQuery);
