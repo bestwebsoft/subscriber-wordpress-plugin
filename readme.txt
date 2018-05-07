@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 4.9.1
-Stable tag: 1.3.8
+Tested up to: 4.9.5
+Stable tag: 1.3.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -83,7 +83,7 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 * [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 * [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
-* [[Doc] Sender & Subscriber Usage instruction](https://docs.google.com/document/d/1VHSpwcPpNSmrBFUdiEiVSikxLyTqcUT1cPivGyQYvxo/)
+* [[Doc] Sender & Subscriber Usage Instruction](https://docs.google.com/document/d/1yazt_na2u364QCbUELlrBixZnRh6Jc0EbunXC02aYZM/)
 * [[Video] Purchase, Installation, Configuration Tutorial](https://www.youtube.com/watch?v=kQQ0ZqmpR6Y)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=YJOQSGXPjRY)
 
@@ -94,6 +94,7 @@ Visit our Help Center if you have any questions, our friendly Support Team is ha
 = Translation =
 
 * Czech (cs_CZ) (thanks to [PaMaDeSSoft](mailto:info@pamadessoft.cz), www.pamadessoft.cz)
+* Indonesian (id_ID) (thanks to [Jordan Silaen](mailto:jordan.silaen@chameleonjohn.com), www.chameleonjohn.com)
 * Russian (ru_RU)
 * Ukrainian (uk)
 
@@ -205,6 +206,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
+
+= V1.3.9 - 07.05.2018 =
+* NEW : An ability to select whether to send email after the subscription or not has been added.
+* Pro : An ability to delete a user data after unsubscription has been added.
 
 = V1.3.8 - 30.11.2017 =
 * NEW : Compatibility with Social Login by BestWebSoft has been added.
@@ -328,8 +333,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Upgrade Notice ==
 
+= V1.3.9 =
+* New features added.
+
 = V1.3.8 =
-* Functionality improved
+* Functionality improved.
 
 = V1.3.7 =
 * The Indonesian language file was added.

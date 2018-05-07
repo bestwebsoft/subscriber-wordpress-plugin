@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Subscriber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-01 14:30+0200\n"
-"PO-Revision-Date: 2017-11-01 14:30+0200\n"
+"POT-Creation-Date: 2018-05-07 14:44+0300\n"
+"PO-Revision-Date: 2018-05-07 14:44+0300\n"
 "Last-Translator: Jordan Silaen <jordan.silaen@chameleonjohn.com>\n"
 "Language-Team: ChameleonJohn.com <jordan.silaen@chameleonjohn.com>\n"
 "Language: id_ID\n"
@@ -27,21 +27,21 @@ msgstr "Mail Subscriber"
 msgid "Unsubscribe Confirmation"
 msgstr "Konfirmasi berhenti berlangganan"
 
-#: ../subscriber.php:195 ../subscriber.php:1265 ../subscriber.php:1317
-#: ../subscriber.php:2412
+#: ../subscriber.php:195 ../subscriber.php:1280 ../subscriber.php:1332
+#: ../subscriber.php:2433
 msgid "E-mail"
 msgstr "E-mail"
 
-#: ../subscriber.php:196 ../subscriber.php:1266 ../subscriber.php:1318
+#: ../subscriber.php:196 ../subscriber.php:1281 ../subscriber.php:1333
 msgid "unsubscribe"
 msgstr "berhenti berlangganan"
 
-#: ../subscriber.php:197 ../subscriber.php:1138 ../subscriber.php:1267
-#: ../subscriber.php:1319 ../subscriber.php:2536
+#: ../subscriber.php:197 ../subscriber.php:1154 ../subscriber.php:1282
+#: ../subscriber.php:1334 ../subscriber.php:2557
 msgid "Subscribe"
 msgstr "Berlangganan"
 
-#: ../subscriber.php:198 ../subscriber.php:2539
+#: ../subscriber.php:198 ../subscriber.php:2560
 msgid "Unsubscribe"
 msgstr "Berhenti berlangganan"
 
@@ -99,24 +99,24 @@ msgid ""
 "know."
 msgstr ""
 
-#: ../subscriber.php:224
+#: ../subscriber.php:225
 msgid "New subscriber"
 msgstr "pelanggan baru"
 
-#: ../subscriber.php:225
+#: ../subscriber.php:226
 msgid "Thanks for registration"
 msgstr "Terima kasih untuk pendaftaran"
 
-#: ../subscriber.php:226
+#: ../subscriber.php:227
 msgid "Link to unsubscribe"
 msgstr "Link ke berhenti berlangganan"
 
-#: ../subscriber.php:228
+#: ../subscriber.php:229
 #, fuzzy, php-format
 msgid "User with e-mail %s has subscribed to a newsletter."
 msgstr "Pengguna dengan e-mail %s telah berlangganan newsletter."
 
-#: ../subscriber.php:229
+#: ../subscriber.php:230
 #, fuzzy, php-format
 msgid ""
 "Thanks for registration. To change data of your profile go to %s If you want "
@@ -126,7 +126,7 @@ msgstr ""
 "Jika Anda ingin berhenti berlangganan dari newsletter dari situs kami pergi "
 "ke link %s"
 
-#: ../subscriber.php:230
+#: ../subscriber.php:231
 #, fuzzy, php-format
 msgid ""
 "Dear user. At your request, we send you a link to unsubscribe from our email "
@@ -140,7 +140,7 @@ msgstr ""
 "gunakan link di bawah ini. Jika Anda berubah pikiran, Anda hanya dapat "
 "mengabaikan surat ini \\ nlink untuk berhenti berlangganan. \\ N %s"
 
-#: ../subscriber.php:238
+#: ../subscriber.php:239
 #, fuzzy, php-format
 msgid ""
 "If you want to unsubscribe from the newsletter from our site go to the "
@@ -149,7 +149,7 @@ msgstr ""
 "Jika Anda ingin berhenti berlangganan dari newsletter dari situs kami pergi "
 "ke link berikut: %s"
 
-#: ../subscriber.php:501
+#: ../subscriber.php:502
 msgid ""
 "Email 'FROM' field option was changed, which may cause email messages being "
 "moved to the spam folder or email delivery failures."
@@ -157,60 +157,60 @@ msgstr ""
 "Email 'DARI' pilihan lapangan berubah, yang dapat menyebabkan pesan email "
 "dipindahkan ke folder spam atau email kegagalan pengiriman."
 
-#: ../subscriber.php:535
+#: ../subscriber.php:537
 msgid ""
 "Error: The domain name in shortcodes settings must be the same as the "
 "current one. Settings are not saved."
 msgstr ""
 
-#: ../subscriber.php:606
+#: ../subscriber.php:608
 msgid "Settings Saved"
 msgstr "pengaturan Disimpan"
 
-#: ../subscriber.php:618
+#: ../subscriber.php:620
 msgid "All plugin settings were restored."
 msgstr "Semua pengaturan Plugin dipulihkan."
 
-#: ../subscriber.php:642
+#: ../subscriber.php:644
 msgid "Subscriber Settings"
 msgstr "Pengaturan pelanggan"
 
-#: ../subscriber.php:644 ../subscriber.php:3058 ../subscriber.php:3077
+#: ../subscriber.php:646 ../subscriber.php:3079 ../subscriber.php:3098
 msgid "Settings"
 msgstr "pengaturan"
 
-#: ../subscriber.php:645
+#: ../subscriber.php:647
 msgid "Email Notifications"
 msgstr "notifikasi email"
 
-#: ../subscriber.php:646
+#: ../subscriber.php:648
 msgid "Subscribers"
 msgstr "pelanggan"
 
-#: ../subscriber.php:647
+#: ../subscriber.php:649
 msgid "Custom code"
 msgstr "kode kustom"
 
-#: ../subscriber.php:648
+#: ../subscriber.php:650
 msgid "Go PRO"
 msgstr "Go PRO"
 
-#: ../subscriber.php:651 ../subscriber.php:3099
+#: ../subscriber.php:653 ../subscriber.php:3120
 msgid "Notice:"
 msgstr "Melihat:"
 
-#: ../subscriber.php:663
+#: ../subscriber.php:665
 #, php-format
 msgid ""
 "If you would like to display the Subscribe Form with a widget, you need to "
 "add the widget \"Subscriber Sign Up Form\" in %s."
 msgstr ""
 
-#: ../subscriber.php:663
+#: ../subscriber.php:665
 msgid "the Widgets tab"
 msgstr "tab Widget"
 
-#: ../subscriber.php:665
+#: ../subscriber.php:667
 #, php-format
 msgid ""
 "If you would like to add the Subscribe Form to your page or post, please use "
@@ -219,7 +219,7 @@ msgstr ""
 "Jika Anda ingin menambahkan Langganan Form ke halaman Anda atau posting, "
 "silakan gunakan %s tombol"
 
-#: ../subscriber.php:671
+#: ../subscriber.php:673
 #, php-format
 msgid ""
 "You can add the Subscribe Form to your page or post by clicking on %s button "
@@ -230,67 +230,67 @@ msgstr ""
 "dengan mengklik %s tombol di blok mengedit konten menggunakan modus Visual. "
 "Jika tombol tidak ditampilkan, gunakan shortcode %s ."
 
-#: ../subscriber.php:683
+#: ../subscriber.php:685
 msgid "Subscribe form labels"
 msgstr "Berlangganan bentuk label"
 
-#: ../subscriber.php:686 ../subscriber.php:1329
+#: ../subscriber.php:688 ../subscriber.php:1344
 msgid "Text above the subscribe form"
 msgstr "Teks di atas bentuk berlangganan"
 
-#: ../subscriber.php:689 ../subscriber.php:1335
+#: ../subscriber.php:691 ../subscriber.php:1350
 #, fuzzy
 msgid "Placeholder for text field \"E-mail\""
 msgstr "Placeholder untuk bidang teks \\ \"E-mail \""
 
-#: ../subscriber.php:692 ../subscriber.php:1341
+#: ../subscriber.php:694 ../subscriber.php:1356
 #, fuzzy
 msgid "Label for \"Unsubscribe\" checkbox"
 msgstr "Label untuk \\ \"Unsubscribe \" kotak centang"
 
-#: ../subscriber.php:695 ../subscriber.php:1347
+#: ../subscriber.php:697 ../subscriber.php:1362
 #, fuzzy
 msgid "Label for \"Subscribe\" button"
 msgstr "Label untuk \\ \"Langganan \" tombol"
 
-#: ../subscriber.php:698
+#: ../subscriber.php:700
 msgid "Label for \"Unsubscribe\" button"
 msgstr ""
 
-#: ../subscriber.php:702 ../subscriber.php:850
+#: ../subscriber.php:704 ../subscriber.php:852
 msgid "Add to the subscribe form"
 msgstr "Menambah bentuk berlangganan"
 
-#: ../subscriber.php:711 ../subscriber.php:723 ../subscriber.php:744
-#: ../subscriber.php:761 ../subscriber.php:963
+#: ../subscriber.php:713 ../subscriber.php:725 ../subscriber.php:746
+#: ../subscriber.php:763 ../subscriber.php:979
 msgid "Activate"
 msgstr "Mengaktifkan"
 
-#: ../subscriber.php:717 ../subscriber.php:726 ../subscriber.php:775
+#: ../subscriber.php:719 ../subscriber.php:728 ../subscriber.php:777
 msgid "Download"
 msgstr "Download"
 
-#: ../subscriber.php:731
+#: ../subscriber.php:733
 msgid "Add \"Subscribe\" checkbox to"
 msgstr ""
 
-#: ../subscriber.php:740 ../subscriber.php:757
+#: ../subscriber.php:742 ../subscriber.php:759
 #, php-format
 msgid "Update %s at least to version"
 msgstr "Perbarui %s setidaknya untuk versi"
 
-#: ../subscriber.php:744 ../subscriber.php:761 ../subscriber.php:963
+#: ../subscriber.php:746 ../subscriber.php:763 ../subscriber.php:979
 #, fuzzy
 msgid "Activate for network"
 msgstr "Aktifkan untuk jaringan"
 
-#: ../subscriber.php:783
+#: ../subscriber.php:785
 msgid "Check off for adding captcha to forms on their settings pages."
 msgstr ""
 "Periksa off untuk menambahkan captcha untuk formulir di halaman pengaturan "
 "mereka."
 
-#: ../subscriber.php:786
+#: ../subscriber.php:788
 #, fuzzy
 msgid ""
 "If you would like to add checkbox \"Subscribe\" to a custom form, please see"
@@ -298,126 +298,134 @@ msgstr ""
 "Jika Anda ingin menambahkan kotak centang \\ \"Berlangganan \" untuk bentuk "
 "kustom, silakan lihat"
 
-#: ../subscriber.php:791
+#: ../subscriber.php:793
 msgid "Service messages"
 msgstr "pesan layanan"
 
-#: ../subscriber.php:794
+#: ../subscriber.php:796
 msgid "These messages will be displayed in the frontend of your site."
 msgstr "Pesan-pesan ini akan ditampilkan di frontend dari situs Anda."
 
-#: ../subscriber.php:800
+#: ../subscriber.php:802
 msgid "Unknown error"
 msgstr "Kesalahan yang tidak diketahui"
 
-#: ../subscriber.php:803
+#: ../subscriber.php:805
 msgid "If user has not entered e-mail"
 msgstr "Jika pengguna belum masuk e-mail"
 
-#: ../subscriber.php:806
+#: ../subscriber.php:808
 msgid "If user has entered invalid e-mail"
 msgstr "Jika pengguna telah memasuki e-mail yang tidak valid"
 
-#: ../subscriber.php:809
+#: ../subscriber.php:811
 msgid "If the user has entered a non-existent e-mail"
 msgstr "Jika pengguna telah memasuki e-mail tidak ada"
 
-#: ../subscriber.php:812
+#: ../subscriber.php:814
 msgid "If it is impossible to get the data about the entered e-mail"
 msgstr "Jika tidak mungkin untuk mendapatkan data tentang e-mail yang masuk"
 
-#: ../subscriber.php:815
+#: ../subscriber.php:817
 msgid "If it is impossible to send a letter"
 msgstr "Jika tidak mungkin untuk mengirim surat"
 
-#: ../subscriber.php:818
+#: ../subscriber.php:820
 msgid "If some errors occurred while user registration"
 msgstr "Jika beberapa kesalahan terjadi saat pendaftaran pengguna"
 
-#: ../subscriber.php:821
+#: ../subscriber.php:823
 msgid "If user registration was succesfully finished"
 msgstr "Jika pendaftaran pengguna telah berhasil selesai"
 
-#: ../subscriber.php:824
+#: ../subscriber.php:826
 msgid "If the user has already subscribed"
 msgstr "Jika pengguna sudah berlangganan"
 
-#: ../subscriber.php:827
+#: ../subscriber.php:829
 msgid "If subscription has been denied"
 msgstr "Jika langganan telah ditolak"
 
-#: ../subscriber.php:830
+#: ../subscriber.php:832
 msgid "If the user has already unsubscribed"
 msgstr "Jika pengguna memiliki sudah berhenti berlangganan"
 
-#: ../subscriber.php:833
+#: ../subscriber.php:835
 msgid "If the user has been sent a letter with a link to unsubscribe"
 msgstr ""
 "Jika pengguna telah mengirim surat dengan link untuk berhenti berlangganan"
 
-#: ../subscriber.php:836
+#: ../subscriber.php:838
 msgid "If user was unsubscribed"
 msgstr "Jika pengguna adalah berhenti berlangganan"
 
-#: ../subscriber.php:839
+#: ../subscriber.php:841
 msgid "If the user clicked on a non-existent \"unsubscribe\"-link"
 msgstr "Jika pengguna mengklik pada tidak ada \\ \"\\ unsubscribe\" - Link"
 
-#: ../subscriber.php:846
+#: ../subscriber.php:848
 msgid "Close"
 msgstr "Dekat"
 
-#: ../subscriber.php:852
+#: ../subscriber.php:854
 msgid "\"Name\" field"
 msgstr "\\ Bidang \"Nama \""
 
-#: ../subscriber.php:853
+#: ../subscriber.php:855
 msgid "\"Unsubscribe\" checkbox"
 msgstr "\\ \"Unsubscribe \" kotak centang"
 
-#: ../subscriber.php:857
+#: ../subscriber.php:859
 #, fuzzy
 msgid "Add checkbox \"Subscribe\" to"
 msgstr "Menambahkan kotak centang \\ \"Berlangganan \" untuk"
 
-#: ../subscriber.php:859
+#: ../subscriber.php:861
 msgid "Registration form"
 msgstr "Formulir pendaftaran"
 
-#: ../subscriber.php:863
+#: ../subscriber.php:865
 #, fuzzy
 msgid "Subscription confirmation"
 msgstr "konfirmasi berlangganan"
 
-#: ../subscriber.php:866
+#: ../subscriber.php:868
 msgid "Subscription confirmation via email before user registration."
 msgstr "konfirmasi berlangganan melalui email sebelum pendaftaran pengguna."
 
-#: ../subscriber.php:870
+#: ../subscriber.php:872
 msgid "Delete a user data if the subscription has not been confirmed in"
 msgstr "Menghapus data pengguna jika berlangganan belum dikonfirmasi di"
 
-#: ../subscriber.php:872 ../subscriber.php:873
+#: ../subscriber.php:874 ../subscriber.php:875
 msgid "hours"
 msgstr "jam"
 
-#: ../subscriber.php:873
+#: ../subscriber.php:875
 msgid "every"
 msgstr "setiap"
 
-#: ../subscriber.php:874
+#: ../subscriber.php:876
 msgid "Please set 0 if you do not want to delete a user data."
 msgstr "Silakan set 0 jika Anda tidak ingin menghapus data pengguna."
 
 #: ../subscriber.php:880
+msgid "Delete user after unsubscribing"
+msgstr ""
+
+#: ../subscriber.php:883
+msgid "Enable to delete user account after unsubscribing."
+msgstr ""
+
+#: ../subscriber.php:889
 msgid "Learn More"
 msgstr "Belajarlah lagi"
 
-#: ../subscriber.php:887
-msgid "Delete users while plugin removing"
-msgstr "Menghapus pengguna sementara Plugin menghapus"
+#: ../subscriber.php:896
+msgid "Delete users with plugin removing"
+msgstr ""
 
-#: ../subscriber.php:890
+#: ../subscriber.php:899
 msgid ""
 "If this option enabled, when you remove plugin, all users with role \"Mail "
 "Subscribed\" will be removed from users list."
@@ -425,7 +433,7 @@ msgstr ""
 "Jika opsi ini diaktifkan, ketika Anda menghapus Plugin, semua pengguna "
 "dengan peran \\ \"Surat Berlangganan \" akan dihapus dari daftar pengguna."
 
-#: ../subscriber.php:895
+#: ../subscriber.php:904
 msgid ""
 "If you want to send mailout to the users who have subscribed for newsletters "
 "use"
@@ -433,14 +441,14 @@ msgstr ""
 "Jika Anda ingin mengirim mailout kepada pengguna yang telah berlangganan "
 "untuk newsletter digunakan"
 
-#: ../subscriber.php:895
+#: ../subscriber.php:904
 msgid ""
 "that sends mail to registered users. There is also a premium version of the "
 "plugin"
 msgstr ""
 "yang mengirim email ke pengguna terdaftar. Ada juga versi premium plugin"
 
-#: ../subscriber.php:895
+#: ../subscriber.php:904
 msgid ""
 "allowing to create and save templates for letters, edit the content of "
 "messages with a visual editor TinyMce, set priority оf mailing, create and "
@@ -450,19 +458,27 @@ msgstr ""
 "pesan dengan editor TinyMCE visual, menetapkan prioritas оf mailing, membuat "
 "dan mengelola mailing list."
 
-#: ../subscriber.php:901
+#: ../subscriber.php:910
 msgid "Email admin about new subscribed users"
 msgstr "Email admin tentang pengguna berlangganan baru"
 
-#: ../subscriber.php:907
+#: ../subscriber.php:916
+msgid "Email user about subscription"
+msgstr ""
+
+#: ../subscriber.php:919
+msgid "Enable to notify a user about the subscription he made."
+msgstr ""
+
+#: ../subscriber.php:923
 msgid "Recipient email address (To:)"
 msgstr "Alamat email penerima (To :)"
 
-#: ../subscriber.php:912
+#: ../subscriber.php:928
 msgid "Select a username"
 msgstr "Memilih nama pengguna"
 
-#: ../subscriber.php:922
+#: ../subscriber.php:938
 msgid ""
 "If necessary you can specify several email addresses separated by comma (For "
 "example: email1@example.com, email2@example.com)."
@@ -470,19 +486,19 @@ msgstr ""
 "Jika perlu Anda dapat menentukan beberapa alamat email dipisahkan dengan "
 "koma (Misalnya: email1@example.com, email2@example.com)."
 
-#: ../subscriber.php:927
+#: ../subscriber.php:943
 msgid "'FROM' field"
 msgstr "'DARI' lapangan"
 
-#: ../subscriber.php:929 ../subscriber.php:2411
+#: ../subscriber.php:945 ../subscriber.php:2432
 msgid "Name"
 msgstr "Nama"
 
-#: ../subscriber.php:935
+#: ../subscriber.php:951
 msgid "Email"
 msgstr "E-mail"
 
-#: ../subscriber.php:939
+#: ../subscriber.php:955
 msgid ""
 "If this option is changed, email messages may be moved to the spam folder or "
 "email delivery failures may occur."
@@ -490,11 +506,11 @@ msgstr ""
 "Jika opsi ini berubah, pesan email mungkin akan dipindahkan ke folder spam "
 "atau email kegagalan pengiriman dapat terjadi."
 
-#: ../subscriber.php:944
+#: ../subscriber.php:960
 msgid "Letters content"
 msgstr "konten surat"
 
-#: ../subscriber.php:947
+#: ../subscriber.php:963
 msgid ""
 "You can edit the content of service letters, which will be sent to users. In "
 "the text of the message you can use the following shortcodes:"
@@ -502,28 +518,28 @@ msgstr ""
 "Anda dapat mengedit isi dari surat layanan, yang akan dikirim ke pengguna. "
 "Dalam teks pesan Anda dapat menggunakan shortcode berikut:"
 
-#: ../subscriber.php:949
+#: ../subscriber.php:965
 msgid "this shortcode will be replaced with the e-mail of a current user;"
 msgstr "shortcode ini akan diganti dengan e-mail dari pengguna saat ini;"
 
-#: ../subscriber.php:950
+#: ../subscriber.php:966
 msgid ""
 "this shortcode will be replaced with the link to profile page of current "
 "user;"
 msgstr ""
 "shortcode ini akan diganti dengan link ke halaman profil pengguna saat ini;"
 
-#: ../subscriber.php:951
+#: ../subscriber.php:967
 msgid "this shortcode will be replaced with the link to unsubscribe."
 msgstr "shortcode ini akan diganti dengan link untuk berhenti berlangganan."
 
-#: ../subscriber.php:953
+#: ../subscriber.php:969
 msgid ""
 "There must be a space after the shortcode otherwise the link will be "
 "incorrect."
 msgstr "Harus ada spasi setelah shortcode sebaliknya link akan salah."
 
-#: ../subscriber.php:969
+#: ../subscriber.php:985
 #, php-format
 msgid ""
 "Install %s plugin in order to use HTML letters created with TinyMce visual "
@@ -532,33 +548,33 @@ msgstr ""
 "Instal %s Plugin untuk menggunakan huruf HTML dibuat dengan TinyMCE editor "
 "visual"
 
-#: ../subscriber.php:972
+#: ../subscriber.php:988
 msgid "Message to admin about new subscribed users"
 msgstr "Pesan ke admin tentang pengguna berlangganan baru"
 
-#: ../subscriber.php:973 ../subscriber.php:991 ../subscriber.php:1009
+#: ../subscriber.php:989 ../subscriber.php:1007 ../subscriber.php:1025
 #, fuzzy
 msgid "Subject"
 msgstr "Subyek"
 
-#: ../subscriber.php:976 ../subscriber.php:994 ../subscriber.php:1012
+#: ../subscriber.php:992 ../subscriber.php:1010 ../subscriber.php:1028
 #, fuzzy
 msgid "Text"
 msgstr "Teks"
 
-#: ../subscriber.php:990
+#: ../subscriber.php:1006
 msgid "Message to subscribed users"
 msgstr "Pesan ke pengguna berlangganan"
 
-#: ../subscriber.php:1008
+#: ../subscriber.php:1024
 msgid "Message with unsubscribe link"
 msgstr "Pesan dengan link unsubscribe"
 
-#: ../subscriber.php:1026
+#: ../subscriber.php:1042
 msgid "Text to be attached to letters"
 msgstr "Teks yang akan melekat pada surat"
 
-#: ../subscriber.php:1030
+#: ../subscriber.php:1046
 #, fuzzy, php-format
 msgid ""
 "This text will be attached to each letter of the mailing, which was created "
@@ -567,12 +583,12 @@ msgstr ""
 "Teks ini akan melekat pada setiap huruf dari mailing, yang diciptakan dengan "
 "plugin %s ."
 
-#: ../subscriber.php:1035
+#: ../subscriber.php:1051
 #, php-format
 msgid "Shortcode %s refers to"
 msgstr "Shortcode %s mengacu"
 
-#: ../subscriber.php:1044
+#: ../subscriber.php:1060
 msgid ""
 "Service message is displayed in a subscriber form if the last one was added "
 "on the page."
@@ -580,64 +596,64 @@ msgstr ""
 "pesan layanan ditampilkan dalam bentuk pelanggan jika yang terakhir "
 "ditambahkan pada halaman."
 
-#: ../subscriber.php:1051
+#: ../subscriber.php:1067
 msgid "Separate page with appropriate service message"
 msgstr "halaman terpisah dengan pesan layanan yang sesuai"
 
-#: ../subscriber.php:1059
+#: ../subscriber.php:1075
 msgid "Save Changes"
 msgstr "Simpan perubahan"
 
-#: ../subscriber.php:1070
+#: ../subscriber.php:1086
 #, php-format
 msgid "Search results for &#8220;%s&#8221;"
 msgstr "Hasil pencarian untuk & # 8220; %s & # 8221;"
 
-#: ../subscriber.php:1072
+#: ../subscriber.php:1088
 msgid "Filter subscribers list"
 msgstr "daftar filter pelanggan"
 
-#: ../subscriber.php:1076
+#: ../subscriber.php:1092
 msgid "search"
 msgstr "pencarian"
 
-#: ../subscriber.php:1101
+#: ../subscriber.php:1117
 #, fuzzy
 msgid "Letters not found"
 msgstr "Surat tidak ditemukan"
 
-#: ../subscriber.php:1110
+#: ../subscriber.php:1126
 #, fuzzy
 msgid "empty title"
 msgstr "judul kosong"
 
-#: ../subscriber.php:1119 ../subscriber.php:1122
+#: ../subscriber.php:1135 ../subscriber.php:1138
 msgid "Choose a letter"
 msgstr "Pilih huruf"
 
-#: ../subscriber.php:1206
+#: ../subscriber.php:1222
 msgid ""
 "The ID of the verifiable form does not match the ID of the sending form."
 msgstr ""
 "ID dari bentuk diverifikasi tidak cocok dengan ID dari bentuk pengiriman."
 
-#: ../subscriber.php:1235
+#: ../subscriber.php:1251
 msgid "Subscriber Sign Up Form"
 msgstr ""
 
-#: ../subscriber.php:1236
+#: ../subscriber.php:1252
 msgid "Displaying the registration form for newsletter subscribers."
 msgstr "Menampilkan formulir pendaftaran untuk pelanggan newsletter."
 
-#: ../subscriber.php:1323
+#: ../subscriber.php:1338
 msgid "Title"
 msgstr "Judul"
 
-#: ../subscriber.php:1354
+#: ../subscriber.php:1369
 msgid "apply plugin settings"
 msgstr "menerapkan pengaturan plugin"
 
-#: ../subscriber.php:2060
+#: ../subscriber.php:2080
 msgid ""
 "\n"
 "Your login:"
@@ -645,7 +661,7 @@ msgstr ""
 "\n"
 " NNama login:"
 
-#: ../subscriber.php:2060
+#: ../subscriber.php:2080
 msgid ""
 "\n"
 "Your password:"
@@ -653,111 +669,111 @@ msgstr ""
 "\n"
 "Sandi nNama:"
 
-#: ../subscriber.php:2298
+#: ../subscriber.php:2319
 msgid "Subscribe on newsletters"
 msgstr "Berlangganan pada newsletter"
 
-#: ../subscriber.php:2367
+#: ../subscriber.php:2388
 msgid "user"
 msgstr "pemakai"
 
-#: ../subscriber.php:2368
+#: ../subscriber.php:2389
 msgid "users"
 msgstr "pengguna"
 
-#: ../subscriber.php:2401
+#: ../subscriber.php:2422
 msgid "Users not found"
 msgstr "Pengguna tidak ditemukan"
 
-#: ../subscriber.php:2413
+#: ../subscriber.php:2434
 msgid "Status"
 msgstr "Status"
 
-#: ../subscriber.php:2466
+#: ../subscriber.php:2487
 #, fuzzy
 msgctxt "Action in WP_List_Table"
 msgid "Subscribe"
 msgstr "Berlangganan"
 
-#: ../subscriber.php:2471
+#: ../subscriber.php:2492
 #, fuzzy
 msgctxt "Action in WP_List_Table"
 msgid "Unsubscribe"
 msgstr "Berhenti berlangganan"
 
-#: ../subscriber.php:2475 ../subscriber.php:2542
+#: ../subscriber.php:2496 ../subscriber.php:2563
 msgid "Restore From Black List"
 msgstr "Kembalikan Dari Daftar Hitam"
 
-#: ../subscriber.php:2477 ../subscriber.php:2524 ../subscriber.php:2544
+#: ../subscriber.php:2498 ../subscriber.php:2545 ../subscriber.php:2565
 msgid "Black List"
 msgstr "Daftar hitam"
 
-#: ../subscriber.php:2480 ../subscriber.php:2547
+#: ../subscriber.php:2501 ../subscriber.php:2568
 msgid "Restore"
 msgstr "Mengembalikan"
 
-#: ../subscriber.php:2481 ../subscriber.php:2548
+#: ../subscriber.php:2502 ../subscriber.php:2569
 msgid "Delete Permanently"
 msgstr "Hapus permanen"
 
-#: ../subscriber.php:2483 ../subscriber.php:2525
+#: ../subscriber.php:2504 ../subscriber.php:2546
 msgid "Trash"
 msgstr "Sampah"
 
-#: ../subscriber.php:2521
+#: ../subscriber.php:2542
 msgid "All"
 msgstr "Semua"
 
-#: ../subscriber.php:2522
+#: ../subscriber.php:2543
 msgid "Subscribed"
 msgstr "berlangganan"
 
-#: ../subscriber.php:2523
+#: ../subscriber.php:2544
 msgid "Unsubscribed"
 msgstr "Tidak berlangganan"
 
-#: ../subscriber.php:2550
+#: ../subscriber.php:2571
 msgid "Delete"
 msgstr "Menghapus"
 
-#: ../subscriber.php:2643
+#: ../subscriber.php:2664
 msgid "in blacklist"
 msgstr "di blacklist"
 
-#: ../subscriber.php:2645
+#: ../subscriber.php:2666
 msgid "in trash"
 msgstr "di tempat sampah"
 
-#: ../subscriber.php:2648
+#: ../subscriber.php:2669
 msgid "E-mail:"
 msgstr "E-mail:"
 
-#: ../subscriber.php:2651
+#: ../subscriber.php:2672
 msgid "Subscribed from"
 msgstr "disetor dari"
 
-#: ../subscriber.php:2653
+#: ../subscriber.php:2674
 msgid "Unsubscribed from"
 msgstr "Berhenti berlangganan dari"
 
-#: ../subscriber.php:2712
+#: ../subscriber.php:2733
 msgid "users per page"
 msgstr "pengguna per halaman"
 
-#: ../subscriber.php:2748
+#: ../subscriber.php:2769
 msgid "Unknown action."
 msgstr "tindakan yang tidak diketahui."
 
-#: ../subscriber.php:2749
+#: ../subscriber.php:2770
 msgid "Select the users to apply the necessary actions."
 msgstr "Pilih pengguna untuk menerapkan tindakan yang diperlukan."
 
-#: ../subscriber.php:2750
+#: ../subscriber.php:2771
 msgid "No user was updated."
 msgstr "Tidak ada pengguna telah diupdate."
 
-#: ../subscriber.php:2793
+#: ../subscriber.php:2814
 #, php-format
 msgid "One user was subscribed on newsletter."
 msgid_plural "%s users were subscribed on newsletter."
@@ -766,12 +782,12 @@ msgstr[1] "Salah satu pengguna yang berlangganan pada newsletter."
 msgstr[2] "Salah satu pengguna yang berlangganan pada newsletter."
 msgstr[3] "Salah satu pengguna yang berlangganan pada newsletter."
 
-#: ../subscriber.php:2793 ../subscriber.php:2834 ../subscriber.php:2874
-#: ../subscriber.php:2909 ../subscriber.php:2945 ../subscriber.php:3010
+#: ../subscriber.php:2814 ../subscriber.php:2855 ../subscriber.php:2895
+#: ../subscriber.php:2930 ../subscriber.php:2966 ../subscriber.php:3031
 msgid "Undo."
 msgstr "Membuka."
 
-#: ../subscriber.php:2834
+#: ../subscriber.php:2855
 #, php-format
 msgid "One user was unsubscribed from newsletter."
 msgid_plural "%s users were unsubscribed from newsletter."
@@ -780,7 +796,7 @@ msgstr[1] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
 msgstr[2] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
 msgstr[3] "Salah satu pengguna adalah berhenti berlangganan dari newsletter."
 
-#: ../subscriber.php:2874
+#: ../subscriber.php:2895
 #, php-format
 msgid "One user was moved to black list."
 msgid_plural "%s users were moved to black list."
@@ -789,7 +805,7 @@ msgstr[1] "Salah satu pengguna dipindahkan ke daftar hitam."
 msgstr[2] "Salah satu pengguna dipindahkan ke daftar hitam."
 msgstr[3] "Salah satu pengguna dipindahkan ke daftar hitam."
 
-#: ../subscriber.php:2909
+#: ../subscriber.php:2930
 #, php-format
 msgid "One user was restored from black list."
 msgid_plural "%s users were restored from black list."
@@ -798,7 +814,7 @@ msgstr[1] "Salah satu pengguna dipulihkan dari daftar hitam."
 msgstr[2] "Salah satu pengguna dipulihkan dari daftar hitam."
 msgstr[3] "Salah satu pengguna dipulihkan dari daftar hitam."
 
-#: ../subscriber.php:2945
+#: ../subscriber.php:2966
 #, php-format
 msgid "One user was moved to trash."
 msgid_plural "%s users were moved to trash."
@@ -807,7 +823,7 @@ msgstr[1] "Salah satu pengguna dipindahkan ke tempat sampah."
 msgstr[2] "Salah satu pengguna dipindahkan ke tempat sampah."
 msgstr[3] "Salah satu pengguna dipindahkan ke tempat sampah."
 
-#: ../subscriber.php:2975
+#: ../subscriber.php:2996
 #, php-format
 msgid "One user was deleted permanently."
 msgid_plural "%s users were deleted permanently."
@@ -816,7 +832,7 @@ msgstr[1] "Salah satu pengguna telah dihapus secara permanen."
 msgstr[2] "Salah satu pengguna telah dihapus secara permanen."
 msgstr[3] "Salah satu pengguna telah dihapus secara permanen."
 
-#: ../subscriber.php:3010
+#: ../subscriber.php:3031
 #, php-format
 msgid "One user was restored."
 msgid_plural "%s users were restored."
@@ -825,24 +841,24 @@ msgstr[1] "Salah satu pengguna dipulihkan."
 msgstr[2] "Salah satu pengguna dipulihkan."
 msgstr[3] "Salah satu pengguna dipulihkan."
 
-#: ../subscriber.php:3078
+#: ../subscriber.php:3099
 msgid "FAQ"
 msgstr "FAQ"
 
-#: ../subscriber.php:3079
+#: ../subscriber.php:3100
 msgid "Support"
 msgstr "Mendukung"
 
-#: ../subscriber.php:3101
+#: ../subscriber.php:3122
 msgid ""
 "Due to the peculiarities of the multisite work, Subscriber plugin has only"
 msgstr "Karena kekhasan karya multisite, Subscriber Plugin hanya memiliki"
 
-#: ../subscriber.php:3101
+#: ../subscriber.php:3122
 msgid "Network settings page"
 msgstr "halaman pengaturan jaringan"
 
-#: ../subscriber.php:3103
+#: ../subscriber.php:3124
 msgid ""
 "Due to the peculiarities of the multisite work, Subscriber plugin has the "
 "network settings page only and it should be Network Activated. Please"
@@ -850,9 +866,12 @@ msgstr ""
 "Karena kekhasan karya multisite, Subscriber plugin memiliki halaman "
 "pengaturan jaringan hanya dan harus Jaringan Diaktifkan. Silahkan"
 
-#: ../subscriber.php:3103
+#: ../subscriber.php:3124
 msgid "Activate Subscriber for Network"
 msgstr "Aktifkan Subscriber untuk Jaringan"
+
+#~ msgid "Delete users while plugin removing"
+#~ msgstr "Menghapus pengguna sementara Plugin menghapus"
 
 #~ msgid "Delete Premanently"
 #~ msgstr "Hapus premanently"

@@ -92,7 +92,7 @@
 <ul>
 <li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow">[Doc] Installation</a></li>
 <li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow">[Doc] Purchase</a></li>
-<li><a href="https://docs.google.com/document/d/1VHSpwcPpNSmrBFUdiEiVSikxLyTqcUT1cPivGyQYvxo/" rel="nofollow">[Doc] Sender &amp; Subscriber Usage instruction</a></li>
+<li><a href="https://docs.google.com/document/d/1yazt_na2u364QCbUELlrBixZnRh6Jc0EbunXC02aYZM/" rel="nofollow">[Doc] Sender &amp; Subscriber Usage Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=kQQ0ZqmpR6Y" rel="nofollow">[Video] Purchase, Installation, Configuration Tutorial</a></li>
 <li><a href="https://www.youtube.com/watch?v=YJOQSGXPjRY" rel="nofollow">[Video] Installation Instruction</a></li>
 </ul>
@@ -101,6 +101,7 @@
 <h4>Translation</h4>
 <ul>
 <li>Czech (cs_CZ) (thanks to <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#x70;&#x61;&#x6d;&#x61;&#x64;&#x65;&#115;&#115;&#111;&#102;&#116;.&#x63;&#x7a;" rel="nofollow">PaMaDeSSoft</a>, www.pamadessoft.cz)</li>
+<li>Indonesian (id_ID) (thanks to <a href="mailto:j&#x6f;&#114;&#x64;&#x61;&#110;&#x2e;&#115;i&#x6c;&#097;&#x65;&#x6e;&#064;&#x63;&#104;&#097;&#x6d;&#101;l&#x65;&#111;&#x6e;&#106;&#111;&#x68;&#110;.&#x63;&#111;&#x6d;" rel="nofollow">Jordan Silaen</a>, www.chameleonjohn.com)</li>
 <li>Russian (ru_RU)</li>
 <li>Ukrainian (uk)</li>
 </ul>
