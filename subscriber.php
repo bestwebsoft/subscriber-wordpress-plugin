@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.3.9
+Version: 1.4.0
 Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -192,10 +192,13 @@ if ( ! function_exists( 'sbscrbr_get_default_options' ) ) {
 			'display_settings_notice'		=> 1,
 			/* form labels */
 			'form_label'					=> '',
+			'gdpr_text'						=> '',
+			'gdpr_link'						=> '',
 			'form_placeholder'				=> __( 'E-mail', 'subscriber' ),
 			'form_checkbox_label'			=> __( 'unsubscribe', 'subscriber' ),
 			'form_button_label'				=> __( 'Subscribe', 'subscriber' ),
 			'unsubscribe_button_name'		=> __( 'Unsubscribe', 'subscriber' ),
+			'gdpr_cb_name'					=> __( 'I consent to having this site collect my personal data.', 'subscriber' ),
 			/* service messages */
 			'bad_request'					=> __( 'System error. Please try later.', 'subscriber' ),
 			'empty_email'					=> __( 'Please enter e-mail address.', 'subscriber' ),
@@ -214,6 +217,7 @@ if ( ! function_exists( 'sbscrbr_get_default_options' ) ) {
 			/* mail settings */
 			/* To email settings */
 			'email_user'					=> 1,
+			'gdpr'							=> 0,
 			'email_custom'					=> array( get_option( 'admin_email' ) ),
 			'to_email'						=> 'custom',
 			/* "From" settings */
@@ -450,6 +454,10 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			$sbscrbr_options_submit['form_checkbox_label']				= isset( $_POST['sbscrbr_form_checkbox_label'] ) ? esc_html( $_POST['sbscrbr_form_checkbox_label'] ) : $sbscrbr_options['form_checkbox_label'];
 			$sbscrbr_options_submit['form_button_label']				= isset( $_POST['sbscrbr_form_button_label'] ) ? esc_html( $_POST['sbscrbr_form_button_label'] ) : $sbscrbr_options['form_button_label'];
 			$sbscrbr_options_submit['form_unsubscribe_button_label']	= isset( $_POST['sbscrbr_unsubscribe_form_button_label'] ) ? esc_html( $_POST['sbscrbr_unsubscribe_form_button_label'] ) : $sbscrbr_options['form_unsubscribe_button_label'];
+			$sbscrbr_options_submit['gdpr_cb_name']						= isset( $_POST['sbscrbr_gdpr_cb_name'] ) ? esc_html( $_POST['sbscrbr_gdpr_cb_name'] ) : $sbscrbr_options['gdpr_cb_name'];
+			$sbscrbr_options_submit['gdpr_text']						= isset( $_POST['sbscrbr_gdpr_text'] ) ? esc_html( $_POST['sbscrbr_gdpr_text'] ) : $sbscrbr_options['gdpr_text'];
+			$sbscrbr_options_submit['gdpr_link']						= isset( $_POST['sbscrbr_gdpr_link'] ) ? esc_html( $_POST['sbscrbr_gdpr_link'] ) : $sbscrbr_options['gdpr_link'];
+			$sbscrbr_options_submit['gdpr']								= isset( $_POST['sbscrbr_gdpr'] ) ? 1 : 0;
 
 			/* service messages  */
 			$sbscrbr_options_submit['bad_request']						= isset( $_POST['sbscrbr_bad_request'] ) ? esc_html( $_POST['sbscrbr_bad_request'] ) : $sbscrbr_options['bad_request'];
@@ -458,14 +466,14 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 			$sbscrbr_options_submit['not_exists_email']					= isset( $_POST['sbscrbr_not_exists_email'] ) ? esc_html( $_POST['sbscrbr_not_exists_email'] ) : $sbscrbr_options['not_exists_email'];
 			$sbscrbr_options_submit['cannot_get_email']					= isset( $_POST['sbscrbr_cannot_get_email'] ) ? esc_html( $_POST['sbscrbr_cannot_get_email'] ) : $sbscrbr_options['cannot_get_email'];
 			$sbscrbr_options_submit['cannot_send_email']				= isset( $_POST['sbscrbr_cannot_send_email'] ) ? esc_html( $_POST['sbscrbr_cannot_send_email'] ) : $sbscrbr_options['cannot_send_email'];
-			$sbscrbr_options_submit['error_subscribe']			= isset( $_POST['sbscrbr_error_subscribe'] ) ? esc_html( $_POST['sbscrbr_error_subscribe'] ) : $sbscrbr_options['error_subscribe'];
-			$sbscrbr_options_submit['done_subscribe']			= isset( $_POST['sbscrbr_done_subscribe'] ) ? esc_html( $_POST['sbscrbr_done_subscribe'] ) : $sbscrbr_options['done_subscribe'];
-			$sbscrbr_options_submit['already_subscribe']		= isset( $_POST['sbscrbr_already_subscribe'] ) ? esc_html( $_POST['sbscrbr_already_subscribe'] ) : $sbscrbr_options['already_subscribe'];
-			$sbscrbr_options_submit['denied_subscribe']			= isset( $_POST['sbscrbr_denied_subscribe'] ) ? esc_html( $_POST['sbscrbr_denied_subscribe'] ) : $sbscrbr_options['denied_subscribe'];
-			$sbscrbr_options_submit['already_unsubscribe']		= isset( $_POST['sbscrbr_already_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_already_unsubscribe'] ) : $sbscrbr_options['already_unsubscribe'];
-			$sbscrbr_options_submit['check_email_unsubscribe']	= isset( $_POST['sbscrbr_check_email_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_check_email_unsubscribe'] ) : $sbscrbr_options['check_email_unsubscribe'];
-			$sbscrbr_options_submit['done_unsubscribe']			= isset( $_POST['sbscrbr_done_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_done_unsubscribe'] ) : $sbscrbr_options['done_unsubscribe'];
-			$sbscrbr_options_submit['not_exists_unsubscribe']	= isset( $_POST['sbscrbr_not_exists_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_not_exists_unsubscribe'] ) : $sbscrbr_options['not_exists_unsubscribe'];
+			$sbscrbr_options_submit['error_subscribe']					= isset( $_POST['sbscrbr_error_subscribe'] ) ? esc_html( $_POST['sbscrbr_error_subscribe'] ) : $sbscrbr_options['error_subscribe'];
+			$sbscrbr_options_submit['done_subscribe']					= isset( $_POST['sbscrbr_done_subscribe'] ) ? esc_html( $_POST['sbscrbr_done_subscribe'] ) : $sbscrbr_options['done_subscribe'];
+			$sbscrbr_options_submit['already_subscribe']				= isset( $_POST['sbscrbr_already_subscribe'] ) ? esc_html( $_POST['sbscrbr_already_subscribe'] ) : $sbscrbr_options['already_subscribe'];
+			$sbscrbr_options_submit['denied_subscribe']					= isset( $_POST['sbscrbr_denied_subscribe'] ) ? esc_html( $_POST['sbscrbr_denied_subscribe'] ) : $sbscrbr_options['denied_subscribe'];
+			$sbscrbr_options_submit['already_unsubscribe']				= isset( $_POST['sbscrbr_already_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_already_unsubscribe'] ) : $sbscrbr_options['already_unsubscribe'];
+			$sbscrbr_options_submit['check_email_unsubscribe']			= isset( $_POST['sbscrbr_check_email_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_check_email_unsubscribe'] ) : $sbscrbr_options['check_email_unsubscribe'];
+			$sbscrbr_options_submit['done_unsubscribe']					= isset( $_POST['sbscrbr_done_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_done_unsubscribe'] ) : $sbscrbr_options['done_unsubscribe'];
+			$sbscrbr_options_submit['not_exists_unsubscribe']			= isset( $_POST['sbscrbr_not_exists_unsubscribe'] ) ? esc_html( $_POST['sbscrbr_not_exists_unsubscribe'] ) : $sbscrbr_options['not_exists_unsubscribe'];
 
 			/* To email settings */
 			$sbscrbr_options_submit['to_email']	= isset( $_POST['sbscrbr_to_email'] ) ? esc_html( $_POST['sbscrbr_to_email'] ) : $sbscrbr_options['to_email'];
@@ -727,6 +735,26 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 										} else { ?>
 											<label><input disabled="disabled" type="checkbox" /> reCAPTCHA PRO by BestWebSoft <span class="bws_info"><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=30ca0db50bce6fe0feed624a1ce979b2&pn=122&v=<?php echo $sbscrbr_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank"><?php _e( 'Download', 'subscriber' ); ?> reCAPTCHA PRO</a></span></label>
 										<?php } ?>
+										<div>
+											<label>
+												<input type="checkbox" id="sbscrbr_gdpr" name="sbscrbr_gdpr" value="1" <?php checked( '1', $sbscrbr_options['gdpr'] ); ?> />
+												<?php _e( "GDPR Compliance", 'subscriber' ); ?>
+											</label>
+										</div>
+										<div id="sbscrbr_gdpr_link_options" >
+											<label class="sbscrbr_privacy_policy_text" >
+												<?php _e( "Link to Privacy Policy Page", 'subscriber' ); ?>
+												<input type="url" id="sbscrbr_gdpr_link" name="sbscrbr_gdpr_link" value="<?php echo $sbscrbr_options['gdpr_link']; ?>" />
+											</label>
+											<label class="sbscrbr_privacy_policy_text" >
+												<?php _e( "Text for Privacy Policy Link", 'subscriber' ); ?>
+												<input type="text" id="sbscrbr_gdpr_text" name="sbscrbr_gdpr_text" value="<?php echo $sbscrbr_options['gdpr_text']; ?>" />
+											</label>
+											<label class="sbscrbr_privacy_policy_text" >
+												<?php _e( 'GDPR checkbox label', 'subscriber' ); ?>
+												<input type="text" id="sbscrbr_gdpr_cb_name" name="sbscrbr_gdpr_cb_name" value="<?php echo $sbscrbr_options['gdpr_cb_name']; ?>"/>
+											</label>
+										</div>
 									</td>
 								</tr>
 								<tr valign="top">
@@ -1312,7 +1340,20 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 						<?php echo $widget_checkbox_label; ?>
 					</label>
 				</p>
-				<?php echo apply_filters( 'sbscrbr_add_field', '', 'bws_subscriber' ); ?>
+				<?php if( ! empty( $sbscrbr_options['gdpr'] ) ) { ?>
+					<p class="sbscrbr-GDPR-wrap">
+						<label for="sbscrbr-GDPR-checkbox">
+							<input id="sbscrbr-GDPR-checkbox" required type="checkbox" name="sbscrbr_GDPR" style="vertical-align: middle;"/>
+							<?php echo $sbscrbr_options['gdpr_cb_name'];
+							if( ! empty( $sbscrbr_options['gdpr_link'] ) ) { ?>
+								<a href="<?php echo $sbscrbr_options['gdpr_link']; ?>" target="_blank"><?php echo $sbscrbr_options['gdpr_text']; ?></a>
+							<?php } else { ?>
+								<span><?php echo $sbscrbr_options['gdpr_text']; ?></span>
+							<?php } ?>
+						</label>
+					</p>
+				<?php }
+				echo apply_filters( 'sbscrbr_add_field', '', 'bws_subscriber' ); ?>
 				<p class="sbscrbr-submit-block" style="position: relative;">
 					<input type="submit" value="<?php echo $widget_button_label; ?>" name="sbscrbr_submit_email" class="submit" />
 					<input type="hidden" value="<?php echo $args['widget_id']; ?>" name="sbscrbr_form_id" />
@@ -1440,6 +1481,19 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 					$sbscrbr_options['form_checkbox_label'] .
 				'</label>
 			</p>';
+		if( ! empty( $sbscrbr_options['gdpr'] ) ) {
+			$content .= '<p class="sbscrbr-GDPR-wrap">
+							<label for="sbscrbr-GDPR-checkbox">
+								<input id="sbscrbr-GDPR-checkbox" required type="checkbox" name="sbscrbr_GDPR" style="vertical-align: middle;"/>'
+								. $sbscrbr_options['gdpr_cb_name'];
+								if( ! empty( $sbscrbr_options['gdpr_link'] ) ) {
+									$content .= ' ' . '<a href="' . $sbscrbr_options['gdpr_link'] . '" target="_blank">' . $sbscrbr_options['gdpr_text'] . '</a>';
+								} else {
+									$content .= '<span>' . ' ' . $sbscrbr_options['gdpr_text'] . '</span>';
+								}
+							'</label>
+						</p>';
+		}
 		$content .= apply_filters( 'sbscrbr_add_field', '', 'bws_subscriber' );
 		$content .= '<p class="sbscrbr-submit-block" style="position: relative;">
 				<input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
