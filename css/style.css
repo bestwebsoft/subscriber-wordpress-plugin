@@ -6,7 +6,7 @@
 	background: #eff8f3;
 }
 .sbscrbr-users-list-page .unsubscribed td,
-.sbscrbr-users-list-page .unsubscribed th{
+.sbscrbr-users-list-page .unsubscribed th {
 	background: #fefaf7;
 }
 .sbscrbr-users-list-page .subtitle {
@@ -44,6 +44,22 @@
 .sbscrbr-users-list-page .subsubsub {
 	clear: left;
 }
+.form-table td {
+	padding: 20px;
+}
+.sbscrbr_text {     
+	vertical-align: top;
+	padding-bottom: 
+}
+.sbscrbr-input-text {
+	margin: 1px;
+	padding: 3px 5px;
+	margin-top: 5px;
+}
+#sbscrbr_settings_tab .sbscrbr-input-text {
+	max-width: 380px;
+	width: 100%;
+}
 /**
  * Settings page
  */
@@ -51,25 +67,28 @@
 	margin-left: 1px;
 	height: 100px;
 }
-.sbscrbr-input-text {
-	max-width: 450px;
-	width: 100%;
-	margin: 5px 0 0;
+.sbscrbr_info_textarea {
+	position: relative;
+	top: 8px;
+	vertical-align: top;
 }
 .sbscrbr-mail-input-text,
 .sbscrbr-select {
-	width: 200px;
+	width: 400px;
 }
 .sbscrbr-email-field {
 	margin-left: 25px;
 	clear: left;
 }
-.sbscrbr-messages-settings {
-	margin: 0 0 20px;
+#sbscrbr-show-service-messages,
+#sbscrbr-show-messages-settings,
+#sbscrbr-hide-service-messages,
+#sbscrbr-hide-messages-settings {
+	display: none;
 }
 .sbscrbr-admin-email-settings {
 	max-width: 300px;
-	width: 100%;
+	width: 82%;
 	margin: 5px 0 0;
 }
 .sbscrbr-preloader {
@@ -81,26 +100,60 @@
 	background: url( '../images/preloader.gif' );
 	background-size: 100%;
 }
-.sbscrbr_floating_info {
-	margin: 5px 0 0 25px;
-	display: block;
+.sbscrbr-messages-settings {
+	margin: 0 0 20px;
 }
 #sbscrbr_gdpr_link_options {
 	border: 1px solid #e0e0e0;
-	max-width: 390px;
-	text-align: right;
+	max-width: 400px;
+	text-align: left;
 	margin: 5px 0;
 	padding: 3px;
 }
-@media only screen and ( min-width: 783px ) {
-	.sbscrbr-message-text {
-		margin: 0 24px;
+#sbscrbr_gdpr_link::placeholder {
+   color: #cdcdcd;
+}
+#sbscrbr_gdpr_link_options label {
+	display: block;
+}
+#sbscrbr_gdpr_cb_name {
+	width: 99%;
+}
+#sbscrbr_gdpr_link {
+	width: 99%;
+}
+#sbscrbr_gdpr_text {
+	width: 99%;
+}
+#sbscrbr_gdpr_link_options {
+	max-width: 380px;
+}
+@media screen and ( min-width: 1100px ) {
+	.sbscrbr_gdpr_td {
+		padding-top: 23px !important; 
+	}
+}
+@media screen and ( max-width: 1108px ) {
+	select {
+		width: 81%;
+	}
+}
+@media screen and ( max-width: 782px ) {
+	#sbscrbr_gdpr_link_options {
+		padding: 8px;
+	}
+	#sbscrbr_gdpr_link_options label input {
+		margin: 5px 0;
+		width: 100% !important;
+	}
+	#sbscrbr_gdpr_link {
+		height: 40px;
+	}
+	#sbscrbr_gdpr {
+		margin: 0; 
 	}
 }
 @media only screen and ( max-width: 782px ) {
-	.sbscrbr-message-text {
-		margin-top: 10px;
-	}
 	/**
 	 * Subscribers tab
 	 */
@@ -126,7 +179,33 @@
 	.sbscrbr-email-field {
 		margin-left: 0;
 	}
-	.sbscrbr_floating_info {
-		margin: 5px 0 0;
+	.sbscrbr-admin-email-settings {
+		display: inline-block !important;
+		width: 75% !important;
 	}
+	select {
+		display: inline-block !important;
+		width: 74% !important;
+	}
+	input[type="radio"] {
+		margin-bottom: 0px;
+	}
+
+}
+#sbscrbr_email_notifications_tab .sbscrbr-message-to-admin {
+	width: 100%;
+	max-width: 500px;
+}
+#sbscrbr_email_notifications_tab .sbscrbr-input-input {
+	width: 100%;
+	max-width: 320px;
+}
+#sbscrbr_email_notifications_tab .sbscrbr-input-shortcode {
+	width: 63%;
+	max-width: 300px;
+	margin: 5px 0 0;
+}
+#sbscrbr_to_email_user {
+	position: relative;
+	bottom: -3px;
 }

@@ -25,7 +25,7 @@
 <li>Subscribe button</li>
 </ul>
 </li>
-<li>GDPR Compliant [NEW]</li>
+<li>GDPR Compliant</li>
 <li>Compatible with:
 <ul>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a" rel="nofollow">Captcha</a></li>

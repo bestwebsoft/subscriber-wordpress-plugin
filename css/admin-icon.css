@@ -1,0 +1,10 @@
+/*
+* menu sidebar
+*/
+.menu-top.toplevel_page_subscriber .wp-menu-image:before {
+content: "\e92e";  
+font-family: 'bwsicons' !important;
+}
+.sbscrbr_names{
+word-break: break-all;
+}

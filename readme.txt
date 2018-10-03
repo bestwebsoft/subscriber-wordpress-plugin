@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 4.9.6
-Stable tag: 1.4.0
+Tested up to: 4.9.8
+Stable tag: 1.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -33,7 +33,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* Email field
 	* Unsubscribe checkbox
 	* Subscribe button
-* GDPR Compliant [NEW]
+* GDPR Compliant
 * Compatible with:
 	* [Captcha](https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=087fd14aa72b0c2680b4ec1ad896e63a)
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
@@ -208,6 +208,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.4.1 - 03.10.2018 =
+* Update : The plugin settings page has been updated.
+* NEW : The ability to not to email a user about the subscription has been added.
+* Bugfix : The way GDPR checkbox works in the widget has been improved.
+
 = V1.4.0 - 18.05.2018 =
 * NEW : GDPR Compliance has been added.
 
@@ -336,6 +341,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.1 =
+* Appearance improved.
+* Functionality expanded.
+* Bugs fixed.
 
 = V1.4.0 =
 * Functionality improved.
