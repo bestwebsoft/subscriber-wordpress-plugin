@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.4.1
+Version: 1.4.2
 Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -463,6 +463,13 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 		$page = new Sbscrbr_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
 		<div class="wrap">
 			<h1><?php _e( 'Subscriber Settings', 'subscriber' ); ?></h1>
+			<noscript>
+                <div class="error below-h2">
+                    <p><strong><?php _e( 'WARNING', 'subscriber' ); ?>
+                            :</strong> <?php _e( 'The plugin works correctly only if JavaScript is enabled.', 'subscriber' ); ?>
+                    </p>
+                </div>
+            </noscript>
 			<?php $page->display_content(); ?>
 		</div>
 	<?php }
@@ -689,7 +696,7 @@ if ( ! class_exists( 'Sbscrbr_Widget' ) ) {
 				$widget_checkbox_label	= isset( $instance['widget_checkbox_label'] ) ? $instance['widget_checkbox_label'] : __( 'Unsubscribe', 'subscriber' );
 				$widget_button_label	= isset( $instance['widget_button_label'] ) ? $instance['widget_button_label'] : __( 'Subscribe', 'subscriber' );
 			}
-
+			
 			/* get report message */
 			$report_message = '';
 			if ( 'unsubscribe_from_email' == $sbscrbr_handle_form_data->last_action && ! isset( $sbscrbr_display_message ) ) {

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 4.9.8
-Stable tag: 1.4.1
+Tested up to: 5.0.1
+Stable tag: 1.4.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,6 +70,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 > * Add email newsletter subscription checkbox to registration form
 > * Send email with subscription confirmation
 > * Set time limit for subscription confirmation
+> * Import and export subscribers [NEW]
 > * Add the following fields to the subscription form:
 > 	* Name
 > 	* Unsubscribe (checkbox)
@@ -208,6 +209,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.4.2 - 17.12.2018 =
+* Update : All functionality was updated for Wordpress 5.0.1
+* Bugfix : Fixed small bugs.
+* Pro : The ability to import and export the subscribers list has been added.
+* Pro : The functions to upload followers and download in CVS and XML formats are added.
+
 = V1.4.1 - 03.10.2018 =
 * Update : The plugin settings page has been updated.
 * NEW : The ability to not to email a user about the subscription has been added.
@@ -341,6 +348,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.2 = 
+* Bugs fixed.
 
 = V1.4.1 =
 * Appearance improved.

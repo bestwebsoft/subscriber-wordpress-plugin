@@ -77,6 +77,7 @@
 <li>Add email newsletter subscription checkbox to registration form</li>
 <li>Send email with subscription confirmation</li>
 <li>Set time limit for subscription confirmation</li>
+<li>Import and export subscribers [NEW]</li>
 <li>Add the following fields to the subscription form:
 <ul>
 <li>Name</li>

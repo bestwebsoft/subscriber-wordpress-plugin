@@ -21,6 +21,7 @@ if ( ! class_exists( 'Sbscrbr_Settings_Tabs' ) ) {
 			$tabs = array(
 				'settings'				=> array( 'label' => __( 'Settings', 'subscriber' ) ),
 				'email_notifications'	=> array( 'label' => __( 'Email Notifications', 'subscriber' ) ),
+				'import-export' 		=> array( 'label' => __( 'Import / Export', 'subscriber' ), 'is_pro' => 1 ),
 				'misc'					=> array( 'label' => __( 'Misc', 'subscriber' ) ),
 				'custom_code'			=> array( 'label' => __( 'Custom Code', 'subscriber' ) ),
 				'license'				=> array( 'label' => __( 'License Key', 'subscriber' ) ),
@@ -666,6 +667,49 @@ if ( ! class_exists( 'Sbscrbr_Settings_Tabs' ) ) {
 			</table>
 		<?php }
 		
+		public function tab_import_export() { ?>
+			<h3 class="bws_tab_label"><?php _e( 'Import / Export', 'subscriber' ); ?></h3>
+			<?php $this->help_phrase(); ?>
+			<hr>
+			<div class="bws_pro_version_bloc">
+					<div class="bws_pro_version_table_bloc">
+						<button type="submit" name="bws_hide_premium_options" class="notice-dismiss bws_hide_premium_options" title="<?php _e( 'Close', 'subscriber' ); ?>"></button>
+						<div class="bws_table_bg"></div>
+						<table class="form-table bws_pro_version">
+				<tr valign="top">
+					<th scope="row"><?php _e( 'Export Data', 'subscriber' ); ?></th>
+					<td>
+						<fieldset>
+							<label><input type="radio" name="sbscrbr_format_export" value="csv" checked="checked" /><?php _e( 'CSV file format', 'subscriber' ); ?></label><br />
+							<label><input type="radio" name="sbscrbr_format_export" value="xml" /><?php _e( 'XML file format', 'subscriber' ); ?></label><br />
+						</fieldset>
+						<input type="submit" name="sbscrbr_export_submit" class="button" value="<?php _e( 'Export', 'subscriber' ) ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e( 'Import Data', 'subscriber' ); ?></th>
+					<td>
+						<fieldset>
+                            <label><input type="radio" name="sbscrbr_method_insert" value="missing_exists" /><?php _e( 'Add missing data', 'subscriber' ); ?></label><br />
+                            <label><input type="radio" name="sbscrbr_method_insert" value="clear_data" /><?php _e( 'Clear old and add new subscribers', 'subscriber' ); ?> </label><br />
+						</fieldset>
+						<label><input name="sbscrbr_import_file_upload" type="file" /></label><br />
+						<input type="submit" name="sbscrbr_import_submit" class="button" value="<?php _e( 'Import', 'subscriber' ) ?>" />
+					</td>
+				</tr>
+		  	</table>
+		  </div>
+		<?php $this->bws_pro_block_links(); ?>
+  	</div>
+<?php }		
+
+
+
+
+
+
+
+
 		/**
 		 * Display custom metabox
 		 * @access public
