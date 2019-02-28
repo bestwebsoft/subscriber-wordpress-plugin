@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.4.2
+Version: 1.4.3
 Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -288,6 +288,7 @@ if ( ! function_exists( 'sbscrbr_get_default_options' ) ) {
 			/* settings for {unsubscribe_link} */
 			'shortcode_link_type'			=> 'url', /* go to url or display text */
 			'shortcode_url'					=> home_url(),
+			'form_one_line'					=> 0,
 		);
 		return $default_options;
 	}
@@ -858,11 +859,21 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 		} else {
 			$content .= $report_message['message'];
 		}
-		$content .= '
-			<p class="sbscrbr-email-wrap">
+		if ( 0 == $sbscrbr_options["form_one_line"] ){
+			$content .= '<p class="sbscrbr-email-wrap">
 				<input type="text" name="sbscrbr_email" value="" placeholder="' . $sbscrbr_options['form_placeholder'] . '"/>
+			</p>';
+		}
+		if ( 1 == $sbscrbr_options["form_one_line"] ) {
+			$content .= '<div class="sbscrbr-block-one-line"><p class="sbscrbr-email-wrap sbscrbr-form-one-line">
+				<span class="dashicons dashicons-email"></span><input type="text" name="sbscrbr_email" value="" placeholder="' . $sbscrbr_options['form_placeholder'] . '"/>
 			</p>
-			<p class="sbscrbr-unsubscribe-wrap">
+			<p class="sbscrbr-submit-block sbscrbr-form-one-line" style="position: relative;">
+				<input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
+				<input type="hidden" value="sbscrbr_shortcode_' . $sbscrbr_shortcode_count . '" name="sbscrbr_form_id" />
+			</p></div>';
+		}
+		$content .= '<p class="sbscrbr-unsubscribe-wrap">
 				<label for="sbscrbr-checkbox">
 					<input id="sbscrbr-checkbox" type="checkbox" name="sbscrbr_unsubscribe" value="yes" style="vertical-align: middle;"/> ' .
 					$sbscrbr_options['form_checkbox_label'] .
@@ -883,11 +894,13 @@ if ( ! function_exists( 'sbscrbr_subscribe_form' ) ) {
 				</p>';
 		}
 		$content .= apply_filters( 'sbscrbr_add_field', '', 'bws_subscriber' );
-		$content .= '<p class="sbscrbr-submit-block" style="position: relative;">
+		if ( 0 == $sbscrbr_options["form_one_line"] ) {
+			$content .= '<p class="sbscrbr-submit-block" style="position: relative;">
 				<input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
 				<input type="hidden" value="sbscrbr_shortcode_' . $sbscrbr_shortcode_count . '" name="sbscrbr_form_id" />
-			</p>
-		</form>';
+			</p>';
+		}
+		$content .= '</form>';
 		return $content;
 	}
 }

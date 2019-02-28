@@ -35,6 +35,7 @@
 </ul>
 </li>
 <li>Customize service messages</li>
+<li>Display the form on one line [NEW]</li>
 <li>Notify administrator via email about new subscribers</li>
 <li>Change recipient email to:
 <ul>
@@ -77,7 +78,7 @@
 <li>Add email newsletter subscription checkbox to registration form</li>
 <li>Send email with subscription confirmation</li>
 <li>Set time limit for subscription confirmation</li>
-<li>Import and export subscribers [NEW]</li>
+<li>Import and export subscribers</li>
 <li>Add the following fields to the subscription form:
 <ul>
 <li>Name</li>

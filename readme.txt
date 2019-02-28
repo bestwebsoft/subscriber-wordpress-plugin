@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 5.0.1
-Stable tag: 1.4.2
+Tested up to: 5.1
+Stable tag: 1.4.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* [Google Captcha (reCAPTCHA)](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688)
 	* [Social Login](https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc)
 * Customize service messages
+* Display the form on one line [NEW]
 * Notify administrator via email about new subscribers
 * Change recipient email to:
 	* Administrator email
@@ -70,7 +71,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 > * Add email newsletter subscription checkbox to registration form
 > * Send email with subscription confirmation
 > * Set time limit for subscription confirmation
-> * Import and export subscribers [NEW]
+> * Import and export subscribers
 > * Add the following fields to the subscription form:
 > 	* Name
 > 	* Unsubscribe (checkbox)
@@ -208,6 +209,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
+
+= V1.4.3 - 28.02.2019 =
+* NEW : The ability to display the form on one line has been added.
 
 = V1.4.2 - 17.12.2018 =
 * Update : All functionality was updated for Wordpress 5.0.1
@@ -348,6 +352,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.3 =
+* Functionality expanded.
 
 = V1.4.2 = 
 * Bugs fixed.

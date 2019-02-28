@@ -153,6 +153,8 @@ if ( ! class_exists( 'Sbscrbr_Settings_Tabs' ) ) {
 			$this->options['subscribe_message_sender_template_id']		= isset( $_POST['sbscrbr_subscribe_message_sender_template_id'] ) ? intval( $_POST['sbscrbr_subscribe_message_sender_template_id'] ) : '';
 			$this->options['unsubscribe_message_sender_template_id']	= isset( $_POST['sbscrbr_unsubscribe_message_sender_template_id'] ) ? intval( $_POST['sbscrbr_unsubscribe_message_sender_template_id'] ) : '';
 
+			$this->options["form_one_line"]	= isset( $_POST['sbscrbr_form_one_line'] ) ? 1 : 0;
+
 			/* settings for {unsubscribe_link} */
 			$this->options['shortcode_link_type']						= esc_attr( $_POST['sbscrbr_shortcode_link_type'] );
 			$this->options['shortcode_url']								= strtok( esc_url( trim( $_POST['sbscrbr_shortcode_url'] ) ), '?' );
@@ -371,6 +373,13 @@ if ( ! class_exists( 'Sbscrbr_Settings_Tabs' ) ) {
 							</span>
 						<br />
 						<span class="bws_info"><?php _e( 'If you would like to add "Subscribe" checkbox to a custom form, please see', 'subscriber' ); ?>&nbsp;<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538739" target="_blank">FAQ</a></span>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th><?php _e( 'One line form', 'subscriber-pro' ); ?></th>
+					<td colspan="2">
+						<input type="checkbox" name="sbscrbr_form_one_line" value="1" <?php checked( $this->options['form_one_line'] ); ?> />
+						<span class="bws_info"><?php _e( 'Enable to display the subscription form on one line. (Works only without the "Name" field).', 'subscriber' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top">
