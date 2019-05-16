@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 5.1
-Stable tag: 1.4.3
+Tested up to: 5.2
+Stable tag: 1.4.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* [Google Captcha (reCAPTCHA)](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688)
 	* [Social Login](https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc)
 * Customize service messages
-* Display the form on one line [NEW]
+* Display the form on one line
 * Notify administrator via email about new subscribers
 * Change recipient email to:
 	* Administrator email
@@ -210,6 +210,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.4.4 - 16.05.2019 =
+* Update : BWS menu has been updated.
+* Update : The function for returning an array of objects has been added.
+
 = V1.4.3 - 28.02.2019 =
 * NEW : The ability to display the form on one line has been added.
 
@@ -352,6 +356,12 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.4 =
+* Functionality improved.
+
+= V1.4.3 =
+* Functionality expanded.
 
 = V1.4.3 =
 * Functionality expanded.

@@ -35,7 +35,7 @@
 </ul>
 </li>
 <li>Customize service messages</li>
-<li>Display the form on one line [NEW]</li>
+<li>Display the form on one line</li>
 <li>Notify administrator via email about new subscribers</li>
 <li>Change recipient email to:
 <ul>

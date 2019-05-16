@@ -351,7 +351,7 @@ $bws_plugins = array(
 		'settings'		=> 'admin.php?page=sndr_settings',
 		'pro_version'	=> 'sender-pro/sender-pro.php',
 		'purchase' 		=> 'https://bestwebsoft.com/products/wordpress/plugins/sender/buy/?k=dc5d1a87bdc8aeab2de40ffb99b38054&pn=' . $bws_plugin_info["id"] . '&v=' . $bws_plugin_info["version"] . '&wp_v=' . $wp_version,
-		'pro_settings'	=> 'admin.php?page=sndr_settings'
+		'pro_settings'	=> 'admin.php?page=sndrpr_settings'
 	),
 	'slider-bws/slider-bws.php' => array(
 		'category'		=> array( 'content' ),

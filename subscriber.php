@@ -6,7 +6,7 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.4.3
+Version: 1.4.4
 Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -2263,6 +2263,112 @@ if ( ! function_exists( 'sbscrbr_shortcode_button_content' ) ) {
 			<div class="clear"></div>
 		</div>
 	<?php }
+}
+
+/* Get subscriber data objects */
+if ( ! function_exists( 'sbscrbr_get_data_objects' ) ) {
+	function sbscrbr_get_data_objects() {
+		global $sbscrbr_options, $sbscrbr_handle_form_data, $wp, $sbscrbr_display_message;
+
+		$report_message = $form_label = $email_wrap = $gdpr = '';
+
+		if ( empty ( $sbscrbr_options ) ) {
+			$sbscrbr_options = is_multisite() ? get_site_option( 'sbscrbr_options' ) : get_option( 'sbscrbr_options' );
+		}
+
+		// count subscriber forms
+		static $sbscrbr_count;
+		$sbscrbr_count = ( empty( $sbscrbr_count ) ) ? 1 : $sbscrbr_count + 1;
+
+		$form_id = $sbscrbr_count == 1 ? '' : '-' . $sbscrbr_count;
+
+		// get form with id
+		$action_form = '#sbscrbr-form' . $form_id;
+		$form = '<form id="sbscrbr-form' . $form_id . '" method="post" action="' . $action_form . '" class="subscrbr-sign-up-form">';
+
+		$sbscrbr_handle_form_data = new Sbscrbr_Handle_Form_Data();
+
+		// get report message
+		if ( ( 'unsubscribe_from_email' == $sbscrbr_handle_form_data->last_action || 'subscribe_from_email' == $sbscrbr_handle_form_data->last_action ) && ! isset( $sbscrbr_display_message ) ) {
+			$report_message = $sbscrbr_handle_form_data->last_response;
+			$sbscrbr_display_message = true;
+		}
+		if ( isset( $_POST['sbscrbr_submit_email'] ) && isset( $_POST['sbscrbr_form_id'] ) && $_POST['sbscrbr_form_id'] == 'sbscrbr_shortcode_' . $sbscrbr_count ) {
+			$report_message = $sbscrbr_handle_form_data->submit( $_POST['sbscrbr_email'], ( isset( $_POST['sbscrbr_name'] ) ) ? $_POST['sbscrbr_name'] : '', ( isset( $_POST['sbscrbr_unsubscribe'] ) && 'yes'== $_POST['sbscrbr_unsubscribe'] ) ? true : false, 'sbscrbr_shortcode' );
+		}
+
+		// get form label
+		if ( empty( $report_message ) ) {
+			if ( ! empty( $sbscrbr_options['form_label'] ) ) {
+				$form_label = '<p class="sbscrbr-label-wrap">' . $sbscrbr_options['form_label'] . '</p>';
+			}
+		} else {
+			$form_label = $report_message['message'];
+		}
+
+		// output email-wrap in one line or not
+		if ( ! $sbscrbr_options['form_one_line'] ) {
+			$email_wrap =
+				'<p class="sbscrbr-email-wrap">
+				    <input type="text" name="sbscrbr_email" value="" placeholder="' . $sbscrbr_options['form_placeholder'] . '"/>
+			    </p>
+                <p class="sbscrbr-submit-block" style="position: relative;">
+                    <input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
+                    <input type="hidden" value="sbscrbr_shortcode_' . $sbscrbr_count . '" name="sbscrbr_form_id" />
+                </p>';
+		}
+		if ( $sbscrbr_options['form_one_line'] ) {
+			$email_wrap =
+				'<div class="sbscrbr-block-one-line">
+                    <p class="sbscrbr-email-wrap sbscrbr-form-one-line">
+                        <span class="dashicons dashicons-email"></span>
+                        <input type="text" name="sbscrbr_email" value="" placeholder="' . $sbscrbr_options['form_placeholder'] . '"/>
+			        </p>
+			        <p class="sbscrbr-submit-block sbscrbr-form-one-line" style="position: relative;">
+				        <input type="submit" value="' . $sbscrbr_options['form_button_label'] . '" name="sbscrbr_submit_email" class="submit" />
+				        <input type="hidden" value="sbscrbr_shortcode_' . $sbscrbr_count . '" name="sbscrbr_form_id" />
+			        </p>
+                </div>';
+		}
+
+		// get form checkbox label
+		$form_checkbox_label =
+			'<p class="sbscrbr-unsubscribe-wrap">
+				<label for="sbscrbr-checkbox">
+					<input id="sbscrbr-checkbox" type="checkbox" name="sbscrbr_unsubscribe" value="yes" style="vertical-align:middle;"/>' . $sbscrbr_options['form_checkbox_label'] .
+			'</label>
+			</p>';
+
+		// get gdpr
+		if ( ! empty( $sbscrbr_options['gdpr'] ) ) {
+			$gdpr =
+				'<div class="sbscrbr_field_form">
+				    <p class="sbscrbr-GDPR-wrap">
+                        <label>
+                            <input id="sbscrbr-GDPR-checkbox" required type="checkbox" name="sbscrbr_GDPR" style="vertical-align:middle;"/>' . $sbscrbr_options['gdpr_cb_name'];
+			if ( ! empty( $sbscrbr_options['gdpr_link'] ) ) {
+				$gdpr .= ' ' . '<a href="' . $sbscrbr_options['gdpr_link'] . '" target="_blank">' . $sbscrbr_options['gdpr_text'] . '</a>';
+			} else {
+				$gdpr .= '<span>' . ' ' . $sbscrbr_options['gdpr_text'] . '</span>';
+			}
+			$gdpr .= '</label>
+				    </p>
+                </div>';
+		}
+
+		$subscriber_array = array(
+			'form'                  => $form,
+			'report_message'        => $report_message,
+			'form_label'            => $form_label,
+			'email_wrap'            => $email_wrap,
+			'form_checkbox_label'   => $form_checkbox_label,
+			'gdpr'                  => $gdpr
+		);
+
+		$subscriber_objects = ( object ) $subscriber_array;
+
+		return $subscriber_objects;
+	}
 }
 
 /**
