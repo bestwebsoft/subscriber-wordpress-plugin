@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 3.9
-Tested up to: 5.2
-Stable tag: 1.4.4
+Tested up to: 5.2.2
+Stable tag: 1.4.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -210,6 +210,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 
 == Changelog ==
 
+= V1.4.5 - 04.09.2019 =
+* Update: The deactivation feedback has been changed. Misleading buttons have been removed.
+
 = V1.4.4 - 16.05.2019 =
 * Update : BWS menu has been updated.
 * Update : The function for returning an array of objects has been added.
@@ -356,6 +359,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.5 =
+* Usability improved.
 
 = V1.4.4 =
 * Functionality improved.
