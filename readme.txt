@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
-Requires at least: 3.9
-Tested up to: 5.2.2
-Stable tag: 1.4.5
+Requires at least: 4.5
+Tested up to: 5.4
+Stable tag: 1.4.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -115,7 +115,7 @@ Some of these translations are not complete. We are constantly adding new featur
 
 1. Upload the `subscriber` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Plugin settings are located in 'BWS Panel', 'Subscriber'.
+3. Plugin settings are located in 'Subscriber' -> 'Settings'.
 
 [View a Step-by-step Instruction on Subscriber Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
 
@@ -209,6 +209,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
+
+= V1.4.6 - 20.04.2020 =
+* Update : BWS menu has been updated.
+* Update : All functionality was updated for Wordpress 5.4.
 
 = V1.4.5 - 04.09.2019 =
 * Update: The deactivation feedback has been changed. Misleading buttons have been removed.
@@ -359,6 +363,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.6 =
+* Usability improved.
 
 = V1.4.5 =
 * Usability improved.

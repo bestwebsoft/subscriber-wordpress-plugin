@@ -33,9 +33,6 @@ form .sbscrbr-submit-block.sbscrbr-form-one-line{
 form .sbscrbr-email-wrap.sbscrbr-form-one-line input[type="text"]{
 	width: 100%;
 }
-form .sbscrbr-submit-block.sbscrbr-form-one-line input[type="submit"]{
-	width: 100%;
-}
 form .sbscrbr-email-wrap.sbscrbr-form-one-line input[type="text"]{
 	padding-left: 40px;
 }

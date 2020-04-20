@@ -262,7 +262,7 @@ if ( ! class_exists( 'Sbscrbr_User_List' ) ) {
 			$order = ( isset( $_REQUEST['order'] ) && 'ASC' == strtoupper( $_REQUEST['order'] ) ) ? 'ASC' : 'DESC';
 			$sql_query = "SELECT * FROM `" . $prefix . "sndr_mail_users_info` ";
 			if ( isset( $_REQUEST['s'] ) && '' != $_REQUEST['s'] ) {
-				$sql_query .= "WHERE `user_email` LIKE '%" . $_REQUEST['s'] . "%' OR `user_display_name` LIKE '%" . $_REQUEST['s'] . "%'";
+				$sql_query .= "WHERE `user_email` LIKE '%" . esc_sql( $_REQUEST['s'] ) . "%' OR `user_display_name` LIKE '%" . esc_sql( $_REQUEST['s'] ) . "%'";
 			} else {
 				if ( isset( $_REQUEST['users_status'] ) ) {
 					switch ( $_REQUEST['users_status'] ) {

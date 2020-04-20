@@ -49,12 +49,13 @@
 }
 .sbscrbr_text {     
 	vertical-align: top;
-	padding-bottom: 
 }
 .sbscrbr-input-text {
 	margin: 1px;
 	padding: 3px 5px;
-	margin-top: 5px;
+}
+.sbscrbr_form_bottom {
+	margin-bottom: 5px;
 }
 #sbscrbr_settings_tab .sbscrbr-input-text {
 	max-width: 380px;
@@ -103,30 +104,11 @@
 .sbscrbr-messages-settings {
 	margin: 0 0 20px;
 }
-#sbscrbr_gdpr_link_options {
-	border: 1px solid #e0e0e0;
-	max-width: 400px;
-	text-align: left;
-	margin: 5px 0;
-	padding: 3px;
-}
 #sbscrbr_gdpr_link::placeholder {
    color: #cdcdcd;
 }
 #sbscrbr_gdpr_link_options label {
 	display: block;
-}
-#sbscrbr_gdpr_cb_name {
-	width: 99%;
-}
-#sbscrbr_gdpr_link {
-	width: 99%;
-}
-#sbscrbr_gdpr_text {
-	width: 99%;
-}
-#sbscrbr_gdpr_link_options {
-	max-width: 380px;
 }
 @media screen and ( min-width: 1100px ) {
 	.sbscrbr_gdpr_td {
@@ -192,15 +174,15 @@
 	}
 
 }
-#sbscrbr_email_notifications_tab .sbscrbr-message-to-admin {
+#sbscrbr_notifications_tab .sbscrbr-message-to-admin {
 	width: 100%;
 	max-width: 500px;
 }
-#sbscrbr_email_notifications_tab .sbscrbr-input-input {
+#sbscrbr_notifications_tab .sbscrbr-input-input {
 	width: 100%;
 	max-width: 320px;
 }
-#sbscrbr_email_notifications_tab .sbscrbr-input-shortcode {
+#sbscrbr_notifications_tab .sbscrbr-input-shortcode {
 	width: 63%;
 	max-width: 300px;
 	margin: 5px 0 0;
@@ -208,4 +190,11 @@
 #sbscrbr_to_email_user {
 	position: relative;
 	bottom: -3px;
+}
+#sbscrbr_messages_tab .sbscrbr-input-text {
+	max-width: 380px;
+	width: 100%;
+}
+.sbscrbr-input-number {
+	margin: 5px 1px 1px;
 }
