@@ -6,12 +6,12 @@ Description: Add email newsletter sign up form to WordPress posts, pages and wid
 Author: BestWebSoft
 Text Domain: subscriber
 Domain Path: /languages
-Version: 1.4.6
+Version: 1.4.7
 Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2020 BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 2021 BestWebSoft  ( https://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -74,7 +74,7 @@ if ( ! function_exists( 'sbscrbr_add_admin_menu' ) ) {
 			$submenu['subscriber.php'][] = array(
 				'<span style="color:#d86463"> ' . __( 'Update to Pro', 'subscriber' ) . '</span>',
 				'manage_options',
-				'https://bestwebsoft.com/products/wordpress/plugins/subscriber/' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version );
+				'https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=d356381b0c3554404e34cdc4fe936455&amp;pn=122&amp;v=' . $sbscrbr_plugin_info["Version"] . '&wp_v=' . $wp_version );
 		}
 
 		add_action( "load-{$settings}", 'sbscrbr_add_tabs' );
@@ -480,7 +480,9 @@ if ( ! function_exists( 'sbscrbr_settings_page' ) ) {
 		if ( ! class_exists( 'Bws_Settings_Tabs' ) )
 			require_once( dirname( __FILE__ ) . '/bws_menu/class-bws-settings.php' );
 		require_once( dirname( __FILE__ ) . '/includes/class-sbscrbr-settings.php' );
-		$page = new Sbscrbr_Settings_Tabs( plugin_basename( __FILE__ ) ); ?>
+		$page = new Sbscrbr_Settings_Tabs( plugin_basename( __FILE__ ) );
+        if ( method_exists( $page,'add_request_feature' ) )
+            $page->add_request_feature();?>
 		<div class="wrap">
 			<h1><?php _e( 'Subscriber Settings', 'subscriber' ); ?></h1>
 			<noscript>
@@ -505,7 +507,8 @@ if ( ! function_exists( 'sbscrbr_users' ) ) {
 		require_once( dirname( __FILE__ ) . '/includes/users.php' ); ?> 
 		<div class="wrap">
 			<h1><?php _e( 'Subscribers', 'subscriber' ); ?></h1>
-			<?php $action_message = sbscrbr_report_actions();
+			<?php sbscrbr_display_advertising();
+            $action_message = sbscrbr_report_actions();
 				if ( $action_message['error'] ) {
 					$error = $action_message['error'];
 				} elseif ( $action_message['done'] ) {
@@ -518,6 +521,7 @@ if ( ! function_exists( 'sbscrbr_users' ) ) {
 		<div class="updated below-h2 fade" <?php if ( empty( $message ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error below-h2" <?php if ( empty( $error ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<?php $sbscrbr_users_list = new Sbscrbr_User_List(); ?>
+
 		<div id="sbscrbr_settings_block_subscribers">
 			<div class="wrap sbscrbr-users-list-page">
 				<?php if ( isset( $_REQUEST['s'] ) && $_REQUEST['s'] ) {
@@ -1872,10 +1876,12 @@ if ( ! function_exists( 'sbscrbr_add_tabs' ) ) {
 	function sbscrbr_add_tabs() {
 		sbscrbr_help_tab();
 		if ( isset( $_GET['page'] ) && 'subscriber-users.php' == $_GET['page'] ) {
-			sbscrbr_screen_options();
+            require_once( dirname( __FILE__) . '/includes/pro-tab.php' );
+            sbscrbr_screen_options();
 		}
 	}
 }
+
 
 /* add screen options */
 if ( ! function_exists( 'sbscrbr_screen_options' ) ) {

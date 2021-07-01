@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
 Requires at least: 4.5
-Tested up to: 5.4
-Stable tag: 1.4.6
+Tested up to: 5.7.2
+Stable tag: 1.4.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -76,6 +76,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 > 	* Name
 > 	* Unsubscribe (checkbox)
 > * View reason of unsubscribing
+> * Summary diagram with subscribers statistic [NEW]
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450)
@@ -84,9 +85,9 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 
 = Documentation & Videos =
 
-* [[Doc] Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
-* [[Doc] Purchase](https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/)
-* [[Doc] Sender & Subscriber Usage Instruction](https://docs.google.com/document/d/1yazt_na2u364QCbUELlrBixZnRh6Jc0EbunXC02aYZM/)
+* [[Doc] User Guide](https://bestwebsoft.com/documentation/subscriber/subscriber-user-guide/)
+* [[Doc] Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
+* [[Doc] Purchase](https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/)
 * [[Video] Purchase, Installation, Configuration Tutorial](https://www.youtube.com/watch?v=kQQ0ZqmpR6Y)
 * [[Video] Installation Instruction](https://www.youtube.com/watch?v=YJOQSGXPjRY)
 
@@ -117,7 +118,7 @@ Some of these translations are not complete. We are constantly adding new featur
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Plugin settings are located in 'Subscriber' -> 'Settings'.
 
-[View a Step-by-step Instruction on Subscriber Installation](https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/)
+[View a Step-by-step Instruction on Subscriber Installation](https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/)
 
 https://www.youtube.com/watch?v=YJOQSGXPjRY
 
@@ -198,7 +199,7 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 1. the link to the page where the problem occurs
 2. the name of the plugin and its version. If you are using a pro version - your order number.
 3. the version of your WordPress installation
-4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://docs.google.com/document/d/1Wi2X8RdRGXk9kMszQy1xItJrpN0ncXgioH935MaBKtc/edit)
+4. copy and paste into the message your system status report. Please read more here: [Instruction on System Status](https://bestwebsoft.com/documentation/admin-panel-issues/system-status/)
 
 == Screenshots ==
 
@@ -209,6 +210,11 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
+
+= V1.4.7 - 01.07.2021 =
+* Update : BWS menu has been updated.
+* Update : All functionality was updated for Wordpress 5.7.2.
+* Pro: Statistics on the number of 'Subscribed', 'Unsubscribed', 'Trash' and 'Black List' has been added.
 
 = V1.4.6 - 20.04.2020 =
 * Update : BWS menu has been updated.
@@ -363,6 +369,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.7 =
+* Usability improved.
+* New features added.
 
 = V1.4.6 =
 * Usability improved.

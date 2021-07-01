@@ -35,8 +35,6 @@ if ( ! class_exists( 'Sbscrbr_Settings_Tabs' ) ) {
 				'is_network_options'		=> is_network_admin(),
 				'tabs'						=> $tabs,
 				'wp_slug'					=> 'subscriber',
-				'pro_page'					=> 'admin.php?page=subscriber-pro.php',
-				'bws_license_plugin'		=> 'subscriber-pro/subscriber-pro.php',
 				'link_key'					=> 'd356381b0c3554404e34cdc4fe936455',
 				'link_pn'					=> '122'
 			) );

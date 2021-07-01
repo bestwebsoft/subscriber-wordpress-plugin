@@ -31,7 +31,6 @@ if ( ! class_exists( 'Sbscrbr_User_List' ) ) {
 		* @return void
 		*/
 		function prepare_items() {
-			global $wpdb;
 			$search                = ( isset( $_REQUEST['s'] ) ) ? $_REQUEST['s'] : '';
 			$columns               = $this->get_columns();
 			$hidden                = array();
