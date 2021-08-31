@@ -32,6 +32,7 @@
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e" rel="nofollow ugc">Contact Form</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688" rel="nofollow ugc">Google Captcha (reCAPTCHA)</a></li>
 <li><a href="https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc" rel="nofollow ugc">Social Login</a></li>
+<li><a href="https://bestwebsoft.com/products/wordpress/plugins/profile-extra-fields/" rel="nofollow ugc">Profile Extra Field</a>[NEW]</li>  
 </ul>
 </li>
 <li>Customize service messages</li>
@@ -93,9 +94,9 @@
 <p>If you have a feature suggestion or idea you&#8217;d like to see in the plugin, we&#8217;d love to hear about it! <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" rel="nofollow ugc">Suggest a Feature</a></p>
 <h4>Documentation &amp; Videos</h4>
 <ul>
-<li><a href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/" rel="nofollow ugc">[Doc] Installation</a></li>
-<li><a href="https://docs.google.com/document/d/1EUdBVvnm7IHZ6y0DNyldZypUQKpB8UVPToSc_LdOYQI/" rel="nofollow ugc">[Doc] Purchase</a></li>
-<li><a href="https://docs.google.com/document/d/1yazt_na2u364QCbUELlrBixZnRh6Jc0EbunXC02aYZM/" rel="nofollow ugc">[Doc] Sender &amp; Subscriber Usage Instruction</a></li>
+<li><a href="https://bestwebsoft.com/documentation/how-to-install-a-wordpress-product/how-to-install-a-wordpress-plugin/" rel="nofollow ugc">[Doc] Installation</a></li>
+<li><a href="https://bestwebsoft.com/documentation/how-to-purchase-a-wordpress-plugin/how-to-purchase-wordpress-plugin-from-bestwebsoft/" rel="nofollow ugc">[Doc] Purchase</a></li>
+<li><a href="https://bestwebsoft.com/documentation/subscriber/subscriber-user-guide//" rel="nofollow ugc">[Doc] Sender &amp; Subscriber Usage Instruction</a></li>
 <li><a href="https://www.youtube.com/watch?v=kQQ0ZqmpR6Y" rel="nofollow ugc">[Video] Purchase, Installation, Configuration Tutorial</a></li>
 <li><a href="https://www.youtube.com/watch?v=YJOQSGXPjRY" rel="nofollow ugc">[Video] Installation Instruction</a></li>
 </ul>
