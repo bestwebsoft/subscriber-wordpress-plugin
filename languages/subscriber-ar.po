@@ -1,0 +1,1003 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Subscriber\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-20 16:36+0300\n"
+"PO-Revision-Date: 2024-05-20 17:09+0300\n"
+"Last-Translator: \n"
+"Language-Team: BestWebSoft Team <wp@bestwebsoft.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_html__;esc_html_e;"
+"esc_attr__;esc_attr_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.4.3\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bws_menu\n"
+
+#: includes/class-sbscrbr-settings.php:23 subscriber.php:46 subscriber.php:1717
+#: subscriber.php:1736
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: includes/class-sbscrbr-settings.php:24
+msgid "Messages"
+msgstr "الرسائل"
+
+#: includes/class-sbscrbr-settings.php:25
+msgid "Notifications"
+msgstr "الإشعارات"
+
+#: includes/class-sbscrbr-settings.php:27
+#: includes/class-sbscrbr-settings.php:843
+msgid "Import / Export"
+msgstr "استيراد وتصدير"
+
+#: includes/class-sbscrbr-settings.php:30
+msgid "Misc"
+msgstr "متفرقات"
+
+#: includes/class-sbscrbr-settings.php:31
+msgid "Custom Code"
+msgstr "كود مخصص"
+
+#: includes/class-sbscrbr-settings.php:32
+msgid "License Key"
+msgstr "مفتاح الترخيص"
+
+#: includes/class-sbscrbr-settings.php:80
+msgid "Sorry, your nonce did not verify."
+msgstr "عذرا، لم يتم التأكيد."
+
+#: includes/class-sbscrbr-settings.php:134
+msgid ""
+"'FROM' field option was changed. This may cause email messages being moved "
+"to the spam folder or email delivery failures."
+msgstr ""
+"تم تغيير خيار الحقل \"من\". قد يتسبب ذلك في نقل رسائل البريد الإلكتروني إلى "
+"مجلد الرسائل غير المرغوب فيها أو فشل تسليم البريد الإلكتروني."
+
+#: includes/class-sbscrbr-settings.php:171
+msgid ""
+"Error: The domain name in shortcode settings must be the same as the current "
+"one. Settings are not saved."
+msgstr ""
+"خطأ: يجب أن يكون اسم المجال في إعدادات الرمز القصير هو نفسه الاسم الحالي. لم "
+"يتم حفظ الإعدادات."
+
+#: includes/class-sbscrbr-settings.php:191
+msgid "Please select one profile extra field at least."
+msgstr "يرجى تحديد حقل إضافي واحد على الأقل للملف الشخصي."
+
+#: includes/class-sbscrbr-settings.php:261
+msgid "Settings Saved"
+msgstr "تمّ حفظ الإعدادات"
+
+#: includes/class-sbscrbr-settings.php:278 subscriber.php:37 subscriber.php:45
+#: subscriber.php:500
+msgid "Subscriber Settings"
+msgstr "إعدادات المشتركين"
+
+#: includes/class-sbscrbr-settings.php:283
+#: includes/class-sbscrbr-settings.php:477
+msgid "Enable Subscription Checkbox for"
+msgstr "خانة اختيار تمكين الاشتراك لـ"
+
+#: includes/class-sbscrbr-settings.php:296
+#: includes/class-sbscrbr-settings.php:313
+#, php-format
+msgid "Update %s at least to version"
+msgstr "تحديث %s على الأقل إلى الإصدار"
+
+#: includes/class-sbscrbr-settings.php:300
+#: includes/class-sbscrbr-settings.php:317
+#: includes/class-sbscrbr-settings.php:697
+msgid "Activate for network"
+msgstr "تنشيط للشبكة"
+
+#: includes/class-sbscrbr-settings.php:300
+#: includes/class-sbscrbr-settings.php:317
+#: includes/class-sbscrbr-settings.php:385
+#: includes/class-sbscrbr-settings.php:412
+#: includes/class-sbscrbr-settings.php:428
+#: includes/class-sbscrbr-settings.php:697
+msgid "Activate"
+msgstr "تفعيل"
+
+#: includes/class-sbscrbr-settings.php:332
+#: includes/class-sbscrbr-settings.php:703
+msgid "Install Now"
+msgstr "تنصيب الان"
+
+#: includes/class-sbscrbr-settings.php:342
+msgid "Check off for adding captcha to forms on their settings pages."
+msgstr "تحقق من إضافة كلمة التحقق إلى النماذج في صفحات الإعدادات الخاصة بها."
+
+#: includes/class-sbscrbr-settings.php:347
+msgid "Want to add a subscription checkbox to a custom form?"
+msgstr "هل تريد إضافة خانة اختيار اشتراك إلى نموذج مخصص؟"
+
+#: includes/class-sbscrbr-settings.php:351
+#: includes/class-sbscrbr-settings.php:468
+msgid "Form Fields"
+msgstr "حقول النموذج"
+
+#: includes/class-sbscrbr-settings.php:354
+#: includes/class-sbscrbr-widget.php:134
+msgid "Title"
+msgstr "العنوان"
+
+#: includes/class-sbscrbr-settings.php:357
+msgid "Title for subscribe form."
+msgstr "عنوان استمارة الاشتراك."
+
+#: includes/class-sbscrbr-settings.php:359
+msgid "Description"
+msgstr "الوصف"
+
+#: includes/class-sbscrbr-settings.php:362
+msgid "Text above the subscribe form."
+msgstr "نص فوق نموذج الاشتراك."
+
+#: includes/class-sbscrbr-settings.php:364 includes/class-sbscrbr-widget.php:45
+#: includes/class-sbscrbr-widget.php:125 includes/users.php:72
+#: subscriber.php:251
+msgid "E-mail"
+msgstr "البريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:367
+msgid "Placeholder for \"E-mail\" field."
+msgstr "عنصر نائب لحقل \"البريد الإلكتروني\"."
+
+#: includes/class-sbscrbr-settings.php:369
+msgid "Button"
+msgstr "زر"
+
+#: includes/class-sbscrbr-settings.php:372
+msgid "Label for \"Subscribe\" button."
+msgstr "تسمية زر \"اشتراك\"."
+
+#: includes/class-sbscrbr-settings.php:376
+msgid "Label for \"Unsubscribe\" button."
+msgstr "تسمية زر \"إلغاء الاشتراك\"."
+
+#: includes/class-sbscrbr-settings.php:390
+#: includes/class-sbscrbr-settings.php:420
+#: includes/class-sbscrbr-settings.php:433
+msgid "Download"
+msgstr "تحميل"
+
+#: includes/class-sbscrbr-settings.php:401
+msgid "Add custom form fields for subscribe form."
+msgstr "إضافة حقول نموذج مخصص لنموذج الاشتراك."
+
+#: includes/class-sbscrbr-settings.php:436
+msgid "Unsubscribe checkbox"
+msgstr "خانة اختيار إلغاء الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:439
+msgid "Label for \"Unsubscribe\" checkbox."
+msgstr "تسمية خانة الاختيار \"إلغاء الاشتراك\"."
+
+#: includes/class-sbscrbr-settings.php:441
+msgid "GDPR checkbox"
+msgstr "خانة الاختيار GDPR"
+
+#: includes/class-sbscrbr-settings.php:444
+msgid "Label for \"GDPR\" checkbox."
+msgstr "تسمية خانة الاختيار \"GDPR\"."
+
+#: includes/class-sbscrbr-settings.php:446
+msgid "Link to Privacy Policy Page."
+msgstr "رابط إلى صفحة سياسة الخصوصية."
+
+#: includes/class-sbscrbr-settings.php:448
+msgid "Text for Privacy Policy Link."
+msgstr "نص رابط سياسة الخصوصية."
+
+#: includes/class-sbscrbr-settings.php:454
+msgid "Display in One Line"
+msgstr "العرض في سطر واحد"
+
+#: includes/class-sbscrbr-settings.php:457
+msgid "Enable to display the form in one line."
+msgstr "تمكين عرض النموذج في سطر واحد."
+
+#: includes/class-sbscrbr-settings.php:464
+#: includes/class-sbscrbr-settings.php:848 includes/pro-tab.php:24
+msgid "Close"
+msgstr "إغلاق"
+
+#: includes/class-sbscrbr-settings.php:471
+#: includes/class-sbscrbr-settings.php:664 includes/users.php:71
+msgid "Name"
+msgstr "الاسم"
+
+#: includes/class-sbscrbr-settings.php:472
+msgid "\"Unsubscribe\" checkbox"
+msgstr "خانة اختيار \"إلغاء الاشتراك\""
+
+#: includes/class-sbscrbr-settings.php:480
+msgid "Registration form"
+msgstr "نموذج التسجيل"
+
+#: includes/class-sbscrbr-settings.php:481
+msgid "Woocommerce Login form"
+msgstr "نموذج تسجيل الدخول إلى Woocommerce"
+
+#: includes/class-sbscrbr-settings.php:482
+msgid "Woocommerce Checkout form"
+msgstr "نموذج السحب من Woocommerce"
+
+#: includes/class-sbscrbr-settings.php:487
+msgid "Subscription Confirmation"
+msgstr "تأكيد الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:490
+msgid "Enable to send a confirmation link via email."
+msgstr "تمكين إرسال رابط تأكيد عبر البريد الإلكتروني."
+
+#: includes/class-sbscrbr-settings.php:494
+msgid "Confirmation Timeout"
+msgstr "مهلة التأكيد"
+
+#: includes/class-sbscrbr-settings.php:496
+msgid "After"
+msgstr "بعد"
+
+#: includes/class-sbscrbr-settings.php:496
+#: includes/class-sbscrbr-settings.php:497
+msgid "hours"
+msgstr "ساعات"
+
+#: includes/class-sbscrbr-settings.php:497
+msgid "Every"
+msgstr "كل"
+
+#: includes/class-sbscrbr-settings.php:498
+msgid ""
+"Enable to delete user data automatically if the subscription has not been "
+"confirmed. If you do not want to delete user data then set 0."
+msgstr ""
+"تمكين حذف بيانات المستخدم تلقائياً إذا لم يتم تأكيد الاشتراك. إذا كنت لا تريد "
+"حذف بيانات المستخدم، فقم بتعيين 0."
+
+#: includes/class-sbscrbr-settings.php:502
+#: includes/class-sbscrbr-settings.php:517
+msgid "Delete User Data Once"
+msgstr "حذف بيانات المستخدم مرة واحدة"
+
+#: includes/class-sbscrbr-settings.php:505 includes/users.php:190
+msgid "Unsubscribed"
+msgstr "غير مشترك"
+
+#: includes/class-sbscrbr-settings.php:506
+msgid "Enable to delete user account after unsubscribing."
+msgstr "تمكين حذف حساب المستخدم بعد إلغاء الاشتراك."
+
+#: includes/class-sbscrbr-settings.php:525
+msgid "Plugin deleted"
+msgstr "تم حذف المكون الإضافي"
+
+#: includes/class-sbscrbr-settings.php:526
+msgid ""
+"If this option enabled, all users with \"Mail Subscribed\" role will be "
+"removed with the plugin removing. If the Sender plugin by BestWebSoft is "
+"installed, users' data will not be deleted."
+msgstr ""
+"إذا تم تمكين هذا الخيار، ستتم إزالة جميع المستخدمين الذين لديهم دور \"البريد "
+"المشترك\" مع إزالة الإضافة. إذا تم تثبيت المكون الإضافي \"المرسل\" من "
+"BestWebSoft، فلن يتم حذف بيانات المستخدمين."
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"If you want to send mailout to the users who have subscribed to newsletter "
+"use"
+msgstr ""
+"إذا كنت تريد إرسال رسالة بريدية إلى المستخدمين الذين اشتركوا في النشرة "
+"الإخبارية استخدم"
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"that sends mail to registered users. There is also a premium version of the "
+"plugin"
+msgstr ""
+"التي ترسل البريد إلى المستخدمين المسجلين. هناك أيضا نسخة متميزة من الإضافة"
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"which allows you to create and save templates for letters, edit the content "
+"of messages with a visual editor TinyMce, set priority оf mailing, create "
+"and manage mailing lists."
+msgstr ""
+"الذي يتيح لك إنشاء قوالب للرسائل وحفظها، وتحرير محتوى الرسائل باستخدام محرر "
+"مرئي TinyMce، وتحديد أولوية المراسلة، وإنشاء قوائم بريدية وإدارتها."
+
+#: includes/class-sbscrbr-settings.php:544
+msgid "System Messages Settings"
+msgstr "إعدادات رسائل النظام"
+
+#: includes/class-sbscrbr-settings.php:550
+msgid "Service messages"
+msgstr "رسائل الخدمة"
+
+#: includes/class-sbscrbr-settings.php:553
+msgid "These messages will be displayed in the frontend of your site."
+msgstr "سيتم عرض هذه الرسائل في الواجهة الأمامية لموقعك."
+
+#: includes/class-sbscrbr-settings.php:559
+msgid "Unknown Error"
+msgstr "يرجى الانتظار قليلاً ..."
+
+#: includes/class-sbscrbr-settings.php:562
+msgid "Missing Email"
+msgstr "بريد إلكتروني مفقود"
+
+#: includes/class-sbscrbr-settings.php:565
+msgid "Invalid Email"
+msgstr "خطأ في البرید الإلکتروني"
+
+#: includes/class-sbscrbr-settings.php:568
+msgid "Email Not Found"
+msgstr "البريد الإلكتروني غير موجود"
+
+#: includes/class-sbscrbr-settings.php:571
+msgid "Email Cannot be Located"
+msgstr "لا يمكن تحديد موقع البريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:574
+msgid "Email Not Sent"
+msgstr "لم يتم إرسال البريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:577
+msgid "Registration Error"
+msgstr "خطأ في التسجيل"
+
+#: includes/class-sbscrbr-settings.php:580
+#: includes/class-sbscrbr-settings.php:737
+msgid "Subscription Completed"
+msgstr "اكتمل الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:583
+msgid "User Already Subscribed"
+msgstr "مستخدم مشترك بالفعل"
+
+#: includes/class-sbscrbr-settings.php:586
+msgid "Subscription Denied"
+msgstr "تم رفض الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:589
+msgid "User Already Unsubscribed"
+msgstr "مستخدم تم إلغاء اشتراكه بالفعل"
+
+#: includes/class-sbscrbr-settings.php:592
+msgid "Unsubscribe Link Sent"
+msgstr "تم إرسال رابط إلغاء الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:595
+msgid "Unsubscribe Completed"
+msgstr "اكتمل إلغاء الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:598
+msgid "Subscribe/Unsubscribe Link Not Exist"
+msgstr "رابط الاشتراك/إلغاء الاشتراك غير موجود"
+
+#: includes/class-sbscrbr-settings.php:611
+msgid "Email Notification Settings"
+msgstr "إعدادات الإعلام بالبريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:616
+msgid "Email Notification"
+msgstr "اشعارات البريد"
+
+#: includes/class-sbscrbr-settings.php:619
+msgid "Enable to receive email notifications."
+msgstr "تمكين تلقي إشعارات البريد الإلكتروني."
+
+#: includes/class-sbscrbr-settings.php:625
+msgid "Send Email Notifications to"
+msgstr "إرسال إشعارات البريد الإلكتروني إلى"
+
+#: includes/class-sbscrbr-settings.php:628
+msgid "Administrator"
+msgstr "المدير"
+
+#: includes/class-sbscrbr-settings.php:629
+msgid ""
+"Enable to send the notifications about new subscribed users to the "
+"administrator."
+msgstr "تمكين إرسال الإشعارات حول المستخدمين الجدد المشتركين إلى المسؤول."
+
+#: includes/class-sbscrbr-settings.php:633
+msgid "Select a username"
+msgstr "اختر اسم مستخدم"
+
+#: includes/class-sbscrbr-settings.php:646
+msgid "User"
+msgstr "المستخدم"
+
+#: includes/class-sbscrbr-settings.php:647
+msgid "Enable to notify a user about the subscription he made."
+msgstr "تمكين إخطار المستخدم بالاشتراك الذي قام به."
+
+#: includes/class-sbscrbr-settings.php:650
+msgid "Custom"
+msgstr "مخصص"
+
+#: includes/class-sbscrbr-settings.php:655
+msgid ""
+"Add multiple email addresses separated by comma (ex: email1@example.com, "
+"email2@example.com)."
+msgstr ""
+"أضف عناوين بريد إلكتروني متعددة مفصولة بفاصلة (على سبيل المثال: "
+"email1@example.com، email2@example.com)."
+
+#: includes/class-sbscrbr-settings.php:661
+msgid "'FROM' field"
+msgstr "حقل \"من"
+
+#: includes/class-sbscrbr-settings.php:670
+#, fuzzy
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:674
+msgid ""
+"If this option is changed, email messages may be moved to the spam folder or "
+"email delivery failures may occur."
+msgstr ""
+"إذا تم تغيير هذا الخيار، فقد يتم نقل رسائل البريد الإلكتروني إلى مجلد "
+"الرسائل غير المرغوب فيها أو قد يحدث فشل في تسليم البريد الإلكتروني."
+
+#: includes/class-sbscrbr-settings.php:679
+msgid "Email Templates"
+msgstr "قوالب البريد الإلكتروني"
+
+#: includes/class-sbscrbr-settings.php:685
+msgid "Available shortcodes"
+msgstr "الرموز القصيرة المتاحة"
+
+#: includes/class-sbscrbr-settings.php:686
+msgid "The e-mail of a current user."
+msgstr "البريد الإلكتروني للمستخدم الحالي."
+
+#: includes/class-sbscrbr-settings.php:687
+msgid "The link to profile page of current user."
+msgstr "رابط صفحة الملف الشخصي للمستخدم الحالي."
+
+#: includes/class-sbscrbr-settings.php:688
+msgid "The link to unsubscribe."
+msgstr "رابط إلغاء الاشتراك."
+
+#: includes/class-sbscrbr-settings.php:707
+msgid "New Subscriber"
+msgstr "مشترك جديد"
+
+#: includes/class-sbscrbr-settings.php:714
+#: includes/class-sbscrbr-settings.php:744
+#: includes/class-sbscrbr-settings.php:774
+msgid "Sender plugin template"
+msgstr "قالب المكون الإضافي للمرسل"
+
+#: includes/class-sbscrbr-settings.php:723
+#: includes/class-sbscrbr-settings.php:753
+#: includes/class-sbscrbr-settings.php:783
+msgid "Custom template"
+msgstr "قالب مخصص"
+
+#: includes/class-sbscrbr-settings.php:727
+#: includes/class-sbscrbr-settings.php:757
+#: includes/class-sbscrbr-settings.php:787
+msgid "Subject"
+msgstr "الموضوع"
+
+#: includes/class-sbscrbr-settings.php:731
+#: includes/class-sbscrbr-settings.php:761
+#: includes/class-sbscrbr-settings.php:791
+msgid "Text"
+msgstr "نص"
+
+#: includes/class-sbscrbr-settings.php:767 subscriber.php:129
+msgid "Unsubscribe Confirmation"
+msgstr "تأكيد إلغاء الاشتراك"
+
+#: includes/class-sbscrbr-settings.php:799
+msgid "Additional Text"
+msgstr "نص إضافي"
+
+#: includes/class-sbscrbr-settings.php:807
+msgid ""
+"Enable to include additional text in all email messages. Sender plugin is "
+"required."
+msgstr ""
+"تمكين تضمين نص إضافي في جميع رسائل البريد الإلكتروني. مطلوب ملحق المرسل."
+
+#: includes/class-sbscrbr-settings.php:816
+msgid "Un/Subscription Links Redirect to"
+msgstr "روابط إلغاء الاشتراك/إعادة التوجيه إلى"
+
+#: includes/class-sbscrbr-settings.php:821
+msgid "Default page"
+msgstr "الصفحة الافتراضية"
+
+#: includes/class-sbscrbr-settings.php:825
+msgid "Custom page"
+msgstr "صفحة مخصصة"
+
+#: includes/class-sbscrbr-settings.php:830
+msgid ""
+"Add a subscriber form to this page in order to see a successful "
+"unsubscription notification."
+msgstr "أضف نموذج اشتراك إلى هذه الصفحة من أجل رؤية إشعار إلغاء اشتراك ناجح."
+
+#: includes/class-sbscrbr-settings.php:852
+msgid "Export Data"
+msgstr "تصدير البيانات"
+
+#: includes/class-sbscrbr-settings.php:855
+msgid "CSV file format"
+msgstr "تنسيق ملف CSV"
+
+#: includes/class-sbscrbr-settings.php:856
+msgid "XML file format"
+msgstr "تنسيق ملف XML"
+
+#: includes/class-sbscrbr-settings.php:858
+msgid "Export"
+msgstr "تصدير"
+
+#: includes/class-sbscrbr-settings.php:862
+msgid "Import Data"
+msgstr "استيراد البيانات"
+
+#: includes/class-sbscrbr-settings.php:865
+msgid "Keep existing data"
+msgstr "الاحتفاظ بالبيانات الموجودة"
+
+#: includes/class-sbscrbr-settings.php:866
+msgid "Delete existing data"
+msgstr "حذف البيانات الموجودة"
+
+#: includes/class-sbscrbr-settings.php:869
+msgid "Import"
+msgstr "استيراد"
+
+#: includes/class-sbscrbr-settings.php:888
+msgid "Subscriber Shortcode"
+msgstr "الرمز المختصر للمشترك"
+
+#: includes/class-sbscrbr-settings.php:892
+msgid "Add a subscription form to a widget."
+msgstr "إضافة نموذج اشتراك إلى عنصر واجهة مستخدم."
+
+#: includes/class-sbscrbr-settings.php:892
+msgid "Navigate to Widgets"
+msgstr "الانتقال إلى الأدوات"
+
+#: includes/class-sbscrbr-settings.php:896
+msgid ""
+"Add the Subscribe Form to your pages or posts using the following shortcode:"
+msgstr "أضف نموذج الاشتراك إلى صفحاتك أو مقالاتك باستخدام الكود القصير التالي:"
+
+#: includes/class-sbscrbr-widget.php:16
+msgid "Subscriber Sign Up Form"
+msgstr "نموذج تسجيل المشتركين"
+
+#: includes/class-sbscrbr-widget.php:17
+msgid "Displaying the registration form for newsletter subscribers."
+msgstr "عرض نموذج التسجيل لمشتركي الرسائل الإخبارية."
+
+#: includes/class-sbscrbr-widget.php:46 includes/class-sbscrbr-widget.php:126
+#: includes/users.php:207 subscriber.php:252 subscriber.php:254
+msgid "Unsubscribe"
+msgstr "إلغاء الاشتراك"
+
+#: includes/class-sbscrbr-widget.php:47 includes/class-sbscrbr-widget.php:127
+#: includes/users.php:204 subscriber.php:253 subscriber.php:616
+msgid "Subscribe"
+msgstr "الاشتراك"
+
+#: includes/class-sbscrbr-widget.php:144
+msgid "Text above the subscribe form"
+msgstr "نص فوق نموذج الاشتراك"
+
+#: includes/class-sbscrbr-widget.php:151
+msgid "Placeholder for text field \"E-mail\""
+msgstr "العنصر النائب للحقل النصي \"البريد الإلكتروني\""
+
+#: includes/class-sbscrbr-widget.php:157
+msgid "Label for \"Unsubscribe\" checkbox"
+msgstr "تسمية خانة الاختيار \"إلغاء الاشتراك\""
+
+#: includes/class-sbscrbr-widget.php:163
+msgid "Label for \"Subscribe\" button"
+msgstr "تسمية زر \"اشتراك\""
+
+#: includes/class-sbscrbr-widget.php:170
+msgid "apply plugin settings"
+msgstr "تطبيق إعدادات المكوِّن الإضافي"
+
+#: includes/pro-tab.php:31
+msgid "Upgrade to Pro"
+msgstr "الترقية إلى الاصدار المدفوع"
+
+#: includes/users.php:27
+msgid "user"
+msgstr "مستخدم"
+
+#: includes/users.php:28
+msgid "users"
+msgstr "المستخدمين"
+
+#: includes/users.php:59
+msgid "Users have not been found"
+msgstr "لم يتم العثور على المستخدمين"
+
+#: includes/users.php:73
+msgid "Status"
+msgstr "الحالة"
+
+#: includes/users.php:129
+msgctxt "Action in WP_List_Table"
+msgid "Subscribe"
+msgstr "الاشتراك"
+
+#: includes/users.php:134
+msgctxt "Action in WP_List_Table"
+msgid "Unsubscribe"
+msgstr "إلغاء الاشتراك"
+
+#: includes/users.php:138 includes/users.php:210
+msgid "Restore From Black List"
+msgstr "الاستعادة من القائمة السوداء"
+
+#: includes/users.php:140 includes/users.php:191 includes/users.php:212
+msgid "Black List"
+msgstr "القائمة السوداء"
+
+#: includes/users.php:143 includes/users.php:215
+msgid "Restore"
+msgstr "استعادة"
+
+#: includes/users.php:144 includes/users.php:216
+msgid "Delete Permanently"
+msgstr "الحذف بشكل نهائي"
+
+#: includes/users.php:146 includes/users.php:192
+msgid "Trash"
+msgstr "سلة المهملات"
+
+#: includes/users.php:188
+msgid "All"
+msgstr "الكل"
+
+#: includes/users.php:189
+msgid "Subscribed"
+msgstr "مشترك"
+
+#: includes/users.php:218
+msgid "Delete"
+msgstr "حذف"
+
+#: includes/users.php:317
+msgid "in blacklist"
+msgstr "في القائمة السوداء"
+
+#: includes/users.php:319
+msgid "in trash"
+msgstr "في القمامة"
+
+#: includes/users.php:322
+msgid "E-mail:"
+msgstr "البريد الإلكتروني:"
+
+#: includes/users.php:325
+msgid "Subscribed from"
+msgstr "تم الاشتراك من"
+
+#: includes/users.php:327
+msgid "Unsubscribed from"
+msgstr "إلغاء اشتراك من"
+
+#: subscriber.php:53 subscriber.php:54 subscriber.php:526
+msgid "Subscribers"
+msgstr "المشتركين"
+
+#: subscriber.php:73
+msgid "Update to Pro"
+msgstr "التحديث إلى Pro"
+
+#: subscriber.php:114
+msgid "Mail Subscriber"
+msgstr "مشترك في البريد"
+
+#: subscriber.php:255
+msgid "I consent to having this site collect my personal data."
+msgstr "أوافق على قيام هذا الموقع بجمع بياناتي الشخصية."
+
+#: subscriber.php:257
+msgid "System error. Please try later."
+msgstr "خطأ في النظام. يرجى المحاولة لاحقاً."
+
+#: subscriber.php:258
+msgid "Please enter e-mail address."
+msgstr "الرجاء إدخال عنوان البريد الإلكتروني."
+
+#: subscriber.php:259
+msgid "You must enter a valid e-mail address."
+msgstr "يجب إدخال عنوان بريد إلكتروني صالح."
+
+#: subscriber.php:260
+msgid "This e-mail address does not exist."
+msgstr "عنوان البريد الإلكتروني هذا غير موجود."
+
+#: subscriber.php:261
+msgid "Your e-mail information cannot be located."
+msgstr "لا يمكن تحديد موقع معلومات البريد الإلكتروني الخاص بك."
+
+#: subscriber.php:262
+msgid "Unable to send the e-mail at this time. Please try later."
+msgstr "يتعذر إرسال البريد الإلكتروني في الوقت الحالي. يرجى المحاولة لاحقاً."
+
+#: subscriber.php:263
+msgid "Error occurred during registration. Please try later."
+msgstr "حدث خطأ أثناء التسجيل. يرجى المحاولة لاحقاً."
+
+#: subscriber.php:264
+msgid "Thank you for subscribing!"
+msgstr "شكرا لك على الاشتراك!"
+
+#: subscriber.php:265
+msgid "This e-mail address is already subscribed."
+msgstr "عنوان البريد الإلكتروني هذا مشترك بالفعل."
+
+#: subscriber.php:266
+msgid "Sorry, but your request to subscribe has been denied."
+msgstr "عذراً، ولكن تم رفض طلبك للاشتراك."
+
+#: subscriber.php:267 subscriber.php:270
+msgid "You have successfully unsubscribed."
+msgstr "لقد قمت بإلغاء اشتراكك بنجاح."
+
+#: subscriber.php:268
+msgid "An unsubscribe link has been sent to you."
+msgstr "تم إرسال رابط إلغاء الاشتراك إليك."
+
+#: subscriber.php:269
+msgid ""
+"Unsubscribe link failed. We respect your wishes. Please contact us to let us "
+"know."
+msgstr ""
+"فشل رابط إلغاء الاشتراك. نحن نحترم رغباتك. يرجى الاتصال بنا لإعلامنا بذلك."
+
+#: subscriber.php:284
+msgid "New subscriber"
+msgstr "مشترك جديد"
+
+#: subscriber.php:285
+msgid "Thanks for registration"
+msgstr "شكرًا للتسجيل"
+
+#: subscriber.php:286
+msgid "Link to unsubscribe"
+msgstr "رابط لإلغاء الاشتراك"
+
+#: subscriber.php:288
+#, php-format
+msgid "User with e-mail %s has subscribed to a newsletter."
+msgstr "اشترك المستخدم الذي لديه بريد إلكتروني %s في رسالة إخبارية."
+
+#: subscriber.php:289
+#, php-format
+msgid ""
+"Thanks for registration. To change data of your profile go to %1$s If you "
+"want to unsubscribe from the newsletter from our site go to the link %2$s"
+msgstr ""
+"شكراً للتسجيل. لتغيير بيانات ملفك الشخصي، انتقل إلى %1$s إذا كنت ترغب في "
+"إلغاء الاشتراك في النشرة الإخبارية من موقعنا، انتقل إلى الرابط %2$s"
+
+#: subscriber.php:290
+#, php-format
+msgid ""
+"Dear user. At your request, we send you a link to unsubscribe from our email "
+"messages. To unsubscribe please use the link below. If you change your mind, "
+"you can just ignore this letter.\n"
+"Link to unsubscribe:\n"
+" %s"
+msgstr ""
+"عزيزي المستخدم بناءً على طلبك، نرسل لك رابطًا لإلغاء الاشتراك في رسائل البريد "
+"الإلكتروني الخاصة بنا. لإلغاء الاشتراك يرجى استخدام الرابط أدناه. إذا غيرت "
+"رأيك، يمكنك فقط تجاهل هذه الرسالة.\n"
+"رابط لإلغاء الاشتراك:\n"
+" %s"
+
+#: subscriber.php:299
+#, php-format
+msgid ""
+"If you want to unsubscribe from the newsletter from our site go to the "
+"following link: %s"
+msgstr ""
+"إذا كنت ترغب في إلغاء الاشتراك في النشرة الإخبارية من موقعنا اذهب إلى الرابط "
+"التالي: %s"
+
+#: subscriber.php:503
+msgid "WARNING"
+msgstr "تحذير"
+
+#: subscriber.php:504
+msgid "The plugin works correctly only if JavaScript is enabled."
+msgstr "لا تعمل الإضافة بشكل صحيح إلا إذا تم تمكين JavaScript."
+
+#: subscriber.php:538 subscriber.php:1757
+msgid "Notice:"
+msgstr "ملاحظة:"
+
+#: subscriber.php:548
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "نتائج البحث عن &#8220;%s&#8221;"
+
+#: subscriber.php:550
+msgid "Filter subscribers list"
+msgstr "تصفية قائمة المشتركين"
+
+#: subscriber.php:556
+msgid "search"
+msgstr "بحث"
+
+#: subscriber.php:578
+msgid "Letters not found"
+msgstr "رسائل غير موجودة"
+
+#: subscriber.php:587
+msgid "empty title"
+msgstr "عنوان فارغ"
+
+#: subscriber.php:688
+msgid ""
+"The ID of the verifiable form does not match the ID of the sending form."
+msgstr "معرف النموذج القابل للتحقق لا يتطابق مع معرف النموذج المرسل."
+
+#: subscriber.php:953
+msgid "Your login:"
+msgstr "تسجيل دخولك:"
+
+#: subscriber.php:953
+msgid "Your password:"
+msgstr "كلمة المرور الخاصة بك:"
+
+#: subscriber.php:1260
+msgid "Subscribe on newsletters"
+msgstr "اشترك في النشرات الإخبارية"
+
+#: subscriber.php:1348
+msgid "users per page"
+msgstr "المستخدمون لكل صفحة"
+
+#: subscriber.php:1406
+msgid "Unknown action."
+msgstr "عملية غير معروفة."
+
+#: subscriber.php:1407
+msgid "Select the users to apply the necessary actions."
+msgstr "حدد المستخدمين لتطبيق الإجراءات اللازمة."
+
+#: subscriber.php:1408
+msgid "No user was updated."
+msgstr "لم يتم تحديث أي مستخدم."
+
+#: subscriber.php:1443
+#, php-format
+msgid "One user was subscribed on newsletter."
+msgid_plural "%s users were subscribed on newsletter."
+msgstr[0] "تم اشتراك مستخدم واحد في النشرة الإخبارية."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1443 subscriber.php:1476 subscriber.php:1508
+#: subscriber.php:1535 subscriber.php:1563 subscriber.php:1618
+msgid "Undo."
+msgstr "التراجع."
+
+#: subscriber.php:1476
+#, php-format
+msgid "One user was unsubscribed from newsletter."
+msgid_plural "%s users were unsubscribed from newsletter."
+msgstr[0] "تم إلغاء اشتراك مستخدم واحد من النشرة الإخبارية."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1508
+#, php-format
+msgid "One user was moved to black list."
+msgid_plural "%s users were moved to black list."
+msgstr[0] "تم نقل مستخدم واحد إلى القائمة السوداء."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1535
+#, php-format
+msgid "One user was restored from black list."
+msgid_plural "%s users were restored from black list."
+msgstr[0] "تمت استعادة مستخدم واحد من القائمة السوداء."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1563
+#, php-format
+msgid "One user was moved to trash."
+msgid_plural "%s users were moved to trash."
+msgstr[0] "تم نقل مستخدم واحد إلى سلة المهملات."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1591
+#, php-format
+msgid "One user was deleted permanently."
+msgid_plural "%s users were deleted permanently."
+msgstr[0] "تم حذف مستخدم واحد بشكل نهائي."
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1618
+#, php-format
+msgid "One user was restored."
+msgid_plural "%s users were restored."
+msgstr[0] "تمت استعادة مستخدم واحد."
+msgstr[1] ""
+msgstr[2] "تمت استعادة مستخدم واحد."
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: subscriber.php:1738
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: subscriber.php:1739
+msgid "Support"
+msgstr "الدعم"
+
+#: subscriber.php:1760
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has only"
+msgstr "نظرًا لخصائص العمل متعدد المواقع، فإن المكون الإضافي للمشتركين لديه فقط"
+
+#: subscriber.php:1762
+msgid "Network settings page"
+msgstr "صفحة إعدادات الشبكة"
+
+#: subscriber.php:1765
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has the "
+"network settings page only and it should be Network Activated. Please"
+msgstr ""
+"نظرًا لخصائص عمل المواقع المتعددة، تحتوي الإضافة الخاصة بالمشترك على صفحة "
+"إعدادات الشبكة فقط ويجب أن تكون مفعلة على الشبكة. من فضلك"
+
+#: subscriber.php:1767
+msgid "Activate Subscriber for Network"
+msgstr "تنشيط المشترك للشبكة"

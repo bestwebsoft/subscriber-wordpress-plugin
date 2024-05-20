@@ -1,0 +1,1004 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Subscriber\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-20 16:36+0300\n"
+"PO-Revision-Date: 2024-05-20 16:54+0300\n"
+"Last-Translator: \n"
+"Language-Team: BestWebSoft Team <wp@bestwebsoft.com>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_html__;esc_html_e;"
+"esc_attr__;esc_attr_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.4.3\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bws_menu\n"
+
+#: includes/class-sbscrbr-settings.php:23 subscriber.php:46 subscriber.php:1717
+#: subscriber.php:1736
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/class-sbscrbr-settings.php:24
+msgid "Messages"
+msgstr "Mensajes"
+
+#: includes/class-sbscrbr-settings.php:25
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: includes/class-sbscrbr-settings.php:27
+#: includes/class-sbscrbr-settings.php:843
+msgid "Import / Export"
+msgstr "Importar / Exportar"
+
+#: includes/class-sbscrbr-settings.php:30
+msgid "Misc"
+msgstr "Otros"
+
+#: includes/class-sbscrbr-settings.php:31
+msgid "Custom Code"
+msgstr "Código personalizado"
+
+#: includes/class-sbscrbr-settings.php:32
+msgid "License Key"
+msgstr "Clave de licencia"
+
+#: includes/class-sbscrbr-settings.php:80
+msgid "Sorry, your nonce did not verify."
+msgstr "Lo siento, error de verificación."
+
+#: includes/class-sbscrbr-settings.php:134
+msgid ""
+"'FROM' field option was changed. This may cause email messages being moved "
+"to the spam folder or email delivery failures."
+msgstr ""
+"se ha modificado la opción del campo 'FROM'. Esto puede provocar que los "
+"mensajes de correo electrónico se muevan a la carpeta de correo no deseado o "
+"fallos en la entrega del correo electrónico."
+
+#: includes/class-sbscrbr-settings.php:171
+msgid ""
+"Error: The domain name in shortcode settings must be the same as the current "
+"one. Settings are not saved."
+msgstr ""
+"Error: El nombre de dominio en los ajustes del shortcode debe ser el mismo "
+"que el actual. Los ajustes no se guardan."
+
+#: includes/class-sbscrbr-settings.php:191
+msgid "Please select one profile extra field at least."
+msgstr "Por favor, seleccione al menos un campo extra del perfil."
+
+#: includes/class-sbscrbr-settings.php:261
+msgid "Settings Saved"
+msgstr "Configuración Guardada"
+
+#: includes/class-sbscrbr-settings.php:278 subscriber.php:37 subscriber.php:45
+#: subscriber.php:500
+msgid "Subscriber Settings"
+msgstr "Ajustes de abonado"
+
+#: includes/class-sbscrbr-settings.php:283
+#: includes/class-sbscrbr-settings.php:477
+msgid "Enable Subscription Checkbox for"
+msgstr "Activar la casilla de verificación de suscripción para"
+
+#: includes/class-sbscrbr-settings.php:296
+#: includes/class-sbscrbr-settings.php:313
+#, php-format
+msgid "Update %s at least to version"
+msgstr "Actualice %s al menos a la versión"
+
+#: includes/class-sbscrbr-settings.php:300
+#: includes/class-sbscrbr-settings.php:317
+#: includes/class-sbscrbr-settings.php:697
+msgid "Activate for network"
+msgstr "Activar para la red"
+
+#: includes/class-sbscrbr-settings.php:300
+#: includes/class-sbscrbr-settings.php:317
+#: includes/class-sbscrbr-settings.php:385
+#: includes/class-sbscrbr-settings.php:412
+#: includes/class-sbscrbr-settings.php:428
+#: includes/class-sbscrbr-settings.php:697
+msgid "Activate"
+msgstr "Activar"
+
+#: includes/class-sbscrbr-settings.php:332
+#: includes/class-sbscrbr-settings.php:703
+msgid "Install Now"
+msgstr "Instalar ahora"
+
+#: includes/class-sbscrbr-settings.php:342
+msgid "Check off for adding captcha to forms on their settings pages."
+msgstr ""
+"Marque la casilla para añadir captcha a los formularios en sus páginas de "
+"configuración."
+
+#: includes/class-sbscrbr-settings.php:347
+msgid "Want to add a subscription checkbox to a custom form?"
+msgstr ""
+"¿Desea añadir una casilla de verificación de suscripción a un formulario "
+"personalizado?"
+
+#: includes/class-sbscrbr-settings.php:351
+#: includes/class-sbscrbr-settings.php:468
+msgid "Form Fields"
+msgstr "Campos del Formulario"
+
+#: includes/class-sbscrbr-settings.php:354
+#: includes/class-sbscrbr-widget.php:134
+msgid "Title"
+msgstr "Título"
+
+#: includes/class-sbscrbr-settings.php:357
+msgid "Title for subscribe form."
+msgstr "Título para el formulario de suscripción."
+
+#: includes/class-sbscrbr-settings.php:359
+msgid "Description"
+msgstr "Descripción"
+
+#: includes/class-sbscrbr-settings.php:362
+msgid "Text above the subscribe form."
+msgstr "Texto sobre el formulario de suscripción."
+
+#: includes/class-sbscrbr-settings.php:364 includes/class-sbscrbr-widget.php:45
+#: includes/class-sbscrbr-widget.php:125 includes/users.php:72
+#: subscriber.php:251
+msgid "E-mail"
+msgstr "E-mail"
+
+#: includes/class-sbscrbr-settings.php:367
+msgid "Placeholder for \"E-mail\" field."
+msgstr "Marcador de posición para el campo \"Correo electrónico\"."
+
+#: includes/class-sbscrbr-settings.php:369
+msgid "Button"
+msgstr "Botón"
+
+#: includes/class-sbscrbr-settings.php:372
+msgid "Label for \"Subscribe\" button."
+msgstr "Etiqueta para el botón \"Suscribir\"."
+
+#: includes/class-sbscrbr-settings.php:376
+msgid "Label for \"Unsubscribe\" button."
+msgstr "Etiqueta para el botón \"Cancelar suscripción\"."
+
+#: includes/class-sbscrbr-settings.php:390
+#: includes/class-sbscrbr-settings.php:420
+#: includes/class-sbscrbr-settings.php:433
+msgid "Download"
+msgstr "Descargar"
+
+#: includes/class-sbscrbr-settings.php:401
+msgid "Add custom form fields for subscribe form."
+msgstr ""
+"Añada campos de formulario personalizados para el formulario de suscripción."
+
+#: includes/class-sbscrbr-settings.php:436
+msgid "Unsubscribe checkbox"
+msgstr "Casilla para darse de baja"
+
+#: includes/class-sbscrbr-settings.php:439
+msgid "Label for \"Unsubscribe\" checkbox."
+msgstr "Etiqueta para la casilla de verificación \"Cancelar suscripción\"."
+
+#: includes/class-sbscrbr-settings.php:441
+msgid "GDPR checkbox"
+msgstr "Casilla de verificación GDPR"
+
+#: includes/class-sbscrbr-settings.php:444
+msgid "Label for \"GDPR\" checkbox."
+msgstr "Etiqueta para la casilla \"GDPR\"."
+
+#: includes/class-sbscrbr-settings.php:446
+msgid "Link to Privacy Policy Page."
+msgstr "Enlace a la página de política de privacidad."
+
+#: includes/class-sbscrbr-settings.php:448
+msgid "Text for Privacy Policy Link."
+msgstr "Texto para el enlace de la política de privacidad."
+
+#: includes/class-sbscrbr-settings.php:454
+msgid "Display in One Line"
+msgstr "Visualización en una línea"
+
+#: includes/class-sbscrbr-settings.php:457
+msgid "Enable to display the form in one line."
+msgstr "Habilitar para mostrar el formulario en una sola línea."
+
+#: includes/class-sbscrbr-settings.php:464
+#: includes/class-sbscrbr-settings.php:848 includes/pro-tab.php:24
+msgid "Close"
+msgstr "Cerrar"
+
+#: includes/class-sbscrbr-settings.php:471
+#: includes/class-sbscrbr-settings.php:664 includes/users.php:71
+msgid "Name"
+msgstr "Nombre"
+
+#: includes/class-sbscrbr-settings.php:472
+msgid "\"Unsubscribe\" checkbox"
+msgstr "\"Casilla \"Darse de baja"
+
+#: includes/class-sbscrbr-settings.php:480
+msgid "Registration form"
+msgstr "Formulario de registro"
+
+#: includes/class-sbscrbr-settings.php:481
+msgid "Woocommerce Login form"
+msgstr "Formulario de inicio de sesión de Woocommerce"
+
+#: includes/class-sbscrbr-settings.php:482
+msgid "Woocommerce Checkout form"
+msgstr "Formulario de pago Woocommerce"
+
+#: includes/class-sbscrbr-settings.php:487
+msgid "Subscription Confirmation"
+msgstr "Confimación de suscripción"
+
+#: includes/class-sbscrbr-settings.php:490
+msgid "Enable to send a confirmation link via email."
+msgstr ""
+"Habilitar para enviar un enlace de confirmación por correo electrónico."
+
+#: includes/class-sbscrbr-settings.php:494
+msgid "Confirmation Timeout"
+msgstr "Tiempo de espera de confirmación"
+
+#: includes/class-sbscrbr-settings.php:496
+msgid "After"
+msgstr "Después"
+
+#: includes/class-sbscrbr-settings.php:496
+#: includes/class-sbscrbr-settings.php:497
+msgid "hours"
+msgstr "horas"
+
+#: includes/class-sbscrbr-settings.php:497
+msgid "Every"
+msgstr "Cada"
+
+#: includes/class-sbscrbr-settings.php:498
+msgid ""
+"Enable to delete user data automatically if the subscription has not been "
+"confirmed. If you do not want to delete user data then set 0."
+msgstr ""
+"Habilite esta opción para borrar automáticamente los datos del usuario si la "
+"suscripción no ha sido confirmada. Si no desea borrar los datos del usuario, "
+"ponga 0."
+
+#: includes/class-sbscrbr-settings.php:502
+#: includes/class-sbscrbr-settings.php:517
+msgid "Delete User Data Once"
+msgstr "Borrar los datos del usuario una vez"
+
+#: includes/class-sbscrbr-settings.php:505 includes/users.php:190
+msgid "Unsubscribed"
+msgstr "Dados de baja"
+
+#: includes/class-sbscrbr-settings.php:506
+msgid "Enable to delete user account after unsubscribing."
+msgstr "Habilite la eliminación de la cuenta de usuario tras darse de baja."
+
+#: includes/class-sbscrbr-settings.php:525
+msgid "Plugin deleted"
+msgstr "Plugin eliminado"
+
+#: includes/class-sbscrbr-settings.php:526
+msgid ""
+"If this option enabled, all users with \"Mail Subscribed\" role will be "
+"removed with the plugin removing. If the Sender plugin by BestWebSoft is "
+"installed, users' data will not be deleted."
+msgstr ""
+"Si esta opción está activada, todos los usuarios con el rol \"Suscrito al "
+"correo\" serán eliminados con la eliminación del plugin. Si el plugin Sender "
+"de BestWebSoft está instalado, los datos de los usuarios no serán eliminados."
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"If you want to send mailout to the users who have subscribed to newsletter "
+"use"
+msgstr ""
+"Si desea enviar un mailout a los usuarios que se han suscrito al boletín de "
+"noticias utilice"
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"that sends mail to registered users. There is also a premium version of the "
+"plugin"
+msgstr ""
+"que envía correos a los usuarios registrados. También existe una versión "
+"premium del plugin"
+
+#: includes/class-sbscrbr-settings.php:534
+msgid ""
+"which allows you to create and save templates for letters, edit the content "
+"of messages with a visual editor TinyMce, set priority оf mailing, create "
+"and manage mailing lists."
+msgstr ""
+"que le permite crear y guardar plantillas para cartas, editar el contenido "
+"de los mensajes con un editor visual TinyMce, establecer la prioridad оf "
+"mailing, crear y gestionar listas de correo."
+
+#: includes/class-sbscrbr-settings.php:544
+msgid "System Messages Settings"
+msgstr "Configuración de los mensajes del sistema"
+
+#: includes/class-sbscrbr-settings.php:550
+msgid "Service messages"
+msgstr "Mensajes de servicio"
+
+#: includes/class-sbscrbr-settings.php:553
+msgid "These messages will be displayed in the frontend of your site."
+msgstr "Estos mensajes se mostrarán en el frontend de su sitio."
+
+#: includes/class-sbscrbr-settings.php:559
+msgid "Unknown Error"
+msgstr "Error desconocido"
+
+#: includes/class-sbscrbr-settings.php:562
+msgid "Missing Email"
+msgstr "Correo electrónico perdido"
+
+#: includes/class-sbscrbr-settings.php:565
+msgid "Invalid Email"
+msgstr "Dirección de correo inválida"
+
+#: includes/class-sbscrbr-settings.php:568
+msgid "Email Not Found"
+msgstr "Correo electrónico no encontrado"
+
+#: includes/class-sbscrbr-settings.php:571
+msgid "Email Cannot be Located"
+msgstr "No se puede localizar el correo electrónico"
+
+#: includes/class-sbscrbr-settings.php:574
+msgid "Email Not Sent"
+msgstr "Email no enviado"
+
+#: includes/class-sbscrbr-settings.php:577
+msgid "Registration Error"
+msgstr "Error de registro"
+
+#: includes/class-sbscrbr-settings.php:580
+#: includes/class-sbscrbr-settings.php:737
+msgid "Subscription Completed"
+msgstr "Suscripción completada"
+
+#: includes/class-sbscrbr-settings.php:583
+msgid "User Already Subscribed"
+msgstr "Usuario ya suscrito"
+
+#: includes/class-sbscrbr-settings.php:586
+msgid "Subscription Denied"
+msgstr "Suscripción denegada"
+
+#: includes/class-sbscrbr-settings.php:589
+msgid "User Already Unsubscribed"
+msgstr "Usuario ya dado de baja"
+
+#: includes/class-sbscrbr-settings.php:592
+msgid "Unsubscribe Link Sent"
+msgstr "Enlace para darse de baja enviado"
+
+#: includes/class-sbscrbr-settings.php:595
+msgid "Unsubscribe Completed"
+msgstr "Cancelar suscripción completado"
+
+#: includes/class-sbscrbr-settings.php:598
+msgid "Subscribe/Unsubscribe Link Not Exist"
+msgstr "El enlace para suscribirse/desuscribirse no existe"
+
+#: includes/class-sbscrbr-settings.php:611
+msgid "Email Notification Settings"
+msgstr "Ajustes de notificación de correo electrónico"
+
+#: includes/class-sbscrbr-settings.php:616
+msgid "Email Notification"
+msgstr "Notificación de correo electrónico"
+
+#: includes/class-sbscrbr-settings.php:619
+msgid "Enable to receive email notifications."
+msgstr "Activar para recibir notificaciones por correo electrónico."
+
+#: includes/class-sbscrbr-settings.php:625
+msgid "Send Email Notifications to"
+msgstr "Enviar notificaciones por correo electrónico a"
+
+#: includes/class-sbscrbr-settings.php:628
+msgid "Administrator"
+msgstr "Administrador"
+
+#: includes/class-sbscrbr-settings.php:629
+msgid ""
+"Enable to send the notifications about new subscribed users to the "
+"administrator."
+msgstr ""
+"Habilitar para enviar las notificaciones sobre nuevos usuarios suscritos al "
+"administrador."
+
+#: includes/class-sbscrbr-settings.php:633
+msgid "Select a username"
+msgstr "Selecciona un nombre de usuario"
+
+#: includes/class-sbscrbr-settings.php:646
+msgid "User"
+msgstr "Usuario"
+
+#: includes/class-sbscrbr-settings.php:647
+msgid "Enable to notify a user about the subscription he made."
+msgstr "Permite notificar a un usuario la suscripción que ha realizado."
+
+#: includes/class-sbscrbr-settings.php:650
+msgid "Custom"
+msgstr "Personalizado"
+
+#: includes/class-sbscrbr-settings.php:655
+msgid ""
+"Add multiple email addresses separated by comma (ex: email1@example.com, "
+"email2@example.com)."
+msgstr ""
+"Añada varias direcciones de correo electrónico separadas por comas (por "
+"ejemplo: email1@example.com, email2@example.com)."
+
+#: includes/class-sbscrbr-settings.php:661
+msgid "'FROM' field"
+msgstr "Campo «FROM»"
+
+#: includes/class-sbscrbr-settings.php:670
+msgid "Email"
+msgstr "Email"
+
+#: includes/class-sbscrbr-settings.php:674
+msgid ""
+"If this option is changed, email messages may be moved to the spam folder or "
+"email delivery failures may occur."
+msgstr ""
+"Si se cambia esta opción, es posible que los mensajes de correo electrónico "
+"se muevan a la carpeta de correo no deseado o que se produzcan fallos en la "
+"entrega del correo electrónico."
+
+#: includes/class-sbscrbr-settings.php:679
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#: includes/class-sbscrbr-settings.php:685
+msgid "Available shortcodes"
+msgstr "Códigos cortos disponibles"
+
+#: includes/class-sbscrbr-settings.php:686
+msgid "The e-mail of a current user."
+msgstr "El correo electrónico de un usuario actual."
+
+#: includes/class-sbscrbr-settings.php:687
+msgid "The link to profile page of current user."
+msgstr "El enlace a la página de perfil del usuario actual."
+
+#: includes/class-sbscrbr-settings.php:688
+msgid "The link to unsubscribe."
+msgstr "El enlace para darse de baja."
+
+#: includes/class-sbscrbr-settings.php:707
+msgid "New Subscriber"
+msgstr "Nuevo Suscriptor"
+
+#: includes/class-sbscrbr-settings.php:714
+#: includes/class-sbscrbr-settings.php:744
+#: includes/class-sbscrbr-settings.php:774
+msgid "Sender plugin template"
+msgstr "Plantilla de plugin de remitente"
+
+#: includes/class-sbscrbr-settings.php:723
+#: includes/class-sbscrbr-settings.php:753
+#: includes/class-sbscrbr-settings.php:783
+msgid "Custom template"
+msgstr "Plantilla personalizada"
+
+#: includes/class-sbscrbr-settings.php:727
+#: includes/class-sbscrbr-settings.php:757
+#: includes/class-sbscrbr-settings.php:787
+msgid "Subject"
+msgstr "Tema"
+
+#: includes/class-sbscrbr-settings.php:731
+#: includes/class-sbscrbr-settings.php:761
+#: includes/class-sbscrbr-settings.php:791
+msgid "Text"
+msgstr "Texto"
+
+#: includes/class-sbscrbr-settings.php:767 subscriber.php:129
+msgid "Unsubscribe Confirmation"
+msgstr "Confirmación de baja"
+
+#: includes/class-sbscrbr-settings.php:799
+msgid "Additional Text"
+msgstr "Texto Adicional"
+
+#: includes/class-sbscrbr-settings.php:807
+msgid ""
+"Enable to include additional text in all email messages. Sender plugin is "
+"required."
+msgstr ""
+"Permite incluir texto adicional en todos los mensajes de correo electrónico. "
+"Se requiere el plugin de remitente."
+
+#: includes/class-sbscrbr-settings.php:816
+msgid "Un/Subscription Links Redirect to"
+msgstr "Enlaces de baja/suscripción Redirigir a"
+
+#: includes/class-sbscrbr-settings.php:821
+msgid "Default page"
+msgstr "Página por defecto"
+
+#: includes/class-sbscrbr-settings.php:825
+msgid "Custom page"
+msgstr "Página personalizada"
+
+#: includes/class-sbscrbr-settings.php:830
+msgid ""
+"Add a subscriber form to this page in order to see a successful "
+"unsubscription notification."
+msgstr ""
+"Añada un formulario de suscriptor a esta página para ver una notificación de "
+"baja con éxito."
+
+#: includes/class-sbscrbr-settings.php:852
+msgid "Export Data"
+msgstr "Exportar datos"
+
+#: includes/class-sbscrbr-settings.php:855
+msgid "CSV file format"
+msgstr "Formato de archivo CSV"
+
+#: includes/class-sbscrbr-settings.php:856
+msgid "XML file format"
+msgstr "Formato de archivo XML"
+
+#: includes/class-sbscrbr-settings.php:858
+msgid "Export"
+msgstr "Exportar"
+
+#: includes/class-sbscrbr-settings.php:862
+msgid "Import Data"
+msgstr "Importar datos"
+
+#: includes/class-sbscrbr-settings.php:865
+msgid "Keep existing data"
+msgstr "Conservar los datos existentes"
+
+#: includes/class-sbscrbr-settings.php:866
+msgid "Delete existing data"
+msgstr "Borrar datos existentes"
+
+#: includes/class-sbscrbr-settings.php:869
+msgid "Import"
+msgstr "Importar"
+
+#: includes/class-sbscrbr-settings.php:888
+msgid "Subscriber Shortcode"
+msgstr "Código corto de suscriptor"
+
+#: includes/class-sbscrbr-settings.php:892
+msgid "Add a subscription form to a widget."
+msgstr "Añada un formulario de suscripción a un widget."
+
+#: includes/class-sbscrbr-settings.php:892
+msgid "Navigate to Widgets"
+msgstr "Desplázate a Widgets"
+
+#: includes/class-sbscrbr-settings.php:896
+msgid ""
+"Add the Subscribe Form to your pages or posts using the following shortcode:"
+msgstr ""
+"Añada el Formulario de suscripción a sus páginas o entradas utilizando el "
+"siguiente shortcode:"
+
+#: includes/class-sbscrbr-widget.php:16
+msgid "Subscriber Sign Up Form"
+msgstr "Formulario de suscripción"
+
+#: includes/class-sbscrbr-widget.php:17
+msgid "Displaying the registration form for newsletter subscribers."
+msgstr ""
+"Visualización del formulario de inscripción para los suscriptores del "
+"boletín de noticias."
+
+#: includes/class-sbscrbr-widget.php:46 includes/class-sbscrbr-widget.php:126
+#: includes/users.php:207 subscriber.php:252 subscriber.php:254
+msgid "Unsubscribe"
+msgstr "Darse de baja"
+
+#: includes/class-sbscrbr-widget.php:47 includes/class-sbscrbr-widget.php:127
+#: includes/users.php:204 subscriber.php:253 subscriber.php:616
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: includes/class-sbscrbr-widget.php:144
+msgid "Text above the subscribe form"
+msgstr "Texto sobre el formulario de suscripción"
+
+#: includes/class-sbscrbr-widget.php:151
+msgid "Placeholder for text field \"E-mail\""
+msgstr "Marcador de posición para el campo de texto \"E-mail\""
+
+#: includes/class-sbscrbr-widget.php:157
+msgid "Label for \"Unsubscribe\" checkbox"
+msgstr "Casilla de verificación para la etiqueta \"Unsubscribe\""
+
+#: includes/class-sbscrbr-widget.php:163
+msgid "Label for \"Subscribe\" button"
+msgstr "Botón para la etiqueta \"Subscribe\""
+
+#: includes/class-sbscrbr-widget.php:170
+msgid "apply plugin settings"
+msgstr "aplicar la configuración del plugin"
+
+#: includes/pro-tab.php:31
+msgid "Upgrade to Pro"
+msgstr "Actualizar a Pro"
+
+#: includes/users.php:27
+msgid "user"
+msgstr "usuario"
+
+#: includes/users.php:28
+msgid "users"
+msgstr "usuarios"
+
+#: includes/users.php:59
+msgid "Users have not been found"
+msgstr "No se han encontrado usuarios"
+
+#: includes/users.php:73
+msgid "Status"
+msgstr "Estado"
+
+#: includes/users.php:129
+msgctxt "Action in WP_List_Table"
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: includes/users.php:134
+msgctxt "Action in WP_List_Table"
+msgid "Unsubscribe"
+msgstr "Darse de baja"
+
+#: includes/users.php:138 includes/users.php:210
+msgid "Restore From Black List"
+msgstr "Restaurar desde lista negra"
+
+#: includes/users.php:140 includes/users.php:191 includes/users.php:212
+msgid "Black List"
+msgstr "Lista negra"
+
+#: includes/users.php:143 includes/users.php:215
+msgid "Restore"
+msgstr "Restaurar"
+
+#: includes/users.php:144 includes/users.php:216
+msgid "Delete Permanently"
+msgstr "Borrar permanentemente"
+
+#: includes/users.php:146 includes/users.php:192
+msgid "Trash"
+msgstr "Papelera"
+
+#: includes/users.php:188
+msgid "All"
+msgstr "Todo"
+
+#: includes/users.php:189
+msgid "Subscribed"
+msgstr "Suscrito"
+
+#: includes/users.php:218
+msgid "Delete"
+msgstr "Borrar"
+
+#: includes/users.php:317
+msgid "in blacklist"
+msgstr "lista negra de usuarios"
+
+#: includes/users.php:319
+msgid "in trash"
+msgstr "en la basura"
+
+#: includes/users.php:322
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: includes/users.php:325
+msgid "Subscribed from"
+msgstr "Suscrito desde"
+
+#: includes/users.php:327
+msgid "Unsubscribed from"
+msgstr "Darse de baja de"
+
+#: subscriber.php:53 subscriber.php:54 subscriber.php:526
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+#: subscriber.php:73
+msgid "Update to Pro"
+msgstr "Actualización a Pro"
+
+#: subscriber.php:114
+msgid "Mail Subscriber"
+msgstr "Suscriptor por correo"
+
+#: subscriber.php:255
+msgid "I consent to having this site collect my personal data."
+msgstr ""
+"Doy mi consentimiento para que este sitio recopile mis datos personales."
+
+#: subscriber.php:257
+msgid "System error. Please try later."
+msgstr "Error del sistema. Por favor, inténtelo más tarde."
+
+#: subscriber.php:258
+msgid "Please enter e-mail address."
+msgstr "Por favor, introduzca la dirección de correo electrónico."
+
+#: subscriber.php:259
+msgid "You must enter a valid e-mail address."
+msgstr "Debe introducir una dirección de correo electrónico válida."
+
+#: subscriber.php:260
+msgid "This e-mail address does not exist."
+msgstr "Esta dirección de correo electrónico no existe."
+
+#: subscriber.php:261
+msgid "Your e-mail information cannot be located."
+msgstr "Su información de correo electrónico no puede ser localizada."
+
+#: subscriber.php:262
+msgid "Unable to send the e-mail at this time. Please try later."
+msgstr ""
+"No es posible enviar el correo electrónico en este momento. Por favor, "
+"inténtelo más tarde."
+
+#: subscriber.php:263
+msgid "Error occurred during registration. Please try later."
+msgstr ""
+"Se ha producido un error durante el registro. Por favor, inténtelo más tarde."
+
+#: subscriber.php:264
+msgid "Thank you for subscribing!"
+msgstr "¡Gracias por suscribirte!"
+
+#: subscriber.php:265
+msgid "This e-mail address is already subscribed."
+msgstr "Esta dirección de correo electrónico ya está suscrita."
+
+#: subscriber.php:266
+msgid "Sorry, but your request to subscribe has been denied."
+msgstr "Lo sentimos, pero su solicitud de suscripción ha sido denegada."
+
+#: subscriber.php:267 subscriber.php:270
+msgid "You have successfully unsubscribed."
+msgstr "Se ha dado de baja correctamente."
+
+#: subscriber.php:268
+msgid "An unsubscribe link has been sent to you."
+msgstr "Se le ha enviado un enlace para darse de baja."
+
+#: subscriber.php:269
+msgid ""
+"Unsubscribe link failed. We respect your wishes. Please contact us to let us "
+"know."
+msgstr ""
+"El enlace para darse de baja ha fallado. Respetamos sus deseos. Póngase en "
+"contacto con nosotros para comunicárnoslo."
+
+#: subscriber.php:284
+msgid "New subscriber"
+msgstr "Nuevo suscriptor"
+
+#: subscriber.php:285
+msgid "Thanks for registration"
+msgstr "Gracias por inscribirse"
+
+#: subscriber.php:286
+msgid "Link to unsubscribe"
+msgstr "Enlace para darse de baja"
+
+#: subscriber.php:288
+#, php-format
+msgid "User with e-mail %s has subscribed to a newsletter."
+msgstr "El usuario con correo electrónico %s se ha suscrito a un boletín."
+
+#: subscriber.php:289
+#, php-format
+msgid ""
+"Thanks for registration. To change data of your profile go to %1$s If you "
+"want to unsubscribe from the newsletter from our site go to the link %2$s"
+msgstr ""
+"Gracias por registrarse. Para cambiar los datos de su perfil vaya a %1$s Si "
+"desea darse de baja del boletín de noticias de nuestro sitio vaya al enlace "
+"%2$s"
+
+#: subscriber.php:290
+#, php-format
+msgid ""
+"Dear user. At your request, we send you a link to unsubscribe from our email "
+"messages. To unsubscribe please use the link below. If you change your mind, "
+"you can just ignore this letter.\n"
+"Link to unsubscribe:\n"
+" %s"
+msgstr ""
+"Estimado usuario. A petición suya, le enviamos un enlace para darse de baja "
+"de nuestros mensajes de correo electrónico. Para darse de baja, utilice el "
+"siguiente enlace. Si cambia de opinión, puede ignorar esta carta.\n"
+"Enlace para darse de baja:\n"
+" %s"
+
+#: subscriber.php:299
+#, php-format
+msgid ""
+"If you want to unsubscribe from the newsletter from our site go to the "
+"following link: %s"
+msgstr ""
+"Si desea darse de baja del boletín de noticias de nuestro sitio vaya al "
+"siguiente enlace: %s"
+
+#: subscriber.php:503
+msgid "WARNING"
+msgstr "ADVERTENCIA"
+
+#: subscriber.php:504
+msgid "The plugin works correctly only if JavaScript is enabled."
+msgstr "El plugin funciona correctamente sólo si JavaScript está activado."
+
+#: subscriber.php:538 subscriber.php:1757
+msgid "Notice:"
+msgstr "Aviso:"
+
+#: subscriber.php:548
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Resultados de búsqueda para &#8220;%s&#8221;"
+
+#: subscriber.php:550
+msgid "Filter subscribers list"
+msgstr "Filtrar la lista de suscriptores"
+
+#: subscriber.php:556
+msgid "search"
+msgstr "buscar"
+
+#: subscriber.php:578
+msgid "Letters not found"
+msgstr "Letras no encontradas"
+
+#: subscriber.php:587
+msgid "empty title"
+msgstr "título vacío"
+
+#: subscriber.php:688
+msgid ""
+"The ID of the verifiable form does not match the ID of the sending form."
+msgstr ""
+"El ID del formulario verificable no coincide con el ID del formulario de "
+"envío."
+
+#: subscriber.php:953
+msgid "Your login:"
+msgstr "Su nombre de usuario:"
+
+#: subscriber.php:953
+msgid "Your password:"
+msgstr "Su contraseña:"
+
+#: subscriber.php:1260
+msgid "Subscribe on newsletters"
+msgstr "Suscribirse a los boletines"
+
+#: subscriber.php:1348
+msgid "users per page"
+msgstr "usuarios por página"
+
+#: subscriber.php:1406
+msgid "Unknown action."
+msgstr "Acción desconocida."
+
+#: subscriber.php:1407
+msgid "Select the users to apply the necessary actions."
+msgstr "Seleccione los usuarios para aplicar las acciones necesarias."
+
+#: subscriber.php:1408
+msgid "No user was updated."
+msgstr "No se ha actualizado ningún usuario."
+
+#: subscriber.php:1443
+#, php-format
+msgid "One user was subscribed on newsletter."
+msgid_plural "%s users were subscribed on newsletter."
+msgstr[0] "Un usuario se suscribió al boletín informativo."
+msgstr[1] "%s varios usuarios se suscribieron al boletín informativo."
+
+#: subscriber.php:1443 subscriber.php:1476 subscriber.php:1508
+#: subscriber.php:1535 subscriber.php:1563 subscriber.php:1618
+msgid "Undo."
+msgstr "Deshacer."
+
+#: subscriber.php:1476
+#, php-format
+msgid "One user was unsubscribed from newsletter."
+msgid_plural "%s users were unsubscribed from newsletter."
+msgstr[0] "Un usuario ha dado de baja del boletín informativo."
+msgstr[1] "%s varios usuarios se han dado de baja del boletín informativo."
+
+#: subscriber.php:1508
+#, php-format
+msgid "One user was moved to black list."
+msgid_plural "%s users were moved to black list."
+msgstr[0] "Un usuario se movió a la lista negra."
+msgstr[1] "%s varios usuarios se movieron de la lista negra."
+
+#: subscriber.php:1535
+#, php-format
+msgid "One user was restored from black list."
+msgid_plural "%s users were restored from black list."
+msgstr[0] "Un usuario se restauró de la lista negra."
+msgstr[1] "%s varios usuarios se restauraron de la lista negra."
+
+#: subscriber.php:1563
+#, php-format
+msgid "One user was moved to trash."
+msgid_plural "%s users were moved to trash."
+msgstr[0] "Un usuario se movió a la basura."
+msgstr[1] "%s varios usuarios se movieron a la basura."
+
+#: subscriber.php:1591
+#, php-format
+msgid "One user was deleted permanently."
+msgid_plural "%s users were deleted permanently."
+msgstr[0] "Un usuario se eliminó de forma permanente."
+msgstr[1] "%s varios usuarios se eliminaron de forma permanente."
+
+#: subscriber.php:1618
+#, php-format
+msgid "One user was restored."
+msgid_plural "%s users were restored."
+msgstr[0] "Se ha restaurado un usuario."
+msgstr[1] "%s se han restaurado varios usuarios."
+
+#: subscriber.php:1738
+msgid "FAQ"
+msgstr "FAQ"
+
+#: subscriber.php:1739
+msgid "Support"
+msgstr "Soporte"
+
+#: subscriber.php:1760
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has only"
+msgstr ""
+"Debido a las peculiaridades del trabajo multisitio, el plugin Suscriptor "
+"sólo tiene"
+
+#: subscriber.php:1762
+msgid "Network settings page"
+msgstr "Página de configuración de la red"
+
+#: subscriber.php:1765
+msgid ""
+"Due to the peculiarities of the multisite work, Subscriber plugin has the "
+"network settings page only and it should be Network Activated. Please"
+msgstr ""
+"Debido a las peculiaridades del trabajo multisitio, el plugin Suscriptor "
+"sólo tiene la página de configuración de red y debe estar Activado en Red. "
+"Por favor"
+
+#: subscriber.php:1767
+msgid "Activate Subscriber for Network"
+msgstr "Activar abonado para la red"

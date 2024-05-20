@@ -2,9 +2,9 @@
 Contributors: bestwebsoft
 Donate link: https://bestwebsoft.com/donate/
 Tags: add subsribe form, display subscribe form, subscriber, subscriber plugin, subscribe to newsletters, subscriber list, subscriber widget, subscription, website newsletters, subscribe, newsletters, add subscriber widget
-Requires at least: 4.5
-Tested up to: 5.7.2
-Stable tag: 1.4.7
+Requires at least: 5.6
+Tested up to: 6.5
+Stable tag: 1.4.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -39,6 +39,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* [Contact Form](https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=8414f4d5854c6ad26575b04a62d6672e)
 	* [Google Captcha (reCAPTCHA)](https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=251a19a5d45d3f788250f7d67e821688)
 	* [Social Login](https://bestwebsoft.com/products/wordpress/plugins/social-login/?k=c9c2236abca4a41f96331f4880027dfc)
+	* [Profile Extra Fields](https://bestwebsoft.com/products/wordpress/plugins/profile-extra-fields/?k=fe3b6c3dbc80bd4b1cf9a27a2f339820)[NEW]
 * Customize service messages
 * Display the form on one line
 * Notify administrator via email about new subscribers
@@ -49,6 +50,7 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* Administrator
 	* Subscribed user
 * Add unsubscribe link and additional text to email template
+* Add subscription checkbox to Woocommerce forms
 * View information about subscribers:
 	* Name
 	* E-mail
@@ -59,7 +61,6 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 	* Unsubscribed
 	* Black listed
 	* Trashed
-* Add custom code via plugin settings page
 * Compatible with latest WordPress version
 * Incredibly simple settings for fast setup without modifying code
 * Detailed step-by-step documentation and videos
@@ -75,8 +76,9 @@ https://www.youtube.com/watch?v=ytjxGd4hXDU
 > * Add the following fields to the subscription form:
 > 	* Name
 > 	* Unsubscribe (checkbox)
+> * Add custom code via plugin settings page
 > * View reason of unsubscribing
-> * Summary diagram with subscribers statistic [NEW]
+> * Summary diagram with subscribers statistic
 > * Get answer to your support question within one business day ([Support Policy](https://bestwebsoft.com/support-policy/))
 >
 > [Upgrade to Pro Now](https://bestwebsoft.com/products/wordpress/plugins/subscriber/?k=ec88b21e8b31454de5a80a997b2f6450)
@@ -94,6 +96,10 @@ If you have a feature suggestion or idea you'd like to see in the plugin, we'd l
 = Help & Support =
 
 Visit our Help Center if you have any questions, our friendly Support Team is happy to help — <https://support.bestwebsoft.com/>
+
+= Affiliate Program =
+
+Earn 20% commission by selling the premium WordPress plugins and themes by BestWebSoft — [https://bestwebsoft.com/affiliate/](https://bestwebsoft.com/affiliate/?utm_source=plugin&utm_medium=readme&utm_campaign=affiliate_program)
 
 = Translation =
 
@@ -210,6 +216,15 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 5. Subscriber Sign Up Form widget settings.
 
 == Changelog ==
+
+= V1.4.9 - 20.05.2024 =
+* Update : All functionality was updated for Wordpress 6.5.
+* Update : BWS menu has been updated.
+* PRO: Ability to add subscription checkbox to Woocommerce Login and Checkout forms.
+
+= V1.4.8 - 25.08.2021 =
+* Update : All functionality was updated for Wordpress 5.8.
+* NEW: Compatibility with Profile Extra Fields by BestWebSoft.
 
 = V1.4.7 - 01.07.2021 =
 * Update : BWS menu has been updated.
@@ -369,6 +384,14 @@ Please make sure that the problem hasn't been discussed yet on our forum (<https
 * NEW : Russian language files were added to the plugin.
 
 == Upgrade Notice ==
+
+= V1.4.9 =
+* The compatibility with new WordPress version updated.
+* Usability improved.
+* New features added.
+
+= V1.4.8 =
+* New features added.
 
 = V1.4.7 =
 * Usability improved.
